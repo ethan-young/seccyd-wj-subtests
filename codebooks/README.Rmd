@@ -1,6 +1,5 @@
 ---
 title: "Codebooks"
-date: "`r format(Sys.Date())`"
 output: 
   md_document:
     variant: markdown_github
@@ -14,5 +13,7 @@ library(gt)
 library(glue)
 library(htmltools)
 ```
+
+Last updated `r format(Sys.Date())`
 
 This folder contains codebooks for the variables used in this project

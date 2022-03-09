@@ -1,3 +1,5 @@
+Last updated 2022-03-09
+
 This repository contains a pregistration, data, code, an (eventual)
 reproducible manuscript/supplemebt for a project entilted (working
 title) “Within-person cognitive performance across abilities among
