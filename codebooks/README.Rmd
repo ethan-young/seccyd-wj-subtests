@@ -1,0 +1,18 @@
+---
+title: "Codebooks"
+date: "`r format(Sys.Date())`"
+output: 
+  md_document:
+    variant: markdown_github
+---
+
+```{r setup, include=F}
+knitr::opts_chunk$set(echo = F, message = F, warning = F)
+
+library(tidyverse)
+library(gt)
+library(glue)
+library(htmltools)
+```
+
+This folder contains codebooks for the variables used in this project
