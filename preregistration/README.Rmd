@@ -1,0 +1,37 @@
+---
+title: "Preregistration"
+output: github_document
+bibliography: references.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Last updated `r format(Sys.Date())`
+
+## Overview
+
+This preregistration document is based on [@akker2021]
+
+## Study Information
+
+info about study
+
+## Data Description
+
+info about data
+
+## Current Study Variables
+
+Variables I will use
+
+## Current Study Analyses
+
+How I will analyze data
+
+## Other relevant information
+
+Other stuff to note
+
+## References

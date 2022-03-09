@@ -3,6 +3,7 @@ title: "Within-person cognitive performance across abilities among adversity-exp
 output: 
   md_document:
     variant: markdown_github
+bibliography: references.bib
 ---
 
 ```{r setup, include=F}
@@ -25,7 +26,8 @@ The names of each folder are intended to be self-explanatory. There are six top-
 1.  [`codebooks/`](codebooks/README.md): lists of variable names, labels, and value labels (where applicable).
 2.  `data/`: data, stored as an `.Rdata` file and `.csv` files.
 3.  `manuscript/`: a manuscript written in R markdown for submission to a journal.
-4.  `preregistration/`: a document based on (insert link) that details my plans for this project.
+4.  [`preregistration/`](preregistration/README.md): a document based on [@akker2021] that details my plans for this project.
 5.  `scripts/`: R-scripts that read, analyze, and produce all outputs.
 6.  `supplement/`: a supplemental text with additional information and materials.
 
+## References
