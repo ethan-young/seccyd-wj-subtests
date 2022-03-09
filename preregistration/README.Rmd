@@ -1,7 +1,8 @@
 ---
 title: "Preregistration"
 output: github_document
-bibliography: references.bib
+bibliography: ../references.bib
+csl: ../apa.csl
 ---
 
 ```{r setup, include=FALSE}
