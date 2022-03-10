@@ -1,8 +1,4 @@
-Within-person cognitive performance across abilities among
-adversity-exposed people in the SECCYD
-================
-
-Last updated 2022-03-10
+*Last updated March 10, 2022*
 
 ## Overview
 
@@ -13,8 +9,9 @@ adversity-exposed people in the SECCYD.”
 
 This project is a secondary data analysis using the Study of Early
 Childcare and Youth Development
-\[[SECCYD](https://www.icpsr.umich.edu/web/ICPSR/series/00233),
-@nichdearlychildcareresearchnetwork2005\].
+([SECCYD](https://www.icpsr.umich.edu/web/ICPSR/series/00233), [NICHD
+Early Child Care Research Network,
+2005](#ref-nichdearlychildcareresearchnetwork2005)).
 
 ## Directory Structure
 
@@ -35,3 +32,7 @@ project:
     materials.
 
 ## References
+
+NICHD Early Child Care Research Network. (2005). *Child care and child
+development: Results from the NICHD study of early child care and youth
+development*. The Guilford Press.

@@ -1,9 +1,12 @@
 ---
 title: "Within-person cognitive performance across abilities among adversity-exposed people in the SECCYD"
-output: github_document
+output: md_document
 bibliography: references.bib
 csl: apa.csl
 link-citations: true
+editor-options:
+  markdown:
+    canonical: true
 ---
 
 ```{r setup, include=F}
@@ -15,13 +18,13 @@ library(glue)
 library(htmltools)
 ```
 
-Last updated `r format(Sys.Date())`
+*Last updated `r format(Sys.Date(), "%B %d, %Y")`*
 
 ## Overview
 
 This repository contains a preregistration, data, code, an (eventual) reproducible manuscript/supplement for a project entitled (working title) "Within-person cognitive performance across abilities among adversity-exposed people in the SECCYD".
 
-This project is a secondary data analysis using the Study of Early Childcare and Youth Development [[SECCYD](https://www.icpsr.umich.edu/web/ICPSR/series/00233), \@nichdearlychildcareresearchnetwork2005].
+This project is a secondary data analysis using the Study of Early Childcare and Youth Development [[SECCYD](https://www.icpsr.umich.edu/web/ICPSR/series/00233), @nichdearlychildcareresearchnetwork2005].
 
 ## Directory Structure
 

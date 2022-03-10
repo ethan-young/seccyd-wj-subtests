@@ -1,12 +1,12 @@
 Preregistration
 ================
 
-Last updated 2022-03-10
+*Last updated March 10, 2022*
 
 ## Overview
 
-This preregistration document is based on (Akker et al., 2021) for
-secondary data analyses.
+This preregistration document is based on ([Akker et al.,
+2021](#ref-akker2021)) for secondary data analyses.
 
 ## Study Information
 
@@ -18,24 +18,18 @@ adversity-exposed people in the SECCYD”
 ### Authors
 
 -   [Ethan S. Young](https://www.ethan-young.com/)<sup>1</sup>
-    [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-8232-0184),
-    Utrecht University
+    [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-8232-0184)
 -   Stefan
-    Vermeent<sup>1</sup>[<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-9595-5373),
-    Utrecht University
+    Vermeent<sup>1</sup>[<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-9595-5373)
 -   [Willem E.
-    Frankenhuis](http://www.willem.maartenfrankenhuis.nl/)<sup>1</sup>,
-    Utrecht University
+    Frankenhuis](http://www.willem.maartenfrankenhuis.nl/)<sup>1</sup>
 -   [Marissa Nivison](https://icd.umn.edu/people/nivis004/)<sup>2</sup>
-    [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-9436-722X),
-    University of Minnesota
+    [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-9436-722X)
 -   [Jeffry
     A.Simpson](https://cla.umn.edu/about/directory/profile/simps108)<sup>2</sup>
-    [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0003-1899-2493),
-    University of Minnesota
+    [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0003-1899-2493)
 -   [Glenn I. Roisman](https://icd.umn.edu/people/roism001/)<sup>2</sup>
-    [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-6941-6560),
-    University of Minnesota
+    [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-6941-6560)
 
 <sup>1</sup>Utrecht University
 
