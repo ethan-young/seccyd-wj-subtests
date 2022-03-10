@@ -13,11 +13,32 @@ Last updated `r format(Sys.Date())`
 
 ## Overview
 
-This preregistration document is based on [@akker2021]
+This preregistration document is based on [\@akker2021] for secondary data analyses.
 
 ## Study Information
 
-info about study
+### Title
+
+"Within-person cognitive performance across abilities among adversity-exposed people in the SECCYD"
+
+### Authors
+
+-   [Ethan S. Young](https://www.ethan-young.com/)<sup>1</sup> [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-8232-0184), Utrecht University
+-   Stefan Vermeent<sup>1</sup>, Utrecht University
+-   [Willem E. Frankenhuis](http://www.willem.maartenfrankenhuis.nl/)<sup>1</sup>, Utrecht University
+-   [Marissa Nivison](https://icd.umn.edu/people/nivis004/)<sup>2</sup> [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-9436-722X), University of Minnesota
+-   [Jeffry A.Simpson](https://cla.umn.edu/about/directory/profile/simps108)<sup>2</sup> [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0003-1899-2493), University of Minnesota
+-   [Glenn I. Roisman](https://icd.umn.edu/people/roism001/)<sup>2</sup> [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-6941-6560), University of Minnesota
+
+<sup>1</sup>Utrecht University
+
+<sup>2</sup>University of Minnesota
+
+### Research Questions
+
+R1: How does adversity relate to overall cognitive performance compared to component-level performance?
+
+R2: Do different adversity dimensions have similar or different patterns of effects?
 
 ## Data Description
 
