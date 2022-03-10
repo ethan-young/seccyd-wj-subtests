@@ -3,6 +3,7 @@ title: "Preregistration"
 output: github_document
 bibliography: ../references.bib
 csl: ../apa.csl
+link-citations: true
 ---
 
 ```{r setup, include=FALSE}
