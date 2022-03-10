@@ -20,7 +20,7 @@ adversity-exposed people in the SECCYD”
 -   [Ethan S. Young](https://www.ethan-young.com/)<sup>1</sup>
     [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-8232-0184),
     Utrecht University
--   Stefan Vermeent<sup>1</sup>, Utrecht University
+-   Stefan Vermeent<sup>1</sup>[<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-9595-5373), Utrecht University
 -   [Willem E.
     Frankenhuis](http://www.willem.maartenfrankenhuis.nl/)<sup>1</sup>,
     Utrecht University
