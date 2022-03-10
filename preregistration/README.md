@@ -47,6 +47,12 @@ to component-level performance?
 R2: Do different adversity dimensions have similar or different patterns
 of effects?
 
+### Hypotheses
+
+H1: Some very precise, theory-derived, logical prediction
+
+H2: Loose intuition
+
 ## Data Description
 
 info about data
