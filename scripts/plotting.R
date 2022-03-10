@@ -16,9 +16,10 @@ wj_data_long %>%
   facet_wrap(~subtest)
 
 wj_data_long %>% 
-  group_by(id) %>%
-  summarise(across(c(-starts_with("assess")), ~mean(.x, na.rm = T))) %>% 
-  select(-id) %>% 
+  group_by(id) %>% 
+  summarise(across(c(-starts_with("assess")), list( mean = ~mean(.x, na.rm = T), n = ~sum(!is.na(.x))))) %>% 
+  filter(if_all(ends_with("_n"), ~.x >1)) %>% 
+  select(-id, -ends_with("_n")) %>% 
   corr_table()
 
 wj_data_long %>% 

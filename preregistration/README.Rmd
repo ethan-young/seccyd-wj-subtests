@@ -13,7 +13,7 @@ Last updated `r format(Sys.Date())`
 
 ## Overview
 
-This preregistration document is based on [\@akker2021] for secondary data analyses.
+This preregistration document is based on [@akker2021] for secondary data analyses.
 
 ## Study Information
 

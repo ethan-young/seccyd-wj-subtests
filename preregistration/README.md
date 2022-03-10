@@ -5,8 +5,8 @@ Last updated 2022-03-10
 
 ## Overview
 
-This preregistration document is based on \[@akker2021\] for secondary
-data analyses.
+This preregistration document is based on (Akker et al., 2021) for
+secondary data analyses.
 
 ## Study Information
 
@@ -20,7 +20,9 @@ adversity-exposed people in the SECCYD”
 -   [Ethan S. Young](https://www.ethan-young.com/)<sup>1</sup>
     [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-8232-0184),
     Utrecht University
--   Stefan Vermeent<sup>1</sup>[<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-9595-5373), Utrecht University
+-   Stefan
+    Vermeent<sup>1</sup>[<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-9595-5373),
+    Utrecht University
 -   [Willem E.
     Frankenhuis](http://www.willem.maartenfrankenhuis.nl/)<sup>1</sup>,
     Utrecht University
@@ -70,3 +72,18 @@ How I will analyze data
 Other stuff to note
 
 ## References
+
+<div id="refs" class="references csl-bib-body hanging-indent"
+line-spacing="2">
+
+<div id="ref-akker2021" class="csl-entry">
+
+Akker, O. R. van den, Weston, S., Campbell, L., Chopik, B., Damian, R.,
+Davis-Kean, P., Hall, A., Kosie, J., Kruse, E., Olsen, J., Ritchie, S.,
+Valentine, K. D., Veer, A. van ’t., & Bakker, M. (2021). Preregistration
+of secondary data analysis: A template and tutorial. *Meta-Psychology*,
+*5*. <https://doi.org/10.15626/MP.2020.2625>
+
+</div>
+
+</div>

@@ -2,6 +2,7 @@
 ## Libraries ----
 library(tidyverse)
 library(haven)
+library(sjlabelled)
 
 ## Load Functions ----
 source("scripts/0-create_codebook.R")
@@ -65,7 +66,40 @@ wj_data_long <-
                                       assessment == "5g"  ~ 5,
                                       assessment == "15y" ~ 6)) %>% 
            arrange(id, assessment_order) %>% 
-  select(id, assessment, assessment_order, everything())
+  select(id, assessment, assessment_order, everything(), -math, -read)
+
+## Label scores ----
+wj_data_long %>% 
+  var_labels(
+    picvo = "Picture Vocabulary standard score. 
+             Measures the ability to recognize or to name pictured objects. 
+             Higher scores = more verbal comprehension/crystallized knowledge.",
+    vrba  = "Verbal Analogies standard score. 
+             Measures the ability to complete phrases with words that indicate appropriate analogies. 
+             Higher scores = more verbal fluid reasoning and crystallized knowledge.",
+    pscmp = "Passage Comprehension standard score.
+             The first four items require pointing a  picture represented by a phrase. 
+             The remaining items require reading a short passage and identifying a missing key word. 
+             Higher scores = more vocab and comprehension skill.",
+    appld = "Applied Problems standard score.
+             Measures practical problem solving in mathematics. 
+             Higher scores = more practical math problem solving skill.",
+    memse = "Memory for Sentences standard score.
+             Measures the ability to remember and repeat simple words, phrases, and sentences presented auditorily.
+             Higher scores = better short-term memory and comprehension.",
+    incom = "Incomplete Words standard score.
+             After hearing a recorded word that has one or more phonemes missing, the subject names the complete word. 
+             Higer scores = better auditory processing.",
+    memna = "Memory for Names standard score. 
+             Measures the ability to learn associations between unfamiliar auditory and visual stimuli, which increases in diffculty.
+             Higher scores = better long-term memory retrieval",
+    lwid  = "Letter-Word Identification standard score.
+             The first five items measure the ability to match a pictograph of a word with an actual picture.
+             The remaining items measure reading identification skill in identifying isolated letters and words.
+             Higher scores = verbal knowledge."
+  )
+
+
 
 # Gather Continuous Performance Data -----------------------------------------
 ## Compile File Names ----
