@@ -5,6 +5,7 @@ toc: true
 bibliography: references.bib
 csl: apa.csl
 link-citations: true
+keep-yaml: true
 ---
 
 ```{r setup, include=F}

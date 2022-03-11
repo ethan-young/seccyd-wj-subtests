@@ -1,3 +1,13 @@
+---
+title: "Within-person cognitive performance across abilities among adversity-exposed people in the SECCYD"
+format: gfm
+toc: true
+bibliography: references.bib
+csl: apa.csl
+link-citations: true
+keep-yaml: true
+---
+
 -   [Overview](#overview)
 -   [Directory Structure](#directory-structure)
 -   [References](#references)
