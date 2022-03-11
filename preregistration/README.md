@@ -1,7 +1,7 @@
 Preregistration
 ================
 
-*Last updated March 10, 2022*
+*Last updated on Friday, March 11, 2022 at 02:49 PM*
 
 ## Overview
 

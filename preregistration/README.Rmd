@@ -4,16 +4,9 @@ output: github_document
 bibliography: ../references.bib
 csl: ../apa.csl
 link-citations: true
-editor-options:
-  markdown:
-    canonical: true
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-*Last updated `r format(Sys.Date(), "%B %d, %Y")`*
+*Last updated `r format(Sys.time(), "on %A, %B %d, %Y at %I:%M %p")`*
 
 ## Overview
 

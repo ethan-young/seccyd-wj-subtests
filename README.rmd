@@ -1,23 +1,12 @@
 ---
 title: "Within-person cognitive performance across abilities among adversity-exposed people in the SECCYD"
-format: gfm
-toc: true
+output: github_document
 bibliography: references.bib
 csl: apa.csl
 link-citations: true
-keep-yaml: true
 ---
 
-```{r setup, include=F}
-knitr::opts_chunk$set(echo = F, message = F, warning = F)
-
-library(tidyverse)
-library(gt)
-library(glue)
-library(htmltools)
-```
-
-*Last updated `r format(Sys.Date(), "%B %d, %Y")`*
+*Last updated `r format(Sys.time(), "on %A, %B %d, %Y at %I:%M %p")`*
 
 ## Overview
 
