@@ -1,7 +1,7 @@
 Preregistration
 ================
 
-*Last updated on Thursday, March 24, 2022 at 08:24 AM*
+*Last updated on Thursday, February 02, 2023 at 01:37 PM*
 
 ## Overview
 
@@ -9,9 +9,12 @@ This preregistration document is based on ([Akker et al.,
 2021](#ref-akker2021)) for secondary data analyses. There are three
 parts, which you can jump to following the links below:
 
--   [Part 1 - Study information](#part-1---study-information)
--   [Part 2 - Data Description](#part-2---data-description)
--   [Part 3 - Variables](#part-3---variables)
+- [Part 1 - Study information](#part-1---study-information)
+- [Part 2 - Data Description](#part-2---data-description)
+- [Part 3 - Variables](#part-3---variables)
+- [Part 4 - Knowledge of Data](#part-4---knowledge-of-data)
+- [Part 5 - Analyses](#part-5---analyses)
+- [Part 6 - Statement of Integrity](#part-6---statement-of-integrity)
 
 ## Part 1 - Study Information
 
@@ -22,19 +25,19 @@ adversity-exposed people in the SECCYD”
 
 ### Q2: Authors
 
--   [Ethan S. Young](https://www.ethan-young.com/)<sup>1</sup>
-    [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-8232-0184)
--   Stefan
-    Vermeent<sup>1</sup>[<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-9595-5373)
--   [Willem E.
-    Frankenhuis](http://www.willem.maartenfrankenhuis.nl/)<sup>1</sup>
--   [Marissa Nivison](https://icd.umn.edu/people/nivis004/)<sup>2</sup>
-    [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-9436-722X)
--   [Jeffry
-    A.Simpson](https://cla.umn.edu/about/directory/profile/simps108)<sup>2</sup>
-    [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0003-1899-2493)
--   [Glenn I. Roisman](https://icd.umn.edu/people/roism001/)<sup>2</sup>
-    [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-6941-6560)
+- [Ethan S. Young](https://www.ethan-young.com/)<sup>1</sup>
+  [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-8232-0184)
+- Stefan
+  Vermeent<sup>1</sup>[<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-9595-5373)
+- [Willem E.
+  Frankenhuis](http://www.willem.maartenfrankenhuis.nl/)<sup>1</sup>
+- [Marissa Nivison](https://icd.umn.edu/people/nivis004/)<sup>2</sup>
+  [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-9436-722X)
+- [Jeffry
+  A.Simpson](https://cla.umn.edu/about/directory/profile/simps108)<sup>2</sup>
+  [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0003-1899-2493)
+- [Glenn I. Roisman](https://icd.umn.edu/people/roism001/)<sup>2</sup>
+  [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-6941-6560)
 
 <sup>1</sup>Utrecht University
 
@@ -42,17 +45,27 @@ adversity-exposed people in the SECCYD”
 
 ### Q3: Research Questions
 
-R1: How does adversity relate to overall cognitive performance compared
-to component-level performance?
+**R1:** How does adversity relate to overall cognitive performance
+compared to component-level performance?
 
-R2: Do different adversity dimensions have similar or different patterns
-of effects?
+**R2:** Do different adversity dimensions have similar or different
+patterns of effects?
+
+**R3:** Are the effects of adversity task-specific or task-general?
 
 ### Q4: Hypotheses
 
-H1: Some very precise, theory-derived, logical prediction
+**H1:** We expect harshness and/or unpredictability to be associated
+with a lower overall within-person Woodcock Johnson (WJ) cognitive
+ability score (sum coded within-person intercept) .
 
-H2: Loose intuition
+**H2:** Compared with overall WJ scores, the effect of harshness and/or
+unpredictability will vary; some sub-tests will show lowered performance
+whereas others remain ‘intact’.
+
+**H3:** If any sub-tests remain intact, they will be tests that depend
+less on formal crystallized knowledge and reading ability (i.e., short
+term memory, auditory processing, fluid intelligence).
 
 ## Part 2 - Data Description
 
@@ -71,14 +84,14 @@ early adulthood. Families were recruited for the NICHD SECCYD in 1991. A
 total of 1364 families met all the prescreening criteria. Below are
 detailed descriptions of each study phase:
 
--   [Phase 1
-    (1991-1994)](https://www.icpsr.umich.edu/web/ICPSR/studies/21940)
--   [Phase 2
-    (1995-1999)](https://www.icpsr.umich.edu/web/ICPSR/studies/21941)
--   [Phase 3
-    (2000-2004)](https://www.icpsr.umich.edu/web/ICPSR/studies/21942)
--   [Phase 4
-    (2000-2004)](https://www.icpsr.umich.edu/web/ICPSR/studies/22361)
+- [Phase 1
+  (1991-1994)](https://www.icpsr.umich.edu/web/ICPSR/studies/21940)
+- [Phase 2
+  (1995-1999)](https://www.icpsr.umich.edu/web/ICPSR/studies/21941)
+- [Phase 3
+  (2000-2004)](https://www.icpsr.umich.edu/web/ICPSR/studies/21942)
+- [Phase 4
+  (2000-2004)](https://www.icpsr.umich.edu/web/ICPSR/studies/22361)
 
 ### Q6: Public Availability -
 
@@ -93,28 +106,28 @@ under “Access Restricted Data” tab.
 
 Data can be accessed through the following links.
 
--   [Phase 1
-    (1991-1994)](https://www.icpsr.umich.edu/web/ICPSR/studies/21940),
-    doi: <https://doi.org/10.3886/ICPSR21940.v6>
--   [Phase 2
-    (1995-1999)](https://www.icpsr.umich.edu/web/ICPSR/studies/21941),
-    doi: <https://doi.org/10.3886/ICPSR21941.v5>
--   [Phase 3
-    (2000-2004)](https://www.icpsr.umich.edu/web/ICPSR/studies/21942),
-    doi: <https://doi.org/10.3886/ICPSR21942.v6>
--   [Phase 4
-    (2000-2004)](https://www.icpsr.umich.edu/web/ICPSR/studies/22361),
-    doi: <https://doi.org/10.3886/ICPSR22361.v5>
+- [Phase 1
+  (1991-1994)](https://www.icpsr.umich.edu/web/ICPSR/studies/21940),
+  doi: <https://doi.org/10.3886/ICPSR21940.v6>
+- [Phase 2
+  (1995-1999)](https://www.icpsr.umich.edu/web/ICPSR/studies/21941),
+  doi: <https://doi.org/10.3886/ICPSR21941.v5>
+- [Phase 3
+  (2000-2004)](https://www.icpsr.umich.edu/web/ICPSR/studies/21942),
+  doi: <https://doi.org/10.3886/ICPSR21942.v6>
+- [Phase 4
+  (2000-2004)](https://www.icpsr.umich.edu/web/ICPSR/studies/22361),
+  doi: <https://doi.org/10.3886/ICPSR22361.v5>
 
 ### Q8: Date of Download
 
--   Ethan Young (lead author and data analyst) accessed data for the
-    dependent variables on Feburary 3rd, 2022.
--   Stefan Vermeent will not access the data
--   Willem Frankenhuis will not access the data
--   Marissa Nivison…
--   Jeffry Simpson will not access the data
--   Glenn Roisman…
+- Ethan Young (lead author and data analyst)
+  - Accessed data for the dependent variables on February 3rd, 2022
+- Stefan Vermeent will not access the data
+- Willem Frankenhuis will not access the data
+- Marissa Nivison…
+- Jeffry Simpson will not access the data
+- Glenn Roisman…
 
 ### Q9: Data Collection
 
@@ -127,14 +140,14 @@ methodology can be found
 Detailed codebooks for each study wave can be downloaded at the
 following links:
 
--   [Phase 1
-    (1991-1994)](https://www.icpsr.umich.edu/web/ICPSR/studies/21940/datadocumentation)
--   [Phase 2
-    (1995-1999)](https://www.icpsr.umich.edu/web/ICPSR/studies/21941/datadocumentation)
--   [Phase 3
-    (2000-2004)](https://www.icpsr.umich.edu/web/ICPSR/studies/21942/datadocumentation)
--   [Phase 4
-    (2000-2004)](https://www.icpsr.umich.edu/web/ICPSR/studies/22361/datadocumentation)
+- [Phase 1
+  (1991-1994)](https://www.icpsr.umich.edu/web/ICPSR/studies/21940/datadocumentation)
+- [Phase 2
+  (1995-1999)](https://www.icpsr.umich.edu/web/ICPSR/studies/21941/datadocumentation)
+- [Phase 3
+  (2000-2004)](https://www.icpsr.umich.edu/web/ICPSR/studies/21942/datadocumentation)
+- [Phase 4
+  (2000-2004)](https://www.icpsr.umich.edu/web/ICPSR/studies/22361/datadocumentation)
 
 Once variables for this study are selected, accessed, and ready for
 pre-processing/analysis, codebooks will be available
@@ -142,17 +155,131 @@ pre-processing/analysis, codebooks will be available
 
 ## Part 3 - Variables
 
-## Current Study Variables
+### Q11: Manipulated Variables:
 
-Variables I will use
+*NA*
 
-## Current Study Analyses
+### Q12: Measured Variables
 
-How I will analyze data
+#### Covariates
 
-## Other relevant information
+- Gender
+- Ethnicity
 
-Other stuff to note
+#### Independent Variables
+
+Unpredictability
+
+- Residential changes
+- Parental transitions
+- Job changes
+
+Harshness
+
+- Income-to-needs ratio
+
+#### Dependent Variables
+
+Woodcock Johnson Sub-tests:
+
+- Picture vocabulary (verbal comprehension/crystallized knowledge)
+- Verbal analogies (verbal fluid reasoning and crystallized knowledge)
+- Passage comprehension (vocab and comprehension skill)
+- Applied problems (practical math problem solving skill)
+- Memory for Sentences (short term retrieval)
+- Incomplete words (auditory processing)
+- Memory for names (long term retrieval)
+- Letter-word identification (verbal knowledge)
+- Word attack (auditory processing)
+- Calculations (math calculations)
+
+### Q13: Inclusion/Exclusion criteria *NOT DONE*
+
+TBD
+
+### Q14: Missing data *NOT DONE*
+
+TBD
+
+### Q15: Outliers *NOT DONE*
+
+TBD
+
+### Q16: Sample Weights
+
+**NA**
+
+## Part 4 - Knowledge of Data
+
+*NOT DONE*
+
+### Q17: Relevant Publications *NOT DONE*
+
+TBD
+
+### Q18: Prior Knowledge *NOT DONE*
+
+TBD
+
+## Part 5 - Analyses
+
+### Q19: Hypothesis -\> Statistical Tests *NOT DONE*
+
+#### H1 & H2
+
+We will use a mixed effects linear regression to test Hypotheses 1 & 2
+using the `lmer`. To do so, we proceed in three steps:
+
+1.  We will standardize (z-score) our independent variables. This
+    centers the IV at 0 and scales them with standard deviation = 1.
+2.  We then stack the data into ‘long’ format. There are 10 subtests, so
+    each participant will have 10 associated rows. Two new columns are
+    created, one indicating the subtest type and one indicating each
+    participant’s associated score.
+3.  Next, we apply a sum coded contrast to the subtest index column.
+    This means the intercept in the mixed effect model reflects the
+    grand mean of WJ subtest scores. Sum coding allows us to compare the
+    effect of adversity on each subtest to the mean of all tests.
+4.  We fit a linear mixed effects model with the following terms
+    - contrast coded subtest
+    - adversity (standardized)
+    - interaction between contrast coded subtest and adversity
+    - random intercept for participants
+
+Below is code that implements this analysis pipeline:
+
+``` r
+# Prepare data
+data_long <-
+  data_wide  |> 
+  # Standardize IVs 
+  mutate(adversity_z = scale(adversity) |> as.numeric()) |> 
+  # Long format
+  pivot_longer(cols = starts_with("wj_"), names_to = "wj_sub_test", values_to = "score") |> 
+  # Contrast for comparison to grand mean
+  mutate(wj_sub_test_contr = contr_code_sum(wj_sub_test, omit = "appl"))
+
+# Fit model
+subtest_model <- lmer(score ~ wj_subtest * adversity + (1|id), data = data_long)
+```
+
+#### H3
+
+### Q20: Predicted effect sizes *NOT DONE*
+
+### Q21: Statistical Power *NOT DONE*
+
+### Q22: Inferential Criteria *NOT DONE*
+
+### Q23: Assumption Violations *NOT DONE*
+
+### Q24: Evaluating Strength, Reliability, and Robustness *NOT DONE*
+
+### Q25: Exploratory Analyses *NOT DONE*
+
+## Part 6 - Statement of Integrity
+
+*NOT DONE*
 
 ## References
 
