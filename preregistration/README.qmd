@@ -55,9 +55,9 @@ This preregistration document is based on [@akker2021] for secondary data analys
 
 ### Q3: Research Questions
 
-<i>*Note that some research questions/hypotheses use causal language. Although we are most interested in these causal questions, the data are observational. We retain the causal language here but will use non-causal language when relating any statistical to these questions/hypotheses.</i>
+<i>*Note that some research questions/hypotheses use causal language. Although we are most interested in these causal questions, the data are observational. We retain the causal language here but will use non-causal language when relating any statistical test to these questions/hypotheses.</i>
 
-**R1:** How does adversity relate to overall cognitive performance compared to component-level performance? In other words, how does adversity relate to broad testing scores compared with more narrow subtest scores?
+**R1:** How does adversity relate to overall performance compared to subtest performance on large cognitive test batteries? In other words, how does adversity relate to broad testing scores compared with more narrow subtest scores?
 
 **R2:** How do impairment and enhancements in cognitive performance manifest across many cognitive domains?
 
@@ -200,7 +200,7 @@ Below is a conceptual depiction of our analyses:
 
 :::{#fig-conceptual}
 
-![](../archive/figures/conceptual-figure.png)
+![](../figures/figure1.png)
 
 We are interested in the effect of each adversity measure on a person’s overall score, measured as a formative average of each subtest. (A) is the main effect of adversity on overall performance. (B) is the main effect of a subtest. (C) is the simple effect (slope) of adversity for a particular subtest. (D) is the interaction effect that measures the difference between A and C. A significant simple slope means the C ≠ 0 and a significant interaction means A ≠ C. So, when C is significant, it means that adversity affects performance. When D is significant, it means that adversity affects a subtest in a different way than A (overall pattern).
 :::
