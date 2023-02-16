@@ -1,7 +1,7 @@
 Preregistration
 ================
 
-*Last updated on Thursday, February 16, 2023 at 02:44 PM*
+*Last updated on Thursday, February 16, 2023 at 03:27 PM*
 
 ## Overview
 
@@ -308,18 +308,18 @@ example_data2 |>
   knitr::kable()
 ```
 
-|  id | adversity | wj_sub_test   |    score |
-|----:|----------:|:--------------|---------:|
-|   1 | -1.236414 | wj_picvo_mean | 108.7500 |
-|   1 | -1.236414 | wj_vrba_mean  | 139.5000 |
-|   1 | -1.236414 | wj_pscmp_mean | 133.0000 |
-|   1 | -1.236414 | wj_appld_mean | 130.5000 |
-|   1 | -1.236414 | wj_memse_mean | 115.0000 |
-|   1 | -1.236414 | wj_incom_mean | 128.0000 |
-|   1 | -1.236414 | wj_memna_mean | 117.0000 |
-|   1 | -1.236414 | wj_lwid_mean  | 138.6667 |
-|   1 | -1.236414 | wj_wrdat_mean | 134.0000 |
-|   1 | -1.236414 | wj_calc_mean  | 143.0000 |
+|  id |  adversity | wj_sub_test   |    score |
+|----:|-----------:|:--------------|---------:|
+|   1 | -0.3085591 | wj_picvo_mean | 108.7500 |
+|   1 | -0.3085591 | wj_vrba_mean  | 139.5000 |
+|   1 | -0.3085591 | wj_pscmp_mean | 133.0000 |
+|   1 | -0.3085591 | wj_appld_mean | 130.5000 |
+|   1 | -0.3085591 | wj_memse_mean | 115.0000 |
+|   1 | -0.3085591 | wj_incom_mean | 128.0000 |
+|   1 | -0.3085591 | wj_memna_mean | 117.0000 |
+|   1 | -0.3085591 | wj_lwid_mean  | 138.6667 |
+|   1 | -0.3085591 | wj_wrdat_mean | 134.0000 |
+|   1 | -0.3085591 | wj_calc_mean  | 143.0000 |
 
 3.  Next, we apply a sum coded contrast to the subtest index column.
     This means the intercept in the mixed effect model reflects the
@@ -400,24 +400,24 @@ subtest_model |>
 |:-------------------|------------:|------:|------:|
 | (Intercept)        |     105.338 | 0.321 | 0.000 |
 | appld              |       2.566 | 0.259 | 0.000 |
-| calc               |       6.538 | 0.268 | 0.000 |
-| incom              |      -9.197 | 0.266 | 0.000 |
+| calc               |       6.539 | 0.268 | 0.000 |
+| incom              |      -9.196 | 0.266 | 0.000 |
 | lwid               |       1.600 | 0.259 | 0.000 |
-| memna              |      -0.229 | 0.264 | 0.386 |
-| memse              |      -8.311 | 0.260 | 0.000 |
+| memna              |      -0.232 | 0.264 | 0.379 |
+| memse              |      -8.310 | 0.260 | 0.000 |
 | picvo              |      -2.697 | 0.259 | 0.000 |
-| pscmp              |       3.069 | 0.267 | 0.000 |
-| vrba               |       5.444 | 0.269 | 0.000 |
-| adversity          |       0.321 | 0.322 | 0.319 |
-| appld \* adversity |       0.223 | 0.259 | 0.389 |
-| calc \* adversity  |       0.239 | 0.268 | 0.373 |
-| incom \* adversity |       0.274 | 0.264 | 0.299 |
-| lwid \* adversity  |      -0.293 | 0.259 | 0.257 |
-| memna \* adversity |      -0.463 | 0.265 | 0.080 |
-| memse \* adversity |       0.091 | 0.260 | 0.727 |
-| picvo \* adversity |      -0.133 | 0.259 | 0.607 |
-| pscmp \* adversity |       0.071 | 0.268 | 0.791 |
-| vrba \* adversity  |       0.515 | 0.270 | 0.056 |
+| pscmp              |       3.070 | 0.267 | 0.000 |
+| vrba               |       5.441 | 0.269 | 0.000 |
+| adversity          |       0.416 | 0.321 | 0.196 |
+| appld \* adversity |       0.285 | 0.259 | 0.271 |
+| calc \* adversity  |       0.188 | 0.267 | 0.481 |
+| incom \* adversity |      -0.204 | 0.265 | 0.442 |
+| lwid \* adversity  |      -0.211 | 0.259 | 0.415 |
+| memna \* adversity |       0.227 | 0.263 | 0.389 |
+| memse \* adversity |      -0.023 | 0.260 | 0.931 |
+| picvo \* adversity |      -0.579 | 0.259 | 0.025 |
+| pscmp \* adversity |       0.126 | 0.266 | 0.637 |
+| vrba \* adversity  |       0.421 | 0.268 | 0.117 |
 
 </div>
 
@@ -440,24 +440,24 @@ subtest_model |>
 |:-------------------|----------------:|-------:|--------:|
 | (Intercept)        |          -0.005 | -0.048 |   0.037 |
 | appld              |           0.173 |  0.139 |   0.207 |
-| calc               |           0.441 |  0.405 |   0.476 |
+| calc               |           0.441 |  0.406 |   0.476 |
 | incom              |          -0.620 | -0.655 |  -0.585 |
 | lwid               |           0.108 |  0.074 |   0.142 |
-| memna              |          -0.015 | -0.050 |   0.019 |
+| memna              |          -0.016 | -0.051 |   0.019 |
 | memse              |          -0.560 | -0.595 |  -0.526 |
 | picvo              |          -0.182 | -0.216 |  -0.148 |
 | pscmp              |           0.207 |  0.172 |   0.242 |
-| vrba               |           0.367 |  0.332 |   0.403 |
-| adversity          |           0.022 | -0.021 |   0.064 |
-| appld \* adversity |           0.015 | -0.019 |   0.049 |
-| calc \* adversity  |           0.016 | -0.019 |   0.052 |
-| incom \* adversity |           0.018 | -0.016 |   0.053 |
-| lwid \* adversity  |          -0.020 | -0.054 |   0.014 |
-| memna \* adversity |          -0.031 | -0.066 |   0.004 |
-| memse \* adversity |           0.006 | -0.028 |   0.040 |
-| picvo \* adversity |          -0.009 | -0.043 |   0.025 |
-| pscmp \* adversity |           0.005 | -0.031 |   0.040 |
-| vrba \* adversity  |           0.035 | -0.001 |   0.070 |
+| vrba               |           0.367 |  0.331 |   0.402 |
+| adversity          |           0.028 | -0.014 |   0.071 |
+| appld \* adversity |           0.019 | -0.015 |   0.053 |
+| calc \* adversity  |           0.013 | -0.023 |   0.048 |
+| incom \* adversity |          -0.014 | -0.049 |   0.021 |
+| lwid \* adversity  |          -0.014 | -0.049 |   0.020 |
+| memna \* adversity |           0.015 | -0.020 |   0.050 |
+| memse \* adversity |          -0.002 | -0.036 |   0.033 |
+| picvo \* adversity |          -0.039 | -0.073 |  -0.005 |
+| pscmp \* adversity |           0.008 | -0.027 |   0.044 |
+| vrba \* adversity  |           0.028 | -0.007 |   0.064 |
 
 ### Q20: Predicted effect sizes
 
@@ -469,23 +469,66 @@ subtest_model |>
 
 ### Q22: Inferential Criteria
 
-*NOT DONE*
+Our inferential criteria will use p \< .05 for interaction effects
+between adversity and subtest type and simple effects of adversity for
+each subtest.
+
+We interested in three effect sizes:
+
+1.  The main effect of each adversity measure (tested in separate
+    models).
+2.  The simple effect of adversity for each subtest.
+3.  The interaction effect between an adversity measure and subtest.
+
+We are also interested in null effects. Based on prior work, we expect
+the main effect of adversity to be negative. However, if main effects
+were zero for any adversity measure, we would be interested in
+determining if the effect *is* zero by using equivalence testing
+([Lakens et al., 2018](#ref-lakens2018)).
+
+For simple effects (effect size 2), we will use simple slopes analysis.
+These tests determine whether the simple effect is different from zero.
+For these effects, we are interested if they are indeed 0, possibly
+using equivalence testing. We are also interested positive slopes of any
+size (that are not equivalent to zero).
+
+For negative slopes, we are interested in effects that are different
+from the overall main effect of adversity. This is where the interaction
+term is important. The interaction effect tests whether the effect of
+adversity for a given subtest is different from the main effect of
+adversity on overall performance. We are interested in both more
+negative and more positive than expected slopes compared to the main
+effect.
 
 ### Q23: Assumption Violations
 
-*NOT DONE*
+If any assumptions are violated, we will update the preregistration
+and/or report deviations from the preregistration. However, we do not
+anticipate any serious violations.
 
 ### Q24: Evaluating Strength, Reliability, and Robustness
 
-*NOT DONE*
+If there are arbitrary data processing decisions, we may use multiverse
+analysis to systematically explore their effect.
 
 ### Q25: Exploratory Analyses
 
-*NOT DONE*
+We may or may not do serveral exploratory analyses listed below:
+
+1.  Fit structural equation models to Woodcock Johnson data to examine
+    how adversity relates to an overall latent variable and to residual
+    test variance in each subtest
+2.  Depending on the main results, we may also look at subtest scores
+    over time to examine developmental trajectories in those tests.
+3.  We may run additional analyses identical to our main analyses but
+    with different adversity measures that are not central to our
+    framework.
 
 ## Part 6 - Statement of Integrity
 
-*NOT DONE*
+The authors of this preregistration state that they filled out this
+preregistration to the best of their knowledge and that no other
+preregistration exists pertaining to the same hypotheses and dataset.
 
 ## References
 
@@ -499,6 +542,15 @@ Davis-Kean, P., Hall, A., Kosie, J., Kruse, E., Olsen, J., Ritchie, S.,
 Valentine, K. D., Veer, A. van ’t, & Bakker, M. (2021). Preregistration
 of secondary data analysis: A template and tutorial. *Meta-Psychology*,
 *5*. <https://doi.org/10.15626/MP.2020.2625>
+
+</div>
+
+<div id="ref-lakens2018" class="csl-entry">
+
+Lakens, D., Scheel, A. M., & Isager, P. M. (2018). Equivalence Testing
+for Psychological Research: A Tutorial. *Advances in Methods and
+Practices in Psychological Science*, *1*(2), 259–269.
+<https://doi.org/10.1177/2515245918770963>
 
 </div>
 

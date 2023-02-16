@@ -325,22 +325,38 @@ subtest_model |>
 
 ### Q22: Inferential Criteria
 
-*NOT DONE*
+Our inferential criteria will use p < .05 for interaction effects between adversity and subtest type and simple effects of adversity for each subtest. 
+
+We interested in three effect sizes:
+
+1. The main effect of each adversity measure (tested in separate models).
+2. The simple effect of adversity for each subtest.
+3. The interaction effect between an adversity measure and subtest.
+
+We are also interested in null effects. Based on prior work, we expect the main effect of adversity to be negative. However, if main effects were zero for any adversity measure, we would be interested in determining if the effect *is* zero by using equivalence testing [@lakens2018].
+
+For simple effects (effect size 2), we will use simple slopes analysis. These tests determine whether the simple effect is different from zero. For these effects, we are interested if they are indeed 0, possibly using equivalence testing. We are also interested positive slopes of any size (that are not equivalent to zero).
+
+For negative slopes, we are interested in effects that are different from the overall main effect of adversity. This is where the interaction term is important. The interaction effect tests whether the effect of adversity for a given subtest is different from the main effect of adversity on overall performance. We are interested in both more negative and more positive than expected slopes compared to the main effect.
 
 ### Q23: Assumption Violations
 
-*NOT DONE*
+If any assumptions are violated, we will update the preregistration and/or report deviations from the preregistration. However, we do not anticipate any serious violations. 
 
 ### Q24: Evaluating Strength, Reliability, and Robustness
 
-*NOT DONE*
+If there are arbitrary data processing decisions, we may use multiverse analysis to systematically explore their effect. 
 
 ### Q25: Exploratory Analyses
 
-*NOT DONE*
+We may or may not do serveral exploratory analyses listed below:
+
+1. Fit structural equation models to Woodcock Johnson data to examine how adversity relates to an overall latent variable and to residual test variance in each subtest
+2. Depending on the main results, we may also look at subtest scores over time to examine developmental trajectories in those tests.
+3. We may run additional analyses identical to our main analyses but with different adversity measures that are not central to our framework.
 
 ## Part 6 - Statement of Integrity
 
-*NOT DONE*
+The authors of this preregistration state that they filled out this preregistration to the best of their knowledge and that no other preregistration exists pertaining to the same hypotheses and dataset.
 
 ## References
