@@ -1,6 +1,6 @@
 ---
 title: "Preregistration"
-output: github_document
+format: gfm
 bibliography: ../references.bib
 csl: ../apa.csl
 link-citations: true
@@ -9,19 +9,21 @@ link-citations: true
 ```{r setup, include=FALSE}
 library(tidyverse)
 library(lmerTest)
+library(flextable)
 
 knitr::opts_knit$set(root.dir = "../")
 ```
 
 ```{r data, include=FALSE}
 load("data/seccyd_dvs_wj.Rdata")
+load("data/seccyd_measures.Rdata")
 ```
 
 *Last updated `r format(Sys.time(), "on %A, %B %d, %Y at %I:%M %p")`*
 
 ## Overview
 
-This preregistration document is based on [@akker2021] for secondary data analyses. There are three parts, which you can jump to following the links below:
+This preregistration document is based on [@akker2021] for secondary data analyses. There are six parts, which you can jump to following the links below:
 
 - [Part 1 - Study information]
 - [Part 2 - Data Description]
@@ -39,25 +41,29 @@ This preregistration document is based on [@akker2021] for secondary data analys
 ### Q2: Authors
 
 -   [Ethan S. Young](https://www.ethan-young.com/)<sup>1</sup> [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-8232-0184)
--   Stefan Vermeent<sup>1</sup>[<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-9595-5373)
--   [Willem E. Frankenhuis](http://www.willem.maartenfrankenhuis.nl/)<sup>1</sup>
--   [Marissa Nivison](https://icd.umn.edu/people/nivis004/)<sup>2</sup> [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-9436-722X)
--   [Jeffry A.Simpson](https://cla.umn.edu/about/directory/profile/simps108)<sup>2</sup> [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0003-1899-2493)
--   [Glenn I. Roisman](https://icd.umn.edu/people/roism001/)<sup>2</sup> [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-6941-6560)
+-   Stefan Vermeent<sup>1, 2</sup>[<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-9595-5373)
+-   [Willem E. Frankenhuis](http://www.willem.maartenfrankenhuis.nl/)<sup>1, 2</sup>
+-   [Marissa Nivison](https://icd.umn.edu/people/nivis004/)<sup>3</sup> [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-9436-722X)
+-   [Jeffry A.Simpson](https://cla.umn.edu/about/directory/profile/simps108)<sup>3</sup> [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0003-1899-2493)
+-   [Glenn I. Roisman](https://icd.umn.edu/people/roism001/)<sup>3</sup> [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-6941-6560)
 
 <sup>1</sup>Utrecht University
 
-<sup>2</sup>University of Minnesota
+<sup>2</sup>Max Planck Institute for the Study of Crime, Security and Law 
+
+<sup>3</sup>University of Minnesota
 
 ### Q3: Research Questions
 
-**R1:** How does adversity relate to overall cognitive performance compared to component-level performance?
+<i>*Note that some research questions/hypotheses use causal language. Although we are most interested in these causal questions, the data are observational. We retain the causal language here but will use non-causal language when relating any statistical to these questions/hypotheses.</i>
 
-**R2:** How do impairment and enhancement processes shape cognitive performance across many cognitive domains?
+**R1:** How does adversity relate to overall cognitive performance compared to component-level performance? In other words, how does adversity relate to broad testing scores compared with more narrow subtest scores?
 
-**R3:** Do different adversity dimensions have similar or different patterns of effects?
+**R2:** How do impairment and enhancements in cognitive performance manifest across many cognitive domains?
 
-**R4:** Are the effects of adversity task-specific or task-general?
+**R3:** Do different adversity dimensions have similar or different patterns of effects across broad and narrow cognitive performance measures?
+
+**R4:** Are the effects of adversity test-specific or test-general?
 
 (Not sure that I want to keep R4 yet)
 
@@ -78,11 +84,11 @@ We will use data from the National Institute of Child Health and Development (NI
 - [Phase 1 (1991-1994)](https://www.icpsr.umich.edu/web/ICPSR/studies/21940)
 - [Phase 2 (1995-1999)](https://www.icpsr.umich.edu/web/ICPSR/studies/21941)
 - [Phase 3 (2000-2004)](https://www.icpsr.umich.edu/web/ICPSR/studies/21942)
-- [Phase 4 (2000-2004)](https://www.icpsr.umich.edu/web/ICPSR/studies/22361)
+- [Phase 4 (2005-2007)](https://www.icpsr.umich.edu/web/ICPSR/studies/22361)
 
 ### Q6: Public Availability -
 
-Data are publicly available. However, users must make an account with ISCPR (see [here](https://www.icpsr.umich.edu/rpxlogin)) abd must sign a data use agreement. Users must also provide details about how data will be used (e.g., project description) and information (e.g., IRB approval). For each study phase, see more information about data access under "Access Restricted Data" tab.
+Data are publicly available. However, users must make an account with ISCPR (see [here](https://www.icpsr.umich.edu/rpxlogin)) anmd must sign a data use agreement. Users must also provide details about how data will be used (e.g., project description) and information (e.g., IRB approval). For each study phase, see more information about data access under "Access Restricted Data" tab.
 
 ### Q7: Data Access
 
@@ -91,7 +97,7 @@ Data can be accessed through the following links.
 - [Phase 1 (1991-1994)](https://www.icpsr.umich.edu/web/ICPSR/studies/21940), doi: https://doi.org/10.3886/ICPSR21940.v6
 - [Phase 2 (1995-1999)](https://www.icpsr.umich.edu/web/ICPSR/studies/21941), doi: https://doi.org/10.3886/ICPSR21941.v5
 - [Phase 3 (2000-2004)](https://www.icpsr.umich.edu/web/ICPSR/studies/21942), doi: https://doi.org/10.3886/ICPSR21942.v6
-- [Phase 4 (2000-2004)](https://www.icpsr.umich.edu/web/ICPSR/studies/22361), doi: https://doi.org/10.3886/ICPSR22361.v5
+- [Phase 4 (2005-2007)](https://www.icpsr.umich.edu/web/ICPSR/studies/22361), doi: https://doi.org/10.3886/ICPSR22361.v5
 
 ### Q8: Date of Download
 
@@ -105,7 +111,7 @@ Data can be accessed through the following links.
 
 ### Q9: Data Collection
 
-Detailed information about recruitment, selection procedures, and study methodology can be found [online](https://www.icpsr.umich.edu/web/ICPSR/series/00233).
+Detailed information about recruitment, selection procedures, measures, and study methodology can be found [online](https://www.icpsr.umich.edu/web/ICPSR/series/00233).
 
 ### Q10: Codebooks
 
@@ -145,38 +151,17 @@ Harshness
 
 #### Dependent Variables
 
-Woodcock Johnson Sub-tests:
+The main dependent measures will come from the Woodcock-Johnson Cognitive and Achievement Tests [@woodcock1990; @woodcock1990a].
 
-- Picture vocabulary 
-    - verbal comprehension/crystallized knowledge
-    - 5 assessments, 54 months, grades 1, 3, 5, and at 15 years
-- Verbal analogies 
-     - verbal fluid reasoning and crystallized knowledge
-    - 2 assessments, grade 3 and at 15 years
-- Passage comprehension
-    - vocab and comprehension skill
-    - 3 assessments, grades 3, 5, and at 15 years
-- Applied problems
-    -  practical math problem solving skill
-    - 5 assessments, 54 months, grades 1, 3, 5, and at 15 years
-- Memory for Sentences
-    - short term retrieval
-    - 3 assessments, 54 months and grades 1 and 3
-- Incomplete words
-    - auditory processing
-    - 2 assessments, 54 months and grade 1
-- Memory for names
-    - long term retrieval
-    - 2 assessments, grades 1 and 3
-- Letter-word identification
-    - verbal knowledge
-    - 4 assessments, 54 months, grades 1, 3, 5
-- Word attack
-    - auditory processing 
-    - 2 assessments, grades 1 and 3
-- Calculations
-    - math calculations
-    - 2 assessments, grades 3 and 5
+![](../figures/table1.jpeg)
+
+##### Scores
+
+For all tests, we will use standard scores. These scores are equivalent to IQ scores in that they use a mean of 100 and standard deviation of 15. This is useful when comparing many different tests.
+
+##### Aggregation strategy
+
+For each subtest, standard scores will be averaged over time to arrive at one score per subtest. For example, picture vocabulary was measured five times so overall picture vocabulary will be averaged over the five time points. 
 
 ### Q13: Inclusion/Exclusion criteria
 
@@ -208,7 +193,18 @@ Woodcock Johnson Sub-tests:
 
 ## Part 5 - Analyses
 
-### Q19: Hypothesis -> Statistical Tests
+### Q19: Hypotheses -> Statistical Tests
+
+Below is a conceptual depiction of our analyses:
+
+
+:::{#fig-conceptual}
+
+![](../archive/figures/conceptual-figure.png)
+
+We are interested in the effect of each adversity measure on a person’s overall score, measured as a formative average of each subtest. (A) is the main effect of adversity on overall performance. (B) is the main effect of a subtest. (C) is the simple effect (slope) of adversity for a particular subtest. (D) is the interaction effect that measures the difference between A and C. A significant simple slope means the C ≠ 0 and a significant interaction means A ≠ C. So, when C is significant, it means that adversity affects performance. When D is significant, it means that adversity affects a subtest in a different way than A (overall pattern).
+:::
+
 
 We will use a mixed effects linear regression to test Hypotheses 1 & 2 using the `lmer`. To do so, we proceed in three steps:
 

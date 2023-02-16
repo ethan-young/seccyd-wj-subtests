@@ -1,13 +1,13 @@
 Preregistration
 ================
 
-*Last updated on Tuesday, February 07, 2023 at 06:31 PM*
+*Last updated on Thursday, February 16, 2023 at 02:06 PM*
 
 ## Overview
 
 This preregistration document is based on ([Akker et al.,
-2021](#ref-akker2021)) for secondary data analyses. There are three
-parts, which you can jump to following the links below:
+2021](#ref-akker2021)) for secondary data analyses. There are six parts,
+which you can jump to following the links below:
 
 - [Part 1 - Study information](#part-1---study-information)
 - [Part 2 - Data Description](#part-2---data-description)
@@ -27,34 +27,46 @@ adversity-exposed people in the SECCYD”
 
 - [Ethan S. Young](https://www.ethan-young.com/)<sup>1</sup>
   [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-8232-0184)
-- Stefan
-  Vermeent<sup>1</sup>[<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-9595-5373)
+- Stefan Vermeent<sup>1,
+  2</sup>[<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-9595-5373)
 - [Willem E.
-  Frankenhuis](http://www.willem.maartenfrankenhuis.nl/)<sup>1</sup>
-- [Marissa Nivison](https://icd.umn.edu/people/nivis004/)<sup>2</sup>
+  Frankenhuis](http://www.willem.maartenfrankenhuis.nl/)<sup>1, 2</sup>
+- [Marissa Nivison](https://icd.umn.edu/people/nivis004/)<sup>3</sup>
   [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-9436-722X)
 - [Jeffry
-  A.Simpson](https://cla.umn.edu/about/directory/profile/simps108)<sup>2</sup>
+  A.Simpson](https://cla.umn.edu/about/directory/profile/simps108)<sup>3</sup>
   [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0003-1899-2493)
-- [Glenn I. Roisman](https://icd.umn.edu/people/roism001/)<sup>2</sup>
+- [Glenn I. Roisman](https://icd.umn.edu/people/roism001/)<sup>3</sup>
   [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-6941-6560)
 
 <sup>1</sup>Utrecht University
 
-<sup>2</sup>University of Minnesota
+<sup>2</sup>Max Planck Institute for the Study of Crime, Security and
+Law
+
+<sup>3</sup>University of Minnesota
 
 ### Q3: Research Questions
 
-**R1:** How does adversity relate to overall cognitive performance
-compared to component-level performance?
+<i>\*Note that some research questions/hypotheses use causal language.
+Although we are most interested in these causal questions, the data are
+observational. We retain the causal language here but will use
+non-causal language when relating any statistical to these
+questions/hypotheses.</i>
 
-**R2:** How do impairment and enhancement processes shape cognitive
-performance across many cognitive domains?
+**R1:** How does adversity relate to overall cognitive performance
+compared to component-level performance? In other words, how does
+adversity relate to broad testing scores compared with more narrow
+subtest scores?
+
+**R2:** How do impairment and enhancements in cognitive performance
+manifest across many cognitive domains?
 
 **R3:** Do different adversity dimensions have similar or different
-patterns of effects?
+patterns of effects across broad and narrow cognitive performance
+measures?
 
-**R4:** Are the effects of adversity task-specific or task-general?
+**R4:** Are the effects of adversity test-specific or test-general?
 
 (Not sure that I want to keep R4 yet)
 
@@ -78,8 +90,7 @@ that depend less on formal crystallized knowledge and reading ability
 
 We will use data from the National Institute of Child Health and
 Development (NICHD) Study of Early Childcare and Youth Development
-([SECCYD](https://www.icpsr.umich.edu/web/ICPSR/series/00233), [NICHD
-Early Child Care Research Network,
+([SECCYD](https://www.icpsr.umich.edu/web/ICPSR/series/00233), [Network,
 2005](#ref-nichdearlychildcareresearchnetwork2005)). The SECCYD was
 conducted in four waves across multiple sites and designed to be
 nationally representative, prospective, longitudinal study. The broad
@@ -96,14 +107,14 @@ detailed descriptions of each study phase:
 - [Phase 3
   (2000-2004)](https://www.icpsr.umich.edu/web/ICPSR/studies/21942)
 - [Phase 4
-  (2000-2004)](https://www.icpsr.umich.edu/web/ICPSR/studies/22361)
+  (2005-2007)](https://www.icpsr.umich.edu/web/ICPSR/studies/22361)
 
 ### Q6: Public Availability -
 
 Data are publicly available. However, users must make an account with
-ISCPR (see [here](https://www.icpsr.umich.edu/rpxlogin)) abd must sign a
-data use agreement. Users must also provide details about how data will
-be used (e.g., project description) and information (e.g., IRB
+ISCPR (see [here](https://www.icpsr.umich.edu/rpxlogin)) anmd must sign
+a data use agreement. Users must also provide details about how data
+will be used (e.g., project description) and information (e.g., IRB
 approval). For each study phase, see more information about data access
 under “Access Restricted Data” tab.
 
@@ -113,16 +124,16 @@ Data can be accessed through the following links.
 
 - [Phase 1
   (1991-1994)](https://www.icpsr.umich.edu/web/ICPSR/studies/21940),
-  doi: <https://doi.org/10.3886/ICPSR21940.v6>
+  doi: https://doi.org/10.3886/ICPSR21940.v6
 - [Phase 2
   (1995-1999)](https://www.icpsr.umich.edu/web/ICPSR/studies/21941),
-  doi: <https://doi.org/10.3886/ICPSR21941.v5>
+  doi: https://doi.org/10.3886/ICPSR21941.v5
 - [Phase 3
   (2000-2004)](https://www.icpsr.umich.edu/web/ICPSR/studies/21942),
-  doi: <https://doi.org/10.3886/ICPSR21942.v6>
+  doi: https://doi.org/10.3886/ICPSR21942.v6
 - [Phase 4
-  (2000-2004)](https://www.icpsr.umich.edu/web/ICPSR/studies/22361),
-  doi: <https://doi.org/10.3886/ICPSR22361.v5>
+  (2005-2007)](https://www.icpsr.umich.edu/web/ICPSR/studies/22361),
+  doi: https://doi.org/10.3886/ICPSR22361.v5
 
 ### Q8: Date of Download
 
@@ -136,8 +147,8 @@ Data can be accessed through the following links.
 
 ### Q9: Data Collection
 
-Detailed information about recruitment, selection procedures, and study
-methodology can be found
+Detailed information about recruitment, selection procedures, measures,
+and study methodology can be found
 [online](https://www.icpsr.umich.edu/web/ICPSR/series/00233).
 
 ### Q10: Codebooks
@@ -185,38 +196,24 @@ Harshness
 
 #### Dependent Variables
 
-Woodcock Johnson Sub-tests:
+The main dependent measures will come from the Woodcock-Johnson
+Cognitive and Achievement Tests ([Woodcock, 1990](#ref-woodcock1990);
+[Woodcock et al., 1990](#ref-woodcock1990a)).
 
-- Picture vocabulary
-  - verbal comprehension/crystallized knowledge
-  - 5 assessments, 54 months, grades 1, 3, 5, and at 15 years
-- Verbal analogies
-  - verbal fluid reasoning and crystallized knowledge
-  - 2 assessments, grade 3 and at 15 years
-- Passage comprehension
-  - vocab and comprehension skill
-  - 3 assessments, grades 3, 5, and at 15 years
-- Applied problems
-  - practical math problem solving skill
-  - 5 assessments, 54 months, grades 1, 3, 5, and at 15 years
-- Memory for Sentences
-  - short term retrieval
-  - 3 assessments, 54 months and grades 1 and 3
-- Incomplete words
-  - auditory processing
-  - 2 assessments, 54 months and grade 1
-- Memory for names
-  - long term retrieval
-  - 2 assessments, grades 1 and 3
-- Letter-word identification
-  - verbal knowledge
-  - 4 assessments, 54 months, grades 1, 3, 5
-- Word attack
-  - auditory processing
-  - 2 assessments, grades 1 and 3
-- Calculations
-  - math calculations
-  - 2 assessments, grades 3 and 5
+![](../figures/table1.jpeg)
+
+##### Scores
+
+For all tests, we will use standard scores. These scores are equivalent
+to IQ scores in that they use a mean of 100 and standard deviation of
+15. This is useful when comparing many different tests.
+
+##### Aggregation strategy
+
+For each subtest, standard scores will be averaged over time to arrive
+at one score per subtest. For example, picture vocabulary was measured
+five times so overall picture vocabulary will be averaged over the five
+time points.
 
 ### Q13: Inclusion/Exclusion criteria
 
@@ -248,7 +245,26 @@ Woodcock Johnson Sub-tests:
 
 ## Part 5 - Analyses
 
-### Q19: Hypothesis -\> Statistical Tests
+### Q19: Hypotheses -\> Statistical Tests
+
+Below is a conceptual depiction of our analyses:
+
+<div id="fig-conceptual">
+
+![](../archive/figures/conceptual-figure.png)
+
+Figure 1: We are interested in the effect of each adversity measure on a
+person’s overall score, measured as a formative average of each subtest.
+(A) is the main effect of adversity on overall performance. (B) is the
+main effect of a subtest. (C) is the simple effect (slope) of adversity
+for a particular subtest. (D) is the interaction effect that measures
+the difference between A and C. A significant simple slope means the C ≠
+0 and a significant interaction means A ≠ C. So, when C is significant,
+it means that adversity affects performance. When D is significant, it
+means that adversity affects a subtest in a different way than A
+(overall pattern).
+
+</div>
 
 We will use a mixed effects linear regression to test Hypotheses 1 & 2
 using the `lmer`. To do so, we proceed in three steps:
@@ -294,16 +310,16 @@ example_data2 |>
 
 |  id |  adversity | wj_sub_test   |    score |
 |----:|-----------:|:--------------|---------:|
-|   1 | -0.4123325 | wj_picvo_mean | 108.7500 |
-|   1 | -0.4123325 | wj_vrba_mean  | 139.5000 |
-|   1 | -0.4123325 | wj_pscmp_mean | 133.0000 |
-|   1 | -0.4123325 | wj_appld_mean | 130.5000 |
-|   1 | -0.4123325 | wj_memse_mean | 115.0000 |
-|   1 | -0.4123325 | wj_incom_mean | 128.0000 |
-|   1 | -0.4123325 | wj_memna_mean | 117.0000 |
-|   1 | -0.4123325 | wj_lwid_mean  | 138.6667 |
-|   1 | -0.4123325 | wj_wrdat_mean | 134.0000 |
-|   1 | -0.4123325 | wj_calc_mean  | 143.0000 |
+|   1 | -0.6565973 | wj_picvo_mean | 108.7500 |
+|   1 | -0.6565973 | wj_vrba_mean  | 139.5000 |
+|   1 | -0.6565973 | wj_pscmp_mean | 133.0000 |
+|   1 | -0.6565973 | wj_appld_mean | 130.5000 |
+|   1 | -0.6565973 | wj_memse_mean | 115.0000 |
+|   1 | -0.6565973 | wj_incom_mean | 128.0000 |
+|   1 | -0.6565973 | wj_memna_mean | 117.0000 |
+|   1 | -0.6565973 | wj_lwid_mean  | 138.6667 |
+|   1 | -0.6565973 | wj_wrdat_mean | 134.0000 |
+|   1 | -0.6565973 | wj_calc_mean  | 143.0000 |
 
 3.  Next, we apply a sum coded contrast to the subtest index column.
     This means the intercept in the mixed effect model reflects the
@@ -378,28 +394,32 @@ subtest_model |>
   knitr::kable()
 ```
 
+<div class="cell-output-display">
+
 | Parameter          | Coefficient |    SE |     p |
 |:-------------------|------------:|------:|------:|
-| (Intercept)        |     105.339 | 0.322 | 0.000 |
-| appld              |       2.565 | 0.259 | 0.000 |
-| calc               |       6.540 | 0.267 | 0.000 |
-| incom              |      -9.197 | 0.266 | 0.000 |
-| lwid               |       1.599 | 0.259 | 0.000 |
-| memna              |      -0.231 | 0.264 | 0.381 |
-| memse              |      -8.308 | 0.260 | 0.000 |
-| picvo              |      -2.698 | 0.259 | 0.000 |
-| pscmp              |       3.068 | 0.267 | 0.000 |
+| (Intercept)        |     105.338 | 0.321 | 0.000 |
+| appld              |       2.566 | 0.259 | 0.000 |
+| calc               |       6.538 | 0.268 | 0.000 |
+| incom              |      -9.202 | 0.266 | 0.000 |
+| lwid               |       1.600 | 0.259 | 0.000 |
+| memna              |      -0.228 | 0.264 | 0.388 |
+| memse              |      -8.309 | 0.260 | 0.000 |
+| picvo              |      -2.696 | 0.259 | 0.000 |
+| pscmp              |       3.069 | 0.267 | 0.000 |
 | vrba               |       5.443 | 0.269 | 0.000 |
-| adversity          |      -0.009 | 0.322 | 0.977 |
-| appld \* adversity |       0.272 | 0.259 | 0.294 |
-| calc \* adversity  |       0.671 | 0.271 | 0.013 |
-| incom \* adversity |       0.412 | 0.266 | 0.122 |
-| lwid \* adversity  |      -0.073 | 0.259 | 0.778 |
-| memna \* adversity |       0.208 | 0.265 | 0.432 |
-| memse \* adversity |      -0.784 | 0.261 | 0.003 |
-| picvo \* adversity |      -0.087 | 0.259 | 0.738 |
-| pscmp \* adversity |      -0.335 | 0.269 | 0.213 |
-| vrba \* adversity  |      -0.054 | 0.272 | 0.842 |
+| adversity          |       0.784 | 0.321 | 0.015 |
+| appld \* adversity |       0.054 | 0.259 | 0.835 |
+| calc \* adversity  |       0.206 | 0.267 | 0.441 |
+| incom \* adversity |      -0.712 | 0.268 | 0.008 |
+| lwid \* adversity  |      -0.224 | 0.259 | 0.386 |
+| memna \* adversity |      -0.036 | 0.264 | 0.890 |
+| memse \* adversity |       0.235 | 0.260 | 0.367 |
+| picvo \* adversity |       0.368 | 0.259 | 0.155 |
+| pscmp \* adversity |       0.190 | 0.267 | 0.476 |
+| vrba \* adversity  |       0.297 | 0.270 | 0.271 |
+
+</div>
 
 **Standardized Parameters**
 
@@ -420,24 +440,24 @@ subtest_model |>
 |:-------------------|----------------:|-------:|--------:|
 | (Intercept)        |          -0.005 | -0.048 |   0.037 |
 | appld              |           0.173 |  0.139 |   0.207 |
-| calc               |           0.441 |  0.406 |   0.476 |
-| incom              |          -0.620 | -0.655 |  -0.585 |
+| calc               |           0.441 |  0.405 |   0.476 |
+| incom              |          -0.620 | -0.656 |  -0.585 |
 | lwid               |           0.108 |  0.074 |   0.142 |
-| memna              |          -0.016 | -0.050 |   0.019 |
+| memna              |          -0.015 | -0.050 |   0.020 |
 | memse              |          -0.560 | -0.595 |  -0.526 |
 | picvo              |          -0.182 | -0.216 |  -0.148 |
 | pscmp              |           0.207 |  0.172 |   0.242 |
 | vrba               |           0.367 |  0.331 |   0.402 |
-| adversity          |          -0.001 | -0.043 |   0.042 |
-| appld \* adversity |           0.018 | -0.016 |   0.052 |
-| calc \* adversity  |           0.045 |  0.009 |   0.081 |
-| incom \* adversity |           0.028 | -0.007 |   0.063 |
-| lwid \* adversity  |          -0.005 | -0.039 |   0.029 |
-| memna \* adversity |           0.014 | -0.021 |   0.049 |
-| memse \* adversity |          -0.053 | -0.087 |  -0.018 |
-| picvo \* adversity |          -0.006 | -0.040 |   0.028 |
-| pscmp \* adversity |          -0.022 | -0.058 |   0.013 |
-| vrba \* adversity  |          -0.004 | -0.039 |   0.032 |
+| adversity          |           0.053 |  0.010 |   0.095 |
+| appld \* adversity |           0.004 | -0.031 |   0.038 |
+| calc \* adversity  |           0.014 | -0.021 |   0.049 |
+| incom \* adversity |          -0.048 | -0.083 |  -0.013 |
+| lwid \* adversity  |          -0.015 | -0.049 |   0.019 |
+| memna \* adversity |          -0.002 | -0.037 |   0.032 |
+| memse \* adversity |           0.016 | -0.019 |   0.050 |
+| picvo \* adversity |           0.025 | -0.009 |   0.059 |
+| pscmp \* adversity |           0.013 | -0.022 |   0.048 |
+| vrba \* adversity  |           0.020 | -0.016 |   0.056 |
 
 ### Q20: Predicted effect sizes
 
@@ -476,7 +496,7 @@ line-spacing="2">
 
 Akker, O. R. van den, Weston, S., Campbell, L., Chopik, B., Damian, R.,
 Davis-Kean, P., Hall, A., Kosie, J., Kruse, E., Olsen, J., Ritchie, S.,
-Valentine, K. D., Veer, A. van ’t., & Bakker, M. (2021). Preregistration
+Valentine, K. D., Veer, A. van ’t, & Bakker, M. (2021). Preregistration
 of secondary data analysis: A template and tutorial. *Meta-Psychology*,
 *5*. <https://doi.org/10.15626/MP.2020.2625>
 
@@ -484,9 +504,24 @@ of secondary data analysis: A template and tutorial. *Meta-Psychology*,
 
 <div id="ref-nichdearlychildcareresearchnetwork2005" class="csl-entry">
 
-NICHD Early Child Care Research Network. (2005). *Child care and child
-development: Results from the NICHD study of early child care and youth
-development*. The Guilford Press.
+Network, N. E. C. C. R. (2005). *Child care and child development:
+Results from the NICHD study of early child care and youth development*
+(pp. xx, 474). The Guilford Press.
+
+</div>
+
+<div id="ref-woodcock1990" class="csl-entry">
+
+Woodcock, R. W. (1990). Theoretical Foundations of the Wj-R Measures of
+Cognitive Ability. *Journal of Psychoeducational Assessment*, *8*(3),
+231–258. <https://doi.org/ft7mjn>
+
+</div>
+
+<div id="ref-woodcock1990a" class="csl-entry">
+
+Woodcock, R. W., Johnson, M. B., & Mather, N. (1990). *Woodcock-Johnson
+psycho-educational battery– revised*. DLM Teaching Resources.
 
 </div>
 
