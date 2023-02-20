@@ -1,7 +1,7 @@
 Preregistration
 ================
 
-*Last updated on Thursday, February 16, 2023 at 03:27 PM*
+*Last updated on Monday, February 20, 2023 at 02:42 PM*
 
 ## Overview
 
@@ -109,7 +109,7 @@ detailed descriptions of each study phase:
 - [Phase 4
   (2005-2007)](https://www.icpsr.umich.edu/web/ICPSR/studies/22361)
 
-### Q6: Public Availability -
+### Q6: Public Availability
 
 Data are publicly available. However, users must make an account with
 ISCPR (see [here](https://www.icpsr.umich.edu/rpxlogin)) anmd must sign
@@ -141,9 +141,9 @@ Data can be accessed through the following links.
   - Accessed data for the dependent variables on February 3rd, 2022
 - Stefan Vermeent will not access the data
 - Willem Frankenhuis will not access the data
-- Marissa Nivison…
+- Marissa Nivison has access to the full dataset
 - Jeffry Simpson will not access the data
-- Glenn Roisman…
+- Glenn Roisman has access to the full data set
 
 ### Q9: Data Collection
 
@@ -173,7 +173,7 @@ pre-processing/analysis, codebooks will be available
 
 ### Q11: Manipulated Variables:
 
-*NA*
+**Not applicable**
 
 ### Q12: Measured Variables
 
@@ -181,6 +181,13 @@ pre-processing/analysis, codebooks will be available
 
 - Gender
 - Ethnicity
+- Maternal education
+  - 1 = less than high school
+  - 2 = high school or general education diploma
+  - 3 = some college or vocational degree
+  - 4 = college degree
+  - 5 = some graduate school or master’s degree
+  - 6 = graduate degree greater than a master’s degree
 
 #### Independent Variables
 
@@ -193,6 +200,15 @@ Unpredictability
 Harshness
 
 - Income-to-needs ratio
+  - Total family income relative to the federal poverty line adjusted
+    for family size
+
+Exploratory variables:
+
+- Maternal depression
+- Variability in maternal depression
+- Variability in income-to-needs
+- Neighborhood income (1990 US Census)
 
 #### Dependent Variables
 
@@ -202,13 +218,13 @@ Cognitive and Achievement Tests ([Woodcock, 1990](#ref-woodcock1990);
 
 ![](../figures/table1.jpeg)
 
-##### Scores
+**Scores**
 
 For all tests, we will use standard scores. These scores are equivalent
 to IQ scores in that they use a mean of 100 and standard deviation of
 15. This is useful when comparing many different tests.
 
-##### Aggregation strategy
+**Aggregation strategy**
 
 For each subtest, standard scores will be averaged over time to arrive
 at one score per subtest. For example, picture vocabulary was measured
@@ -217,7 +233,20 @@ time points.
 
 ### Q13: Inclusion/Exclusion criteria
 
-*NOT DONE*
+At the time of writing this preregistration, the only inclusion criteria
+are that participants should have a least one non-missing score on each
+subtest for at least one measurment period. This ensures that every case
+has at least one assessment of each subtest included in their overall
+average of all subtests. Participants must also have at least one score
+for the adversity measure. Each adversity measure will be analyzed in a
+separate model so the total samples size for each adversity measure may
+differ depending on missing data patterns (see Q14).
+
+If it becomes clear that there are other inclusion/exclusion criteria,
+we will update the preregistration and/or report deviations in the the
+final manuscript. If there are many reasonable alternative criteria, we
+may use multiverse analysis to handle all combinations of reasonable and
+arbitrary inclusion/exclusion criteria.
 
 ### Q14: Missing data
 
@@ -229,19 +258,59 @@ time points.
 
 ### Q16: Sample Weights
 
-**NA**
+**Not applicable**
 
 ## Part 4 - Knowledge of Data
 
-*NOT DONE*
-
 ### Q17: Relevant Publications
 
-*NOT DONE*
+**No author has analyzed or worked with the Woodcock Johnson subtest
+scores prior to this preregistration.**
+
+EY has not published any papers using this dataset. In 2014 and 2015,
+EY, JS, and GI submitted a paper to *Child Development* (rejected) and
+*Development and Psychopathology* (withdrawn). The paper used aggregated
+Woodcock Johnson scores over each assessment and used income-to-needs as
+a covariate.
+
+MN has intimate knowledge of this dataset. MN has published two papers
+using the dataset, although MN has not analyzed or used the variables in
+the current preregistration.
+
+GI has intimate knowledge of this dataset. GI is a co-principle
+investigator on the project and has published many papers using the
+data. Variables analyzed in GI publications relate mostly to the
+dependent variables in this project. Those relevant to the current
+preregistration include:
+
+- Bleil et al. ([2021](#ref-bleil2021))
+- Cottrell et al. ([2015](#ref-cottrell2015))
+- Monti et al. ([2014](#ref-monti2014))
+- Fraley et al. ([2013](#ref-fraley2013))
+- Roisman et al. ([2012](#ref-roisman2012))
+- Burt & Roisman ([2010](#ref-burt2010))
+
+JS has also worked with the current dataset. Variables in JS
+publications relate mostly to the independent variables used in this
+study. Those relevant to the current preregistration include:
+
+- Hartman et al. ([2018](#ref-hartman2018a))
+- Sung et al. ([2016](#ref-sung2016))
+
+SV and WF have no prior experience with the data.
 
 ### Q18: Prior Knowledge
 
-*NOT DONE*
+From prior work, we have some knowledge of how income, maternal
+education, and quality of maternal caregiving (observations of maternal
+sensitivity) are associated with aggregated Woodcock Johnson scores. For
+example, Fraley et al. ([2013](#ref-fraley2013)) find correlations
+between Woodcock Johnson composites over 5 assessment periods and
+income-to-needs (averaged over 6, 15, 24, and 36 months; *rs* range =
+.34-.37), maternal education (*rs* range = .41 - .47), and maternal
+sensitivity (*rs* range = .40 - .47) . These findings give us a strong
+prior that harshness/poverty will be associated with a lower within
+person average Woodcock Johnson score.
 
 ## Part 5 - Analyses
 
@@ -310,16 +379,16 @@ example_data2 |>
 
 |  id |  adversity | wj_sub_test   |    score |
 |----:|-----------:|:--------------|---------:|
-|   1 | -0.3085591 | wj_picvo_mean | 108.7500 |
-|   1 | -0.3085591 | wj_vrba_mean  | 139.5000 |
-|   1 | -0.3085591 | wj_pscmp_mean | 133.0000 |
-|   1 | -0.3085591 | wj_appld_mean | 130.5000 |
-|   1 | -0.3085591 | wj_memse_mean | 115.0000 |
-|   1 | -0.3085591 | wj_incom_mean | 128.0000 |
-|   1 | -0.3085591 | wj_memna_mean | 117.0000 |
-|   1 | -0.3085591 | wj_lwid_mean  | 138.6667 |
-|   1 | -0.3085591 | wj_wrdat_mean | 134.0000 |
-|   1 | -0.3085591 | wj_calc_mean  | 143.0000 |
+|   1 | -0.9736841 | wj_picvo_mean | 108.7500 |
+|   1 | -0.9736841 | wj_vrba_mean  | 139.5000 |
+|   1 | -0.9736841 | wj_pscmp_mean | 133.0000 |
+|   1 | -0.9736841 | wj_appld_mean | 130.5000 |
+|   1 | -0.9736841 | wj_memse_mean | 115.0000 |
+|   1 | -0.9736841 | wj_incom_mean | 128.0000 |
+|   1 | -0.9736841 | wj_memna_mean | 117.0000 |
+|   1 | -0.9736841 | wj_lwid_mean  | 138.6667 |
+|   1 | -0.9736841 | wj_wrdat_mean | 134.0000 |
+|   1 | -0.9736841 | wj_calc_mean  | 143.0000 |
 
 3.  Next, we apply a sum coded contrast to the subtest index column.
     This means the intercept in the mixed effect model reflects the
@@ -398,26 +467,26 @@ subtest_model |>
 
 | Parameter          | Coefficient |    SE |     p |
 |:-------------------|------------:|------:|------:|
-| (Intercept)        |     105.338 | 0.321 | 0.000 |
+| (Intercept)        |     105.338 | 0.322 | 0.000 |
 | appld              |       2.566 | 0.259 | 0.000 |
-| calc               |       6.539 | 0.268 | 0.000 |
-| incom              |      -9.196 | 0.266 | 0.000 |
+| calc               |       6.532 | 0.268 | 0.000 |
+| incom              |      -9.195 | 0.266 | 0.000 |
 | lwid               |       1.600 | 0.259 | 0.000 |
-| memna              |      -0.232 | 0.264 | 0.379 |
+| memna              |      -0.224 | 0.264 | 0.397 |
 | memse              |      -8.310 | 0.260 | 0.000 |
-| picvo              |      -2.697 | 0.259 | 0.000 |
+| picvo              |      -2.696 | 0.259 | 0.000 |
 | pscmp              |       3.070 | 0.267 | 0.000 |
-| vrba               |       5.441 | 0.269 | 0.000 |
-| adversity          |       0.416 | 0.321 | 0.196 |
-| appld \* adversity |       0.285 | 0.259 | 0.271 |
-| calc \* adversity  |       0.188 | 0.267 | 0.481 |
-| incom \* adversity |      -0.204 | 0.265 | 0.442 |
-| lwid \* adversity  |      -0.211 | 0.259 | 0.415 |
-| memna \* adversity |       0.227 | 0.263 | 0.389 |
-| memse \* adversity |      -0.023 | 0.260 | 0.931 |
-| picvo \* adversity |      -0.579 | 0.259 | 0.025 |
-| pscmp \* adversity |       0.126 | 0.266 | 0.637 |
-| vrba \* adversity  |       0.421 | 0.268 | 0.117 |
+| vrba               |       5.438 | 0.269 | 0.000 |
+| adversity          |      -0.179 | 0.322 | 0.577 |
+| appld \* adversity |      -0.306 | 0.259 | 0.237 |
+| calc \* adversity  |      -0.501 | 0.271 | 0.064 |
+| incom \* adversity |      -0.057 | 0.267 | 0.832 |
+| lwid \* adversity  |       0.027 | 0.259 | 0.918 |
+| memna \* adversity |       0.629 | 0.265 | 0.018 |
+| memse \* adversity |      -0.073 | 0.260 | 0.779 |
+| picvo \* adversity |       0.349 | 0.259 | 0.178 |
+| pscmp \* adversity |       0.062 | 0.270 | 0.820 |
+| vrba \* adversity  |      -0.288 | 0.274 | 0.294 |
 
 </div>
 
@@ -440,24 +509,24 @@ subtest_model |>
 |:-------------------|----------------:|-------:|--------:|
 | (Intercept)        |          -0.005 | -0.048 |   0.037 |
 | appld              |           0.173 |  0.139 |   0.207 |
-| calc               |           0.441 |  0.406 |   0.476 |
+| calc               |           0.441 |  0.405 |   0.476 |
 | incom              |          -0.620 | -0.655 |  -0.585 |
 | lwid               |           0.108 |  0.074 |   0.142 |
-| memna              |          -0.016 | -0.051 |   0.019 |
+| memna              |          -0.015 | -0.050 |   0.020 |
 | memse              |          -0.560 | -0.595 |  -0.526 |
 | picvo              |          -0.182 | -0.216 |  -0.148 |
 | pscmp              |           0.207 |  0.172 |   0.242 |
 | vrba               |           0.367 |  0.331 |   0.402 |
-| adversity          |           0.028 | -0.014 |   0.071 |
-| appld \* adversity |           0.019 | -0.015 |   0.053 |
-| calc \* adversity  |           0.013 | -0.023 |   0.048 |
-| incom \* adversity |          -0.014 | -0.049 |   0.021 |
-| lwid \* adversity  |          -0.014 | -0.049 |   0.020 |
-| memna \* adversity |           0.015 | -0.020 |   0.050 |
-| memse \* adversity |          -0.002 | -0.036 |   0.033 |
-| picvo \* adversity |          -0.039 | -0.073 |  -0.005 |
-| pscmp \* adversity |           0.008 | -0.027 |   0.044 |
-| vrba \* adversity  |           0.028 | -0.007 |   0.064 |
+| adversity          |          -0.012 | -0.054 |   0.030 |
+| appld \* adversity |          -0.021 | -0.055 |   0.014 |
+| calc \* adversity  |          -0.034 | -0.069 |   0.002 |
+| incom \* adversity |          -0.004 | -0.039 |   0.031 |
+| lwid \* adversity  |           0.002 | -0.032 |   0.036 |
+| memna \* adversity |           0.042 |  0.007 |   0.077 |
+| memse \* adversity |          -0.005 | -0.039 |   0.029 |
+| picvo \* adversity |           0.023 | -0.011 |   0.057 |
+| pscmp \* adversity |           0.004 | -0.031 |   0.040 |
+| vrba \* adversity  |          -0.019 | -0.055 |   0.017 |
 
 ### Q20: Predicted effect sizes
 
@@ -545,6 +614,51 @@ of secondary data analysis: A template and tutorial. *Meta-Psychology*,
 
 </div>
 
+<div id="ref-bleil2021" class="csl-entry">
+
+Bleil, M. E., Spieker, S. J., Gregorich, S. E., Thomas, A. S., Hiatt, R.
+A., Appelhans, B. M., Roisman, G. I., & Booth-LaForce, C. (2021). Early
+life adversity and pubertal timing: Implications for cardiometabolic
+health. *Journal of Pediatric Psychology*, *46*(1), 36–48.
+
+</div>
+
+<div id="ref-burt2010" class="csl-entry">
+
+Burt, K. B., & Roisman, G. I. (2010). Competence and psychopathology:
+Cascade effects in the NICHD Study of Early Child Care and Youth
+Development. *Development and Psychopathology*, *22*(3), 557–567.
+<https://doi.org/10.1017/S0954579410000271>
+
+</div>
+
+<div id="ref-cottrell2015" class="csl-entry">
+
+Cottrell, J. M., Newman, D. A., & Roisman, G. I. (2015). Explaining the
+blackwhite gap in cognitive test scores: Toward a theory of adverse
+impact. *Journal of Applied Psychology*, *100*, 1713–1736.
+<https://doi.org/f7zb56>
+
+</div>
+
+<div id="ref-fraley2013" class="csl-entry">
+
+Fraley, R. C., Roisman, G. I., & Haltigan, J. D. (2013). The legacy of
+early experiences in development: Formalizing alternative models of how
+early experiences are carried forward over time. *Developmental
+Psychology*, *49*(1), 109.
+
+</div>
+
+<div id="ref-hartman2018a" class="csl-entry">
+
+Hartman, S., Sung, S., Simpson, J. A., Schlomer, G. L., & Belsky, J.
+(2018). Decomposing environmental unpredictability in forecasting
+adolescent and young adult development: A two-sample study. *Development
+and Psychopathology*, *30*(4), 1321–1332. <https://doi.org/gjqzzj>
+
+</div>
+
 <div id="ref-lakens2018" class="csl-entry">
 
 Lakens, D., Scheel, A. M., & Isager, P. M. (2018). Equivalence Testing
@@ -554,11 +668,39 @@ Practices in Psychological Science*, *1*(2), 259–269.
 
 </div>
 
+<div id="ref-monti2014" class="csl-entry">
+
+Monti, J. D., Pomerantz, E. M., & Roisman, G. I. (2014). Can parents’
+involvement in children’s education offset the effects of early
+insensitivity on academic functioning? *Journal of Educational
+Psychology*, *106*, 859–869. <https://doi.org/gm2bz2>
+
+</div>
+
 <div id="ref-nichdearlychildcareresearchnetwork2005" class="csl-entry">
 
 Network, N. E. C. C. R. (2005). *Child care and child development:
 Results from the NICHD study of early child care and youth development*
 (pp. xx, 474). The Guilford Press.
+
+</div>
+
+<div id="ref-roisman2012" class="csl-entry">
+
+Roisman, G. I., Newman, D. A., Fraley, R. C., Haltigan, J. D., Groh, A.
+M., & Haydon, K. C. (2012). Distinguishing differential susceptibility
+from diathesisstress: Recommendations for evaluating interaction
+effects. *Development and Psychopathology*, *24*(02), 389–409.
+<https://doi.org/gd59f7>
+
+</div>
+
+<div id="ref-sung2016" class="csl-entry">
+
+Sung, S., Simpson, J. A., Griskevicius, V., Kuo, S. I.-C., Schlomer, G.
+L., & Belsky, J. (2016). Secure infant-mother attachment buffers the
+effect of early-life stress on age of menarche. *Psychological Science*,
+*27*(5), 667–674. <https://doi.org/f8n843>
 
 </div>
 

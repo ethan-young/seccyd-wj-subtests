@@ -1,6 +1,8 @@
 ---
 title: "Preregistration"
-format: gfm
+format: 
+  gfm: default
+  docx: default
 bibliography: ../references.bib
 csl: ../apa.csl
 link-citations: true
@@ -86,7 +88,7 @@ We will use data from the National Institute of Child Health and Development (NI
 - [Phase 3 (2000-2004)](https://www.icpsr.umich.edu/web/ICPSR/studies/21942)
 - [Phase 4 (2005-2007)](https://www.icpsr.umich.edu/web/ICPSR/studies/22361)
 
-### Q6: Public Availability -
+### Q6: Public Availability
 
 Data are publicly available. However, users must make an account with ISCPR (see [here](https://www.icpsr.umich.edu/rpxlogin)) anmd must sign a data use agreement. Users must also provide details about how data will be used (e.g., project description) and information (e.g., IRB approval). For each study phase, see more information about data access under "Access Restricted Data" tab.
 
@@ -105,9 +107,9 @@ Data can be accessed through the following links.
     - Accessed data for the dependent variables on February 3rd, 2022
 - Stefan Vermeent will not access the data
 - Willem Frankenhuis will not access the data
-- Marissa Nivison...
+- Marissa Nivison has access to the full dataset
 - Jeffry Simpson will not access the data
-- Glenn Roisman...
+- Glenn Roisman has access to the full data set
 
 ### Q9: Data Collection
 
@@ -128,7 +130,7 @@ Once variables for this study are selected, accessed, and ready for pre-processi
 
 ### Q11: Manipulated Variables:
 
-*NA*
+**Not applicable**
 
 ### Q12: Measured Variables
 
@@ -136,6 +138,13 @@ Once variables for this study are selected, accessed, and ready for pre-processi
 
 - Gender
 - Ethnicity
+- Maternal education
+    - 1 = less than high school
+    - 2 = high school or general education diploma
+    - 3 = some college or vocational degree
+    - 4 = college degree
+    - 5 = some graduate school or master’s degree
+    - 6 = graduate degree greater than a master’s degree
 
 #### Independent Variables
 
@@ -148,6 +157,14 @@ Unpredictability
 Harshness
 
 - Income-to-needs ratio
+    - Total family income relative to the federal poverty line adjusted for family size
+
+Exploratory variables:
+
+- Maternal depression
+- Variability in  maternal depression
+- Variability in income-to-needs
+- Neighborhood income (1990 US Census)
 
 #### Dependent Variables
 
@@ -155,17 +172,19 @@ The main dependent measures will come from the Woodcock-Johnson Cognitive and Ac
 
 ![](../figures/table1.jpeg)
 
-##### Scores
+**Scores**
 
 For all tests, we will use standard scores. These scores are equivalent to IQ scores in that they use a mean of 100 and standard deviation of 15. This is useful when comparing many different tests.
 
-##### Aggregation strategy
+**Aggregation strategy**
 
 For each subtest, standard scores will be averaged over time to arrive at one score per subtest. For example, picture vocabulary was measured five times so overall picture vocabulary will be averaged over the five time points. 
 
 ### Q13: Inclusion/Exclusion criteria
 
-*NOT DONE*
+At the time of writing this preregistration, the only inclusion criteria are that participants should have a least one non-missing score on each subtest for at least one measurment period. This ensures that every case has at least one assessment of each subtest included in their overall average of all subtests. Participants must also have at least one score for the adversity measure. Each adversity measure will be analyzed in a separate model so the total samples size for each adversity measure may differ depending on missing data patterns (see Q14).
+
+If it becomes clear that there are other inclusion/exclusion criteria, we will update the preregistration and/or report deviations in the the final manuscript. If there are many reasonable alternative criteria, we may use multiverse analysis to handle all combinations of reasonable and arbitrary inclusion/exclusion criteria.
 
 ### Q14: Missing data
 
@@ -177,19 +196,37 @@ For each subtest, standard scores will be averaged over time to arrive at one sc
 
 ### Q16: Sample Weights
 
-**NA**
+**Not applicable**
 
 ## Part 4 - Knowledge of Data
 
-*NOT DONE*
-
 ### Q17: Relevant Publications 
 
-*NOT DONE*
+**No author has analyzed or worked with the Woodcock Johnson subtest scores prior to this preregistration.**
+
+EY has not published any papers using this dataset. In 2014 and 2015, EY, JS, and GI submitted a paper to  *Child  Development* (rejected) and *Development and Psychopathology* (withdrawn). The paper used aggregated Woodcock Johnson scores over each assessment and used income-to-needs as a covariate.
+
+MN has intimate knowledge of this dataset. MN has published two papers using the dataset, although MN has not analyzed or used the variables in the current preregistration.
+
+GI has intimate knowledge of this dataset. GI is a co-principle investigator on the project and has published many papers using the data. Variables analyzed in GI publications relate mostly to the dependent variables in this project. Those relevant to the current preregistration include:
+
+- @bleil2021
+- @cottrell2015
+- @monti2014
+- @fraley2013
+- @roisman2012
+- @burt2010
+
+JS has also worked with the current dataset. Variables in JS publications relate mostly to the independent variables used in this study. Those relevant to the current preregistration include:
+
+- @hartman2018a
+- @sung2016
+
+SV and WF have no prior experience with the data.
 
 ### Q18: Prior Knowledge 
 
-*NOT DONE*
+From prior work, we have some knowledge of how income, maternal education, and quality of maternal caregiving (observations of maternal sensitivity) are associated with aggregated Woodcock Johnson scores. For example, @fraley2013 find correlations between  Woodcock Johnson composites over 5 assessment periods and income-to-needs (averaged over 6, 15, 24, and 36 months; *rs* range = .34-.37), maternal education (*rs* range = .41 - .47), and maternal sensitivity (*rs* range = .40 - .47) . These findings give us a strong prior that harshness/poverty will be associated with a lower within person average Woodcock Johnson score.
 
 ## Part 5 - Analyses
 
