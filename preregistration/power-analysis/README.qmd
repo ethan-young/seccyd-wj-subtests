@@ -15,6 +15,7 @@ This is a power analysis for a mixed-model testing the effect of adversity on av
 
 ```{r}
 #| label: load-data
+#| include: false
 load("data/seccyd_dvs_wj.Rdata")
 load("preregistration/power-analysis/power-objects.Rdata")
 
@@ -41,8 +42,8 @@ In short, because this is a secondary data analysis, our sample size is fixed at
 
 ```{r}
 #| label: example-data
-#| include: false
-  seccyd_dvs_wj_data2 |> 
+#| echo: false
+seccyd_dvs_wj_data2 |> 
   group_by(id) |> 
   summarize(
     # Average scores over time to single scores for each subtest
@@ -53,6 +54,7 @@ In short, because this is a secondary data analysis, our sample size is fixed at
   # Stack data so that eadh participant has one row per subtest score (step 2)
   pivot_longer(c(-id), names_to = "wj_sub_test", values_to = "score") |> 
   filter(id == 10) |> 
+  mutate(id = "id_0001") |> 
   knitr::kable()
 ```
 
@@ -63,7 +65,7 @@ The model has the following terms:
 - interaction between contrast coded and adversity
 - random intercept for participants (average over all subtests)
 
-To perform a power analysis, we generated random adversity scores. Then we created artificial dependencies between adversity and every subtest and ran 500 simulations. The simulations explored the power to detect the follwing sum contrast-coded interaction $\beta$s:
+To perform a power analysis, we generated random adversity scores. Then we created artificial dependencies between adversity and every subtest and ran 500 simulations. The simulations explored the power to detect the follwing sum contrast-coded interaction $\beta$ coefficients:
 
 - $\beta=-.15$
 - $\beta=-.125$
@@ -80,7 +82,7 @@ For each run, we set the main effect of adversity to $\beta=-.2$. This means the
 
 Note that sum contrast-coded interaction $\beta$ reflect the *difference in slopes* between the main effect of adversity and the effect of a subtest. For example, if the main effect of adversity across all subtests is -.3 and simple effect of a subtest and adversity = -.10, the interaction effect will = .20 (difference between -.3 and -.10 is -.20).
 
-I wrote the following function to make sure the main effect of adversity was always -.20 and the effect of one subest set to one of the $\beta$s above.
+I wrote the following function to make sure the main effect of adversity was always -.20 and the effect of one subest set to one of the $\beta$ coefficients above.
 
 ```r
 ## custom function for looking at betas
@@ -108,7 +110,7 @@ rnorm_fixed <- function(n, mean, sd, fixed_beta) {
 
 Finally, we simulated models with higher and lower error in the estimates. Noise was introduced by adding random values to test scores. These values were drawn from a normal distribution with a mean of 0 and a standard deviation of .5 (lower) or 1 (higher). Because we are simulating standardized effects, the error values are akin to adding z-scores to the outcome that ranged from 1/2 or 1 full standard deviation of the sample mean for each test type.
 
-Simulations revealed, that, with a sample size of (*N* = `r nrow(seccyd_dvs_wj_data1)`), smallest interaction effect we can detect is of -.075 (or .075) with 90% power if error is small. When error is larger, we can detect the same effect size with only 65% power. However, even with larger error, we can detect a -.1 (or .10) interaction effect with 83% power.
+Simulations revealed, that, with a sample size of (*N* = `r nrow(seccyd_dvs_wj_data1)`), the smallest interaction effect we can detect is $\beta$ = -.075 (or .075) with 90% power, if error is small. When error is larger, we can detect the same effect size with only 65% power. However, even with larger error, we can detect a $\beta$ = -.10 (or .10) with 83% power.
 
 Below are the full simulation results plotted as power curves:
 

@@ -7,32 +7,22 @@ for this model can be found in the [preregistration](../). The script
 for performing the power analysis can be found here: [power analysis
 script](../../scripts/power-simulation.R)
 
-``` r
-load("data/seccyd_dvs_wj.Rdata")
-load("preregistration/power-analysis/power-objects.Rdata")
-
-## Set ggplot2 theme ----
-theme_set(
-  theme_light() +
-    theme(
-      text = element_text(size = 12),
-      axis.line = element_line(),
-      title = element_text(size = 12),
-      panel.border = element_blank(),
-      panel.background = element_rect(color = NA),
-      panel.grid = element_blank(),
-      plot.background = element_rect(color = NA),
-      plot.title = element_text(hjust = .5),
-      plot.subtitle = element_text(hjust = .5),
-      strip.background = element_rect(color = NA, fill = NA),
-      strip.text = element_text(color = "black", hjust = 0.5, size = 10)
-    )
-)
-```
-
 In short, because this is a secondary data analysis, our sample size is
 fixed at (*N* = 1156). For the mixed model, the data will be stacked,
 like so:
+
+| id      | wj_sub_test   |    score |
+|:--------|:--------------|---------:|
+| id_0001 | wj_picvo_mean | 108.7500 |
+| id_0001 | wj_vrba_mean  | 139.5000 |
+| id_0001 | wj_pscmp_mean | 133.0000 |
+| id_0001 | wj_appld_mean | 130.5000 |
+| id_0001 | wj_memse_mean | 115.0000 |
+| id_0001 | wj_incom_mean | 128.0000 |
+| id_0001 | wj_memna_mean | 117.0000 |
+| id_0001 | wj_lwid_mean  | 138.6667 |
+| id_0001 | wj_wrdat_mean | 134.0000 |
+| id_0001 | wj_calc_mean  | 143.0000 |
 
 The model has the following terms:
 
@@ -44,7 +34,7 @@ The model has the following terms:
 To perform a power analysis, we generated random adversity scores. Then
 we created artificial dependencies between adversity and every subtest
 and ran 500 simulations. The simulations explored the power to detect
-the follwing sum contrast-coded interaction $\beta$s:
+the follwing sum contrast-coded interaction $\beta$ coefficients:
 
 - $\beta=-.15$
 - $\beta=-.125$
@@ -67,8 +57,8 @@ subtests is -.3 and simple effect of a subtest and adversity = -.10, the
 interaction effect will = .20 (difference between -.3 and -.10 is -.20).
 
 I wrote the following function to make sure the main effect of adversity
-was always -.20 and the effect of one subest set to one of the $\beta$s
-above.
+was always -.20 and the effect of one subest set to one of the $\beta$
+coefficients above.
 
 ``` r
 ## custom function for looking at betas
@@ -102,11 +92,11 @@ simulating standardized effects, the error values are akin to adding
 z-scores to the outcome that ranged from 1/2 or 1 full standard
 deviation of the sample mean for each test type.
 
-Simulations revealed, that, with a sample size of (*N* = 1156), smallest
-interaction effect we can detect is of -.075 (or .075) with 90% power if
-error is small. When error is larger, we can detect the same effect size
-with only 65% power. However, even with larger error, we can detect a
--.1 (or .10) interaction effect with 83% power.
+Simulations revealed, that, with a sample size of (*N* = 1156), the
+smallest interaction effect we can detect is $\beta$ = -.075 (or .075)
+with 90% power, if error is small. When error is larger, we can detect
+the same effect size with only 65% power. However, even with larger
+error, we can detect a $\beta$ = -.10 (or .10) with 83% power.
 
 Below are the full simulation results plotted as power curves:
 
