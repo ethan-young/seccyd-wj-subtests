@@ -3,9 +3,9 @@ Power Analysis
 
 This is a power analysis for a mixed-model testing the effect of
 adversity on average and subtest Woodcock Johnson scores. The background
-for this model can be found in the [preregistration](preregistration/).
-The script for performing the power analysis can be found here: [power
-analysis script](scripts/power-simulation.R)
+for this model can be found in the [preregistration](../). The script
+for performing the power analysis can be found here: [power analysis
+script](../../scripts/power-simulation.R)
 
 ``` r
 load("data/seccyd_dvs_wj.Rdata")
@@ -108,6 +108,7 @@ error is small. When error is larger, we can detect the same effect size
 with only 65% power. However, even with larger error, we can detect a
 -.1 (or .10) interaction effect with 83% power.
 
-Below are the full simulation results plotted as power curvers:
+Below are the full simulation results plotted as power curves:
 
-![](README_files/figure-commonmark/unnamed-chunk-4-1.png)
+<img src="README_files/figure-commonmark/unnamed-chunk-4-1.png"
+data-fig-align="center" />

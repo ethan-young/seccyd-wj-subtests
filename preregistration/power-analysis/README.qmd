@@ -11,7 +11,7 @@ library(tidyverse)
 knitr::opts_knit$set(root.dir = "../../")
 ```
 
-This is a power analysis for a mixed-model testing the effect of adversity on average and subtest Woodcock Johnson scores. The background for this model can be found in the [preregistration](preregistration/). The script for performing the power analysis can be found here: [power analysis script](scripts/power-simulation.R)
+This is a power analysis for a mixed-model testing the effect of adversity on average and subtest Woodcock Johnson scores. The background for this model can be found in the [preregistration](../). The script for performing the power analysis can be found here: [power analysis script](../../scripts/power-simulation.R)
 
 ```{r}
 #| label: load-data
@@ -110,11 +110,12 @@ Finally, we simulated models with higher and lower error in the estimates. Noise
 
 Simulations revealed, that, with a sample size of (*N* = `r nrow(seccyd_dvs_wj_data1)`), smallest interaction effect we can detect is of -.075 (or .075) with 90% power if error is small. When error is larger, we can detect the same effect size with only 65% power. However, even with larger error, we can detect a -.1 (or .10) interaction effect with 83% power.
 
-Below are the full simulation results plotted as power curvers:
+Below are the full simulation results plotted as power curves:
 
 ```{r}
 #| echo: false
 #| fig-width: 5
+#| fig-align: center
 power_curve
 ```
 
