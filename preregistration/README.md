@@ -1,7 +1,7 @@
 Preregistration
 ================
 
-*Last updated on Monday, February 20, 2023 at 02:42 PM*
+*Last updated on Tuesday, February 28, 2023 at 04:38 PM*
 
 ## Overview
 
@@ -377,18 +377,18 @@ example_data2 |>
   knitr::kable()
 ```
 
-|  id |  adversity | wj_sub_test   |    score |
-|----:|-----------:|:--------------|---------:|
-|   1 | -0.9736841 | wj_picvo_mean | 108.7500 |
-|   1 | -0.9736841 | wj_vrba_mean  | 139.5000 |
-|   1 | -0.9736841 | wj_pscmp_mean | 133.0000 |
-|   1 | -0.9736841 | wj_appld_mean | 130.5000 |
-|   1 | -0.9736841 | wj_memse_mean | 115.0000 |
-|   1 | -0.9736841 | wj_incom_mean | 128.0000 |
-|   1 | -0.9736841 | wj_memna_mean | 117.0000 |
-|   1 | -0.9736841 | wj_lwid_mean  | 138.6667 |
-|   1 | -0.9736841 | wj_wrdat_mean | 134.0000 |
-|   1 | -0.9736841 | wj_calc_mean  | 143.0000 |
+|  id | adversity | wj_sub_test   |    score |
+|----:|----------:|:--------------|---------:|
+|   1 | 0.1826707 | wj_picvo_mean | 108.7500 |
+|   1 | 0.1826707 | wj_vrba_mean  | 139.5000 |
+|   1 | 0.1826707 | wj_pscmp_mean | 133.0000 |
+|   1 | 0.1826707 | wj_appld_mean | 130.5000 |
+|   1 | 0.1826707 | wj_memse_mean | 115.0000 |
+|   1 | 0.1826707 | wj_incom_mean | 128.0000 |
+|   1 | 0.1826707 | wj_memna_mean | 117.0000 |
+|   1 | 0.1826707 | wj_lwid_mean  | 138.6667 |
+|   1 | 0.1826707 | wj_wrdat_mean | 134.0000 |
+|   1 | 0.1826707 | wj_calc_mean  | 143.0000 |
 
 3.  Next, we apply a sum coded contrast to the subtest index column.
     This means the intercept in the mixed effect model reflects the
@@ -467,26 +467,26 @@ subtest_model |>
 
 | Parameter          | Coefficient |    SE |     p |
 |:-------------------|------------:|------:|------:|
-| (Intercept)        |     105.338 | 0.322 | 0.000 |
-| appld              |       2.566 | 0.259 | 0.000 |
-| calc               |       6.532 | 0.268 | 0.000 |
-| incom              |      -9.195 | 0.266 | 0.000 |
-| lwid               |       1.600 | 0.259 | 0.000 |
-| memna              |      -0.224 | 0.264 | 0.397 |
-| memse              |      -8.310 | 0.260 | 0.000 |
-| picvo              |      -2.696 | 0.259 | 0.000 |
-| pscmp              |       3.070 | 0.267 | 0.000 |
-| vrba               |       5.438 | 0.269 | 0.000 |
-| adversity          |      -0.179 | 0.322 | 0.577 |
-| appld \* adversity |      -0.306 | 0.259 | 0.237 |
-| calc \* adversity  |      -0.501 | 0.271 | 0.064 |
-| incom \* adversity |      -0.057 | 0.267 | 0.832 |
-| lwid \* adversity  |       0.027 | 0.259 | 0.918 |
-| memna \* adversity |       0.629 | 0.265 | 0.018 |
-| memse \* adversity |      -0.073 | 0.260 | 0.779 |
-| picvo \* adversity |       0.349 | 0.259 | 0.178 |
-| pscmp \* adversity |       0.062 | 0.270 | 0.820 |
-| vrba \* adversity  |      -0.288 | 0.274 | 0.294 |
+| (Intercept)        |     105.339 | 0.322 | 0.000 |
+| appld              |       2.565 | 0.259 | 0.000 |
+| calc               |       6.540 | 0.268 | 0.000 |
+| incom              |      -9.196 | 0.266 | 0.000 |
+| lwid               |       1.598 | 0.259 | 0.000 |
+| memna              |      -0.229 | 0.264 | 0.387 |
+| memse              |      -8.312 | 0.260 | 0.000 |
+| picvo              |      -2.697 | 0.259 | 0.000 |
+| pscmp              |       3.069 | 0.267 | 0.000 |
+| vrba               |       5.444 | 0.269 | 0.000 |
+| adversity          |       0.028 | 0.322 | 0.932 |
+| appld \* adversity |       0.054 | 0.259 | 0.836 |
+| calc \* adversity  |       0.191 | 0.268 | 0.476 |
+| incom \* adversity |       0.412 | 0.268 | 0.124 |
+| lwid \* adversity  |      -0.179 | 0.260 | 0.490 |
+| memna \* adversity |      -0.432 | 0.266 | 0.105 |
+| memse \* adversity |      -0.404 | 0.262 | 0.123 |
+| picvo \* adversity |       0.287 | 0.259 | 0.268 |
+| pscmp \* adversity |       0.065 | 0.267 | 0.807 |
+| vrba \* adversity  |       0.221 | 0.270 | 0.412 |
 
 </div>
 
@@ -509,40 +509,59 @@ subtest_model |>
 |:-------------------|----------------:|-------:|--------:|
 | (Intercept)        |          -0.005 | -0.048 |   0.037 |
 | appld              |           0.173 |  0.139 |   0.207 |
-| calc               |           0.441 |  0.405 |   0.476 |
+| calc               |           0.441 |  0.406 |   0.476 |
 | incom              |          -0.620 | -0.655 |  -0.585 |
 | lwid               |           0.108 |  0.074 |   0.142 |
 | memna              |          -0.015 | -0.050 |   0.020 |
 | memse              |          -0.560 | -0.595 |  -0.526 |
 | picvo              |          -0.182 | -0.216 |  -0.148 |
 | pscmp              |           0.207 |  0.172 |   0.242 |
-| vrba               |           0.367 |  0.331 |   0.402 |
-| adversity          |          -0.012 | -0.054 |   0.030 |
-| appld \* adversity |          -0.021 | -0.055 |   0.014 |
-| calc \* adversity  |          -0.034 | -0.069 |   0.002 |
-| incom \* adversity |          -0.004 | -0.039 |   0.031 |
-| lwid \* adversity  |           0.002 | -0.032 |   0.036 |
-| memna \* adversity |           0.042 |  0.007 |   0.077 |
-| memse \* adversity |          -0.005 | -0.039 |   0.029 |
-| picvo \* adversity |           0.023 | -0.011 |   0.057 |
-| pscmp \* adversity |           0.004 | -0.031 |   0.040 |
-| vrba \* adversity  |          -0.019 | -0.055 |   0.017 |
+| vrba               |           0.367 |  0.331 |   0.403 |
+| adversity          |           0.002 | -0.041 |   0.044 |
+| appld \* adversity |           0.004 | -0.031 |   0.038 |
+| calc \* adversity  |           0.013 | -0.022 |   0.048 |
+| incom \* adversity |           0.028 | -0.008 |   0.063 |
+| lwid \* adversity  |          -0.012 | -0.046 |   0.022 |
+| memna \* adversity |          -0.029 | -0.064 |   0.006 |
+| memse \* adversity |          -0.027 | -0.062 |   0.007 |
+| picvo \* adversity |           0.019 | -0.015 |   0.053 |
+| pscmp \* adversity |           0.004 | -0.031 |   0.039 |
+| vrba \* adversity  |           0.015 | -0.021 |   0.050 |
 
 ### Q20: Predicted effect sizes
 
-*NOT DONE*
+We do not have specific predictions for effect sizes but we deem
+standardized regression coefficients for interaction effects = .10 (or
+higher) and -.10 (or lower) meaningful. These effects would indicate
+that an effect of adversity on a subtest score is meaningfully more
+negative or more positive.
+
+Effects between -.10 and .10 are not of interest for determining
+differences between subtests and the overall average. However, we are
+interested in determining if simple effects falling between -.10 and .10
+are consitent with an effect of 0. For this scenario, we will use
+equivalence testing with -.10 and .10 as bounds.
 
 ### Q21: Statistical Power
 
-*NOT DONE*
+See our full power analysis [here](power-analysis/) and the code
+[here](../scripts/power-simulation.R).
+
+In short, we used a simulation approach to conduct power analyses. We
+simulated adversity scores but used actual Woodcock Johnson test scores.
+Simulations revealed, that, with a sample size of (*N* = 1156), the
+smallest interaction effect we can detect is $\beta$ = -.075 (or .075)
+with 90% power, if error is small. When error is larger, we can detect
+the same effect size with only 65% power. However, even with larger
+error, we can detect a $\beta$ = -.10 (or .10) with 83% power.
 
 ### Q22: Inferential Criteria
 
 Our inferential criteria will use p \< .05 for interaction effects
-between adversity and subtest type and simple effects of adversity for
-each subtest.
+between adversity and subtest type and for simple effects of adversity
+for each subtest.
 
-We interested in three effect sizes:
+We interested in three types of effect sizes:
 
 1.  The main effect of each adversity measure (tested in separate
     models).
@@ -557,9 +576,9 @@ determining if the effect *is* zero by using equivalence testing
 
 For simple effects (effect size 2), we will use simple slopes analysis.
 These tests determine whether the simple effect is different from zero.
-For these effects, we are interested if they are indeed 0, possibly
-using equivalence testing. We are also interested positive slopes of any
-size (that are not equivalent to zero).
+For these effects, we are interested if they are indeed 0 using
+equivalence testing. We are also interested positive slopes of any size
+(that are not equivalent to zero).
 
 For negative slopes, we are interested in effects that are different
 from the overall main effect of adversity. This is where the interaction
@@ -568,6 +587,12 @@ adversity for a given subtest is different from the main effect of
 adversity on overall performance. We are interested in both more
 negative and more positive than expected slopes compared to the main
 effect.
+
+Based on our minimum effect size of interest criterion and our power
+analysis, we are interested in interaction effects where $\beta$ = -.10
+(or lower) or $\beta$ = .10 (or higher). We will use these bounds to
+inform our equivalence tests, where effects are null, to determine if
+they are consistent with an effect = 0.
 
 ### Q23: Assumption Violations
 

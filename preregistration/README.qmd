@@ -354,17 +354,21 @@ subtest_model |>
 
 ### Q20: Predicted effect sizes
 
-*NOT DONE*
+We do not have specific predictions for effect sizes but we deem standardized regression coefficients for interaction effects = .10 (or higher) and -.10 (or lower) meaningful. These effects would indicate that an effect of adversity on a subtest score is meaningfully more negative or more positive. 
+
+Effects between -.10 and .10 are not of interest for determining differences between subtests and the overall average. However, we are interested in determining if simple effects falling between -.10 and .10 are consitent with an effect of 0. For this scenario, we will use equivalence testing with -.10 and .10 as bounds.
 
 ### Q21: Statistical Power
 
-*NOT DONE*
+See our full power analysis [here](power-analysis/) and the code [here](../scripts/power-simulation.R).
+
+In short, we used a simulation approach to conduct power analyses. We simulated adversity scores but used actual Woodcock Johnson test scores. Simulations revealed, that, with a sample size of (*N* = `r nrow(seccyd_dvs_wj_data1)`), the smallest interaction effect we can detect is $\beta$ = -.075 (or .075) with 90% power, if error is small. When error is larger, we can detect the same effect size with only 65% power. However, even with larger error, we can detect a $\beta$ = -.10 (or .10) with 83% power.
 
 ### Q22: Inferential Criteria
 
-Our inferential criteria will use p < .05 for interaction effects between adversity and subtest type and simple effects of adversity for each subtest. 
+Our inferential criteria will use p < .05 for interaction effects between adversity and subtest type and for simple effects of adversity for each subtest. 
 
-We interested in three effect sizes:
+We interested in three types of effect sizes:
 
 1. The main effect of each adversity measure (tested in separate models).
 2. The simple effect of adversity for each subtest.
@@ -372,9 +376,11 @@ We interested in three effect sizes:
 
 We are also interested in null effects. Based on prior work, we expect the main effect of adversity to be negative. However, if main effects were zero for any adversity measure, we would be interested in determining if the effect *is* zero by using equivalence testing [@lakens2018].
 
-For simple effects (effect size 2), we will use simple slopes analysis. These tests determine whether the simple effect is different from zero. For these effects, we are interested if they are indeed 0, possibly using equivalence testing. We are also interested positive slopes of any size (that are not equivalent to zero).
+For simple effects (effect size 2), we will use simple slopes analysis. These tests determine whether the simple effect is different from zero. For these effects, we are interested if they are indeed 0 using equivalence testing. We are also interested positive slopes of any size (that are not equivalent to zero). 
 
 For negative slopes, we are interested in effects that are different from the overall main effect of adversity. This is where the interaction term is important. The interaction effect tests whether the effect of adversity for a given subtest is different from the main effect of adversity on overall performance. We are interested in both more negative and more positive than expected slopes compared to the main effect.
+
+Based on our minimum effect size of interest criterion and our power analysis, we are interested in interaction effects where $\beta$ = -.10 (or lower) or $\beta$ = .10 (or higher). We will use these bounds to inform our equivalence tests, where effects are null, to determine if they are consistent with an effect = 0.
 
 ### Q23: Assumption Violations
 
