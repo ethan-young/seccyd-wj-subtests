@@ -17,8 +17,8 @@ knitr::opts_knit$set(root.dir = "../")
 ```
 
 ```{r data, include=FALSE}
-load("data/seccyd_dvs_wj.Rdata")
-load("data/seccyd_measures.Rdata")
+load("data/seccyd-dvs-wj.Rdata")
+load("data/seccyd-full-measure-list.Rdata")
 ```
 
 *Last updated `r format(Sys.time(), "on %A, %B %d, %Y at %I:%M %p")`*
@@ -43,7 +43,7 @@ This preregistration document is based on [@akker2021] for secondary data analys
 ### Q2: Authors
 
 -   [Ethan S. Young](https://www.ethan-young.com/)<sup>1</sup> [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-8232-0184)
--   Stefan Vermeent<sup>1, 2</sup>[<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-9595-5373)
+-   [Stefan Vermeent](https://www.stefan-vermeent.nl)<sup>1, 2</sup>[<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-9595-5373)
 -   [Willem E. Frankenhuis](http://www.willem.maartenfrankenhuis.nl/)<sup>1, 2</sup>
 -   [Marissa Nivison](https://icd.umn.edu/people/nivis004/)<sup>3</sup> [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-9436-722X)
 -   [Jeffry A.Simpson](https://cla.umn.edu/about/directory/profile/simps108)<sup>3</sup> [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0003-1899-2493)
@@ -105,6 +105,7 @@ Data can be accessed through the following links.
 
 - Ethan Young (lead author and data analyst) 
     - Accessed data for the dependent variables on February 3rd, 2022
+    - Accessed data for the independent variables on March 2nd, 2023
 - Stefan Vermeent will not access the data
 - Willem Frankenhuis will not access the data
 - Marissa Nivison has access to the full dataset
@@ -148,23 +149,64 @@ Once variables for this study are selected, accessed, and ready for pre-processi
 
 #### Independent Variables
 
-Unpredictability
+We are interested in two constructs: environmental harshness and unpredictability. However, in the literature, and in these data specifically, there have been different approaches to measuring them. There are also other, unexplored ways to capture them. Given the exploratory nature of our approach, we plan to compute both and explore their effects.
 
-- Residential changes
-- Parental transitions
-- Job changes
+**Unpredictability, Past Approaches**
 
-Harshness
+1. *Environmental Unpredictability*
 
-- Income-to-needs ratio
-    - Total family income relative to the federal poverty line adjusted for family size
+This measure is based on @belsky2012 includes three variables that are standardized and averaged together over the relevant time period:
 
-Exploratory variables:
+- Residential changes, or changes in address.
+- Paternal transitions, or changes in father figures moving in or out of the home.
+- Job changes, or changes in employment status for mothers and partners.
+
+
+2. *Income Variation*
+
+This measure is based on @li2018 computes the residual variance in income-to-needs ratios after a linear trend is fit to each participant. 
+
+**Harshness, Past Approaches**
+
+Studies based on both the  @belsky2012 and @li2018 approaches have used income-to-needs ratio. In most cases, an average score over the relevant period is the measure. However, some use an intercept after fitting a linear model to each person's income data.
+
+**The Current approach**
+
+In addition to these classic measures, we plan to leverage data from the Census about the broader ecological context. Addresses were tracked for each participant over time. These addresses were geocoded and linked to the 1990 and 2000 decinniel Census blocks. Census blocks are the smallest geographical area that the Census measures. We will only use the 1990 Census blocks because all IVs in this study will be from when target participants were 0 - 54 months old. 
+
+The Census variables relevant here are the following:
+
+- Percent of people living under the poverty line
+- Median household income
+- Gini coefficient, a metric for measuring income inequality
+- Percent of unemployed individuals over 16 in the workforce
+- Percent of occupied houses that are occupied by renters
+
+We plan to compute mean and standard deviation scores for each Census measure over the addresses each participant lived at. For an overall neighborhood harshness score, we will standardize and avergae together each mean score. For an overall neighborhood change score, we will standardize and average together all standard deviation scores.
+
+**Summary**
+
+In short, we plan to analyze the following variables:
+
+*Harshness*
+
+- Census based neighborhood harhsness (from census variable averages)
+- Average income-to-needs 
+
+*Unpredictability*
+
+- Classic composite from @belsky2012
+- Census-based neighborhood change (from standard deviations)
+- Standard deviation of income-to-needs (this is a deviation from @li2018)
+
+**Possible follow-ups**
+
+We might break apart composites. For exampe, we may analyze Census variables separately or items from the classic unpredictaiblity measure. If we do so, these analyses will be reported in a supplement, only. We may mention them in the main text, but they will not be interpreted to the same degree as the main analyses.
+
+**Other possible (exploratory) variables:**
 
 - Maternal depression
 - Variability in  maternal depression
-- Variability in income-to-needs
-- Neighborhood income (1990 US Census)
 
 #### Dependent Variables
 
@@ -206,7 +248,7 @@ If it becomes clear that there are other inclusion/exclusion criteria, we will u
 
 EY has not published any papers using this dataset. In 2014 and 2015, EY, JS, and GI submitted a paper to  *Child  Development* (rejected) and *Development and Psychopathology* (withdrawn). The paper used aggregated Woodcock Johnson scores over each assessment and used income-to-needs as a covariate.
 
-MN has intimate knowledge of this dataset. MN has published two papers using the dataset, although MN has not analyzed or used the variables in the current preregistration.
+MN has intimate knowledge of this dataset. MN has published two papers using the dataset. MN also has one manuscript in  press and one under review using the data. MN has not analyzed or used the subtest variables in the current preregistration.
 
 GI has intimate knowledge of this dataset. GI is a co-principle investigator on the project and has published many papers using the data. Variables analyzed in GI publications relate mostly to the dependent variables in this project. Those relevant to the current preregistration include:
 

@@ -1,0 +1,335 @@
+instrument,construct,key,ages,informant
+ASBI,Adaptive Social Behavior Inventory (ASBI),Prosocial behavior,"24 Month, 36 Month",Cg
+About My Family,Friend’s Family Demographics,"Demographics, friend","4th Grade, 6th Grade",Fr’s M
+About This Classroom,Friend’s School Information,"School environment, friend","4th Grade, 6th Grade",Fr’s T
+Academic Skills,Academic Skills Rating Scale from the Early Childhood Longitudinal Study,"Language, Literacy, & Math skills","K, 1st Grade, 2nd Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade",T
+Activities and Feelings,Loneliness and Social Dissatisfaction Questionnaire,Loneliness,"1st Grade, 3rd Grade, 5th Grade, Age 15",C
+Adolescent Work Experiences Questionnaire,Adolescent Work Experiences Questionnaire,"Employment, adolescent",Age 15,C
+Adult Friendship,Adult Friendship Quality Questionnaire,"Friendship quality, parental","3rd Grade, 4th Grade, 5th Grade",M
+Adult Friendship,Adult Friendship Quality Questionnaire,"Friendship quality, parental","3rd Grade, 4th Grade, 5th Grade","M, F"
+After School,After School Caregiver Questionnaire,Caregiver questionnaire,"1st Grade, 3rd Grade, 4th Grade, 5th Grade",ACg
+After School Arrangements and Structured Activities,After School Arrangements and Structured Activities – Mother Interview,"Childcare usage, after school time","3rd Grade, 4th Grade, 5th Grade",M
+After School Questionnaire,After School Environment Questionnaire,Psychosocial climate,1st Grade,C
+After School Time Use - Child Interview,After School Time Use Child Interview,After school time,"3rd Grade, 4th Grade, 5th Grade",C
+Anthropometric Assessment,Anthropometric Form,"Height, weight, BMI, skin folds",Age 15,C
+"Attendance, Referral, and Retention/Teacher Year End Questionnaire","Attendance, Referrals and Retention Information","School, performance","1st Grade, 2nd Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade, 8th grade",T
+"Attendance, Referral, and Retention/Teacher Year End Questionnaire","Attendance, Referrals and Retention Information","School, performance","1st Grade, 2nd Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade, 8th grade",P
+Attitude Toward Maternal Employment,Attitude Toward Maternal Employment,"Employment, maternal","1 Month, 6 Month, 15 Month, 24 Month, 36 Month","M, FHHS"
+Attitude Toward Maternal Employment,Attitude Toward Maternal Employment,"Employment, maternal","1 Month, 6 Month, 15 Month, 24 Month, 36 Month",FHHS
+Attribution Bias Questionnaire,Attribution Bias Questionnaire,Attribution bias,"54 Month, 1st Grade",C
+BART,Balloon Analogue Risk Task,Risk taking,Age 15,C
+Bayley,Bayley Scales of Infant Development (Mental Development Index) & Revised Standardization Version,Cognitive-Mental development,"15 Month, 24 Month",C
+Bayley Compliance Sheet,Compliance Ratings in Bayley Procedure,Compliance,24 Month,C
+Blood Pressure Assessment,Blood Pressure Form,Blood pressure,Age 15,C
+Book Naming Activity,Title Recognition Test,"Literacy, home environment",5th Grade,C
+Bracken,Bracken Basic Concept Scale (BBCS),Cognition,36 Month,C
+Brief Neighborhood Observation Schedule,Neighborhood Observation,"Neighborhood, quality, type",Age 15,RA
+CSA Activity Monitor Data Form,CSA Activity Monitor Data Form,Physical activity,"3rd Grade, 5th Grade, 6th Grade, Age 15",RA
+Caregiver Interview,"National Child Care Staffing  Study, Caregiver Interview",Caregiver interview,"6 Month, 15 Month, 24 Month, 36 Month, 54 Month",Cg
+Caregiver Ratings of Parent-Child Behaviors When Parent Leaves and Returns,Child Care Separation/Reunion Scale,Separation anxiety & reunion,"15 Month, 24 Month, 36 Month",Cg
+Center Director Background Information and Questionnaires,Director Questionnaires - Long and Short Versions,Center director interview,"6 Month, 15 Month, 24 Month, 36 Month, 54 Month",D
+Child Behavior Checklist (CBCL),Child Behavior Checklist (CBCL),Behavior problems,"24 Month, 36 Month, 54 Month, K, 1st Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade, Age 15","M, Cg"
+Child Behavior Checklist (CBCL),Child Behavior Checklist (CBCL),Behavior problems,"24 Month, 36 Month, 54 Month, K, 1st Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade, Age 15",M
+Child Behavior Checklist (CBCL),Child Behavior Checklist (CBCL),Behavior problems,"24 Month, 36 Month, 54 Month, K, 1st Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade, Age 15","M, F, ACg"
+Child Behavior Checklist (CBCL),Child Behavior Checklist (CBCL),Behavior problems,"24 Month, 36 Month, 54 Month, K, 1st Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade, Age 15","M,  F  ,  ACg"
+Child Behavior Checklist (CBCL),Child Behavior Checklist (CBCL),Behavior problems,"24 Month, 36 Month, 54 Month, K, 1st Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade, Age 15","M, F,  Fr’s M,  ACg"
+Child Behavior Checklist (CBCL),Child Behavior Checklist (CBCL),Behavior problems,"24 Month, 36 Month, 54 Month, K, 1st Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade, Age 15","M,  F,  ACg"
+Child Behavior Checklist (CBCL),Child Behavior Checklist (CBCL),Behavior problems,"24 Month, 36 Month, 54 Month, K, 1st Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade, Age 15","M , F,  Fr’s M"
+Child Behavior Checklist (CBCL),Child Behavior Checklist (CBCL),Behavior problems,"24 Month, 36 Month, 54 Month, K, 1st Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade, Age 15","M,  F"
+Child Evaluation,Mock Report Card,School performance,"1st Grade, 2nd Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade",T
+Child Evaluation,Mock Report Card,School performance,"1st Grade, 2nd Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade","T, Fr’s T"
+Child Evaluation,Mock Report Card,School performance,"1st Grade, 2nd Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade","T,  Fr’s T"
+Child-Caregiver Relationship Scale,Child-Caregiver Relationship Scale,Child/caregiver relationship,"54 Month, 1st Grade, 3rd Grade, 4th Grade, 5th Grade",Cg
+Child-Caregiver Relationship Scale,Child-Caregiver Relationship Scale,Child/caregiver relationship,"54 Month, 1st Grade, 3rd Grade, 4th Grade, 5th Grade",Acg
+Child-Caregiver Relationship Scale,Child-Caregiver Relationship Scale,Child/caregiver relationship,"54 Month, 1st Grade, 3rd Grade, 4th Grade, 5th Grade",ACg
+Child-Caregiver Relationship Scale: Short Form,Student-Teacher Relationship Scale (STRS),Caregiver/Teracher/child interaction,"54 Month, K, 1st Grade",Cg
+Child-Caregiver Relationship Scale: Short Form,Student-Teacher Relationship Scale (STRS),Caregiver/Teracher/child interaction,"54 Month, K, 1st Grade",T
+Child-Caregiver Relationship Scale: Short Form,Student-Teacher Relationship Scale (STRS),Caregiver/Teracher/child interaction,"54 Month, K, 1st Grade",ACg
+Child-Parent Relationship Scale,Child-Parent Relationship Scale: Short Form,Attachment,"K, 1st Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade, Age 15",M
+Child-Parent Relationship Scale,Child-Parent Relationship Scale: Short Form,Attachment,"K, 1st Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade, Age 15","M, F"
+Child-Parent Relationship Scale,Child-Parent Relationship Scale: Short Form,Attachment,"K, 1st Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade, Age 15","M, F, Fr’s M"
+Children and Their Parents,Parental Locus of Control Scale,Parental locus of control,1 Month,M
+Children’s Behavior Questionnaire (CBQ),Children’s Behavior  Questionnaire (CBQ),Temperament,54 Month,"Cg, M"
+Child’s Adaptive Language,Child’s Adaptive Language Inventory,"Language, adaptive",54 Month,Cg
+Class Time,Perception of Teaching Style (Child),Teaching style,6th Grade,C
+Classroom Observation,Classroom Practices Inventory (CPI),Childcare climate,54 Month,Cg
+"Classroom Observation System (COS-1, 3, & 5)","Classroom Observation System (COS-1, COS-3, & COS-5)","School, behavior, quality","1st Grade, 3rd Grade, 5th Grade","C, T"
+Clean-Up Compliance Ratings,Compliance Ratings from Lab Clean-Up Procedure (24/36 Month Ratings),Compliance,"24 Month, 36 Month",C
+Combining Work (Employment) & Family,Work & Family Conflict Scale,"Employment, stress","6 Month, 15 Month, 24 Month, 36 Month, 3rd Grade, 5th Grade","M, FHHS"
+Combining Work (Employment) & Family,Work & Family Conflict Scale,"Employment, stress","6 Month, 15 Month, 24 Month, 36 Month, 3rd Grade, 5th Grade",M
+Combining Work (Employment) & Family,Work & Family Conflict Scale,"Employment, stress","6 Month, 15 Month, 24 Month, 36 Month, 3rd Grade, 5th Grade","M  ,  F"
+Compliance Ratings in Growth Procedure,Compliance Ratings in Growth Procedure,Compliance,36 Month,C
+Contacts with Friends (Mother)/Relationships With Peers: Part B (Teacher),Contacts with Friends,Peer/friendship quality,"3rd Grade, 4th Grade, 5th Grade, 6th Grade","M, T"
+Contacts with Friends (Mother)/Relationships With Peers: Part B (Teacher),Contacts with Friends,Peer/friendship quality,"3rd Grade, 4th Grade, 5th Grade, 6th Grade","M, F, T, Fr’s T"
+Contacts with Friends (Mother)/Relationships With Peers: Part B (Teacher),Contacts with Friends,Peer/friendship quality,"3rd Grade, 4th Grade, 5th Grade, 6th Grade","M, T, Fr’s T"
+Continuous Performance Task (CPT),Continuous Performance Task (CPT),"Attention, sustained","54 Month, 1st Grade, 4th Grade",C
+Current Child Care Grid; Telephone Interview,Telephone Contact (Pre-Visit Child Care Updates),Childcare history,"6 Month, 15 Month, 24 Month, 36 Month, 54 Month", M
+Current Child Care Grid; Telephone Interview,Telephone Contact (Pre-Visit Child Care Updates),Childcare history,"6 Month, 15 Month, 24 Month, 36 Month, 54 Month",M
+Daily Diary,Saliva Collection Diary (Cortisol),Cortisol,Age 15,C
+Daily Life at Our House,"CHAOS Scale (Confusion, Hubbub, & Disorder)",Chaos,3rd Grade,"M,  F"
+Delay of Gratification,Delay of Gratification,Self regulation,54 Month,C
+Director Telephone Interview,Director Telephone Interview,Center director interview,"6 Month, 15 Month, 24 Month, 36 Month, 54 Month",D
+Director Telephone Interview for Centers We Cannot Visit,Director Telephone Interview for Centers We Cannot Visit,Center director interview,"6 Month, 15 Month, 24 Month, 36 Month, 54 Month",D
+Eating Attitudes,Eating Attitudes,Eating attitudes,Age 15,C
+End of School Visit Ratings,End of Visit Ratings – Classroom,School quality,"3rd Grade, 5th Grade",T
+Ethnic Preference and Identity Measure (EPI),Ethnic Preference and Identity (EPI),Racial identity,"1st Grade, 3rd Grade",C
+Events in My Life,Life Experiences Survey,Stressful events,"54 Month, 3rd Grade, 5th Grade",M
+Family Emotional Expressiveness,Family Emotional Expressiveness,Emotional expressiveness,"3rd Grade, 4th Grade, 5th Grade","M, F"
+Family Finances Questionnaire,Family Finances,Financial stress,"1 Month, 6 Month, 15 Month, 24 Month, 36 Month, 54 Month, Age 15",M
+Family Finances Questionnaire,Family Finances,Financial stress,"1 Month, 6 Month, 15 Month, 24 Month, 36 Month, 54 Month, Age 15","M,  F"
+Family Finances/Family Education & Income,Family Education & Income,"Employment, Income","54 Month, K, 1st Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade, Age 15",M
+Family Health History,Family Health History,"Health, parents & family",Age 15,M
+Family Ties,Family Ties,"Involvement , family",6th Grade,C
+Father-Child Interaction,Father-Child Interaction,Father/child quality,"54 Month, 1st Grade, 3rd Grade, 5th Grade, Age 15",F/C
+Feelings About Parenting,Parenting Stress Index (PSI),Parenting stress,"1 Month, 6 Month",M
+Friends or Foes?/Relationships With Peers: Part A,Popularity,Popularity,"54 Month, K, 1st Grade, 2nd Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade",Cg
+Friends or Foes?/Relationships With Peers: Part A,Popularity,Popularity,"54 Month, K, 1st Grade, 2nd Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade",T
+Friends or Foes?/Relationships With Peers: Part A,Popularity,Popularity,"54 Month, K, 1st Grade, 2nd Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade","T, Acg"
+Friendship Interaction Coding During Recess,Friendship Interaction Coding During Recess,Peer/friendship interaction,"54 Month, 1st Grade","C, Fr"
+Friendship Interactions,Friendship Interaction Coding,Peer/friendship quality,"4th Grade, 6th Grade","C,  Fr"
+Friendship Interview,Friendship Interview,Peer/friendship quality,"3rd Grade, 5th Grade",C
+Friendship Quality Questionnaire/ My Best Friend & Me,Friendship Quality Questionnaire,Peer/friendship quality,"3rd Grade, 4th Grade, 5th Grade, 6th Grade",C
+Friendship Quality Questionnaire/ My Best Friend & Me,Friendship Quality Questionnaire,Peer/friendship quality,"3rd Grade, 4th Grade, 5th Grade, 6th Grade","C, Fr"
+Future Outlook Inventory,Future Outlook Inventory,Perspective,Age 15,C
+Getting Along with My Parent,"Parental Warmth, Support, & Hostility","Support, hostility, parental","6th Grade, Age 15","C, Fr"
+Getting Along with My Parent,"Parental Warmth, Support, & Hostility","Support, hostility, parental","6th Grade, Age 15",C
+Getting Ready for School: Parent’s Version,Getting Ready for School: Parent’s Version,"School involvement, friends",K,M
+Getting Ready for School: Teacher’s Version,Getting Ready for School: Teacher’s Version,"School involvement, friends",K,T
+"Girls’,  Boys’ Tanner Drawings",Tanner Staging (Mother Report),Pubertal development,"4th Grade, 5th Grade, 6th Grade, 7th grade, 8th grade, Age 15",M
+"H.O.M.E. Inventory, Infant, Toddler, Early/Middle/Late Childhood",Home Observation for Measurement of the Environment (HOME) Inventory,H.O. M. E.,"6 Month, 15 Month, 36 Month, 54 Month, 3rd Grade, 5th Grade, Age 15",M
+"H.O.M.E. Inventory, Infant, Toddler, Early/Middle/Late Childhood",Home Observation for Measurement of the Environment (HOME) Inventory,H.O. M. E.,"6 Month, 15 Month, 36 Month, 54 Month, 3rd Grade, 5th Grade, Age 15","C,  M"
+"H.O.M.E. Inventory, Infant, Toddler, Early/Middle/Late Childhood",Home Observation for Measurement of the Environment (HOME) Inventory,H.O. M. E.,"6 Month, 15 Month, 36 Month, 54 Month, 3rd Grade, 5th Grade, Age 15","C, M"
+HPDA Visit Report,HPDA Office/Home Visit Report,Visit monitoring,"4th Grade, 5th Grade, 6th Grade, 7th grade, 8th grade, Age 15",CL
+Health Condition Follow-up,Health Condition Follow-up,Health conditions,"36 Month, 1st Grade",M
+Health and Physical Development Assessment (HPDA),Pubertal Development Exam,"Pubertal development, height, weight, BMI, blood pressure, skin folds","4th Grade, 5th Grade, 6th Grade, 7th grade, 8th grade, Age 15",CL
+Height and Weight,Growth Measures,"Height, weight, BMI","15 Month, 24 Month, 36 Month, 54 Month, 1st Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade",C
+Home Interview Booklet 1 and 2,Home Interview - Booklet 1 and 2,"Demographics, sleep, health, employment","15 Month, 24 Month, 36 Month",M
+Home Visit Report Form,Home Visit Report Form,Visit monitoring,"3rd Grade, 5th Grade, Age 15",RA
+Home-School Questionnaire,Home-Schooling Questionnaire,Home-schooling,"K, 1st Grade, 2nd Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade",T
+Hooked On Nicotine Checklist,Hooked On Nicotine Checklist,Smoking,Age 15,C
+How I Do In School,"Achievement Motivation,  Efficacy, & Educational Aspirations",Efficacy in academics and sports,"6th Grade, Age 15","C, Fr"
+How I Do In School,"Achievement Motivation,  Efficacy, & Educational Aspirations",Efficacy in academics and sports,"6th Grade, Age 15",C
+How I Sometimes Feel,Children’s Depression Inventory (CDI),Depression,"5th Grade, 6th Grade, Age 15",C
+How I Sometimes Feel,Children’s Depression Inventory (CDI),Depression,"5th Grade, 6th Grade, Age 15","C, Fr"
+How Things Work at Our House/Parental Monitoring/Keeping Tabs,Parental Involvement and Monitoring,"Supervision, monitoring, parental","4th Grade, 5th Grade, 6th Grade, Age 15","M, F"
+How Things Work at Our House/Parental Monitoring/Keeping Tabs,Parental Involvement and Monitoring,"Supervision, monitoring, parental","4th Grade, 5th Grade, 6th Grade, Age 15",M
+How Things Work at Our House/Parental Monitoring/Keeping Tabs,Parental Involvement and Monitoring,"Supervision, monitoring, parental","4th Grade, 5th Grade, 6th Grade, Age 15","M, C, Fr, Fr’s M"
+How Things Work at Our House/Parental Monitoring/Keeping Tabs,Parental Involvement and Monitoring,"Supervision, monitoring, parental","4th Grade, 5th Grade, 6th Grade, Age 15","M, F, C"
+Ideas About Raising Children,Parental Modernity Scale of Childrearing and Educational Beliefs,Parenting beliefs,"1 Month, 15 Month, 24 Month, 36 Month, 54 Month, 1st Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade",M
+Ideas About Raising Children,Parental Modernity Scale of Childrearing and Educational Beliefs,Parenting beliefs,"1 Month, 15 Month, 24 Month, 36 Month, 54 Month, 1st Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade",Cg
+Ideas About Raising Children,Parental Modernity Scale of Childrearing and Educational Beliefs,Parenting beliefs,"1 Month, 15 Month, 24 Month, 36 Month, 54 Month, 1st Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade","M, F, ACg"
+Ideas About Raising Children,Parental Modernity Scale of Childrearing and Educational Beliefs,Parenting beliefs,"1 Month, 15 Month, 24 Month, 36 Month, 54 Month, 1st Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade",ACg
+Ideas About Raising Children,Parental Modernity Scale of Childrearing and Educational Beliefs,Parenting beliefs,"1 Month, 15 Month, 24 Month, 36 Month, 54 Month, 1st Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade","M, F, Fr’s M, ACg"
+Ideas About Raising Children,Parental Modernity Scale of Childrearing and Educational Beliefs,Parenting beliefs,"1 Month, 15 Month, 24 Month, 36 Month, 54 Month, 1st Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade",Fr’s M
+Impulses,Weinberger Adjustment Inventory,Impulsivity,Age 15,C
+Infant/Toddler/Early Childhood Child Care H.O.M.E. Inventory,Home Observation for Measurement of the Environment (HOME) Inventory - Family child care home settings,H.O.M.E. Family Childcare,"6 Month, 15 Month, 24 Month, 36 Month, 54 Month",Cg
+Interview Part 6: Updating Our Files,Interview Part Six: Updating Files,"Demographics, sleep, health","24 Month, 36 Month",M
+Kids I Know/What My Friends are Like,Social Network,Peer/friendship relationships,"4th Grade, 5th Grade, 6th Grade, Age 15","C, Fr"
+Kids I Know/What My Friends are Like,Social Network,Peer/friendship relationships,"4th Grade, 5th Grade, 6th Grade, Age 15",C
+Kids in My Class at School/Kids at School,"Peer social support, bullying, & victimization","Social support, bullying, victimization","3rd Grade, 5th Grade, 6th Grade",C
+Kids in My Class at School/Kids at School,"Peer social support, bullying, & victimization","Social support, bullying, victimization","3rd Grade, 5th Grade, 6th Grade","C, Fr"
+Kids with My Kid (mother)/Relationships With Peers: Part D (teacher),Peer Network Characteristics,Peer Relationships,"3rd Grade, 4th Grade, 5th Grade, 6th Grade, Age 15","M, T"
+Kids with My Kid (mother)/Relationships With Peers: Part D (teacher),Peer Network Characteristics,Peer Relationships,"3rd Grade, 4th Grade, 5th Grade, 6th Grade, Age 15",T
+Kids with My Kid (mother)/Relationships With Peers: Part D (teacher),Peer Network Characteristics,Peer Relationships,"3rd Grade, 4th Grade, 5th Grade, 6th Grade, Age 15",M
+Kind of Person I am,Aggression Scale,Aggression,Age 15,C
+Lab Visit Monitoring Form,Lab Visit Monitoring Form,Visit monitoring,"36 Month, 54 Month, 1st Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade, Age 15",RA
+Levels of Play Coding Sheet,Solitary Play (Coding for Focused Attention During Play),Attention,"15 Month, 24 Month, 36 Month",C
+Levels of Play Coding Sheet,Solitary Play (Coding for Levels of Play),Cognitive development,"15 Month, 24 Month, 36 Month",C
+Linking Friendship Reports,Linking Friendship Reports,Peer/friendship history,"5th Grade, 6th Grade",C
+Love Is In the Air/Romantic Relationship Questionnaire,Romantic Relationships,Romantic relationships,"6th Grade, Age 15","C, Fr"
+Love Is In the Air/Romantic Relationship Questionnaire,Romantic Relationships,Romantic relationships,"6th Grade, Age 15",C
+Love and Relationships,Love and Relationships Part A: Personal Assessment of Intimacy in Relationships (PAIR),"Intimacy, marital","1 Month, 6 Month, 15 Month, 24 Month, 36 Month, 54 Month, 1st Grade, 3rd Grade, 5th Grade, 6th Grade, Age 15","M, FHHS"
+Love and Relationships,Love and Relationships Part A: Personal Assessment of Intimacy in Relationships (PAIR),"Intimacy, marital","1 Month, 6 Month, 15 Month, 24 Month, 36 Month, 54 Month, 1st Grade, 3rd Grade, 5th Grade, 6th Grade, Age 15","M, F"
+Love and Relationships (B),"Love and Relationships - Part B: Marital Conflict, Love, Ambivolence","Conflict, marital",1 Month,"M, FHHS"
+M Questionnaire: Boys’ & Girls’ Pubertal Development Scale,Pubertal Development Scale,"Pubertal development, height, weight, blood pressure, skin folds","4th Grade, 5th Grade, 6th Grade, 7th grade, 8th grade, Age 15",M
+MacArthur Communicative Inventory,MacArthur Communicative Development Inventories (CDI) for Infants and Toddlers,Language development,"15 Month, 24 Month",M 
+MacArthur Communicative Inventory,MacArthur Communicative Development Inventories (CDI) for Infants and Toddlers,Language development,"15 Month, 24 Month",M
+Making Decisions,Parental Control and Autonomy,Autonomy,"6th Grade, Age 15","C, Fr"
+Making Decisions,Parental Control and Autonomy,Autonomy,"6th Grade, Age 15","M, F, C"
+Millionaire Point Accrual Recording Form,Millionaire Point Accrual Recording Form,Peer/friendship observation,6th Grade,"C, Fr"
+Mother Questionnaire: Puberty History and Expectations,Puberty History and Expectations,"Pubertal development, mother","4th Grade, 5th Grade, 6th Grade, 7th grade, 8th grade, Age 15",M
+Mother-Child Interaction,Mother-Child Interaction,Mother/child quality,"6 Month, 15 Month, 24 Month, 36 Month, 54 Month, 1st Grade, 3rd Grade, 5th Grade, Age 15",M/C
+Mothers as Mediators of Cognitive Development,Mothers as Mediators of Cognitive Development,Cognitive development,36 Month,M
+Multi Ethnic Identity Measure (MEIM),Multi-Ethnic Identity Measure (MEIM),Racial identity,5th Grade,C
+Multidimensional Inventory of Black Identity (MIBI) for African American children,Multidimensional Inventory of Black Identity (MIBI) for African American children,Racial identity,5th Grade,C(AA)
+My Baby Questionnaire/This Baby,Early Infant Temperament Questionnaire (EITQ),Temperament,"1 Month, 6 Month",M
+My Baby Questionnaire/This Baby,Early Infant Temperament Questionnaire (EITQ),Temperament,"1 Month, 6 Month","M, Cg"
+My Best Friend & Me,Friendship Quality Questionnaire,Friendship quality,Age 15,C
+My Child Care,My Child Care,"Relationship quality, caregiver/child","6 Month, 15 Month, 24 Month",M
+My Child in Our Neighborhood,Self-Care Checklist-Parent (Perception of Child Safety After School),"Neighborhood safety, self care","3rd Grade, 5th Grade",M
+My Child in Our Neighborhood,Self-Care Checklist-Parent (Perception of Child Safety After School),"Neighborhood safety, self care","3rd Grade, 5th Grade","M, F"
+My Child’s Behavior with Other Children (mother)/Relationships With Peers (after-school caregiver)/Relationships With Peers: Part E (teacher),Child Behavior With Peers,Peer/friendship behaviors,"3rd Grade, 4th Grade, 5th Grade, 6th Grade","M, ACg, T"
+My Child’s Behavior with Other Children (mother)/Relationships With Peers (after-school caregiver)/Relationships With Peers: Part E (teacher),Child Behavior With Peers,Peer/friendship behaviors,"3rd Grade, 4th Grade, 5th Grade, 6th Grade","M, F, Fr’s M, ACg, T"
+My Child’s Behavior with Other Children (mother)/Relationships With Peers (after-school caregiver)/Relationships With Peers: Part E (teacher),Child Behavior With Peers,Peer/friendship behaviors,"3rd Grade, 4th Grade, 5th Grade, 6th Grade","M  ,  ACg,  T"
+My Child’s Behavior with Other Children (mother)/Relationships With Peers (after-school caregiver)/Relationships With Peers: Part E (teacher),Child Behavior With Peers,Peer/friendship behaviors,"3rd Grade, 4th Grade, 5th Grade, 6th Grade","M, T"
+My Child’s Behavior/Child Behavior Rating Scale,Disruptive Behavior Disorders Rating Scale (DBD),"Behavior, disruptive","3rd Grade, 4th Grade, 5th Grade, 6th Grade","M, F, T"
+My Child’s Health/My Health Questionnaire,Child Health Questionnaire (Mother and Child report),Health & well-being,"3rd Grade, 5th Grade, Age 15",M
+My Child’s Health/My Health Questionnaire,Child Health Questionnaire (Mother and Child report),Health & well-being,"3rd Grade, 5th Grade, Age 15","M, C"
+My Child’s Relationship with Me,Parent-Child Relationship Scale,Parental warmth,"54 Month, K, 1st Grade",M
+My Child’s Relationship with Me,Parent-Child Relationship Scale,Parental warmth,"54 Month, K, 1st Grade","M, F"
+My Child’s School Ability,Child’s School Preference and Ability,"School ability, perception",3rd Grade,M
+My Child’s Sleep Habits,My Child’s Sleep Habits,Sleep problems,"3rd Grade, 6th Grade",M
+My Eating Habits and the Way I Look,Child’s Eating Habits and Body Self Image,"Self-image, physical",6th Grade,C
+My Family and Teacher (Well Being Protocol,Relatedness Questionnaire & Security Questionnaire,"Emotional quality,  security","3rd Grade, 5th Grade",C
+My Family’s Cultural Background,Family Ethnicity & Cultural Background,Ethnicity & culture,"4th Grade, 6th Grade","M,  Fr’s M"
+My Family’s Cultural Background,Family Ethnicity & Cultural Background,Ethnicity & culture,"4th Grade, 6th Grade",Fr’s M
+My Feelings I,Center for Epidemiological Studies Depression Scale (CES-D) (My Feelings),Depression,"1 Month, 6 Month, 15 Month, 24 Month, 36 Month, 54 Month, 1st Grade, 3rd Grade, 5th Grade, 6th Grade, Age 15",M
+My Feelings I,Center for Epidemiological Studies Depression Scale (CES-D) (My Feelings),Depression,"1 Month, 6 Month, 15 Month, 24 Month, 36 Month, 54 Month, 1st Grade, 3rd Grade, 5th Grade, 6th Grade, Age 15","M, Cg"
+My Feelings I,Center for Epidemiological Studies Depression Scale (CES-D) (My Feelings),Depression,"1 Month, 6 Month, 15 Month, 24 Month, 36 Month, 54 Month, 1st Grade, 3rd Grade, 5th Grade, 6th Grade, Age 15","M, F"
+My Feelings II,State-Trait Anger & Anxiety Scales,"Anger & anxiety, parental","1st Grade, 3rd Grade, 5th Grade, 6th Grade, Age 15","M, F"
+My Feelings II,State-Trait Anger & Anxiety Scales,"Anger & anxiety, parental","1st Grade, 3rd Grade, 5th Grade, 6th Grade, Age 15","M,  F"
+My Life,Cantril’s Life Satisfaction Ladder,Life satisfaction,"3rd Grade, 5th Grade",C
+My Neighborhood,Self-care Checklist - Child,"Neighborhood safety, self care","3rd Grade, Age 15",C
+My Relationship with My Child’s Caregiver,Parental School Involvement Scale used in the FAST TRACK project,Childcare involvement,54 Month,M
+My Sleep,Circadian Preference Scale/My Sleep Habits,Sleep behaviors,Age 15,C
+My Sleep Habits,My Sleep Habits (Child),Sleep problems,6th Grade,C
+My Time Spent as a Parent (Part 2),Division of labor,Household responsibilities,"6 Month, 15 Month, 24 Month, 36 Month, 54 Month, 1st Grade, 5th Grade",FHHS
+My Time Spent as a Parent (Part 2),Division of labor,Household responsibilities,"6 Month, 15 Month, 24 Month, 36 Month, 54 Month, 1st Grade, 5th Grade",M
+My Time Spent as a Parent (Part 2),Division of labor,Household responsibilities,"6 Month, 15 Month, 24 Month, 36 Month, 54 Month, 1st Grade, 5th Grade","M,F"
+My Time Spent as a Parent (Part 2),Division of labor,Household responsibilities,"6 Month, 15 Month, 24 Month, 36 Month, 54 Month, 1st Grade, 5th Grade","M, F"
+"Narrative Elicitation Task - “Frog, where are you?”",Narrative Language Fluency,Language fluency,"3rd Grade, 5th Grade",C
+Neighborhood Questionnaire,Neighborhood Satisfaction and Involvement,"Neighborhood safety, involvement","1st Grade, 3rd Grade, 5th Grade","M, F"
+Neighborhood Questionnaire,Neighborhood Satisfaction and Involvement,"Neighborhood safety, involvement","1st Grade, 3rd Grade, 5th Grade","M,  F"
+No form for Snack,Snack Procedure (NOT coded),Mother/child interaction (NOT coded),"15 Month, 24 Month, 36 Month",C
+Observation During Lunch,Peer Observation During School Lunch,Peer/friendship interaction,"3rd Grade, 5th Grade","C, Fr"
+Observation Ratings of the Caregiving Environment,"Observation Ratings of the Caregiving Environment (ORCE): Part l: Behavior Scales, Qualitative Scales, and Observed Structural Variables","Childcare observation, behavioral, quality, structural","6 Month, 15 Month, 24 Month, 36 Month, 54 Month","Cg, C"
+Observation Report/Post Visit Ratings of Mother/Child Behavior During Entire Visit,Ratings of Mother/Child Behavior During Entire Visit,Mother/child interaction,"6 Month, 15 Month, 54 Month","RA, M, C"
+On My Job/My Paid Employment/Job Experiences,Job Role Quality Scale,"Employment, maternal & paternal","6 Month, 15 Month, 24 Month, 36 Month, 54 Month, 1st Grade, 3rd Grade, 5th Grade",M
+On My Job/My Paid Employment/Job Experiences,Job Role Quality Scale,"Employment, maternal & paternal","6 Month, 15 Month, 24 Month, 36 Month, 54 Month, 1st Grade, 3rd Grade, 5th Grade","M, FHHS"
+On My Job/My Paid Employment/Job Experiences,Job Role Quality Scale,"Employment, maternal & paternal","6 Month, 15 Month, 24 Month, 36 Month, 54 Month, 1st Grade, 3rd Grade, 5th Grade",FHHS
+On My Job/My Paid Employment/Job Experiences,Job Role Quality Scale,"Employment, maternal & paternal","6 Month, 15 Month, 24 Month, 36 Month, 54 Month, 1st Grade, 3rd Grade, 5th Grade","M, F"
+One Month Interview Section 1 & 2,One Month Interview - Section 1 and 2,"Demographics, sleep, health, employment",1 Month,M
+Ospan (Numbers and Letters),Ospan,Cognitive-Working memory,Age 15,C
+PAM (Physical Activity Monitor),CSA Accelerometer,Physical activity,"3rd Grade, 5th Grade, 6th Grade, Age 15",C
+Parent Interview of Child Physical Activity,Parent Interview of Child Physical Activity,Physical activity & parental support,"3rd Grade, 5th Grade, 6th Grade, Age 15",M
+Parent Involvement,Parent Involvement,Childcare involvement,54 Month,Cg
+Parent Report of Children’s Reactions,Emotion Regulation (Parent Report),Emotion regulation,"3rd Grade, 4th Grade, 5th Grade, 6th Grade","M, F"
+Parent Report of Children’s Reactions,Emotion Regulation (Parent Report),Emotion regulation,"3rd Grade, 4th Grade, 5th Grade, 6th Grade","M, F, Fr’s M"
+Parent Report of Involvement In Community Organizations/Activities,Parent Report of Involvement In Community Organizations/Activities,"Community involvement, parental",Age 15,"M,  F"
+Parent and Teacher Involvement,Parent-Teacher Involvement,"School involvement, maternal","1st Grade, 2nd Grade, 3rd Grade, 4th Grade, 5th Grade","M, T"
+Parent and Teacher Involvement,Parent-Teacher Involvement,"School involvement, maternal","1st Grade, 2nd Grade, 3rd Grade, 4th Grade, 5th Grade",T
+Parental Care Questionnaire,Maternal Separation Anxiety Scale (MSAS),Separation anxiety,"1 Month, 6 Month, 15 Month, 24 Month",M
+Parental Involvement in Schooling,Parental Involvement in Schooling,"Involvement in schooling, parental",Age 15,C
+Parental Relationships,Behavioral Systems Questionnaire,"Attachment, parenting",Age 15,C
+Parenting Experiences,Parent Role Quality Scale,Parenting stress,"15 Month, 24 Month, 36 Month",M
+Partner Health History,Partner Health History,"Health, partner",Age 15,F
+Partner Relationship,Partnership Conflict and Resolution,"Conflict, marital","5th Grade, 6th Grade, Age 15","M, F"
+Partner Relationship,Partnership Conflict and Resolution,"Conflict, marital","5th Grade, 6th Grade, Age 15","M,  F"
+Peabody Picture Vocabulary Test III-- for friend,Peabody Picture Vocabulary Test III-- for friend,"Cognitive development, maternal and friend","36 Month, 4th Grade, 6th Grade",M
+Peabody Picture Vocabulary Test III-- for friend,Peabody Picture Vocabulary Test III-- for friend,"Cognitive development, maternal and friend","36 Month, 4th Grade, 6th Grade",Fr
+Peer Observation,Peer Observation,Peer/friendship interaction,36 Month,"C, Fr"
+Peer Observation Videotaping Report,Peer Observation Videotaping Report,Peer/friendship interaction,"36 Month, 54 Month",RA
+Peer Pressure,Peer Pressure,Peer pressure,"6th Grade, Age 15","C, Fr"
+Peer Pressure,Peer Pressure,Peer pressure,"6th Grade, Age 15",C
+Peer Relationships,University of Illinois Aggression Scale (victimization),Victimization,Age 15,C
+Personal Responsibility,Psychosocial Maturity Inventory,Self management,Age 15,C
+Physical Activity Booklet,Physical Activity Booklet,Physical activity,"3rd Grade, 5th Grade","M, C"
+Physical Activity Record of Classes (PARC),Physical Activity Record of Classes (PARC),Physical education & activity,"3rd Grade, 4th Grade, 5th Grade, 6th Grade",T
+Physical Appearance Profile,Physical Appearance Profile for Adolescents,"Self-image, physical",Age 15,C
+Physical Environment Checklist,Physical Environment Checklist,Childcare physical environment,54 Month,Cg
+Physician Contact Form (Ear Infection),Otitis Media Record Extraction,Otitis Media,"15 Month, 36 Month",CL
+Playmate,Playmate demographic characteristics,Peer/friendship interaction,"54 Month, K, 1st Grade",M
+"Post Visit Interview and Ratings of the Caregiving Environment, End of Visit Ratings",Post Visit Interview and Ratings of the Caregiving Environment,Childcare quality,"15 Month, 24 Month, 36 Month, 54 Month",Cg
+Preschool Language Scale,Preschool Language Scale – 3(PLS-3),Language development,54 Month,C
+Principal Questionnaire,Principal Questionnaire,"School, demographics, curriculum","3rd Grade, 5th Grade, 8th grade, Age 15",P
+Profile – Center Version,Assessment Profile for Early-Childhood Programs (APECP),Center care quality,"6 Month, 15 Month, 24 Month, 36 Month",Cg
+Profile – Family Day Care,Assessment Profile for Family Day Care (APFDC),Family care quality,"6 Month, 15 Month, 24 Month, 36 Month",Cg
+Q-Sort,Attachment Behavior Q-set,Attachment,24 Month,M
+Quality of Child’s Friendship(mother)/Relationships With Peers: Part C (teacher),Quality of Child’s Friendship,Peer/friend relationship,"3rd Grade, 4th Grade, 5th Grade, 6th Grade","M, T"
+Quality of Child’s Friendship(mother)/Relationships With Peers: Part C (teacher),Quality of Child’s Friendship,Peer/friend relationship,"3rd Grade, 4th Grade, 5th Grade, 6th Grade",T
+Raising Children,Raising Children Checklist,Parenting style,"54 Month, 1st Grade, 3rd Grade",M
+Raising Children,Raising Children Checklist,Parenting style,"54 Month, 1st Grade, 3rd Grade","M, F"
+Relationships with Other People,Relationships with Other People,"Social support, parental","1 Month, 6 Month, 15 Month, 24 Month, 36 Month, 54 Month",M
+Relationships with Other People,Relationships with Other People,"Social support, parental","1 Month, 6 Month, 15 Month, 24 Month, 36 Month, 54 Month","M, F"
+Relationships with Other People,Social Support,Social support,"3rd Grade, 5th Grade","M,  F"
+Religion in My Life,Religion in My Life,Religious commitment,"6th Grade, Age 15","C, Fr"
+Religion in My Life,Religion in My Life,Religious commitment,"6th Grade, Age 15",C
+Reynell,Reynell Developmental Language Scale (RDLS),Language development,36 Month,C
+SOFIT (System for Observing Fitness Instruction Time),System for Observing Fitness Instruction Time (SOFIT),Physical education & activity,"3rd Grade, 5th Grade",C
+Saliva Samples for Cortisol,Basal Cortisol Assay,Cortisol,Age 15,C
+School Stories,Social Information Processing,Conflict management,"3rd Grade, 5th Grade",C
+Selection of Friend,Selection of Friend,Peer Relationships,"4th Grade, 6th Grade",M
+Self Scale,"NEO Personality Inventory, Neuroticism (N) and Extraversion (E) Subscales","Personality, parental",6 Month,"M, FHHS"
+Self-Administered Physical Activity Checklist (SAPAC),Self-Administered Physical Activity Checklist (SAPAC),Physical activity,"5th Grade, 6th Grade",C
+Self-Control Ratings,Self Control Procedure,Self regulation/control,36 Month,C
+Seven-Month Time Use Coding Sheet,Time Use Interview  At 7 Months,"Time use, maternal",Other,M
+Six-Month Home Interview Section 1 & 2,Six-Month Home Interview Section 1 and 2,"Demographics, health, employment",6 Month,M
+Social Age Interview,Social Age Interview,"Demographics, health, employment, school history","K, 1st Grade",M
+Social Age Interview,Social Age Interview - Computer Assisted Telephone Interview (CATI),"Demographics,  employment, health, school history","2nd Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade",M
+Social Competency,California Preschool Social Competency Scale,Social competency,54 Month,Cg
+Social Problem-Solving Test,Social Problem-Solving Test-Revised,Social competence,54 Month,C
+Social Skills,Social Skills Rating System (SSRS) – Parent and Teacher,Social competence,"54 Month, K, 1st Grade, 2nd Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade, Age 15",M
+Social Skills,Social Skills Rating System (SSRS) – Parent and Teacher,Social competence,"54 Month, K, 1st Grade, 2nd Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade, Age 15","M, T"
+Social Skills,Social Skills Rating System (SSRS) – Parent and Teacher,Social competence,"54 Month, K, 1st Grade, 2nd Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade, Age 15","M, F, T, Acg"
+Social Skills,Social Skills Rating System (SSRS) – Parent and Teacher,Social competence,"54 Month, K, 1st Grade, 2nd Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade, Age 15",T
+Social Skills,Social Skills Rating System (SSRS) – Parent and Teacher,Social competence,"54 Month, K, 1st Grade, 2nd Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade, Age 15","M,  F, T, Acgr"
+Social Skills,Social Skills Rating System (SSRS) – Parent and Teacher,Social competence,"54 Month, K, 1st Grade, 2nd Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade, Age 15","M, F, T, Fr’s M,  Fr’s T"
+Social Skills,Social Skills Rating System (SSRS) – Parent and Teacher,Social competence,"54 Month, K, 1st Grade, 2nd Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade, Age 15","M, F, C"
+Social Skills Strategies,Social Skills Strategies,Social competence,54 Month,Cg
+Sociometric Status: Caregiver and Teacher Ratings,Sociometric Status: Caregiver and Teacher Ratings,Popularity,"K, 1st Grade, 2nd Grade",T
+Sociometric Status: Caregiver and Teacher Ratings,Sociometric Status: Caregiver and Teacher Ratings,Popularity,"K, 1st Grade, 2nd Grade",ACg
+Some of My Favorite People,Network of Relationships Inventory (NRI),Relationship quality with teacher & mentor,6th Grade,"C, Fr"
+Standardized Interview – Mother,Standardized Interview – Mother,"Demographics, health, employment, childcare history","54 Month, 1st Grade",M
+Stoplight,Driving Risk Taking Task,Risk taking,Age 15,C
+Strange Situation Coding Sheet,Strange Situation,Attachment,"15 Month, 36 Month",C
+Stroop,Stroop Task,Impulsivity,"54 Month, Age 15",C
+Student-Teacher Relationship Scale (STRS),Student-Teacher Relationship Scale (STRS),Student-teacher interaction,"2nd Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade",T
+Student-Teacher Relationship Scale (STRS),Student-Teacher Relationship Scale (STRS),Student-teacher interaction,"2nd Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade","T,  Fr’s T"
+Summer Activities Questionnaire,Summer Activities Questionnaire,Out-of-school time,"4th Grade, 5th Grade, 6th Grade",M
+Taking Care of  Young Children,Taking Care of Young Children,Caregiver concerns & rewards,"15 Month, 24 Month, 36 Month",Cg
+Teacher Questionnaire,School Teacher Survey – Schools and Staffing Survey,"Teacher & class demographics, teaching style","K, 1st Grade, 2nd Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade",T
+Teacher Relations,Teacher Relationship,Student-teacher interaction,Age 15,C
+Teacher Report Form,Teacher’s Report Form (Achenbach),Behavior problems,"54 Month, K, 1st Grade, 2nd Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade",Cg
+Teacher Report Form,Teacher’s Report Form (Achenbach),Behavior problems,"54 Month, K, 1st Grade, 2nd Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade",T
+Teacher Report Form,Teacher’s Report Form (Achenbach),Behavior problems,"54 Month, K, 1st Grade, 2nd Grade, 3rd Grade, 4th Grade, 5th Grade, 6th Grade","T,  Fr’s T"
+Teacher Report of Children’s Reactions,Emotion Regulation (Teacher Report),Emotion regulation,"4th Grade, 5th Grade, 6th Grade","T, Fr’s T"
+Teacher Report of Children’s Reactions,Emotion Regulation (Teacher Report),Emotion regulation,"4th Grade, 5th Grade, 6th Grade",T
+Teacher Self-Efficacy Scale,Teacher Self-Efficacy Scale,Self-efficacy,"3rd Grade, 4th Grade, 5th Grade, 6th Grade",T
+"Telephone Contact (Family Update 3, 9, 12, 18, 21, 27, 30, 33, 42, 46, 50, 60, 66 Mo)",Telephone Contact,"Demographics, health, employment, childcare history",Other,M
+Telephone Interview About Child Care for Home Arrangements We Cannot Visit,Telephone Interview About Child Care for Home Arrangements We Cannot Visit,Caregiver interview,54 Month,M
+Television Viewing Interview,Television Viewing,"Television, child",36 Month,M
+The Year Before My Child Was Born (Passive Smoke),Passive Smoking,Smoking,24 Month,M
+Things I Do After School or on Weekends,Out of School Activities,After school time,"6th Grade, Age 15",C
+Things My Friends Do & Things I Do/Things Your Child May Do (Risky Behavior Protocol),Risky Behavior Protocol,Risk taking,"5th Grade, 6th Grade, Age 15","C, M"
+Things My Friends Do & Things I Do/Things Your Child May Do (Risky Behavior Protocol),Risky Behavior Protocol,Risk taking,"5th Grade, 6th Grade, Age 15","C, Fr, M, Fr’s M"
+Things My Friends Do & Things I Do/Things Your Child May Do (Risky Behavior Protocol),Risky Behavior Protocol,Risk taking,"5th Grade, 6th Grade, Age 15",C
+Time Spent as a Parent (Part 1),Parental Involvement,Parenting responsibilities,"6 Month, 15 Month, 24 Month, 36 Month, 54 Month, 1st Grade, 5th Grade",FHHS
+Time Spent as a Parent (Part 1),Parental Involvement,Parenting responsibilities,"6 Month, 15 Month, 24 Month, 36 Month, 54 Month, 1st Grade, 5th Grade",M
+Time Spent as a Parent (Part 1),Parental Involvement,Parenting responsibilities,"6 Month, 15 Month, 24 Month, 36 Month, 54 Month, 1st Grade, 5th Grade","M, F"
+Tower Activity,Tower of Hanoi,"Planning, executive function","1st Grade, 3rd Grade, 5th Grade",C
+Tower of London,Tower of London,"Planning, executive function",Age 15,C
+Toy Activity – Description of Adult,Toy Activity – Description of Adult,Father/child interaction identification,54 Month,RA
+Transcript Questionnaire,Transcript Questionnaire,"School, grades, test scores, curriculum",Age 15,SPl
+Update Interview,Update Call Interview,"Demographics, employment, income, health, school history","7th grade, 8th grade, Age 15",M
+"Watching TV, Reading, & Computers at Home",Home Literacy Environment Questionnaire,"Literacy, home environment","3rd Grade, 5th Grade, 6th Grade",M
+"Watching TV, Reading, & Computers at Home",Home Literacy Environment Questionnaire,"Literacy, home environment","3rd Grade, 5th Grade, 6th Grade","M,  C"
+"Watching TV, Reading, & Computers at Home",Home Literacy Environment Questionnaire,"Literacy, home environment","3rd Grade, 5th Grade, 6th Grade",C
+"Watching TV, Reading, & Computers at Home",Media Use Questionnaire,"TV, home literacy, computer use",Age 15,C
+Wechsler Abbreviated Scale of Intelligence (WASI),Wechsler Abbreviated Scale of Intelligence (WASI),Cognitive development,4th Grade,"C,  Fr"
+What Employment Means to Me,Work Commitment Scale (What Employment Means to Me),"Employment, maternal","1 Month, 36 Month",M
+What I Expect,Life Orientation Test,Optimism/pessimism,6th Grade,"C, Fr"
+What I Expect of My Child,What I Expect of My Child,Maturity demands,54 Month,M
+What I Think About School,School Commitment,School commitment,5th Grade,C
+What My Peers Think About Me,Popularity,Popularity,Age 15,C
+What My School is Like,School Attachment and Environment,"School climate, teacher behavior","6th Grade, Age 15","C,  Fr"
+What My School is Like,School Attachment and Environment,"School climate, teacher behavior","6th Grade, Age 15",C
+What Teens Do,Social Norms,Risk taking,Age 15,C
+Whole-Family Interaction,Whole-Family Interaction,"Parent/child, sibling interactions",5th Grade,WF
+Why Kids Do Things,Intent Attributions and Feelings of Distress,Hostility & distress,"3rd Grade, 4th Grade, 5th Grade",C
+Why Kids Do Things,Intent Attributions and Feelings of Distress,Hostility & distress,"3rd Grade, 4th Grade, 5th Grade","C, Fr"
+Woodcock-Johnson Achievement Broad Mathematics,Woodcock-Johnson (WJ-R) Broad Mathematics,Achievement-Broad mathematics,"3rd Grade, 5th Grade",C
+Woodcock-Johnson Achievement Broad Reading,Woodcock-Johnson (WJ-R) Broad Reading,Achievement-Broad reading,"3rd Grade, 5th Grade",C
+Woodcock-Johnson Achievement Test 22,Woodcock-Johnson (WJ-R) Test 22 Letter-Word Identification,Achievement-Reading,"54 Month, 1st Grade, 3rd Grade, 5th Grade",C
+Woodcock-Johnson Achievement Test 23,Woodcock-Johnson (WJ-R) Test 23 Passage Comprehension,Achievement-Comprehension-knowledge,"3rd Grade, 5th Grade, Age 15",C
+Woodcock-Johnson Achievement Test 24,Woodcock-Johnson (WJ-R) Test 24 Calculation,Achievement-Mathematics,"3rd Grade, 5th Grade",C
+Woodcock-Johnson Achievement Test 25,Woodcock-Johnson (WJ-R) Test 25 Applied Problems,Achievement-Mathematics,"54 Month, 1st Grade, 3rd Grade, 5th Grade, Age 15",C
+Woodcock-Johnson Achievement Test 31,Woodcock-Johnson (WJ-R) Test 31 Word Attack,Achievement-Auditory processing,"1st Grade, 3rd Grade",C
+Woodcock-Johnson Cognitive Test 1,Woodcock-Johnson (WJ-R) Test 1 Memory for Names,Cognitive-Long-term retrieval,"1st Grade, 3rd Grade",C
+Woodcock-Johnson Cognitive Test 2,Woodcock-Johnson  (WJ-R) Test 2 Memory for Sentences,Cognitive-Short-term memory,"54 Month, 1st Grade, 3rd Grade",C
+Woodcock-Johnson Cognitive Test 21,Woodcock-Johnson (WJ-R) Test 21 Verbal Analogies,Cognitive-Verbal comprehension,"3rd Grade, Age 15",C
+Woodcock-Johnson Cognitive Test 4,Woodcock-Johnson (WJ-R) Test 4 Incomplete Words,Cognitive-Auditory processing,"54 Month, 1st Grade",C
+Woodcock-Johnson Cognitive Test 6,Woodcock-Johnson (WJ-R) Test 6 Picture Vocabulary,Cognitive-Comprehension-knowledge,"54 Month, 1st Grade, 3rd Grade, 5th Grade, Age 15",C
+Writing a Story,Narrative Writing Fluency,Language fluency,5th Grade,C
+Your Pregnancy,Your Pregnancy,"Pregnancy, planned, feelings",1 Month,M
+Youth Self Report,Youth Self Report (YSR),Behavior problems,Age 15,C
+Youth Traits Inventory,Youth Psychopathic Traits Inventory,Psychopathic traits,Age 15,C

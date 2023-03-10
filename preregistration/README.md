@@ -1,7 +1,7 @@
 Preregistration
 ================
 
-*Last updated on Tuesday, February 28, 2023 at 04:38 PM*
+*Last updated on Friday, March 10, 2023 at 06:46 PM*
 
 ## Overview
 
@@ -27,7 +27,7 @@ adversity-exposed people in the SECCYD”
 
 - [Ethan S. Young](https://www.ethan-young.com/)<sup>1</sup>
   [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-8232-0184)
-- Stefan Vermeent<sup>1,
+- [Stefan Vermeent](https://www.stefan-vermeent.nl)<sup>1,
   2</sup>[<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-9595-5373)
 - [Willem E.
   Frankenhuis](http://www.willem.maartenfrankenhuis.nl/)<sup>1, 2</sup>
@@ -139,6 +139,7 @@ Data can be accessed through the following links.
 
 - Ethan Young (lead author and data analyst)
   - Accessed data for the dependent variables on February 3rd, 2022
+  - Accessed data for the independent variables on March 2nd, 2023
 - Stefan Vermeent will not access the data
 - Willem Frankenhuis will not access the data
 - Marissa Nivison has access to the full dataset
@@ -191,24 +192,92 @@ pre-processing/analysis, codebooks will be available
 
 #### Independent Variables
 
-Unpredictability
+We are interested in two constructs: environmental harshness and
+unpredictability. However, in the literature, and in these data
+specifically, there have been different approaches to measuring them.
+There are also other, unexplored ways to capture them. Given the
+exploratory nature of our approach, we plan to compute both and explore
+their effects.
 
-- Residential changes
-- Parental transitions
-- Job changes
+**Unpredictability, Past Approaches**
 
-Harshness
+1.  *Environmental Unpredictability*
 
-- Income-to-needs ratio
-  - Total family income relative to the federal poverty line adjusted
-    for family size
+This measure is based on Belsky et al. ([2012](#ref-belsky2012))
+includes three variables that are standardized and averaged together
+over the relevant time period:
 
-Exploratory variables:
+- Residential changes, or changes in address.
+- Paternal transitions, or changes in father figures moving in or out of
+  the home.
+- Job changes, or changes in employment status for mothers and partners.
+
+2.  *Income Variation*
+
+This measure is based on Li et al. ([2018](#ref-li2018)) computes the
+residual variance in income-to-needs ratios after a linear trend is fit
+to each participant.
+
+**Harshness, Past Approaches**
+
+Studies based on both the Belsky et al. ([2012](#ref-belsky2012)) and Li
+et al. ([2018](#ref-li2018)) approaches have used income-to-needs ratio.
+In most cases, an average score over the relevant period is the measure.
+However, some use an intercept after fitting a linear model to each
+person’s income data.
+
+**The Current approach**
+
+In addition to these classic measures, we plan to leverage data from the
+Census about the broader ecological context. Addresses were tracked for
+each participant over time. These addresses were geocoded and linked to
+the 1990 and 2000 decinniel Census blocks. Census blocks are the
+smallest geographical area that the Census measures. We will only use
+the 1990 Census blocks because all IVs in this study will be from when
+target participants were 0 - 54 months old.
+
+The Census variables relevant here are the following:
+
+- Percent of people living under the poverty line
+- Median household income
+- Gini coefficient, a metric for measuring income inequality
+- Percent of unemployed individuals over 16 in the workforce
+- Percent of occupied houses that are occupied by renters
+
+We plan to compute mean and standard deviation scores for each Census
+measure over the addresses each participant lived at. For an overall
+neighborhood harshness score, we will standardize and avergae together
+each mean score. For an overall neighborhood change score, we will
+standardize and average together all standard deviation scores.
+
+**Summary**
+
+In short, we plan to analyze the following variables:
+
+*Harshness*
+
+- Census based neighborhood harhsness (from census variable averages)
+- Average income-to-needs
+
+*Unpredictability*
+
+- Classic composite from Belsky et al. ([2012](#ref-belsky2012))
+- Census-based neighborhood change (from standard deviations)
+- Standard deviation of income-to-needs (this is a deviation from Li et
+  al. ([2018](#ref-li2018)))
+
+**Possible follow-ups**
+
+We might break apart composites. For exampe, we may analyze Census
+variables separately or items from the classic unpredictaiblity measure.
+If we do so, these analyses will be reported in a supplement, only. We
+may mention them in the main text, but they will not be interpreted to
+the same degree as the main analyses.
+
+**Other possible (exploratory) variables:**
 
 - Maternal depression
 - Variability in maternal depression
-- Variability in income-to-needs
-- Neighborhood income (1990 US Census)
 
 #### Dependent Variables
 
@@ -274,8 +343,9 @@ Woodcock Johnson scores over each assessment and used income-to-needs as
 a covariate.
 
 MN has intimate knowledge of this dataset. MN has published two papers
-using the dataset, although MN has not analyzed or used the variables in
-the current preregistration.
+using the dataset. MN also has one manuscript in press and one under
+review using the data. MN has not analyzed or used the subtest variables
+in the current preregistration.
 
 GI has intimate knowledge of this dataset. GI is a co-principle
 investigator on the project and has published many papers using the
@@ -377,18 +447,18 @@ example_data2 |>
   knitr::kable()
 ```
 
-|  id | adversity | wj_sub_test   |    score |
-|----:|----------:|:--------------|---------:|
-|   1 | 0.1826707 | wj_picvo_mean | 108.7500 |
-|   1 | 0.1826707 | wj_vrba_mean  | 139.5000 |
-|   1 | 0.1826707 | wj_pscmp_mean | 133.0000 |
-|   1 | 0.1826707 | wj_appld_mean | 130.5000 |
-|   1 | 0.1826707 | wj_memse_mean | 115.0000 |
-|   1 | 0.1826707 | wj_incom_mean | 128.0000 |
-|   1 | 0.1826707 | wj_memna_mean | 117.0000 |
-|   1 | 0.1826707 | wj_lwid_mean  | 138.6667 |
-|   1 | 0.1826707 | wj_wrdat_mean | 134.0000 |
-|   1 | 0.1826707 | wj_calc_mean  | 143.0000 |
+|  id |  adversity | wj_sub_test   |    score |
+|----:|-----------:|:--------------|---------:|
+|   1 | -0.0599079 | wj_picvo_mean | 108.7500 |
+|   1 | -0.0599079 | wj_vrba_mean  | 139.5000 |
+|   1 | -0.0599079 | wj_pscmp_mean | 133.0000 |
+|   1 | -0.0599079 | wj_appld_mean | 130.5000 |
+|   1 | -0.0599079 | wj_memse_mean | 115.0000 |
+|   1 | -0.0599079 | wj_incom_mean | 128.0000 |
+|   1 | -0.0599079 | wj_memna_mean | 117.0000 |
+|   1 | -0.0599079 | wj_lwid_mean  | 138.6667 |
+|   1 | -0.0599079 | wj_wrdat_mean | 134.0000 |
+|   1 | -0.0599079 | wj_calc_mean  | 143.0000 |
 
 3.  Next, we apply a sum coded contrast to the subtest index column.
     This means the intercept in the mixed effect model reflects the
@@ -467,26 +537,26 @@ subtest_model |>
 
 | Parameter          | Coefficient |    SE |     p |
 |:-------------------|------------:|------:|------:|
-| (Intercept)        |     105.339 | 0.322 | 0.000 |
-| appld              |       2.565 | 0.259 | 0.000 |
-| calc               |       6.540 | 0.268 | 0.000 |
+| (Intercept)        |     105.340 | 0.321 | 0.000 |
+| appld              |       2.564 | 0.259 | 0.000 |
+| calc               |       6.539 | 0.268 | 0.000 |
 | incom              |      -9.196 | 0.266 | 0.000 |
 | lwid               |       1.598 | 0.259 | 0.000 |
-| memna              |      -0.229 | 0.264 | 0.387 |
-| memse              |      -8.312 | 0.260 | 0.000 |
-| picvo              |      -2.697 | 0.259 | 0.000 |
-| pscmp              |       3.069 | 0.267 | 0.000 |
-| vrba               |       5.444 | 0.269 | 0.000 |
-| adversity          |       0.028 | 0.322 | 0.932 |
-| appld \* adversity |       0.054 | 0.259 | 0.836 |
-| calc \* adversity  |       0.191 | 0.268 | 0.476 |
-| incom \* adversity |       0.412 | 0.268 | 0.124 |
-| lwid \* adversity  |      -0.179 | 0.260 | 0.490 |
-| memna \* adversity |      -0.432 | 0.266 | 0.105 |
-| memse \* adversity |      -0.404 | 0.262 | 0.123 |
-| picvo \* adversity |       0.287 | 0.259 | 0.268 |
-| pscmp \* adversity |       0.065 | 0.267 | 0.807 |
-| vrba \* adversity  |       0.221 | 0.270 | 0.412 |
+| memna              |      -0.223 | 0.264 | 0.398 |
+| memse              |      -8.315 | 0.260 | 0.000 |
+| picvo              |      -2.699 | 0.259 | 0.000 |
+| pscmp              |       3.068 | 0.267 | 0.000 |
+| vrba               |       5.443 | 0.269 | 0.000 |
+| adversity          |      -0.241 | 0.322 | 0.454 |
+| appld \* adversity |       0.109 | 0.259 | 0.673 |
+| calc \* adversity  |       0.279 | 0.270 | 0.302 |
+| incom \* adversity |      -0.410 | 0.267 | 0.125 |
+| lwid \* adversity  |       0.107 | 0.259 | 0.681 |
+| memna \* adversity |      -0.501 | 0.265 | 0.059 |
+| memse \* adversity |       0.545 | 0.261 | 0.037 |
+| picvo \* adversity |       0.027 | 0.259 | 0.916 |
+| pscmp \* adversity |      -0.035 | 0.269 | 0.898 |
+| vrba \* adversity  |       0.204 | 0.273 | 0.454 |
 
 </div>
 
@@ -513,20 +583,20 @@ subtest_model |>
 | incom              |          -0.620 | -0.655 |  -0.585 |
 | lwid               |           0.108 |  0.074 |   0.142 |
 | memna              |          -0.015 | -0.050 |   0.020 |
-| memse              |          -0.560 | -0.595 |  -0.526 |
+| memse              |          -0.561 | -0.595 |  -0.526 |
 | picvo              |          -0.182 | -0.216 |  -0.148 |
 | pscmp              |           0.207 |  0.172 |   0.242 |
-| vrba               |           0.367 |  0.331 |   0.403 |
-| adversity          |           0.002 | -0.041 |   0.044 |
-| appld \* adversity |           0.004 | -0.031 |   0.038 |
-| calc \* adversity  |           0.013 | -0.022 |   0.048 |
-| incom \* adversity |           0.028 | -0.008 |   0.063 |
-| lwid \* adversity  |          -0.012 | -0.046 |   0.022 |
-| memna \* adversity |          -0.029 | -0.064 |   0.006 |
-| memse \* adversity |          -0.027 | -0.062 |   0.007 |
-| picvo \* adversity |           0.019 | -0.015 |   0.053 |
-| pscmp \* adversity |           0.004 | -0.031 |   0.039 |
-| vrba \* adversity  |           0.015 | -0.021 |   0.050 |
+| vrba               |           0.367 |  0.332 |   0.403 |
+| adversity          |          -0.016 | -0.059 |   0.026 |
+| appld \* adversity |           0.007 | -0.027 |   0.041 |
+| calc \* adversity  |           0.019 | -0.017 |   0.054 |
+| incom \* adversity |          -0.028 | -0.063 |   0.008 |
+| lwid \* adversity  |           0.007 | -0.027 |   0.041 |
+| memna \* adversity |          -0.034 | -0.069 |   0.001 |
+| memse \* adversity |           0.037 |  0.002 |   0.071 |
+| picvo \* adversity |           0.002 | -0.032 |   0.036 |
+| pscmp \* adversity |          -0.002 | -0.038 |   0.033 |
+| vrba \* adversity  |           0.014 | -0.022 |   0.050 |
 
 ### Q20: Predicted effect sizes
 
@@ -639,6 +709,15 @@ of secondary data analysis: A template and tutorial. *Meta-Psychology*,
 
 </div>
 
+<div id="ref-belsky2012" class="csl-entry">
+
+Belsky, J., Schlomer, G. L., & Ellis, B. J. (2012). Beyond cumulative
+risk: Distinguishing harshness and unpredictability as determinants of
+parenting and early life history strategy. *Developmental Psychology*,
+*48*(3), 662–673. <https://doi.org/b7r3m4>
+
+</div>
+
 <div id="ref-bleil2021" class="csl-entry">
 
 Bleil, M. E., Spieker, S. J., Gregorich, S. E., Thomas, A. S., Hiatt, R.
@@ -653,7 +732,7 @@ health. *Journal of Pediatric Psychology*, *46*(1), 36–48.
 Burt, K. B., & Roisman, G. I. (2010). Competence and psychopathology:
 Cascade effects in the NICHD Study of Early Child Care and Youth
 Development. *Development and Psychopathology*, *22*(3), 557–567.
-<https://doi.org/10.1017/S0954579410000271>
+<https://doi.org/bc45zc>
 
 </div>
 
@@ -690,6 +769,16 @@ Lakens, D., Scheel, A. M., & Isager, P. M. (2018). Equivalence Testing
 for Psychological Research: A Tutorial. *Advances in Methods and
 Practices in Psychological Science*, *1*(2), 259–269.
 <https://doi.org/10.1177/2515245918770963>
+
+</div>
+
+<div id="ref-li2018" class="csl-entry">
+
+Li, Z., Liu, S., Hartman, S., & Belsky, J. (2018). Interactive Effects
+of Early-Life Income Harshness and Unpredictability on Children’s
+Socioemotional and Academic Functioning in Kindergarten and Adolescence.
+*Developmental Psychology*, *54*(11), 2101–2112.
+<https://doi.org/gfmd6w>
 
 </div>
 

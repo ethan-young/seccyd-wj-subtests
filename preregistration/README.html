@@ -376,7 +376,7 @@ display: none;
 
 <div id="preregistration" class="section level1">
 <h1>Preregistration</h1>
-<p><em>Last updated on Tuesday, February 28, 2023 at 04:30 PM</em></p>
+<p><em>Last updated on Friday, March 10, 2023 at 06:34 PM</em></p>
 <div id="overview" class="section level2">
 <h2>Overview</h2>
 <p>This preregistration document is based on (<a href="#ref-akker2021">Akker et al., 2021</a>) for secondary data
@@ -407,7 +407,7 @@ adversity-exposed people in the SECCYD”</p>
 <ul>
 <li><a href="https://www.ethan-young.com/">Ethan S.
 Young</a><sup>1</sup> <a href="https://orcid.org/0000-0002-8232-0184"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAALVBMVEUAAACmzjmmzjmmzjmmzjmmzjn////0+ebj8MHe7bXT55y82mus0UWmzjmSwCmNJ4LqAAAABnRSTlMAIGC/z+8mlFLTAAAAaElEQVR42k2OsQmAMBRET3CAFG5gbWMv6CBpRT44knM4hU3ESl6bLs5gEUW7x3GPO0k1tJJUAQxS4S3B4VRiCejVcCU2gjosjtO2CyymdSHDOT/A/Eu63NnVZCuoBIBehQc43Df63rgBoFJNFnlCBV4AAAAASUVORK5CYII=" alt="ORCID logo" width="16" height="16" /></a></li>
-<li>Stefan Vermeent<sup>1, 2</sup><a href="https://orcid.org/0000-0002-9595-5373"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAALVBMVEUAAACmzjmmzjmmzjmmzjmmzjn////0+ebj8MHe7bXT55y82mus0UWmzjmSwCmNJ4LqAAAABnRSTlMAIGC/z+8mlFLTAAAAaElEQVR42k2OsQmAMBRET3CAFG5gbWMv6CBpRT44knM4hU3ESl6bLs5gEUW7x3GPO0k1tJJUAQxS4S3B4VRiCejVcCU2gjosjtO2CyymdSHDOT/A/Eu63NnVZCuoBIBehQc43Df63rgBoFJNFnlCBV4AAAAASUVORK5CYII=" alt="ORCID logo" width="16" height="16" /></a></li>
+<li><a href="Stfan-vermeent.nl">Stefan Vermeent</a><sup>1, 2</sup><a href="https://orcid.org/0000-0002-9595-5373"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAALVBMVEUAAACmzjmmzjmmzjmmzjmmzjn////0+ebj8MHe7bXT55y82mus0UWmzjmSwCmNJ4LqAAAABnRSTlMAIGC/z+8mlFLTAAAAaElEQVR42k2OsQmAMBRET3CAFG5gbWMv6CBpRT44knM4hU3ESl6bLs5gEUW7x3GPO0k1tJJUAQxS4S3B4VRiCejVcCU2gjosjtO2CyymdSHDOT/A/Eu63NnVZCuoBIBehQc43Df63rgBoFJNFnlCBV4AAAAASUVORK5CYII=" alt="ORCID logo" width="16" height="16" /></a></li>
 <li><a href="http://www.willem.maartenfrankenhuis.nl/">Willem E.
 Frankenhuis</a><sup>1, 2</sup></li>
 <li><a href="https://icd.umn.edu/people/nivis004/">Marissa
@@ -509,6 +509,7 @@ access under “Access Restricted Data” tab.</p>
 <li>Ethan Young (lead author and data analyst)
 <ul>
 <li>Accessed data for the dependent variables on February 3rd, 2022</li>
+<li>Accessed data for the independent variables on March 2nd, 2023</li>
 </ul></li>
 <li>Stefan Vermeent will not access the data</li>
 <li>Willem Frankenhuis will not access the data</li>
@@ -566,26 +567,81 @@ pre-processing/analysis, codebooks will be available <a href="../codebooks/">her
 </div>
 <div id="independent-variables" class="section level4">
 <h4>Independent Variables</h4>
-<p>Unpredictability</p>
+<p>We are interested in two constructs: environmental harshness and
+unpredictability. However, in the literature and in these data
+specifically, there have been different approaches to measuring them.
+There are also other, unexplored ways to capture them. Given the
+exploratory nature of our approach, we plan to compute both and explore
+their effects.</p>
+<p><strong>Unpredictability, Past Approaches</strong></p>
+<ol style="list-style-type: decimal">
+<li><em>Environmental Unpredictability</em></li>
+</ol>
+<p>This measure is based on Belsky et al. (<a href="#ref-belsky2012">2012</a>) includes three variables that are
+standardized and averaged together over the relevant time period:</p>
 <ul>
-<li>Residential changes</li>
-<li>Parental transitions</li>
-<li>Job changes</li>
+<li>Residential changes, or changes in address.</li>
+<li>Paternal transitions, or changes in father figures moving in or out
+of the home.</li>
+<li>Job changes, or changes in employment status for mothers and
+partners.</li>
 </ul>
-<p>Harshness</p>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Income Variation</strong></li>
+</ol>
+<p>This measure is based on Li et al. (<a href="#ref-li2018">2018</a>)
+computes the residual variance in income-to-needs ratios after a linear
+trend is fit to each participant.</p>
+<p><strong>Harshness, Past Approaches</strong></p>
+<p>Studies based on both the Belsky et al. (<a href="#ref-belsky2012">2012</a>) and Li et al. (<a href="#ref-li2018">2018</a>) approaches have used income-to-needs ratio.
+In most cases, an average score over the relevant period is the measure.
+However, some use an intercept after fitting a linear model to each
+person’s income data.</p>
+<p><strong>The Current approach</strong></p>
+<p>In addition to these classic measures, we plan to leverage data from
+the Census about the broader ecological context. Addresses were tracked
+for each participant over time. These addresses were geocoded and linked
+to the 1990 and 2000 decinniel Census blocks. Census blocks are the
+smallest geographical area that the Census measures. We will only use
+the 1990 Census blocks because all IVs in this study will be from when
+target participants were 0 - 54 months old.</p>
+<p>The Census variables relevant here are the following:</p>
 <ul>
-<li>Income-to-needs ratio
-<ul>
-<li>Total family income relative to the federal poverty line adjusted
-for family size</li>
-</ul></li>
+<li>Percent of people living under the poverty line</li>
+<li>Median household income</li>
+<li>Gini coefficient, a metric for measuring income inequality</li>
+<li>Percent of unemployed individuals over 16 in the workforce</li>
+<li>Percent of occupied houses that are occupied by renters</li>
 </ul>
-<p>Exploratory variables:</p>
+<p>We plan to compute mean and standard deviation scores for each Census
+measure over the addresses each participant lived at. For an overall
+neighborhood harshness score, we will standardize and combine each mean
+score. For an overall neighborhood change score, we will standardize and
+average all standard deviation scores.</p>
+<p><strong>Summary</strong></p>
+<p>In short, we plan to analyze the following variables:</p>
+<p><em>Harshness</em></p>
+<ul>
+<li>Census based neighborhood harhsness</li>
+<li>Average income-to-needs</li>
+</ul>
+<p><em>Unpredictability</em></p>
+<ul>
+<li>Classic composite from Belsky et al. (<a href="#ref-belsky2012">2012</a>)</li>
+<li>Census-based neighborhood change</li>
+<li>Standard deviation of income-to-needs (this is a deviation from Li
+et al. (<a href="#ref-li2018">2018</a>))</li>
+</ul>
+<p><strong>Possible follow-ups</strong></p>
+<p>We might break apart composites. For exampe, we may analyze Census
+variables separately or items form the classic unpredictaiblity measure.
+If we do so, these analyses will be reported in a supplement, only. We
+may mention them in the main text, but they will not be interpreted to
+the same degree as the main analyses.</p>
+<p><strong>Other possible (exploratory) variables:</strong></p>
 <ul>
 <li>Maternal depression</li>
 <li>Variability in maternal depression</li>
-<li>Variability in income-to-needs</li>
-<li>Neighborhood income (1990 US Census)</li>
 </ul>
 </div>
 <div id="dependent-variables" class="section level4">
@@ -647,7 +703,8 @@ EY, JS, and GI submitted a paper to <em>Child Development</em>
 paper used aggregated Woodcock Johnson scores over each assessment and
 used income-to-needs as a covariate.</p>
 <p>MN has intimate knowledge of this dataset. MN has published two
-papers using the dataset, although MN has not analyzed or used the
+papers using the dataset. MN also has one manuscript in press and one
+under review using the data. MN has not analyzed or used the subtest
 variables in the current preregistration.</p>
 <p>GI has intimate knowledge of this dataset. GI is a co-principle
 investigator on the project and has published many papers using the
@@ -753,61 +810,61 @@ example_data2 |&gt;
 <tbody>
 <tr class="odd">
 <td align="right">1</td>
-<td align="right">0.7774425</td>
+<td align="right">-0.8668011</td>
 <td align="left">wj_picvo_mean</td>
 <td align="right">108.7500</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
-<td align="right">0.7774425</td>
+<td align="right">-0.8668011</td>
 <td align="left">wj_vrba_mean</td>
 <td align="right">139.5000</td>
 </tr>
 <tr class="odd">
 <td align="right">1</td>
-<td align="right">0.7774425</td>
+<td align="right">-0.8668011</td>
 <td align="left">wj_pscmp_mean</td>
 <td align="right">133.0000</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
-<td align="right">0.7774425</td>
+<td align="right">-0.8668011</td>
 <td align="left">wj_appld_mean</td>
 <td align="right">130.5000</td>
 </tr>
 <tr class="odd">
 <td align="right">1</td>
-<td align="right">0.7774425</td>
+<td align="right">-0.8668011</td>
 <td align="left">wj_memse_mean</td>
 <td align="right">115.0000</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
-<td align="right">0.7774425</td>
+<td align="right">-0.8668011</td>
 <td align="left">wj_incom_mean</td>
 <td align="right">128.0000</td>
 </tr>
 <tr class="odd">
 <td align="right">1</td>
-<td align="right">0.7774425</td>
+<td align="right">-0.8668011</td>
 <td align="left">wj_memna_mean</td>
 <td align="right">117.0000</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
-<td align="right">0.7774425</td>
+<td align="right">-0.8668011</td>
 <td align="left">wj_lwid_mean</td>
 <td align="right">138.6667</td>
 </tr>
 <tr class="odd">
 <td align="right">1</td>
-<td align="right">0.7774425</td>
+<td align="right">-0.8668011</td>
 <td align="left">wj_wrdat_mean</td>
 <td align="right">134.0000</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
-<td align="right">0.7774425</td>
+<td align="right">-0.8668011</td>
 <td align="left">wj_calc_mean</td>
 <td align="right">143.0000</td>
 </tr>
@@ -1029,25 +1086,25 @@ subtest_model |&gt;
 <tbody>
 <tr class="odd">
 <td align="left">(Intercept)</td>
-<td align="right">105.339</td>
+<td align="right">105.338</td>
 <td align="right">0.321</td>
 <td align="right">0.000</td>
 </tr>
 <tr class="even">
 <td align="left">appld</td>
-<td align="right">2.565</td>
+<td align="right">2.566</td>
 <td align="right">0.259</td>
 <td align="right">0.000</td>
 </tr>
 <tr class="odd">
 <td align="left">calc</td>
-<td align="right">6.535</td>
+<td align="right">6.536</td>
 <td align="right">0.268</td>
 <td align="right">0.000</td>
 </tr>
 <tr class="even">
 <td align="left">incom</td>
-<td align="right">-9.193</td>
+<td align="right">-9.195</td>
 <td align="right">0.266</td>
 <td align="right">0.000</td>
 </tr>
@@ -1059,19 +1116,19 @@ subtest_model |&gt;
 </tr>
 <tr class="even">
 <td align="left">memna</td>
-<td align="right">-0.227</td>
+<td align="right">-0.228</td>
 <td align="right">0.264</td>
-<td align="right">0.390</td>
+<td align="right">0.388</td>
 </tr>
 <tr class="odd">
 <td align="left">memse</td>
-<td align="right">-8.312</td>
+<td align="right">-8.311</td>
 <td align="right">0.260</td>
 <td align="right">0.000</td>
 </tr>
 <tr class="even">
 <td align="left">picvo</td>
-<td align="right">-2.698</td>
+<td align="right">-2.697</td>
 <td align="right">0.259</td>
 <td align="right">0.000</td>
 </tr>
@@ -1089,63 +1146,63 @@ subtest_model |&gt;
 </tr>
 <tr class="odd">
 <td align="left">adversity</td>
-<td align="right">-0.340</td>
-<td align="right">0.321</td>
-<td align="right">0.290</td>
+<td align="right">-0.270</td>
+<td align="right">0.322</td>
+<td align="right">0.401</td>
 </tr>
 <tr class="even">
 <td align="left">appld * adversity</td>
-<td align="right">-0.317</td>
+<td align="right">0.048</td>
 <td align="right">0.259</td>
-<td align="right">0.220</td>
+<td align="right">0.851</td>
 </tr>
 <tr class="odd">
 <td align="left">calc * adversity</td>
-<td align="right">-0.287</td>
-<td align="right">0.265</td>
-<td align="right">0.280</td>
+<td align="right">0.240</td>
+<td align="right">0.267</td>
+<td align="right">0.369</td>
 </tr>
 <tr class="even">
 <td align="left">incom * adversity</td>
-<td align="right">-0.505</td>
+<td align="right">-0.040</td>
 <td align="right">0.266</td>
-<td align="right">0.058</td>
+<td align="right">0.880</td>
 </tr>
 <tr class="odd">
 <td align="left">lwid * adversity</td>
-<td align="right">0.038</td>
+<td align="right">-0.019</td>
 <td align="right">0.259</td>
-<td align="right">0.884</td>
+<td align="right">0.941</td>
 </tr>
 <tr class="even">
 <td align="left">memna * adversity</td>
-<td align="right">0.316</td>
-<td align="right">0.262</td>
-<td align="right">0.228</td>
+<td align="right">0.171</td>
+<td align="right">0.265</td>
+<td align="right">0.519</td>
 </tr>
 <tr class="odd">
 <td align="left">memse * adversity</td>
-<td align="right">0.221</td>
+<td align="right">-0.161</td>
 <td align="right">0.260</td>
-<td align="right">0.395</td>
+<td align="right">0.536</td>
 </tr>
 <tr class="even">
 <td align="left">picvo * adversity</td>
-<td align="right">0.209</td>
+<td align="right">-0.067</td>
 <td align="right">0.259</td>
-<td align="right">0.420</td>
+<td align="right">0.795</td>
 </tr>
 <tr class="odd">
 <td align="left">pscmp * adversity</td>
-<td align="right">0.101</td>
-<td align="right">0.264</td>
-<td align="right">0.702</td>
+<td align="right">-0.069</td>
+<td align="right">0.267</td>
+<td align="right">0.797</td>
 </tr>
 <tr class="even">
 <td align="left">vrba * adversity</td>
-<td align="right">0.044</td>
-<td align="right">0.265</td>
-<td align="right">0.868</td>
+<td align="right">-0.152</td>
+<td align="right">0.269</td>
+<td align="right">0.572</td>
 </tr>
 </tbody>
 </table>
@@ -1233,78 +1290,79 @@ subtest_model |&gt;
 </tr>
 <tr class="odd">
 <td align="left">adversity</td>
-<td align="right">-0.023</td>
-<td align="right">-0.066</td>
-<td align="right">0.020</td>
+<td align="right">-0.018</td>
+<td align="right">-0.061</td>
+<td align="right">0.024</td>
 </tr>
 <tr class="even">
 <td align="left">appld * adversity</td>
-<td align="right">-0.022</td>
-<td align="right">-0.056</td>
-<td align="right">0.013</td>
+<td align="right">0.003</td>
+<td align="right">-0.031</td>
+<td align="right">0.037</td>
 </tr>
 <tr class="odd">
 <td align="left">calc * adversity</td>
-<td align="right">-0.019</td>
-<td align="right">-0.055</td>
 <td align="right">0.016</td>
+<td align="right">-0.019</td>
+<td align="right">0.052</td>
 </tr>
 <tr class="even">
 <td align="left">incom * adversity</td>
-<td align="right">-0.034</td>
-<td align="right">-0.070</td>
-<td align="right">0.001</td>
+<td align="right">-0.003</td>
+<td align="right">-0.038</td>
+<td align="right">0.032</td>
 </tr>
 <tr class="odd">
 <td align="left">lwid * adversity</td>
-<td align="right">0.003</td>
-<td align="right">-0.032</td>
-<td align="right">0.037</td>
+<td align="right">-0.001</td>
+<td align="right">-0.036</td>
+<td align="right">0.033</td>
 </tr>
 <tr class="even">
 <td align="left">memna * adversity</td>
-<td align="right">0.021</td>
-<td align="right">-0.013</td>
-<td align="right">0.056</td>
+<td align="right">0.012</td>
+<td align="right">-0.023</td>
+<td align="right">0.046</td>
 </tr>
 <tr class="odd">
 <td align="left">memse * adversity</td>
-<td align="right">0.015</td>
-<td align="right">-0.020</td>
-<td align="right">0.049</td>
+<td align="right">-0.011</td>
+<td align="right">-0.045</td>
+<td align="right">0.024</td>
 </tr>
 <tr class="even">
 <td align="left">picvo * adversity</td>
-<td align="right">0.014</td>
-<td align="right">-0.020</td>
-<td align="right">0.048</td>
+<td align="right">-0.005</td>
+<td align="right">-0.039</td>
+<td align="right">0.030</td>
 </tr>
 <tr class="odd">
 <td align="left">pscmp * adversity</td>
-<td align="right">0.007</td>
-<td align="right">-0.028</td>
-<td align="right">0.042</td>
+<td align="right">-0.005</td>
+<td align="right">-0.040</td>
+<td align="right">0.031</td>
 </tr>
 <tr class="even">
 <td align="left">vrba * adversity</td>
-<td align="right">0.003</td>
-<td align="right">-0.032</td>
-<td align="right">0.038</td>
+<td align="right">-0.010</td>
+<td align="right">-0.046</td>
+<td align="right">0.025</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div id="q20-predicted-effect-sizes" class="section level3">
 <h3>Q20: Predicted effect sizes</h3>
-<p>We do not have specific predictions for effect sizes but we deem a
+<p>We do not have specific predictions for effect sizes but we deem
 standardized regression coefficients for interaction effects = .10 (or
 higher) and -.10 (or lower) meaningful. These effects would indicate
 that an effect of adversity on a subtest score is meaningfully more
-negative or more positive. Effects between -.10 and .10 are not of
-interest for determining differences between subtests and the overall
-average. However, we are interested in determining if such effects are
-consistent with the idea that they are truly 0. For this scenario, we
-will use equivalence testing with -.10 and .10 as bounds.</p>
+negative or more positive.</p>
+<p>Effects between -.10 and .10 are not of interest for determining
+differences between subtests and the overall average. However, we are
+interested in determining if simple effects falling between -.10 and .10
+are consitent with an effect of 0. For this scenario, we will use
+equivalence testing with -.10 and .10 as bounds.</p>
 </div>
 <div id="q21-statistical-power" class="section level3">
 <h3>Q21: Statistical Power</h3>
@@ -1339,9 +1397,9 @@ determining if the effect <em>is</em> zero by using equivalence testing
 (<a href="#ref-lakens2018">Lakens et al., 2018</a>).</p>
 <p>For simple effects (effect size 2), we will use simple slopes
 analysis. These tests determine whether the simple effect is different
-from zero. For these effects, we are interested if they are indeed 0,
-possibly using equivalence testing. We are also interested positive
-slopes of any size (that are not equivalent to zero).</p>
+from zero. For these effects, we are interested if they are indeed 0
+using equivalence testing. We are also interested positive slopes of any
+size (that are not equivalent to zero).</p>
 <p>For negative slopes, we are interested in effects that are different
 from the overall main effect of adversity. This is where the interaction
 term is important. The interaction effect tests whether the effect of
@@ -1352,7 +1410,7 @@ effect.</p>
 <p>Based on our minimum effect size of interest criterion and our power
 analysis, we are interested in interaction effects where <span class="math inline">\(\beta\)</span> = -.10 (or lower) or <span class="math inline">\(\beta\)</span> = .10 (or higher). We will use
 these bounds to inform our equivalence tests, where effects are null, to
-determine if they are consistent with an effect of 0.</p>
+determine if they are consistent with an effect = 0.</p>
 </div>
 <div id="q23-assumption-violations" class="section level3">
 <h3>Q23: Assumption Violations</h3>
@@ -1397,6 +1455,12 @@ Valentine, K. D., Veer, A. van ’t, &amp; Bakker, M. (2021).
 Preregistration of secondary data analysis: A template and tutorial.
 <em>Meta-Psychology</em>, <em>5</em>. <a href="https://doi.org/10.15626/MP.2020.2625" class="uri">https://doi.org/10.15626/MP.2020.2625</a>
 </div>
+<div id="ref-belsky2012" class="csl-entry">
+Belsky, J., Schlomer, G. L., &amp; Ellis, B. J. (2012). Beyond
+cumulative risk: Distinguishing harshness and unpredictability as
+determinants of parenting and early life history strategy.
+<em>Developmental Psychology</em>, <em>48</em>(3), 662–673. <a href="https://doi.org/b7r3m4" class="uri">https://doi.org/b7r3m4</a>
+</div>
 <div id="ref-bleil2021" class="csl-entry">
 Bleil, M. E., Spieker, S. J., Gregorich, S. E., Thomas, A. S., Hiatt, R.
 A., Appelhans, B. M., Roisman, G. I., &amp; Booth-LaForce, C. (2021).
@@ -1408,7 +1472,7 @@ cardiometabolic health. <em>Journal of Pediatric Psychology</em>,
 Burt, K. B., &amp; Roisman, G. I. (2010). Competence and
 psychopathology: Cascade effects in the NICHD Study of Early Child Care
 and Youth Development. <em>Development and Psychopathology</em>,
-<em>22</em>(3), 557–567. <a href="https://doi.org/10.1017/S0954579410000271" class="uri">https://doi.org/10.1017/S0954579410000271</a>
+<em>22</em>(3), 557–567. <a href="https://doi.org/bc45zc" class="uri">https://doi.org/bc45zc</a>
 </div>
 <div id="ref-cottrell2015" class="csl-entry">
 Cottrell, J. M., Newman, D. A., &amp; Roisman, G. I. (2015). Explaining
@@ -1432,6 +1496,13 @@ adolescent and young adult development: A two-sample study.
 Lakens, D., Scheel, A. M., &amp; Isager, P. M. (2018). Equivalence
 Testing for Psychological Research: A Tutorial. <em>Advances in Methods
 and Practices in Psychological Science</em>, <em>1</em>(2), 259–269. <a href="https://doi.org/10.1177/2515245918770963" class="uri">https://doi.org/10.1177/2515245918770963</a>
+</div>
+<div id="ref-li2018" class="csl-entry">
+Li, Z., Liu, S., Hartman, S., &amp; Belsky, J. (2018). Interactive
+Effects of Early-Life Income Harshness and Unpredictability on
+Children’s Socioemotional and Academic Functioning in Kindergarten and
+Adolescence. <em>Developmental Psychology</em>, <em>54</em>(11),
+2101–2112. <a href="https://doi.org/gfmd6w" class="uri">https://doi.org/gfmd6w</a>
 </div>
 <div id="ref-monti2014" class="csl-entry">
 Monti, J. D., Pomerantz, E. M., &amp; Roisman, G. I. (2014). Can

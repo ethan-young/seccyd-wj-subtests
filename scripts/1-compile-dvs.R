@@ -89,7 +89,7 @@ save(
   seccyd_dvs_wj_list,
   seccyd_dvs_wj_data1, 
   seccyd_dvs_wj_data2, 
-  file = "data/seccyd_dvs_wj.Rdata"
+  file = "data/seccyd-dvs-wj.Rdata"
 )
 
 ## Just the DVs wrangled above

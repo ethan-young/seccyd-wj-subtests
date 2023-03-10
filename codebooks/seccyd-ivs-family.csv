@@ -1,0 +1,12 @@
+Variable,Label,Values
+id,SITE/LOC/SUBJECT ID,
+assessment,assessment when information was collected,
+madep,Mother depression score from CESD,
+hlthm,Health of mother,
+hhtot,H.O.M.E. total score,
+parex,Parenting stress,
+lfstr,Total life stress,
+neger,Sum of negative event ratings,
+negle,Number of negative life events ,
+poser,Sum of positive event ratings,
+posle,Number of positive life events ,
