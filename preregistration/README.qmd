@@ -59,9 +59,9 @@ This preregistration document is based on [@akker2021] for secondary data analys
 
 <i>*Note that some research questions/hypotheses use causal language. Although we are most interested in these causal questions, the data are observational. We retain the causal language here but will use non-causal language when relating any statistical test to these questions/hypotheses.</i>
 
-**R1:** How does adversity relate to overall performance compared to subtest performance on large cognitive test batteries? In other words, how does adversity relate to broad testing scores compared with more narrow subtest scores?
+**R1:** How does adversity relate to overall performance compared to subtest performance on large cognitive test batteries? In other words, how does adversity relate to broad testing scores compared with more narrow, specific subtest scores?
 
-**R2:** How do impairment and enhancements in cognitive performance manifest across many cognitive domains?
+**R2:** How do impairments and enhancements in cognitive performance manifest across many cognitive domains?
 
 **R3:** Do different adversity dimensions have similar or different patterns of effects across broad and narrow cognitive performance measures?
 
@@ -71,9 +71,9 @@ This preregistration document is based on [@akker2021] for secondary data analys
 
 ### Q4: Hypotheses
 
-**H1:** We expect harshness and/or unpredictability to be associated with a lower overall within-person Woodcock Johnson (WJ) cognitive ability score (sum coded within-person intercept) .
+**H1:** We expect harshness and/or unpredictability to be associated with lower overall within-person Woodcock Johnson (WJ) cognitive ability score (sum coded within-person intercept).
 
-**H2:** Compared with overall WJ scores, the effect of harshness and/or unpredictability will vary; some sub-tests will show lowered performance whereas others remain 'intact'. 
+**H2:** Compared with overall WJ scores, the effect of harshness and/or unpredictability will vary; some sub-tests will show lowered performance, whereas others will remain ‘intact’ (i.e., should little if any change).
 
 **H3:** If any sub-tests remain intact (or enhanced), they will be tests that depend less on formal crystallized knowledge and reading ability (i.e., short term memory, auditory processing, fluid intelligence).
 
@@ -81,7 +81,7 @@ This preregistration document is based on [@akker2021] for secondary data analys
 
 ### Q5: Dataset
 
-We will use data from the National Institute of Child Health and Development (NICHD) Study of Early Childcare and Youth Development [[SECCYD](https://www.icpsr.umich.edu/web/ICPSR/series/00233), @nichdearlychildcareresearchnetwork2005]. The SECCYD was conducted in four waves across multiple sites and designed to be nationally representative, prospective, longitudinal study. The broad research goals of the study was to  investigate the relation between childcare and development from infancy through adolescence and into early adulthood. Families were recruited for the NICHD SECCYD in 1991. A total of 1364 families met all the prescreening criteria. Below are detailed descriptions of each study phase:
+We will use data from the National Institute of Child Health and Development (NICHD) Study of Early Childcare and Youth Development [[SECCYD](https://www.icpsr.umich.edu/web/ICPSR/series/00233); @nichdearlychildcareresearchnetwork2005]. The SECCYD is a prospective, longitudinal study conducted in four waves across multiple sites. The broad research goals of the study was to  investigate the relation between childcare and development from infancy through adolescence and into early adulthood. Families were recruited for the NICHD SECCYD in 1991. A total of 1364 families met all the prescreening criteria. Below are detailed descriptions of each study phase:
 
 - [Phase 1 (1991-1994)](https://www.icpsr.umich.edu/web/ICPSR/studies/21940)
 - [Phase 2 (1995-1999)](https://www.icpsr.umich.edu/web/ICPSR/studies/21941)
@@ -90,7 +90,7 @@ We will use data from the National Institute of Child Health and Development (NI
 
 ### Q6: Public Availability
 
-Data are publicly available. However, users must make an account with ISCPR (see [here](https://www.icpsr.umich.edu/rpxlogin)) anmd must sign a data use agreement. Users must also provide details about how data will be used (e.g., project description) and information (e.g., IRB approval). For each study phase, see more information about data access under "Access Restricted Data" tab.
+Data are publicly available through age 15 years. However, users must make an account with ISCPR (see [here](https://www.icpsr.umich.edu/rpxlogin)) and must sign a data use agreement. Users must also provide details about how data will be used (e.g., project description) and information (e.g., IRB approval). For each study phase, see more information about data access under "Access Restricted Data" tab.
 
 ### Q7: Data Access
 
@@ -138,7 +138,7 @@ Once variables for this study are selected, accessed, and ready for pre-processi
 #### Covariates
 
 - Gender
-- Ethnicity
+- Race/Ethnicity (White/non-Hispanic vesrs other)
 - Maternal education
     - 1 = less than high school
     - 2 = high school or general education diploma
@@ -190,7 +190,7 @@ In short, we plan to analyze the following variables:
 
 *Harshness*
 
-- Census based neighborhood harhsness (from census variable averages)
+- Census based neighborhood harshness (from census variable averages)
 - Average income-to-needs 
 
 *Unpredictability*
@@ -201,7 +201,7 @@ In short, we plan to analyze the following variables:
 
 **Possible follow-ups**
 
-We might break apart composites. For exampe, we may analyze Census variables separately or items from the classic unpredictaiblity measure. If we do so, these analyses will be reported in a supplement, only. We may mention them in the main text, but they will not be interpreted to the same degree as the main analyses.
+We might break apart composites. For example, we may analyze Census variables separately or items from the classic unpredictability measure. If we do so, these analyses will be reported in a supplement, only. We may mention them in the main text, but they will not be interpreted to the same degree as the main analyses.
 
 **Other possible (exploratory) variables:**
 
@@ -224,9 +224,9 @@ For each subtest, standard scores will be averaged over time to arrive at one sc
 
 ### Q13: Inclusion/Exclusion criteria
 
-At the time of writing this preregistration, the only inclusion criteria are that participants should have a least one non-missing score on each subtest for at least one measurment period. This ensures that every case has at least one assessment of each subtest included in their overall average of all subtests. Participants must also have at least one score for the adversity measure. Each adversity measure will be analyzed in a separate model so the total samples size for each adversity measure may differ depending on missing data patterns (see Q14).
+At the time of writing this preregistration, the only inclusion criteria are that participants should have a least one non-missing score on each subtest for at least one measurement period. This ensures that every case has at least one assessment of each subtest included in their overall average of all subtests. Participants must also have at least one score for the adversity measure. Each adversity measure will be analyzed in a separate model so the total samples size for each adversity measure may differ depending on missing data patterns (see Q14).
 
-If it becomes clear that there are other inclusion/exclusion criteria, we will update the preregistration and/or report deviations in the the final manuscript. If there are many reasonable alternative criteria, we may use multiverse analysis to handle all combinations of reasonable and arbitrary inclusion/exclusion criteria.
+If it becomes clear that there are other inclusion/exclusion criteria, we will update the preregistration and/or report deviations in the final manuscript. If there are many reasonable alternative criteria, we may use multiverse analysis to handle all combinations of reasonable and arbitrary inclusion/exclusion criteria.
 
 ### Q14: Missing data
 
@@ -250,7 +250,7 @@ EY has not published any papers using this dataset. In 2014 and 2015, EY, JS, an
 
 MN has intimate knowledge of this dataset. MN has published two papers using the dataset. MN also has one manuscript in  press and one under review using the data. MN has not analyzed or used the subtest variables in the current preregistration.
 
-GI has intimate knowledge of this dataset. GI is a co-principle investigator on the project and has published many papers using the data. Variables analyzed in GI publications relate mostly to the dependent variables in this project. Those relevant to the current preregistration include:
+GI has intimate knowledge of this dataset. GI is a co-principal investigator on the project and has published many papers using the data. Variables analyzed in GI publications relate mostly to the dependent variables in this project. Those relevant to the current preregistration include:
 
 - @bleil2021
 - @cottrell2015
@@ -416,7 +416,7 @@ We interested in three types of effect sizes:
 2. The simple effect of adversity for each subtest.
 3. The interaction effect between an adversity measure and subtest.
 
-We are also interested in null effects. Based on prior work, we expect the main effect of adversity to be negative. However, if main effects were zero for any adversity measure, we would be interested in determining if the effect *is* zero by using equivalence testing [@lakens2018].
+We are also interested in null effects. Based on prior work, we expect the main effect of adversity to be negative. However, if main effects were zero for any adversity measure, we would be interested in testing if the effect is zero (rather than simply null) by using equivalence testing [@lakens2018].
 
 For simple effects (effect size 2), we will use simple slopes analysis. These tests determine whether the simple effect is different from zero. For these effects, we are interested if they are indeed 0 using equivalence testing. We are also interested positive slopes of any size (that are not equivalent to zero). 
 
@@ -434,7 +434,7 @@ If there are arbitrary data processing decisions, we may use multiverse analysis
 
 ### Q25: Exploratory Analyses
 
-We may or may not do serveral exploratory analyses listed below:
+We may or may not do several exploratory analyses listed below:
 
 1. Fit structural equation models to Woodcock Johnson data to examine how adversity relates to an overall latent variable and to residual test variance in each subtest
 2. Depending on the main results, we may also look at subtest scores over time to examine developmental trajectories in those tests.

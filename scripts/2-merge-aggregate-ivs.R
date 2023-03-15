@@ -14,7 +14,8 @@ first_wj_date <-
   list.files("..", pattern = "f55l54_a.sav", full.names = T, recursive = T) |> 
   haven::read_sav() |> 
   rename_with(tolower) |> 
-  select(id, intdt55l)
+  select(id, intdt55l) |> 
+  rename(wj_date = intdt55l)
 
 ### Get all compiled iv data
 walk(
@@ -93,9 +94,8 @@ ivs_data2 <-
   arrange(id, assessment) |> 
   filter(as.numeric(assessment) <= 12)
 
-
 # Compute aggregated variables --------------------------------------------
-ivs_unp_home <- 
+ivs_family <- 
   ivs_data2 |> 
   mutate(
     n_missing = sum(is.na(phome)) + sum(is.na(fhome)),
@@ -132,7 +132,6 @@ ivs_unp_home <-
     .by = id
   ) |> 
   summarize(
-    across(c(-id, -assessment), ~sum(is.na)),
     transitions_n    = mean(transitions, na.rm = T) * sum(!is.na(transitions)),
     mjob_changes_n   = mean(mjob_change, na.rm = T) * sum(!is.na(mjob_change)),
     pjob_changes_n   = mean(pjob_change, na.rm = T) * sum(!is.na(pjob_change)),
@@ -142,7 +141,7 @@ ivs_unp_home <-
     phrs_mean        = mean(phrw, na.rm = T),
     phrs_sd          = sd(phrw, na.rm = T),
     adults_mean      = mean(adlts, na.rm = T),
-    aduts_sd         = sd(adlts, na.rm = T),
+    adults_sd        = sd(adlts, na.rm = T),
     incnt_mean       = mean(incnt, na.rm = T),
     incnt_sd         = sd(incnt, na.rm = T),
     madep_mean       = mean(madep, na.rm = T),
@@ -150,17 +149,52 @@ ivs_unp_home <-
     .by = id
   )
 
-ivs_unp_home |> select(-id) |> corr_table(numbered = T, stats = c("mean","sd", "min","max", "skew","kurtosis"))
-
-# Compute Residential moves data ------------------------------------------
-seccyd_ivs_census1990 |>
+# Residential and Census aggregation --------------------------------------
+ivs_neigh <- 
+  seccyd_ivs_census1990 |>
+  full_join(
+    first_wj_date,
+    by = "id"
+  ) |> 
+  mutate(
+    wj_date = if_else(is.na(wj_date), max(wj_date, na.rm = T), wj_date)
+  ) |> 
   filter(
-    strtdate <= ymd("1996-12-31"),
-    enddate <= ymd("1996-12-31") | is.na(enddate),
-    id == 12
-  ) |
+    strtdate <= wj_date
+  ) |> 
+  mutate(
+    enddate = if_else(enddate > max(wj_date, na.rm = T), NA, enddate)
+  ) |> 
   summarize(
-    n_homes = n_distinct(strtdate),
-    n_moves = n_distinct(enddate, na.rm = T),
+    homes_n       = n_distinct(strtdate, na.rm = T),
+    moves_n       = n_distinct(enddate, na.rm = T),
+    cen_block_n   = n_distinct(blkgrpid, na.rm = T),
+    cen_pov_mean  = mean(cen1990_pov, na.rm = T),
+    cen_inc_mean  = mean(cen1990_med_income91, na.rm = T) * -1,
+    cen_gini_mean = mean(cen1990_gini, na.rm = T),
+    cen_rent_mean = mean(cen1990_rent, na.rm = T),
+    cen_unem_mean = mean(cen1990_unemploy, na.rm = T),
+    cen_pov_sd    = sd(cen1990_pov, na.rm = T),
+    cen_inc_sd    = sd(cen1990_med_income91, na.rm = T),
+    cen_gini_sd   = sd(cen1990_gini, na.rm = T),
+    cen_rent_sd   = sd(cen1990_rent, na.rm = T),
+    cen_unem_sd   = sd(cen1990_unemploy, na.rm = T),
     .by = id
+  ) |> 
+  mutate(
+    across(ends_with("sd"), ~ifelse(homes_n == 1, 0, .x)),
+    neigh_harsh = across(ends_with("mean"), ~scale(.x)) |> rowMeans(na.rm = T),
+    neigh_unp   = across(ends_with("sd"), ~scale(.x)) |> rowMeans(na.rm = T)
+  )
+
+
+full_join(
+  ivs_family,
+  ivs_neigh,
+  by = "id"
+) |> 
+  select(incnt_mean, incnt_sd, neigh_harsh, neigh_unp) |> 
+  corr_table(
+    numbered = T,
+    stats = c("n","mean","sd","min","max")
   )

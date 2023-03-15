@@ -1,7 +1,7 @@
 Preregistration
 ================
 
-*Last updated on Friday, March 10, 2023 at 06:46 PM*
+*Last updated on Tuesday, March 14, 2023 at 02:01 PM*
 
 ## Overview
 
@@ -57,9 +57,9 @@ questions/hypotheses.</i>
 **R1:** How does adversity relate to overall performance compared to
 subtest performance on large cognitive test batteries? In other words,
 how does adversity relate to broad testing scores compared with more
-narrow subtest scores?
+narrow, specific subtest scores?
 
-**R2:** How do impairment and enhancements in cognitive performance
+**R2:** How do impairments and enhancements in cognitive performance
 manifest across many cognitive domains?
 
 **R3:** Do different adversity dimensions have similar or different
@@ -73,12 +73,13 @@ measures?
 ### Q4: Hypotheses
 
 **H1:** We expect harshness and/or unpredictability to be associated
-with a lower overall within-person Woodcock Johnson (WJ) cognitive
-ability score (sum coded within-person intercept) .
+with lower overall within-person Woodcock Johnson (WJ) cognitive ability
+score (sum coded within-person intercept).
 
 **H2:** Compared with overall WJ scores, the effect of harshness and/or
-unpredictability will vary; some sub-tests will show lowered performance
-whereas others remain ‘intact’.
+unpredictability will vary; some sub-tests will show lowered
+performance, whereas others will remain ‘intact’ (i.e., should little if
+any change).
 
 **H3:** If any sub-tests remain intact (or enhanced), they will be tests
 that depend less on formal crystallized knowledge and reading ability
@@ -90,15 +91,14 @@ that depend less on formal crystallized knowledge and reading ability
 
 We will use data from the National Institute of Child Health and
 Development (NICHD) Study of Early Childcare and Youth Development
-([SECCYD](https://www.icpsr.umich.edu/web/ICPSR/series/00233), [Network,
-2005](#ref-nichdearlychildcareresearchnetwork2005)). The SECCYD was
-conducted in four waves across multiple sites and designed to be
-nationally representative, prospective, longitudinal study. The broad
-research goals of the study was to investigate the relation between
-childcare and development from infancy through adolescence and into
-early adulthood. Families were recruited for the NICHD SECCYD in 1991. A
-total of 1364 families met all the prescreening criteria. Below are
-detailed descriptions of each study phase:
+\[[SECCYD](https://www.icpsr.umich.edu/web/ICPSR/series/00233); Network
+([2005](#ref-nichdearlychildcareresearchnetwork2005))\]. The SECCYD is a
+prospective, longitudinal study conducted in four waves across multiple
+sites. The broad research goals of the study was to investigate the
+relation between childcare and development from infancy through
+adolescence and into early adulthood. Families were recruited for the
+NICHD SECCYD in 1991. A total of 1364 families met all the prescreening
+criteria. Below are detailed descriptions of each study phase:
 
 - [Phase 1
   (1991-1994)](https://www.icpsr.umich.edu/web/ICPSR/studies/21940)
@@ -111,12 +111,13 @@ detailed descriptions of each study phase:
 
 ### Q6: Public Availability
 
-Data are publicly available. However, users must make an account with
-ISCPR (see [here](https://www.icpsr.umich.edu/rpxlogin)) anmd must sign
-a data use agreement. Users must also provide details about how data
-will be used (e.g., project description) and information (e.g., IRB
-approval). For each study phase, see more information about data access
-under “Access Restricted Data” tab.
+Data are publicly available through age 15 years. However, users must
+make an account with ISCPR (see
+[here](https://www.icpsr.umich.edu/rpxlogin)) and must sign a data use
+agreement. Users must also provide details about how data will be used
+(e.g., project description) and information (e.g., IRB approval). For
+each study phase, see more information about data access under “Access
+Restricted Data” tab.
 
 ### Q7: Data Access
 
@@ -181,7 +182,7 @@ pre-processing/analysis, codebooks will be available
 #### Covariates
 
 - Gender
-- Ethnicity
+- Race/Ethnicity (White/non-Hispanic vesrs other)
 - Maternal education
   - 1 = less than high school
   - 2 = high school or general education diploma
@@ -256,7 +257,7 @@ In short, we plan to analyze the following variables:
 
 *Harshness*
 
-- Census based neighborhood harhsness (from census variable averages)
+- Census based neighborhood harshness (from census variable averages)
 - Average income-to-needs
 
 *Unpredictability*
@@ -268,8 +269,8 @@ In short, we plan to analyze the following variables:
 
 **Possible follow-ups**
 
-We might break apart composites. For exampe, we may analyze Census
-variables separately or items from the classic unpredictaiblity measure.
+We might break apart composites. For example, we may analyze Census
+variables separately or items from the classic unpredictability measure.
 If we do so, these analyses will be reported in a supplement, only. We
 may mention them in the main text, but they will not be interpreted to
 the same degree as the main analyses.
@@ -304,17 +305,18 @@ time points.
 
 At the time of writing this preregistration, the only inclusion criteria
 are that participants should have a least one non-missing score on each
-subtest for at least one measurment period. This ensures that every case
-has at least one assessment of each subtest included in their overall
-average of all subtests. Participants must also have at least one score
-for the adversity measure. Each adversity measure will be analyzed in a
-separate model so the total samples size for each adversity measure may
-differ depending on missing data patterns (see Q14).
+subtest for at least one measurement period. This ensures that every
+case has at least one assessment of each subtest included in their
+overall average of all subtests. Participants must also have at least
+one score for the adversity measure. Each adversity measure will be
+analyzed in a separate model so the total samples size for each
+adversity measure may differ depending on missing data patterns (see
+Q14).
 
 If it becomes clear that there are other inclusion/exclusion criteria,
-we will update the preregistration and/or report deviations in the the
-final manuscript. If there are many reasonable alternative criteria, we
-may use multiverse analysis to handle all combinations of reasonable and
+we will update the preregistration and/or report deviations in the final
+manuscript. If there are many reasonable alternative criteria, we may
+use multiverse analysis to handle all combinations of reasonable and
 arbitrary inclusion/exclusion criteria.
 
 ### Q14: Missing data
@@ -347,7 +349,7 @@ using the dataset. MN also has one manuscript in press and one under
 review using the data. MN has not analyzed or used the subtest variables
 in the current preregistration.
 
-GI has intimate knowledge of this dataset. GI is a co-principle
+GI has intimate knowledge of this dataset. GI is a co-principal
 investigator on the project and has published many papers using the
 data. Variables analyzed in GI publications relate mostly to the
 dependent variables in this project. Those relevant to the current
@@ -449,16 +451,16 @@ example_data2 |>
 
 |  id |  adversity | wj_sub_test   |    score |
 |----:|-----------:|:--------------|---------:|
-|   1 | -0.0599079 | wj_picvo_mean | 108.7500 |
-|   1 | -0.0599079 | wj_vrba_mean  | 139.5000 |
-|   1 | -0.0599079 | wj_pscmp_mean | 133.0000 |
-|   1 | -0.0599079 | wj_appld_mean | 130.5000 |
-|   1 | -0.0599079 | wj_memse_mean | 115.0000 |
-|   1 | -0.0599079 | wj_incom_mean | 128.0000 |
-|   1 | -0.0599079 | wj_memna_mean | 117.0000 |
-|   1 | -0.0599079 | wj_lwid_mean  | 138.6667 |
-|   1 | -0.0599079 | wj_wrdat_mean | 134.0000 |
-|   1 | -0.0599079 | wj_calc_mean  | 143.0000 |
+|   1 | -0.0400269 | wj_picvo_mean | 108.7500 |
+|   1 | -0.0400269 | wj_vrba_mean  | 139.5000 |
+|   1 | -0.0400269 | wj_pscmp_mean | 133.0000 |
+|   1 | -0.0400269 | wj_appld_mean | 130.5000 |
+|   1 | -0.0400269 | wj_memse_mean | 115.0000 |
+|   1 | -0.0400269 | wj_incom_mean | 128.0000 |
+|   1 | -0.0400269 | wj_memna_mean | 117.0000 |
+|   1 | -0.0400269 | wj_lwid_mean  | 138.6667 |
+|   1 | -0.0400269 | wj_wrdat_mean | 134.0000 |
+|   1 | -0.0400269 | wj_calc_mean  | 143.0000 |
 
 3.  Next, we apply a sum coded contrast to the subtest index column.
     This means the intercept in the mixed effect model reflects the
@@ -537,26 +539,26 @@ subtest_model |>
 
 | Parameter          | Coefficient |    SE |     p |
 |:-------------------|------------:|------:|------:|
-| (Intercept)        |     105.340 | 0.321 | 0.000 |
-| appld              |       2.564 | 0.259 | 0.000 |
+| (Intercept)        |     105.338 | 0.322 | 0.000 |
+| appld              |       2.566 | 0.259 | 0.000 |
 | calc               |       6.539 | 0.268 | 0.000 |
-| incom              |      -9.196 | 0.266 | 0.000 |
-| lwid               |       1.598 | 0.259 | 0.000 |
-| memna              |      -0.223 | 0.264 | 0.398 |
-| memse              |      -8.315 | 0.260 | 0.000 |
-| picvo              |      -2.699 | 0.259 | 0.000 |
-| pscmp              |       3.068 | 0.267 | 0.000 |
+| incom              |      -9.195 | 0.266 | 0.000 |
+| lwid               |       1.600 | 0.259 | 0.000 |
+| memna              |      -0.231 | 0.264 | 0.383 |
+| memse              |      -8.311 | 0.260 | 0.000 |
+| picvo              |      -2.697 | 0.259 | 0.000 |
+| pscmp              |       3.070 | 0.267 | 0.000 |
 | vrba               |       5.443 | 0.269 | 0.000 |
-| adversity          |      -0.241 | 0.322 | 0.454 |
-| appld \* adversity |       0.109 | 0.259 | 0.673 |
-| calc \* adversity  |       0.279 | 0.270 | 0.302 |
-| incom \* adversity |      -0.410 | 0.267 | 0.125 |
-| lwid \* adversity  |       0.107 | 0.259 | 0.681 |
-| memna \* adversity |      -0.501 | 0.265 | 0.059 |
-| memse \* adversity |       0.545 | 0.261 | 0.037 |
-| picvo \* adversity |       0.027 | 0.259 | 0.916 |
-| pscmp \* adversity |      -0.035 | 0.269 | 0.898 |
-| vrba \* adversity  |       0.204 | 0.273 | 0.454 |
+| adversity          |       0.031 | 0.322 | 0.923 |
+| appld \* adversity |       0.111 | 0.259 | 0.667 |
+| calc \* adversity  |       0.209 | 0.266 | 0.432 |
+| incom \* adversity |       0.075 | 0.267 | 0.780 |
+| lwid \* adversity  |      -0.312 | 0.259 | 0.229 |
+| memna \* adversity |      -0.385 | 0.263 | 0.144 |
+| memse \* adversity |       0.362 | 0.259 | 0.163 |
+| picvo \* adversity |       0.120 | 0.259 | 0.643 |
+| pscmp \* adversity |       0.148 | 0.266 | 0.578 |
+| vrba \* adversity  |      -0.015 | 0.268 | 0.955 |
 
 </div>
 
@@ -582,21 +584,21 @@ subtest_model |>
 | calc               |           0.441 |  0.406 |   0.476 |
 | incom              |          -0.620 | -0.655 |  -0.585 |
 | lwid               |           0.108 |  0.074 |   0.142 |
-| memna              |          -0.015 | -0.050 |   0.020 |
-| memse              |          -0.561 | -0.595 |  -0.526 |
+| memna              |          -0.015 | -0.050 |   0.019 |
+| memse              |          -0.560 | -0.595 |  -0.526 |
 | picvo              |          -0.182 | -0.216 |  -0.148 |
 | pscmp              |           0.207 |  0.172 |   0.242 |
-| vrba               |           0.367 |  0.332 |   0.403 |
-| adversity          |          -0.016 | -0.059 |   0.026 |
-| appld \* adversity |           0.007 | -0.027 |   0.041 |
-| calc \* adversity  |           0.019 | -0.017 |   0.054 |
-| incom \* adversity |          -0.028 | -0.063 |   0.008 |
-| lwid \* adversity  |           0.007 | -0.027 |   0.041 |
-| memna \* adversity |          -0.034 | -0.069 |   0.001 |
-| memse \* adversity |           0.037 |  0.002 |   0.071 |
-| picvo \* adversity |           0.002 | -0.032 |   0.036 |
-| pscmp \* adversity |          -0.002 | -0.038 |   0.033 |
-| vrba \* adversity  |           0.014 | -0.022 |   0.050 |
+| vrba               |           0.367 |  0.331 |   0.403 |
+| adversity          |           0.002 | -0.041 |   0.045 |
+| appld \* adversity |           0.008 | -0.027 |   0.042 |
+| calc \* adversity  |           0.014 | -0.021 |   0.049 |
+| incom \* adversity |           0.005 | -0.030 |   0.040 |
+| lwid \* adversity  |          -0.021 | -0.055 |   0.013 |
+| memna \* adversity |          -0.026 | -0.061 |   0.009 |
+| memse \* adversity |           0.024 | -0.010 |   0.059 |
+| picvo \* adversity |           0.008 | -0.026 |   0.042 |
+| pscmp \* adversity |           0.010 | -0.025 |   0.045 |
+| vrba \* adversity  |          -0.001 | -0.036 |   0.034 |
 
 ### Q20: Predicted effect sizes
 
@@ -640,9 +642,9 @@ We interested in three types of effect sizes:
 
 We are also interested in null effects. Based on prior work, we expect
 the main effect of adversity to be negative. However, if main effects
-were zero for any adversity measure, we would be interested in
-determining if the effect *is* zero by using equivalence testing
-([Lakens et al., 2018](#ref-lakens2018)).
+were zero for any adversity measure, we would be interested in testing
+if the effect is zero (rather than simply null) by using equivalence
+testing ([Lakens et al., 2018](#ref-lakens2018)).
 
 For simple effects (effect size 2), we will use simple slopes analysis.
 These tests determine whether the simple effect is different from zero.
@@ -677,7 +679,7 @@ analysis to systematically explore their effect.
 
 ### Q25: Exploratory Analyses
 
-We may or may not do serveral exploratory analyses listed below:
+We may or may not do several exploratory analyses listed below:
 
 1.  Fit structural equation models to Woodcock Johnson data to examine
     how adversity relates to an overall latent variable and to residual
