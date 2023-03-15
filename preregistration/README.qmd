@@ -138,7 +138,7 @@ Once variables for this study are selected, accessed, and ready for pre-processi
 #### Covariates
 
 - Gender
-- Race/Ethnicity (White/non-Hispanic vesrs other)
+- Race/Ethnicity (White/non-Hispanic = 0, otherwise = 1)
 - Maternal education
     - 1 = less than high school
     - 2 = high school or general education diploma

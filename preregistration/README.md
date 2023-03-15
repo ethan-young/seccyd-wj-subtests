@@ -1,7 +1,7 @@
 Preregistration
 ================
 
-*Last updated on Tuesday, March 14, 2023 at 02:01 PM*
+*Last updated on Wednesday, March 15, 2023 at 09:53 AM*
 
 ## Overview
 
@@ -182,7 +182,7 @@ pre-processing/analysis, codebooks will be available
 #### Covariates
 
 - Gender
-- Race/Ethnicity (White/non-Hispanic vesrs other)
+- Race/Ethnicity (White/non-Hispanic = 0, otherwise = 1)
 - Maternal education
   - 1 = less than high school
   - 2 = high school or general education diploma
@@ -449,18 +449,18 @@ example_data2 |>
   knitr::kable()
 ```
 
-|  id |  adversity | wj_sub_test   |    score |
-|----:|-----------:|:--------------|---------:|
-|   1 | -0.0400269 | wj_picvo_mean | 108.7500 |
-|   1 | -0.0400269 | wj_vrba_mean  | 139.5000 |
-|   1 | -0.0400269 | wj_pscmp_mean | 133.0000 |
-|   1 | -0.0400269 | wj_appld_mean | 130.5000 |
-|   1 | -0.0400269 | wj_memse_mean | 115.0000 |
-|   1 | -0.0400269 | wj_incom_mean | 128.0000 |
-|   1 | -0.0400269 | wj_memna_mean | 117.0000 |
-|   1 | -0.0400269 | wj_lwid_mean  | 138.6667 |
-|   1 | -0.0400269 | wj_wrdat_mean | 134.0000 |
-|   1 | -0.0400269 | wj_calc_mean  | 143.0000 |
+|  id | adversity | wj_sub_test   |    score |
+|----:|----------:|:--------------|---------:|
+|   1 | 0.1910243 | wj_picvo_mean | 108.7500 |
+|   1 | 0.1910243 | wj_vrba_mean  | 139.5000 |
+|   1 | 0.1910243 | wj_pscmp_mean | 133.0000 |
+|   1 | 0.1910243 | wj_appld_mean | 130.5000 |
+|   1 | 0.1910243 | wj_memse_mean | 115.0000 |
+|   1 | 0.1910243 | wj_incom_mean | 128.0000 |
+|   1 | 0.1910243 | wj_memna_mean | 117.0000 |
+|   1 | 0.1910243 | wj_lwid_mean  | 138.6667 |
+|   1 | 0.1910243 | wj_wrdat_mean | 134.0000 |
+|   1 | 0.1910243 | wj_calc_mean  | 143.0000 |
 
 3.  Next, we apply a sum coded contrast to the subtest index column.
     This means the intercept in the mixed effect model reflects the
@@ -539,26 +539,26 @@ subtest_model |>
 
 | Parameter          | Coefficient |    SE |     p |
 |:-------------------|------------:|------:|------:|
-| (Intercept)        |     105.338 | 0.322 | 0.000 |
-| appld              |       2.566 | 0.259 | 0.000 |
-| calc               |       6.539 | 0.268 | 0.000 |
+| (Intercept)        |     105.339 | 0.322 | 0.000 |
+| appld              |       2.565 | 0.259 | 0.000 |
+| calc               |       6.537 | 0.268 | 0.000 |
 | incom              |      -9.195 | 0.266 | 0.000 |
-| lwid               |       1.600 | 0.259 | 0.000 |
-| memna              |      -0.231 | 0.264 | 0.383 |
+| lwid               |       1.599 | 0.259 | 0.000 |
+| memna              |      -0.229 | 0.264 | 0.387 |
 | memse              |      -8.311 | 0.260 | 0.000 |
 | picvo              |      -2.697 | 0.259 | 0.000 |
-| pscmp              |       3.070 | 0.267 | 0.000 |
+| pscmp              |       3.069 | 0.267 | 0.000 |
 | vrba               |       5.443 | 0.269 | 0.000 |
-| adversity          |       0.031 | 0.322 | 0.923 |
-| appld \* adversity |       0.111 | 0.259 | 0.667 |
-| calc \* adversity  |       0.209 | 0.266 | 0.432 |
-| incom \* adversity |       0.075 | 0.267 | 0.780 |
-| lwid \* adversity  |      -0.312 | 0.259 | 0.229 |
-| memna \* adversity |      -0.385 | 0.263 | 0.144 |
-| memse \* adversity |       0.362 | 0.259 | 0.163 |
-| picvo \* adversity |       0.120 | 0.259 | 0.643 |
-| pscmp \* adversity |       0.148 | 0.266 | 0.578 |
-| vrba \* adversity  |      -0.015 | 0.268 | 0.955 |
+| adversity          |       0.121 | 0.322 | 0.706 |
+| appld \* adversity |      -0.089 | 0.259 | 0.732 |
+| calc \* adversity  |      -0.099 | 0.266 | 0.711 |
+| incom \* adversity |       0.032 | 0.267 | 0.904 |
+| lwid \* adversity  |      -0.277 | 0.259 | 0.285 |
+| memna \* adversity |       0.094 | 0.264 | 0.721 |
+| memse \* adversity |      -0.041 | 0.260 | 0.875 |
+| picvo \* adversity |       0.413 | 0.259 | 0.111 |
+| pscmp \* adversity |       0.086 | 0.266 | 0.746 |
+| vrba \* adversity  |       0.151 | 0.268 | 0.575 |
 
 </div>
 
@@ -581,24 +581,24 @@ subtest_model |>
 |:-------------------|----------------:|-------:|--------:|
 | (Intercept)        |          -0.005 | -0.048 |   0.037 |
 | appld              |           0.173 |  0.139 |   0.207 |
-| calc               |           0.441 |  0.406 |   0.476 |
+| calc               |           0.441 |  0.405 |   0.476 |
 | incom              |          -0.620 | -0.655 |  -0.585 |
 | lwid               |           0.108 |  0.074 |   0.142 |
-| memna              |          -0.015 | -0.050 |   0.019 |
+| memna              |          -0.015 | -0.050 |   0.020 |
 | memse              |          -0.560 | -0.595 |  -0.526 |
 | picvo              |          -0.182 | -0.216 |  -0.148 |
 | pscmp              |           0.207 |  0.172 |   0.242 |
 | vrba               |           0.367 |  0.331 |   0.403 |
-| adversity          |           0.002 | -0.041 |   0.045 |
-| appld \* adversity |           0.008 | -0.027 |   0.042 |
-| calc \* adversity  |           0.014 | -0.021 |   0.049 |
-| incom \* adversity |           0.005 | -0.030 |   0.040 |
-| lwid \* adversity  |          -0.021 | -0.055 |   0.013 |
-| memna \* adversity |          -0.026 | -0.061 |   0.009 |
-| memse \* adversity |           0.024 | -0.010 |   0.059 |
-| picvo \* adversity |           0.008 | -0.026 |   0.042 |
-| pscmp \* adversity |           0.010 | -0.025 |   0.045 |
-| vrba \* adversity  |          -0.001 | -0.036 |   0.034 |
+| adversity          |           0.008 | -0.034 |   0.051 |
+| appld \* adversity |          -0.006 | -0.040 |   0.028 |
+| calc \* adversity  |          -0.007 | -0.042 |   0.029 |
+| incom \* adversity |           0.002 | -0.033 |   0.037 |
+| lwid \* adversity  |          -0.019 | -0.053 |   0.016 |
+| memna \* adversity |           0.006 | -0.029 |   0.041 |
+| memse \* adversity |          -0.003 | -0.037 |   0.032 |
+| picvo \* adversity |           0.028 | -0.006 |   0.062 |
+| pscmp \* adversity |           0.006 | -0.029 |   0.041 |
+| vrba \* adversity  |           0.010 | -0.025 |   0.046 |
 
 ### Q20: Predicted effect sizes
 
