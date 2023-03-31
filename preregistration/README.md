@@ -247,7 +247,7 @@ The Census variables relevant here are the following:
 
 We plan to compute mean and standard deviation scores for each Census
 measure over the addresses each participant lived at. For an overall
-neighborhood harshness score, we will standardize and avergae together
+neighborhood harshness score, we will standardize and average together
 each mean score. For an overall neighborhood change score, we will
 standardize and average together all standard deviation scores.
 
@@ -614,6 +614,13 @@ interested in determining if simple effects falling between -.10 and .10
 are consitent with an effect of 0. For this scenario, we will use
 equivalence testing with -.10 and .10 as bounds.
 
+*<< -- We might discuss whether these equivalence bounds are the best ones.
+Hypothetically, there could be a true effect of, say, 0.07, that is a real
+adversity effect but too small to be practically interesting. Setting 
+equivalence bounds to .10 however would potentially classify this as a true 
+zero effect (practically equivalent to zero). Thus, I think it could be that we 
+actually want to set more narrow boundaries. -->>*
+
 ### Q21: Statistical Power
 
 See our full power analysis [here](power-analysis/) and the code
@@ -633,7 +640,7 @@ Our inferential criteria will use p \< .05 for interaction effects
 between adversity and subtest type and for simple effects of adversity
 for each subtest.
 
-We interested in three types of effect sizes:
+We are interested in three types of effect sizes:
 
 1.  The main effect of each adversity measure (tested in separate
     models).
