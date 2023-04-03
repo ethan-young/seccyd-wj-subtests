@@ -69,13 +69,17 @@ This preregistration document is based on [@akker2021] for secondary data analys
 
 (Not sure that I want to keep R4 yet)
 
+*<< -- SV: In case we include R4, I think this project lends itself very well to talking about *domain*-general effects as opposed to *test*-general effects. If we're talking about test-general I guess we would model one overarching latent variable. However, With the WJ we can divide them up into several ability-domains. -- >>*
+
 ### Q4: Hypotheses
 
 **H1:** We expect harshness and/or unpredictability to be associated with lower overall within-person Woodcock Johnson (WJ) cognitive ability score (sum coded within-person intercept).
 
-**H2:** Compared with overall WJ scores, the effect of harshness and/or unpredictability will vary; some sub-tests will show lowered performance, whereas others will remain ‘intact’ (i.e., should little if any change).
+**H2:** Compared with overall WJ scores, the effect of harshness and/or unpredictability on specific sub-tests will vary; some sub-tests will show lowered performance, whereas others will remain ‘intact’ (i.e., should little if any change) or even show enhanced performance.
 
 **H3:** If any sub-tests remain intact (or enhanced), they will be tests that depend less on formal crystallized knowledge and reading ability (i.e., short term memory, auditory processing, fluid intelligence).
+
+*<< -- SV: I don't see these hypotheses in the introduction, especially H3 which seems way more specific than the types of 'principled exploratory' steps that you describe there. Is this with a reason? Do we have enough existing evidence to predict H3 and if so, should that be something that features in the intro? -- >>*
 
 ## Part 2 - Data Description
 
@@ -155,7 +159,7 @@ We are interested in two constructs: environmental harshness and unpredictabilit
 
 1. *Environmental Unpredictability*
 
-This measure is based on @belsky2012 includes three variables that are standardized and averaged together over the relevant time period:
+This measure is based on @belsky2012 and includes three variables that are standardized and averaged together over the relevant time period:
 
 - Residential changes, or changes in address.
 - Paternal transitions, or changes in father figures moving in or out of the home.
@@ -164,7 +168,7 @@ This measure is based on @belsky2012 includes three variables that are standardi
 
 2. *Income Variation*
 
-This measure is based on @li2018 computes the residual variance in income-to-needs ratios after a linear trend is fit to each participant. 
+This measure is based on @li2018 and computes the residual variance in income-to-needs ratios after a linear trend is fit to each participant. 
 
 **Harshness, Past Approaches**
 
@@ -182,7 +186,7 @@ The Census variables relevant here are the following:
 - Percent of unemployed individuals over 16 in the workforce
 - Percent of occupied houses that are occupied by renters
 
-We plan to compute mean and standard deviation scores for each Census measure over the addresses each participant lived at. For an overall neighborhood harshness score, we will standardize and avergae together each mean score. For an overall neighborhood change score, we will standardize and average together all standard deviation scores.
+We plan to compute mean and standard deviation scores for each Census measure over the addresses each participant lived at. For an overall neighborhood harshness score, we will standardize and average together each mean score. For an overall neighborhood change score, we will standardize and average together all standard deviation scores.
 
 **Summary**
 
@@ -221,6 +225,8 @@ For all tests, we will use standard scores. These scores are equivalent to IQ sc
 **Aggregation strategy**
 
 For each subtest, standard scores will be averaged over time to arrive at one score per subtest. For example, picture vocabulary was measured five times so overall picture vocabulary will be averaged over the five time points. 
+
+*<< -- SV: Do you think it's necessary to control for age within these time points before aggregating? I assume the gap between the first and fifth timepoint is quite wide? -- >>*
 
 ### Q13: Inclusion/Exclusion criteria
 
@@ -285,7 +291,7 @@ We are interested in the effect of each adversity measure on a person’s overal
 :::
 
 
-We will use a mixed effects linear regression to test Hypotheses 1 & 2 using the `lmer`. To do so, we proceed in three steps:
+We will use a mixed effects linear regression to test Hypotheses 1 & 2 using the `lmer` package. To do so, we proceed in three steps:
 
 1. We will standardize (z-score) our independent variables. This centers the IV at 0 and scales them with standard deviation = 1.
 
@@ -400,6 +406,9 @@ We do not have specific predictions for effect sizes but we deem standardized re
 
 Effects between -.10 and .10 are not of interest for determining differences between subtests and the overall average. However, we are interested in determining if simple effects falling between -.10 and .10 are consitent with an effect of 0. For this scenario, we will use equivalence testing with -.10 and .10 as bounds.
 
+*<< -- SV: We might discuss whether these equivalence bounds are the best ones. Hypothetically, there could be a true effect of, say, 0.07, that is a real adversity effect but too small to be practically interesting. Setting equivalence bounds to .10 however would potentially classify this as a true zero effect (practically equivalent to zero). Thus, I think it could be that we actually want to set more narrow boundaries. -->>*
+
+
 ### Q21: Statistical Power
 
 See our full power analysis [here](power-analysis/) and the code [here](../scripts/power-simulation.R).
@@ -410,7 +419,7 @@ In short, we used a simulation approach to conduct power analyses. We simulated 
 
 Our inferential criteria will use p < .05 for interaction effects between adversity and subtest type and for simple effects of adversity for each subtest. 
 
-We interested in three types of effect sizes:
+We are interested in three types of effect sizes:
 
 1. The main effect of each adversity measure (tested in separate models).
 2. The simple effect of adversity for each subtest.
@@ -423,6 +432,7 @@ For simple effects (effect size 2), we will use simple slopes analysis. These te
 For negative slopes, we are interested in effects that are different from the overall main effect of adversity. This is where the interaction term is important. The interaction effect tests whether the effect of adversity for a given subtest is different from the main effect of adversity on overall performance. We are interested in both more negative and more positive than expected slopes compared to the main effect.
 
 Based on our minimum effect size of interest criterion and our power analysis, we are interested in interaction effects where $\beta$ = -.10 (or lower) or $\beta$ = .10 (or higher). We will use these bounds to inform our equivalence tests, where effects are null, to determine if they are consistent with an effect = 0.
+
 
 ### Q23: Assumption Violations
 
