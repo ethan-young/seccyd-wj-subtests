@@ -48,7 +48,9 @@ seccyd_ivs_phone_data1 <-
       rename_with(~str_remove(.x, "_") |>  tolower()) |> 
       select(
         id, 
-        matches("^(mstat|meduc|fhome|phome|memps|pemps|moccu|poccu|mhrw|phrw|incnt|hhtyp|adlts|thhsz)m"))
+        matches("^(mstat|meduc|fhome|phome|memp(s|)|pemp(s|)|moccu|poccu|mhrw|phrw|incnt|hhtyp|adlts|thhsz)m")
+      ) |> 
+      rename_with(.cols = any_of(matches("pempm")), ~str_replace(.x, "pemp(.*)", "pemps\\1"))
   }) %>% 
   reduce(full_join, by = "id")
 

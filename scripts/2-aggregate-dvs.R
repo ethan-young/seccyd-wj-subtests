@@ -23,7 +23,7 @@ seccyd_wj_n_assessments <-
   pivot_longer(everything(), names_to = "wj_subtest", values_to = "n_assessments")
 
 ## Average score and number of scores ----
-dvs_wj_subtests <- 
+dvs_analysis_long <- 
   seccyd_dvs_wj_data2 |> 
   group_by(id) |> 
   summarize(
@@ -52,3 +52,11 @@ dvs_wj_subtests <-
     n_missing = n_assessments - n_scores
   )
 
+dvs_analysis_wide <- seccyd_dvs_wj_data2
+
+# Save data ---------------------------------------------------------------
+save(
+  dvs_analysis_wide,
+  dvs_analysis_long,
+  file = "data/analysis-dvs.Rdata"
+)

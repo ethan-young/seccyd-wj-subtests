@@ -48,7 +48,9 @@ seccyd_ivs_demo_data1 <-
       rename_with(~str_remove(.x, "_") |>  tolower()) |> 
       select(
         id, 
-        matches("^(csex|crace|mrace|frace|mage|mstat|meduc|fhome|phome|memps|pemps|moccu|poccu|mhrw|phrw|incnt|hhtyp|adlts|thhsz)m"))
+        matches("^(csex|crace|mrace|frace|mage|mstat|meduc|fhome|phome|memps|pemp(s|)|moccu|poccu|mhrw|phrw|incnt|hhtyp|adlts|thhsz)m")
+      ) |> 
+      rename_with(.cols = any_of(matches("pempm")), ~str_replace(.x, "pemp(.*)", "pemps\\1"))
   }) %>% 
   reduce(full_join, by = "id")
 
