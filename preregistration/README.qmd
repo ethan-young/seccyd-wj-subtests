@@ -253,8 +253,6 @@ For all tests, we will use standard scores. These scores are equivalent to IQ sc
 
 For each subtest, standard scores will be averaged over time to arrive at one score per subtest. For example, picture vocabulary was measured five times so overall picture vocabulary will be averaged over the five time points. 
 
-*<< -- SV: Do you think it's necessary to control for age within these time points before aggregating? I assume the gap between the first and fifth timepoint is quite wide? -- >>*
-
 ### Q13: Inclusion/Exclusion criteria
 
 At the time of writing this preregistration, the only inclusion criteria are that participants should have a least one non-missing score on each subtest for at least one measurement period. This ensures that every case has at least one assessment of each subtest included in their overall average of all subtests. Participants must also have at least one score for the adversity measure. Each adversity measure will be analyzed in a separate model so the total samples size for each adversity measure may differ depending on missing data patterns (see Q14).
