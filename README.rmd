@@ -1,8 +1,8 @@
 ---
 title: "Within-person cognitive performance across abilities among adversity-exposed people in the SECCYD"
 output: github_document
-bibliography: references.bib
-csl: apa.csl
+bibliography: bib-files/references.bib
+csl: bib-files/apa.csl
 link-citations: true
 ---
 

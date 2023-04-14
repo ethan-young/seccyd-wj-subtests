@@ -2,7 +2,7 @@ Within-person cognitive performance across abilities among
 adversity-exposed people in the SECCYD
 ================
 
-*Last updated on Friday, March 11, 2022 at 02:48 PM*
+*Last updated on Friday, April 14, 2023 at 12:22 PM*
 
 ## Overview
 
@@ -13,8 +13,7 @@ the SECCYD” (working title).
 
 This project is a secondary data analysis using the Study of Early
 Childcare and Youth Development
-([SECCYD](https://www.icpsr.umich.edu/web/ICPSR/series/00233), [NICHD
-Early Child Care Research Network,
+([SECCYD](https://www.icpsr.umich.edu/web/ICPSR/series/00233), [Network,
 2005](#ref-nichdearlychildcareresearchnetwork2005)).
 
 ## Directory Structure
@@ -45,7 +44,7 @@ line-spacing="2">
 
 Akker, O. R. van den, Weston, S., Campbell, L., Chopik, B., Damian, R.,
 Davis-Kean, P., Hall, A., Kosie, J., Kruse, E., Olsen, J., Ritchie, S.,
-Valentine, K. D., Veer, A. van ’t., & Bakker, M. (2021). Preregistration
+Valentine, K. D., Veer, A. van ’t, & Bakker, M. (2021). Preregistration
 of secondary data analysis: A template and tutorial. *Meta-Psychology*,
 *5*. <https://doi.org/10.15626/MP.2020.2625>
 
@@ -53,9 +52,9 @@ of secondary data analysis: A template and tutorial. *Meta-Psychology*,
 
 <div id="ref-nichdearlychildcareresearchnetwork2005" class="csl-entry">
 
-NICHD Early Child Care Research Network. (2005). *Child care and child
-development: Results from the NICHD study of early child care and youth
-development*. The Guilford Press.
+Network, N. E. C. C. R. (2005). *Child care and child development:
+Results from the NICHD study of early child care and youth development*
+(pp. xx, 474). The Guilford Press.
 
 </div>
 

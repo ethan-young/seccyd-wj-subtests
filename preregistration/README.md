@@ -1,7 +1,7 @@
 Preregistration
 ================
 
-*Last updated on Friday, April 14, 2023 at 10:17 AM*
+*Last updated on Friday, April 14, 2023 at 01:33 PM*
 
 ## Overview
 
@@ -298,7 +298,7 @@ The main dependent measures will come from the Woodcock-Johnson
 Cognitive and Achievement Tests ([Woodcock, 1990](#ref-woodcock1990);
 [Woodcock et al., 1990](#ref-woodcock1990a)).
 
-![](../figures/table1.jpeg)
+![](figures/prereg-table1.png)
 
 **Scores**
 
@@ -414,30 +414,30 @@ ivs_partner_transitions |>
   arrange(n_missing) |> 
   mutate(across(everything(), ~ifelse(is.na(.x), "", .x))) |> 
   knitr::kable(
-    col.names = c("Missing Assessments", "Partner Changes", "Mother Job Changes", "Father Job Changes", "Income-to-Needs", "Materal Depr.")
+    col.names = c("Missing Assessments", "Partner Changes", "Mother Job Changes", "Father Job Changes", "Income-to-Needs", "Maternal Depr.")
   )
 ```
 
-| Missing Assessments | Partner Changes | Mother Job Changes | Father Job Changes | Income-to-Needs | Materal Depr. |
-|--------------------:|:----------------|:-------------------|:-------------------|:----------------|:--------------|
-|                   0 |                 |                    |                    | 963 (70.60%)    | 1048 (76.83%) |
-|                   1 | 859 (62.98%)    | 854 (62.61%)       | 631 (46.26%)       | 197 (14.44%)    | 162 (11.88%)  |
-|                   2 | 60 (4.40%)      | 96 (7.04%)         | 61 (4.47%)         | 52 (3.81%)      | 52 (3.81%)    |
-|                   3 | 144 (10.56%)    | 119 (8.72%)        | 132 (9.68%)        | 44 (3.23%)      | 101 (7.40%)   |
-|                   4 | 35 (2.57%)      | 34 (2.49%)         | 32 (2.35%)         | 43 (3.15%)      | 1 (0.07%)     |
-|                   5 | 53 (3.89%)      | 50 (3.67%)         | 56 (4.11%)         | 56 (4.11%)      |               |
-|                   6 | 23 (1.69%)      | 21 (1.54%)         | 27 (1.98%)         | 9 (0.66%)       |               |
-|                   7 | 20 (1.47%)      | 25 (1.83%)         | 31 (2.27%)         |                 |               |
-|                   8 | 11 (0.81%)      | 15 (1.10%)         | 18 (1.32%)         |                 |               |
-|                   9 | 15 (1.10%)      | 7 (0.51%)          | 28 (2.05%)         |                 |               |
-|                  10 | 19 (1.39%)      | 20 (1.47%)         | 25 (1.83%)         |                 |               |
-|                  11 | 12 (0.88%)      | 11 (0.81%)         | 21 (1.54%)         |                 |               |
-|                  12 | 8 (0.59%)       | 8 (0.59%)          | 27 (1.98%)         |                 |               |
-|                  13 | 16 (1.17%)      | 19 (1.39%)         | 28 (2.05%)         |                 |               |
-|                  14 | 14 (1.03%)      | 11 (0.81%)         | 26 (1.91%)         |                 |               |
-|                  15 | 17 (1.25%)      | 17 (1.25%)         | 26 (1.91%)         |                 |               |
-|                  16 | 35 (2.57%)      | 34 (2.49%)         | 60 (4.40%)         |                 |               |
-|                  17 | 23 (1.69%)      | 23 (1.69%)         | 135 (9.90%)        |                 |               |
+| Missing Assessments | Partner Changes | Mother Job Changes | Father Job Changes | Income-to-Needs | Maternal Depr. |
+|--------------------:|:----------------|:-------------------|:-------------------|:----------------|:---------------|
+|                   0 |                 |                    |                    | 963 (70.60%)    | 1048 (76.83%)  |
+|                   1 | 859 (62.98%)    | 854 (62.61%)       | 631 (46.26%)       | 197 (14.44%)    | 162 (11.88%)   |
+|                   2 | 60 (4.40%)      | 96 (7.04%)         | 61 (4.47%)         | 52 (3.81%)      | 52 (3.81%)     |
+|                   3 | 144 (10.56%)    | 119 (8.72%)        | 132 (9.68%)        | 44 (3.23%)      | 101 (7.40%)    |
+|                   4 | 35 (2.57%)      | 34 (2.49%)         | 32 (2.35%)         | 43 (3.15%)      | 1 (0.07%)      |
+|                   5 | 53 (3.89%)      | 50 (3.67%)         | 56 (4.11%)         | 56 (4.11%)      |                |
+|                   6 | 23 (1.69%)      | 21 (1.54%)         | 27 (1.98%)         | 9 (0.66%)       |                |
+|                   7 | 20 (1.47%)      | 25 (1.83%)         | 31 (2.27%)         |                 |                |
+|                   8 | 11 (0.81%)      | 15 (1.10%)         | 18 (1.32%)         |                 |                |
+|                   9 | 15 (1.10%)      | 7 (0.51%)          | 28 (2.05%)         |                 |                |
+|                  10 | 19 (1.39%)      | 20 (1.47%)         | 25 (1.83%)         |                 |                |
+|                  11 | 12 (0.88%)      | 11 (0.81%)         | 21 (1.54%)         |                 |                |
+|                  12 | 8 (0.59%)       | 8 (0.59%)          | 27 (1.98%)         |                 |                |
+|                  13 | 16 (1.17%)      | 19 (1.39%)         | 28 (2.05%)         |                 |                |
+|                  14 | 14 (1.03%)      | 11 (0.81%)         | 26 (1.91%)         |                 |                |
+|                  15 | 17 (1.25%)      | 17 (1.25%)         | 26 (1.91%)         |                 |                |
+|                  16 | 35 (2.57%)      | 34 (2.49%)         | 60 (4.40%)         |                 |                |
+|                  17 | 23 (1.69%)      | 23 (1.69%)         | 135 (9.90%)        |                 |                |
 
 ### Q15: Outliers
 
@@ -510,7 +510,7 @@ Below is a conceptual depiction of our analyses:
 
 <div id="fig-conceptual">
 
-![](../figures/figure1.png)
+![](figures/prereg-figure1.png)
 
 Figure 1: We are interested in the effect of each adversity measure on a
 person’s overall score, measured as a formative average of each subtest.
@@ -569,16 +569,16 @@ example_data2 |>
 
 |  id | adversity | wj_sub_test   |    score |
 |----:|----------:|:--------------|---------:|
-|   1 | -1.157769 | wj_picvo_mean | 108.7500 |
-|   1 | -1.157769 | wj_vrba_mean  | 139.5000 |
-|   1 | -1.157769 | wj_pscmp_mean | 133.0000 |
-|   1 | -1.157769 | wj_appld_mean | 130.5000 |
-|   1 | -1.157769 | wj_memse_mean | 115.0000 |
-|   1 | -1.157769 | wj_incom_mean | 128.0000 |
-|   1 | -1.157769 | wj_memna_mean | 117.0000 |
-|   1 | -1.157769 | wj_lwid_mean  | 138.6667 |
-|   1 | -1.157769 | wj_wrdat_mean | 134.0000 |
-|   1 | -1.157769 | wj_calc_mean  | 143.0000 |
+|   1 | 0.9679272 | wj_picvo_mean | 108.7500 |
+|   1 | 0.9679272 | wj_vrba_mean  | 139.5000 |
+|   1 | 0.9679272 | wj_pscmp_mean | 133.0000 |
+|   1 | 0.9679272 | wj_appld_mean | 130.5000 |
+|   1 | 0.9679272 | wj_memse_mean | 115.0000 |
+|   1 | 0.9679272 | wj_incom_mean | 128.0000 |
+|   1 | 0.9679272 | wj_memna_mean | 117.0000 |
+|   1 | 0.9679272 | wj_lwid_mean  | 138.6667 |
+|   1 | 0.9679272 | wj_wrdat_mean | 134.0000 |
+|   1 | 0.9679272 | wj_calc_mean  | 143.0000 |
 
 3.  Next, we apply a sum coded contrast to the subtest index column.
     This means the intercept in the mixed effect model reflects the
@@ -658,26 +658,26 @@ subtest_model |>
 
 | Parameter          | Coefficient |    SE |     p |
 |:-------------------|------------:|------:|------:|
-| (Intercept)        |     105.339 | 0.321 | 0.000 |
-| appld              |       2.566 | 0.259 | 0.000 |
+| (Intercept)        |     105.339 | 0.322 | 0.000 |
+| appld              |       2.565 | 0.259 | 0.000 |
 | calc               |       6.537 | 0.268 | 0.000 |
-| incom              |      -9.195 | 0.266 | 0.000 |
+| incom              |      -9.193 | 0.266 | 0.000 |
 | lwid               |       1.599 | 0.259 | 0.000 |
-| memna              |      -0.228 | 0.264 | 0.389 |
+| memna              |      -0.230 | 0.264 | 0.383 |
 | memse              |      -8.311 | 0.260 | 0.000 |
-| picvo              |      -2.697 | 0.259 | 0.000 |
+| picvo              |      -2.698 | 0.259 | 0.000 |
 | pscmp              |       3.069 | 0.267 | 0.000 |
-| vrba               |       5.443 | 0.269 | 0.000 |
-| adversity          |      -0.462 | 0.321 | 0.151 |
-| appld \* adversity |       0.204 | 0.259 | 0.432 |
-| calc \* adversity  |       0.457 | 0.268 | 0.088 |
-| incom \* adversity |       0.007 | 0.266 | 0.980 |
-| lwid \* adversity  |      -0.012 | 0.259 | 0.964 |
-| memna \* adversity |       0.266 | 0.263 | 0.313 |
-| memse \* adversity |      -0.220 | 0.260 | 0.397 |
-| picvo \* adversity |      -0.142 | 0.259 | 0.582 |
-| pscmp \* adversity |       0.129 | 0.267 | 0.629 |
-| vrba \* adversity  |      -0.394 | 0.269 | 0.144 |
+| vrba               |       5.444 | 0.269 | 0.000 |
+| adversity          |      -0.154 | 0.322 | 0.632 |
+| appld \* adversity |       0.112 | 0.259 | 0.666 |
+| calc \* adversity  |       0.399 | 0.267 | 0.136 |
+| incom \* adversity |      -0.214 | 0.267 | 0.422 |
+| lwid \* adversity  |       0.053 | 0.259 | 0.837 |
+| memna \* adversity |       0.364 | 0.265 | 0.170 |
+| memse \* adversity |      -0.073 | 0.261 | 0.779 |
+| picvo \* adversity |      -0.281 | 0.259 | 0.278 |
+| pscmp \* adversity |      -0.183 | 0.267 | 0.495 |
+| vrba \* adversity  |      -0.155 | 0.270 | 0.566 |
 
 </div>
 
@@ -703,21 +703,21 @@ subtest_model |>
 | calc               |           0.441 |  0.405 |   0.476 |
 | incom              |          -0.620 | -0.655 |  -0.585 |
 | lwid               |           0.108 |  0.074 |   0.142 |
-| memna              |          -0.015 | -0.050 |   0.020 |
+| memna              |          -0.015 | -0.050 |   0.019 |
 | memse              |          -0.560 | -0.595 |  -0.526 |
 | picvo              |          -0.182 | -0.216 |  -0.148 |
 | pscmp              |           0.207 |  0.172 |   0.242 |
 | vrba               |           0.367 |  0.331 |   0.403 |
-| adversity          |          -0.031 | -0.074 |   0.011 |
-| appld \* adversity |           0.014 | -0.020 |   0.048 |
-| calc \* adversity  |           0.031 | -0.005 |   0.066 |
-| incom \* adversity |           0.000 | -0.035 |   0.036 |
-| lwid \* adversity  |          -0.001 | -0.035 |   0.033 |
-| memna \* adversity |           0.018 | -0.017 |   0.053 |
-| memse \* adversity |          -0.015 | -0.049 |   0.020 |
-| picvo \* adversity |          -0.010 | -0.044 |   0.025 |
-| pscmp \* adversity |           0.009 | -0.027 |   0.044 |
-| vrba \* adversity  |          -0.027 | -0.062 |   0.009 |
+| adversity          |          -0.010 | -0.053 |   0.032 |
+| appld \* adversity |           0.008 | -0.027 |   0.042 |
+| calc \* adversity  |           0.027 | -0.008 |   0.062 |
+| incom \* adversity |          -0.014 | -0.050 |   0.021 |
+| lwid \* adversity  |           0.004 | -0.031 |   0.038 |
+| memna \* adversity |           0.024 | -0.010 |   0.059 |
+| memse \* adversity |          -0.005 | -0.039 |   0.029 |
+| picvo \* adversity |          -0.019 | -0.053 |   0.015 |
+| pscmp \* adversity |          -0.012 | -0.048 |   0.023 |
+| vrba \* adversity  |          -0.010 | -0.046 |   0.025 |
 
 ### Q20: Predicted effect sizes
 
@@ -744,7 +744,7 @@ boundaries. –\>\>*
 ### Q21: Statistical Power
 
 See our full power analysis [here](power-analysis/) and the code
-[here](../scripts/power-simulation.R).
+[here](../scripts/prereg-power-simulation.R).
 
 In short, we used a simulation approach to conduct power analyses. We
 simulated adversity scores but used actual Woodcock Johnson test scores.

@@ -3,8 +3,8 @@ title: "Preregistration"
 format: 
   gfm: default
   docx: default
-bibliography: ../references.bib
-csl: ../apa.csl
+bibliography: ../bib-files/references.bib
+csl: ../bib-files/apa.csl
 link-citations: true
 ---
 
@@ -249,7 +249,7 @@ We might break apart composites. For example, we may analyze Census variables se
 
 The main dependent measures will come from the Woodcock-Johnson Cognitive and Achievement Tests [@woodcock1990; @woodcock1990a].
 
-![](../figures/table1.jpeg)
+![](figures/prereg-table1.png)
 
 **Scores**
 
@@ -333,7 +333,7 @@ ivs_partner_transitions |>
   arrange(n_missing) |> 
   mutate(across(everything(), ~ifelse(is.na(.x), "", .x))) |> 
   knitr::kable(
-    col.names = c("Missing Assessments", "Partner Changes", "Mother Job Changes", "Father Job Changes", "Income-to-Needs", "Materal Depr.")
+    col.names = c("Missing Assessments", "Partner Changes", "Mother Job Changes", "Father Job Changes", "Income-to-Needs", "Maternal Depr.")
   )
 ```
 
@@ -384,7 +384,7 @@ Below is a conceptual depiction of our analyses:
 
 :::{#fig-conceptual}
 
-![](../figures/figure1.png)
+![](figures/prereg-figure1.png)
 
 We are interested in the effect of each adversity measure on a person’s overall score, measured as a formative average of each subtest. (A) is the main effect of adversity on overall performance. (B) is the main effect of a subtest. (C) is the simple effect (slope) of adversity for a particular subtest. (D) is the interaction effect that measures the difference between A and C. A significant simple slope means the C ≠ 0 and a significant interaction means A ≠ C. So, when C is significant, it means that adversity affects performance. When D is significant, it means that adversity affects a subtest in a different way than A (overall pattern).
 :::
@@ -510,7 +510,7 @@ Effects between -.10 and .10 are not of interest for determining differences bet
 
 ### Q21: Statistical Power
 
-See our full power analysis [here](power-analysis/) and the code [here](../scripts/power-simulation.R).
+See our full power analysis [here](power-analysis/) and the code [here](../scripts/prereg-power-simulation.R).
 
 In short, we used a simulation approach to conduct power analyses. We simulated adversity scores but used actual Woodcock Johnson test scores. Simulations revealed, that, with a sample size of (*N* = `r nrow(seccyd_dvs_wj_data1)`), the smallest interaction effect we can detect is $\beta$ = -.075 (or .075) with 90% power, if error is small. When error is larger, we can detect the same effect size with only 65% power. However, even with larger error, we can detect a $\beta$ = -.10 (or .10) with 83% power.
 

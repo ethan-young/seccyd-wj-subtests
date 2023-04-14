@@ -5,8 +5,9 @@ library(flextable)
 library(gt)
 
 ## Load data
-load("data/seccyd_measures.Rdata")
+load("data/seccyd-full-measure-list.Rdata")
 
+# WJ Subtest Table --------------------------------------------------------
 table_wj_measures <- 
   seccyd_codebook |> 
   filter(
@@ -27,4 +28,11 @@ table_wj_measures <-
   bold(i = c(1,7), j = 1) |> 
   padding(i = c(2:6, 8:12), j = 1, padding.left = 15) |> 
   valign(valign = "top") |> 
-  set_table_properties(width = 1, layout = "autofit")
+  set_table_properties(width = 1)
+
+# Save table --------------------------------------------------------------
+save_as_image(
+  table_wj_measures |> autofit(), 
+  "preregistration/figures/prereg-table1.png",
+  expand = 0
+)
