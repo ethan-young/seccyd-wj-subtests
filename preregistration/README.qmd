@@ -108,8 +108,6 @@ This preregistration document is based on [@akker2021] for secondary data analys
 
 **H3:** If any sub-tests remain intact (or enhanced), they will be tests that depend less on formal crystallized knowledge and reading ability (i.e., short term memory, auditory processing, fluid intelligence).
 
-*<< -- SV: I don't see these hypotheses in the introduction, especially H3 which seems way more specific than the types of 'principled exploratory' steps that you describe there. Is this with a reason? Do we have enough existing evidence to predict H3 and if so, should that be something that features in the intro? -- >>*
-
 ## Part 2 - Data Description
 
 ### Q5: Dataset
