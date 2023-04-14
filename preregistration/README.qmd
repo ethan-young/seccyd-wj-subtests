@@ -100,10 +100,6 @@ This preregistration document is based on [@akker2021] for secondary data analys
 
 **R4:** Are the effects of adversity test-specific or test-general?
 
-(Not sure that I want to keep R4 yet)
-
-*<< -- SV: In case we include R4, I think this project lends itself very well to talking about *domain*-general effects as opposed to *test*-general effects. If we're talking about test-general I guess we would model one overarching latent variable. However, With the WJ we can divide them up into several ability-domains. -- >>*
-
 ### Q4: Hypotheses
 
 **H1:** We expect harshness and/or unpredictability to be associated with lower overall within-person Woodcock Johnson (WJ) cognitive ability score (sum coded within-person intercept).
@@ -504,9 +500,6 @@ subtest_model |>
 We do not have specific predictions for effect sizes but we deem standardized regression coefficients for interaction effects = .10 (or higher) and -.10 (or lower) meaningful. These effects would indicate that an effect of adversity on a subtest score is meaningfully more negative or more positive. 
 
 Effects between -.10 and .10 are not of interest for determining differences between subtests and the overall average. However, we are interested in determining if simple effects falling between -.10 and .10 are consitent with an effect of 0. For this scenario, we will use equivalence testing with -.10 and .10 as bounds.
-
-*<< -- SV: We might discuss whether these equivalence bounds are the best ones. Hypothetically, there could be a true effect of, say, 0.07, that is a real adversity effect but too small to be practically interesting. Setting equivalence bounds to .10 however would potentially classify this as a true zero effect (practically equivalent to zero). Thus, I think it could be that we actually want to set more narrow boundaries. -->>*
-
 
 ### Q21: Statistical Power
 

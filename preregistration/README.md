@@ -1,7 +1,7 @@
 Preregistration
 ================
 
-*Last updated on Friday, April 14, 2023 at 01:33 PM*
+*Last updated on Friday, April 14, 2023 at 06:09 PM*
 
 ## Overview
 
@@ -67,14 +67,6 @@ patterns of effects across broad and narrow cognitive performance
 measures?
 
 **R4:** Are the effects of adversity test-specific or test-general?
-
-(Not sure that I want to keep R4 yet)
-
-*\<\< – SV: In case we include R4, I think this project lends itself
-very well to talking about *domain*-general effects as opposed to
-*test*-general effects. If we’re talking about test-general I guess we
-would model one overarching latent variable. However, With the WJ we can
-divide them up into several ability-domains. – \>\>*
 
 ### Q4: Hypotheses
 
@@ -569,16 +561,16 @@ example_data2 |>
 
 |  id | adversity | wj_sub_test   |    score |
 |----:|----------:|:--------------|---------:|
-|   1 | 0.9679272 | wj_picvo_mean | 108.7500 |
-|   1 | 0.9679272 | wj_vrba_mean  | 139.5000 |
-|   1 | 0.9679272 | wj_pscmp_mean | 133.0000 |
-|   1 | 0.9679272 | wj_appld_mean | 130.5000 |
-|   1 | 0.9679272 | wj_memse_mean | 115.0000 |
-|   1 | 0.9679272 | wj_incom_mean | 128.0000 |
-|   1 | 0.9679272 | wj_memna_mean | 117.0000 |
-|   1 | 0.9679272 | wj_lwid_mean  | 138.6667 |
-|   1 | 0.9679272 | wj_wrdat_mean | 134.0000 |
-|   1 | 0.9679272 | wj_calc_mean  | 143.0000 |
+|   1 | -1.367574 | wj_picvo_mean | 108.7500 |
+|   1 | -1.367574 | wj_vrba_mean  | 139.5000 |
+|   1 | -1.367574 | wj_pscmp_mean | 133.0000 |
+|   1 | -1.367574 | wj_appld_mean | 130.5000 |
+|   1 | -1.367574 | wj_memse_mean | 115.0000 |
+|   1 | -1.367574 | wj_incom_mean | 128.0000 |
+|   1 | -1.367574 | wj_memna_mean | 117.0000 |
+|   1 | -1.367574 | wj_lwid_mean  | 138.6667 |
+|   1 | -1.367574 | wj_wrdat_mean | 134.0000 |
+|   1 | -1.367574 | wj_calc_mean  | 143.0000 |
 
 3.  Next, we apply a sum coded contrast to the subtest index column.
     This means the intercept in the mixed effect model reflects the
@@ -658,26 +650,26 @@ subtest_model |>
 
 | Parameter          | Coefficient |    SE |     p |
 |:-------------------|------------:|------:|------:|
-| (Intercept)        |     105.339 | 0.322 | 0.000 |
-| appld              |       2.565 | 0.259 | 0.000 |
-| calc               |       6.537 | 0.268 | 0.000 |
-| incom              |      -9.193 | 0.266 | 0.000 |
-| lwid               |       1.599 | 0.259 | 0.000 |
-| memna              |      -0.230 | 0.264 | 0.383 |
-| memse              |      -8.311 | 0.260 | 0.000 |
-| picvo              |      -2.698 | 0.259 | 0.000 |
+| (Intercept)        |     105.338 | 0.322 | 0.000 |
+| appld              |       2.566 | 0.259 | 0.000 |
+| calc               |       6.539 | 0.267 | 0.000 |
+| incom              |      -9.196 | 0.266 | 0.000 |
+| lwid               |       1.600 | 0.259 | 0.000 |
+| memna              |      -0.227 | 0.264 | 0.390 |
+| memse              |      -8.312 | 0.260 | 0.000 |
+| picvo              |      -2.697 | 0.259 | 0.000 |
 | pscmp              |       3.069 | 0.267 | 0.000 |
-| vrba               |       5.444 | 0.269 | 0.000 |
-| adversity          |      -0.154 | 0.322 | 0.632 |
-| appld \* adversity |       0.112 | 0.259 | 0.666 |
-| calc \* adversity  |       0.399 | 0.267 | 0.136 |
-| incom \* adversity |      -0.214 | 0.267 | 0.422 |
-| lwid \* adversity  |       0.053 | 0.259 | 0.837 |
-| memna \* adversity |       0.364 | 0.265 | 0.170 |
-| memse \* adversity |      -0.073 | 0.261 | 0.779 |
-| picvo \* adversity |      -0.281 | 0.259 | 0.278 |
-| pscmp \* adversity |      -0.183 | 0.267 | 0.495 |
-| vrba \* adversity  |      -0.155 | 0.270 | 0.566 |
+| vrba               |       5.438 | 0.269 | 0.000 |
+| adversity          |       0.186 | 0.322 | 0.564 |
+| appld \* adversity |      -0.307 | 0.259 | 0.235 |
+| calc \* adversity  |       0.521 | 0.266 | 0.050 |
+| incom \* adversity |      -0.108 | 0.267 | 0.685 |
+| lwid \* adversity  |       0.349 | 0.259 | 0.178 |
+| memna \* adversity |       0.209 | 0.265 | 0.431 |
+| memse \* adversity |      -0.231 | 0.261 | 0.376 |
+| picvo \* adversity |       0.214 | 0.259 | 0.409 |
+| pscmp \* adversity |      -0.092 | 0.266 | 0.728 |
+| vrba \* adversity  |      -0.821 | 0.268 | 0.002 |
 
 </div>
 
@@ -703,21 +695,21 @@ subtest_model |>
 | calc               |           0.441 |  0.405 |   0.476 |
 | incom              |          -0.620 | -0.655 |  -0.585 |
 | lwid               |           0.108 |  0.074 |   0.142 |
-| memna              |          -0.015 | -0.050 |   0.019 |
+| memna              |          -0.015 | -0.050 |   0.020 |
 | memse              |          -0.560 | -0.595 |  -0.526 |
 | picvo              |          -0.182 | -0.216 |  -0.148 |
 | pscmp              |           0.207 |  0.172 |   0.242 |
-| vrba               |           0.367 |  0.331 |   0.403 |
-| adversity          |          -0.010 | -0.053 |   0.032 |
-| appld \* adversity |           0.008 | -0.027 |   0.042 |
-| calc \* adversity  |           0.027 | -0.008 |   0.062 |
-| incom \* adversity |          -0.014 | -0.050 |   0.021 |
-| lwid \* adversity  |           0.004 | -0.031 |   0.038 |
-| memna \* adversity |           0.024 | -0.010 |   0.059 |
-| memse \* adversity |          -0.005 | -0.039 |   0.029 |
-| picvo \* adversity |          -0.019 | -0.053 |   0.015 |
-| pscmp \* adversity |          -0.012 | -0.048 |   0.023 |
-| vrba \* adversity  |          -0.010 | -0.046 |   0.025 |
+| vrba               |           0.367 |  0.331 |   0.402 |
+| adversity          |           0.013 | -0.030 |   0.055 |
+| appld \* adversity |          -0.021 | -0.055 |   0.013 |
+| calc \* adversity  |           0.035 |  0.000 |   0.070 |
+| incom \* adversity |          -0.007 | -0.043 |   0.028 |
+| lwid \* adversity  |           0.024 | -0.011 |   0.058 |
+| memna \* adversity |           0.014 | -0.021 |   0.049 |
+| memse \* adversity |          -0.016 | -0.050 |   0.019 |
+| picvo \* adversity |           0.014 | -0.020 |   0.049 |
+| pscmp \* adversity |          -0.006 | -0.041 |   0.029 |
+| vrba \* adversity  |          -0.055 | -0.091 |  -0.020 |
 
 ### Q20: Predicted effect sizes
 
@@ -732,14 +724,6 @@ differences between subtests and the overall average. However, we are
 interested in determining if simple effects falling between -.10 and .10
 are consitent with an effect of 0. For this scenario, we will use
 equivalence testing with -.10 and .10 as bounds.
-
-*\<\< – SV: We might discuss whether these equivalence bounds are the
-best ones. Hypothetically, there could be a true effect of, say, 0.07,
-that is a real adversity effect but too small to be practically
-interesting. Setting equivalence bounds to .10 however would potentially
-classify this as a true zero effect (practically equivalent to zero).
-Thus, I think it could be that we actually want to set more narrow
-boundaries. –\>\>*
 
 ### Q21: Statistical Power
 
