@@ -19,6 +19,39 @@ knitr::opts_knit$set(root.dir = "../")
 ```{r data, include=FALSE}
 load("data/seccyd-dvs-wj.Rdata")
 load("data/seccyd-full-measure-list.Rdata")
+
+walk(
+  list.files("data", "^analysis", full.names = T), 
+  function(x) load(x, envir =.GlobalEnv)
+)
+
+wj_order <- 
+  c(
+    "wj_picvo",
+    "wj_vrba",
+    "wj_pscmp",
+    "wj_appld",
+    "wj_memse",
+    "wj_incom",
+    "wj_memna",
+    "wj_lwid",
+    "wj_wrdat",
+    "wj_calc"
+  )
+
+wj_labels <- 
+  c(
+    "Picture Vocab",
+    "Verbal Analogies",
+    "Passage Comprehension",
+    "Applied Problems",
+    "Short-Term Memory",
+    "Auditory Processing",
+    "Auditory-Visual Associations",
+    "Syymbolic Learning",
+    "Unfamilar Words",
+    "Calculations"
+  )
 ```
 
 *Last updated `r format(Sys.time(), "on %A, %B %d, %Y at %I:%M %p")`*
@@ -108,8 +141,8 @@ Data can be accessed through the following links.
 ### Q8: Date of Download
 
 - Ethan Young (lead author and data analyst) 
-    - Accessed data for the dependent variables on February 3rd, 2022
-    - Accessed data for the independent variables on March 2nd, 2023
+- Accessed data for the dependent variables on February 3rd, 2022
+- Accessed data for the independent variables on March 2nd, 2023
 - Stefan Vermeent will not access the data
 - Willem Frankenhuis will not access the data
 - Marissa Nivison has access to the full dataset
@@ -144,12 +177,12 @@ Once variables for this study are selected, accessed, and ready for pre-processi
 - Gender
 - Race/Ethnicity (White/non-Hispanic = 0, otherwise = 1)
 - Maternal education
-    - 1 = less than high school
-    - 2 = high school or general education diploma
-    - 3 = some college or vocational degree
-    - 4 = college degree
-    - 5 = some graduate school or master’s degree
-    - 6 = graduate degree greater than a master’s degree
+- 1 = less than high school
+- 2 = high school or general education diploma
+- 3 = some college or vocational degree
+- 4 = college degree
+- 5 = some graduate school or master’s degree
+- 6 = graduate degree greater than a master’s degree
 
 #### Independent Variables
 
@@ -236,11 +269,77 @@ If it becomes clear that there are other inclusion/exclusion criteria, we will u
 
 ### Q14: Missing data
 
-*NOT DONE*
+Below are missing data rates arcoss key variables.
+
+#### Dependent Variables
+
+```{r}
+dvs_analysis_long |> 
+  summarize(
+    n = n(),
+    n_prop = (n/1364) * 100,
+    .by = c(wj_subtest, n_missing)
+  ) |> 
+  mutate(
+    n = str_pad(sprintf("%.0f", n), side = "left", 4),
+    n_prop =  str_pad(paste0("(", sprintf("%.2f", n_prop), "%)"), side = "left", 8),
+    missingness = glue::glue("{n} {n_prop}")
+  ) |> 
+  select(wj_subtest, n_missing, missingness) |> 
+  pivot_longer(c(-wj_subtest, -n_missing), names_to = "type") |> 
+  unite(type, n_missing, col = "type") |> 
+  pivot_wider(names_from = "type", values_from = "value") |> 
+  mutate(wj_subtest = factor(wj_subtest, wj_order, wj_labels)) |> 
+  mutate(across(starts_with("miss"), ~ifelse(is.na(.x), "", .x))) |> 
+  select(
+    wj_subtest, 
+    missingness_0, 
+    missingness_1,
+    missingness_2,
+    missingness_3,
+    missingness_4, 
+    missingness_5
+  ) |> 
+  knitr::kable(
+    col.names = c("WJ Subtest", paste("Missing", c(0:5), "Assessments") |> str_replace("1 Assessments","1 Assessment"))
+  )
+```
+
+#### Independent Variables
+
+**Family Level Variables**
+
+```{r}
+ivs_partner_transitions |> 
+  left_join(ivs_incnt, by = "id") |> 
+  left_join(ivs_madep, by = "id") |> 
+  select(id, ends_with("na")) |> 
+  pivot_longer(c(-id), names_to = "variable", values_to = "n_missing") |> 
+  summarize(
+    n = n(),
+    n_prop = (n/1364) * 100,
+    .by = c(variable, n_missing)
+  ) |> 
+  mutate(
+    n = str_pad(sprintf("%.0f", n), side = "left", 4),
+    n_prop =  str_pad(paste0("(", sprintf("%.2f", n_prop), "%)"), side = "left", 8),
+    missingness = glue::glue("{n} {n_prop}")
+  ) |> 
+  select(variable, n_missing, missingness) |> 
+  pivot_longer(c(-variable, -n_missing), names_to = "type") |> 
+  mutate(variable = str_remove(variable, "_na$")) |> 
+  unite(variable, type, col = "type") |> 
+  pivot_wider(names_from = "type", values_from = "value") |> 
+  arrange(n_missing) |> 
+  mutate(across(everything(), ~ifelse(is.na(.x), "", .x))) |> 
+  knitr::kable(
+    col.names = c("Missing Assessments", "Partner Changes", "Mother Job Changes", "Father Job Changes", "Income-to-Needs", "Materal Depr.")
+  )
+```
 
 ### Q15: Outliers
 
-*NOT DONE*
+Our strategy will be to retain outliers. However, if we discover influential outliers, we may use a multiverse strategy to handle how they affect analyses.
 
 ### Q16: Sample Weights
 
@@ -357,10 +456,10 @@ example_data3 |>
 ```
 
 4. We fit a linear mixed effects model with the following terms
-    - contrast coded subtest 
-    - adversity (standardized)
-    - interaction between contrast coded subtest and adversity
-    - random intercept for participants
+- contrast coded subtest 
+- adversity (standardized)
+- interaction between contrast coded subtest and adversity
+- random intercept for participants
 
 ```{r model, echo=TRUE}
 # Fit model

@@ -1,7 +1,7 @@
 Preregistration
 ================
 
-*Last updated on Wednesday, March 15, 2023 at 09:53 AM*
+*Last updated on Friday, April 14, 2023 at 10:17 AM*
 
 ## Overview
 
@@ -70,6 +70,12 @@ measures?
 
 (Not sure that I want to keep R4 yet)
 
+*\<\< – SV: In case we include R4, I think this project lends itself
+very well to talking about *domain*-general effects as opposed to
+*test*-general effects. If we’re talking about test-general I guess we
+would model one overarching latent variable. However, With the WJ we can
+divide them up into several ability-domains. – \>\>*
+
 ### Q4: Hypotheses
 
 **H1:** We expect harshness and/or unpredictability to be associated
@@ -77,13 +83,19 @@ with lower overall within-person Woodcock Johnson (WJ) cognitive ability
 score (sum coded within-person intercept).
 
 **H2:** Compared with overall WJ scores, the effect of harshness and/or
-unpredictability will vary; some sub-tests will show lowered
-performance, whereas others will remain ‘intact’ (i.e., should little if
-any change).
+unpredictability on specific sub-tests will vary; some sub-tests will
+show lowered performance, whereas others will remain ‘intact’ (i.e.,
+should little if any change) or even show enhanced performance.
 
 **H3:** If any sub-tests remain intact (or enhanced), they will be tests
 that depend less on formal crystallized knowledge and reading ability
 (i.e., short term memory, auditory processing, fluid intelligence).
+
+*\<\< – SV: I don’t see these hypotheses in the introduction, especially
+H3 which seems way more specific than the types of ‘principled
+exploratory’ steps that you describe there. Is this with a reason? Do we
+have enough existing evidence to predict H3 and if so, should that be
+something that features in the intro? – \>\>*
 
 ## Part 2 - Data Description
 
@@ -139,8 +151,8 @@ Data can be accessed through the following links.
 ### Q8: Date of Download
 
 - Ethan Young (lead author and data analyst)
-  - Accessed data for the dependent variables on February 3rd, 2022
-  - Accessed data for the independent variables on March 2nd, 2023
+- Accessed data for the dependent variables on February 3rd, 2022
+- Accessed data for the independent variables on March 2nd, 2023
 - Stefan Vermeent will not access the data
 - Willem Frankenhuis will not access the data
 - Marissa Nivison has access to the full dataset
@@ -184,12 +196,12 @@ pre-processing/analysis, codebooks will be available
 - Gender
 - Race/Ethnicity (White/non-Hispanic = 0, otherwise = 1)
 - Maternal education
-  - 1 = less than high school
-  - 2 = high school or general education diploma
-  - 3 = some college or vocational degree
-  - 4 = college degree
-  - 5 = some graduate school or master’s degree
-  - 6 = graduate degree greater than a master’s degree
+- 1 = less than high school
+- 2 = high school or general education diploma
+- 3 = some college or vocational degree
+- 4 = college degree
+- 5 = some graduate school or master’s degree
+- 6 = graduate degree greater than a master’s degree
 
 #### Independent Variables
 
@@ -204,7 +216,7 @@ their effects.
 
 1.  *Environmental Unpredictability*
 
-This measure is based on Belsky et al. ([2012](#ref-belsky2012))
+This measure is based on Belsky et al. ([2012](#ref-belsky2012)) and
 includes three variables that are standardized and averaged together
 over the relevant time period:
 
@@ -215,9 +227,9 @@ over the relevant time period:
 
 2.  *Income Variation*
 
-This measure is based on Li et al. ([2018](#ref-li2018)) computes the
-residual variance in income-to-needs ratios after a linear trend is fit
-to each participant.
+This measure is based on Li et al. ([2018](#ref-li2018)) and computes
+the residual variance in income-to-needs ratios after a linear trend is
+fit to each participant.
 
 **Harshness, Past Approaches**
 
@@ -247,7 +259,7 @@ The Census variables relevant here are the following:
 
 We plan to compute mean and standard deviation scores for each Census
 measure over the addresses each participant lived at. For an overall
-neighborhood harshness score, we will standardize and avergae together
+neighborhood harshness score, we will standardize and average together
 each mean score. For an overall neighborhood change score, we will
 standardize and average together all standard deviation scores.
 
@@ -301,6 +313,10 @@ at one score per subtest. For example, picture vocabulary was measured
 five times so overall picture vocabulary will be averaged over the five
 time points.
 
+*\<\< – SV: Do you think it’s necessary to control for age within these
+time points before aggregating? I assume the gap between the first and
+fifth timepoint is quite wide? – \>\>*
+
 ### Q13: Inclusion/Exclusion criteria
 
 At the time of writing this preregistration, the only inclusion criteria
@@ -321,11 +337,113 @@ arbitrary inclusion/exclusion criteria.
 
 ### Q14: Missing data
 
-*NOT DONE*
+Below are missing data rates arcoss key variables.
+
+#### Dependent Variables
+
+``` r
+dvs_analysis_long |> 
+  summarize(
+    n = n(),
+    n_prop = (n/1364) * 100,
+    .by = c(wj_subtest, n_missing)
+  ) |> 
+  mutate(
+    n = str_pad(sprintf("%.0f", n), side = "left", 4),
+    n_prop =  str_pad(paste0("(", sprintf("%.2f", n_prop), "%)"), side = "left", 8),
+    missingness = glue::glue("{n} {n_prop}")
+  ) |> 
+  select(wj_subtest, n_missing, missingness) |> 
+  pivot_longer(c(-wj_subtest, -n_missing), names_to = "type") |> 
+  unite(type, n_missing, col = "type") |> 
+  pivot_wider(names_from = "type", values_from = "value") |> 
+  mutate(wj_subtest = factor(wj_subtest, wj_order, wj_labels)) |> 
+  mutate(across(starts_with("miss"), ~ifelse(is.na(.x), "", .x))) |> 
+  select(
+    wj_subtest, 
+    missingness_0, 
+    missingness_1,
+    missingness_2,
+    missingness_3,
+    missingness_4, 
+    missingness_5
+  ) |> 
+  knitr::kable(
+    col.names = c("WJ Subtest", paste("Missing", c(0:5), "Assessments") |> str_replace("1 Assessments","1 Assessment"))
+  )
+```
+
+| WJ Subtest                   | Missing 0 Assessments | Missing 1 Assessment | Missing 2 Assessments | Missing 3 Assessments | Missing 4 Assessments | Missing 5 Assessments |
+|:-----------------------------|:----------------------|:---------------------|:----------------------|:----------------------|:----------------------|:----------------------|
+| Picture Vocab                | 746 (54.69%)          | 189 (13.86%)         | 95 (6.96%)            | 78 (5.72%)            | 48 (3.52%)            |                       |
+| Verbal Analogies             | 840 (61.58%)          | 224 (16.42%)         | 92 (6.74%)            |                       |                       |                       |
+| Passage Comprehension        | 803 (58.87%)          | 203 (14.88%)         | 74 (5.43%)            | 76 (5.57%)            |                       |                       |
+| Applied Problems             | 744 (54.55%)          | 189 (13.86%)         | 96 (7.04%)            | 79 (5.79%)            | 47 (3.45%)            | 1 (0.07%)             |
+| Short-Term Memory            | 897 (65.76%)          | 149 (10.92%)         | 96 (7.04%)            | 14 (1.03%)            |                       |                       |
+| Auditory Processing          | 976 (71.55%)          | 116 (8.50%)          | 64 (4.69%)            |                       |                       |                       |
+| Auditory-Visual Associations | 932 (68.33%)          | 171 (12.54%)         | 53 (3.89%)            |                       |                       |                       |
+| Syymbolic Learning           | 847 (62.10%)          | 140 (10.26%)         | 113 (8.28%)           | 54 (3.96%)            | 2 (0.15%)             |                       |
+| Unfamilar Words              | 932 (68.33%)          | 171 (12.54%)         | 53 (3.89%)            |                       |                       |                       |
+| Calculations                 | 926 (67.89%)          | 149 (10.92%)         | 81 (5.94%)            |                       |                       |                       |
+
+#### Independent Variables
+
+**Family Level Variables**
+
+``` r
+ivs_partner_transitions |> 
+  left_join(ivs_incnt, by = "id") |> 
+  left_join(ivs_madep, by = "id") |> 
+  select(id, ends_with("na")) |> 
+  pivot_longer(c(-id), names_to = "variable", values_to = "n_missing") |> 
+  summarize(
+    n = n(),
+    n_prop = (n/1364) * 100,
+    .by = c(variable, n_missing)
+  ) |> 
+  mutate(
+    n = str_pad(sprintf("%.0f", n), side = "left", 4),
+    n_prop =  str_pad(paste0("(", sprintf("%.2f", n_prop), "%)"), side = "left", 8),
+    missingness = glue::glue("{n} {n_prop}")
+  ) |> 
+  select(variable, n_missing, missingness) |> 
+  pivot_longer(c(-variable, -n_missing), names_to = "type") |> 
+  mutate(variable = str_remove(variable, "_na$")) |> 
+  unite(variable, type, col = "type") |> 
+  pivot_wider(names_from = "type", values_from = "value") |> 
+  arrange(n_missing) |> 
+  mutate(across(everything(), ~ifelse(is.na(.x), "", .x))) |> 
+  knitr::kable(
+    col.names = c("Missing Assessments", "Partner Changes", "Mother Job Changes", "Father Job Changes", "Income-to-Needs", "Materal Depr.")
+  )
+```
+
+| Missing Assessments | Partner Changes | Mother Job Changes | Father Job Changes | Income-to-Needs | Materal Depr. |
+|--------------------:|:----------------|:-------------------|:-------------------|:----------------|:--------------|
+|                   0 |                 |                    |                    | 963 (70.60%)    | 1048 (76.83%) |
+|                   1 | 859 (62.98%)    | 854 (62.61%)       | 631 (46.26%)       | 197 (14.44%)    | 162 (11.88%)  |
+|                   2 | 60 (4.40%)      | 96 (7.04%)         | 61 (4.47%)         | 52 (3.81%)      | 52 (3.81%)    |
+|                   3 | 144 (10.56%)    | 119 (8.72%)        | 132 (9.68%)        | 44 (3.23%)      | 101 (7.40%)   |
+|                   4 | 35 (2.57%)      | 34 (2.49%)         | 32 (2.35%)         | 43 (3.15%)      | 1 (0.07%)     |
+|                   5 | 53 (3.89%)      | 50 (3.67%)         | 56 (4.11%)         | 56 (4.11%)      |               |
+|                   6 | 23 (1.69%)      | 21 (1.54%)         | 27 (1.98%)         | 9 (0.66%)       |               |
+|                   7 | 20 (1.47%)      | 25 (1.83%)         | 31 (2.27%)         |                 |               |
+|                   8 | 11 (0.81%)      | 15 (1.10%)         | 18 (1.32%)         |                 |               |
+|                   9 | 15 (1.10%)      | 7 (0.51%)          | 28 (2.05%)         |                 |               |
+|                  10 | 19 (1.39%)      | 20 (1.47%)         | 25 (1.83%)         |                 |               |
+|                  11 | 12 (0.88%)      | 11 (0.81%)         | 21 (1.54%)         |                 |               |
+|                  12 | 8 (0.59%)       | 8 (0.59%)          | 27 (1.98%)         |                 |               |
+|                  13 | 16 (1.17%)      | 19 (1.39%)         | 28 (2.05%)         |                 |               |
+|                  14 | 14 (1.03%)      | 11 (0.81%)         | 26 (1.91%)         |                 |               |
+|                  15 | 17 (1.25%)      | 17 (1.25%)         | 26 (1.91%)         |                 |               |
+|                  16 | 35 (2.57%)      | 34 (2.49%)         | 60 (4.40%)         |                 |               |
+|                  17 | 23 (1.69%)      | 23 (1.69%)         | 135 (9.90%)        |                 |               |
 
 ### Q15: Outliers
 
-*NOT DONE*
+Our strategy will be to retain outliers. However, if we discover
+influential outliers, we may use a multiverse strategy to handle how
+they affect analyses.
 
 ### Q16: Sample Weights
 
@@ -408,7 +526,7 @@ means that adversity affects a subtest in a different way than A
 </div>
 
 We will use a mixed effects linear regression to test Hypotheses 1 & 2
-using the `lmer`. To do so, we proceed in three steps:
+using the `lmer` package. To do so, we proceed in three steps:
 
 1.  We will standardize (z-score) our independent variables. This
     centers the IV at 0 and scales them with standard deviation = 1.
@@ -451,16 +569,16 @@ example_data2 |>
 
 |  id | adversity | wj_sub_test   |    score |
 |----:|----------:|:--------------|---------:|
-|   1 | 0.1910243 | wj_picvo_mean | 108.7500 |
-|   1 | 0.1910243 | wj_vrba_mean  | 139.5000 |
-|   1 | 0.1910243 | wj_pscmp_mean | 133.0000 |
-|   1 | 0.1910243 | wj_appld_mean | 130.5000 |
-|   1 | 0.1910243 | wj_memse_mean | 115.0000 |
-|   1 | 0.1910243 | wj_incom_mean | 128.0000 |
-|   1 | 0.1910243 | wj_memna_mean | 117.0000 |
-|   1 | 0.1910243 | wj_lwid_mean  | 138.6667 |
-|   1 | 0.1910243 | wj_wrdat_mean | 134.0000 |
-|   1 | 0.1910243 | wj_calc_mean  | 143.0000 |
+|   1 | -1.157769 | wj_picvo_mean | 108.7500 |
+|   1 | -1.157769 | wj_vrba_mean  | 139.5000 |
+|   1 | -1.157769 | wj_pscmp_mean | 133.0000 |
+|   1 | -1.157769 | wj_appld_mean | 130.5000 |
+|   1 | -1.157769 | wj_memse_mean | 115.0000 |
+|   1 | -1.157769 | wj_incom_mean | 128.0000 |
+|   1 | -1.157769 | wj_memna_mean | 117.0000 |
+|   1 | -1.157769 | wj_lwid_mean  | 138.6667 |
+|   1 | -1.157769 | wj_wrdat_mean | 134.0000 |
+|   1 | -1.157769 | wj_calc_mean  | 143.0000 |
 
 3.  Next, we apply a sum coded contrast to the subtest index column.
     This means the intercept in the mixed effect model reflects the
@@ -507,10 +625,11 @@ example_data3 |>
 | wrdat |    -1 |   -1 |    -1 |   -1 |    -1 |    -1 |    -1 |    -1 |   -1 |
 
 4.  We fit a linear mixed effects model with the following terms
-    - contrast coded subtest
-    - adversity (standardized)
-    - interaction between contrast coded subtest and adversity
-    - random intercept for participants
+
+- contrast coded subtest
+- adversity (standardized)
+- interaction between contrast coded subtest and adversity
+- random intercept for participants
 
 ``` r
 # Fit model
@@ -539,26 +658,26 @@ subtest_model |>
 
 | Parameter          | Coefficient |    SE |     p |
 |:-------------------|------------:|------:|------:|
-| (Intercept)        |     105.339 | 0.322 | 0.000 |
-| appld              |       2.565 | 0.259 | 0.000 |
+| (Intercept)        |     105.339 | 0.321 | 0.000 |
+| appld              |       2.566 | 0.259 | 0.000 |
 | calc               |       6.537 | 0.268 | 0.000 |
 | incom              |      -9.195 | 0.266 | 0.000 |
 | lwid               |       1.599 | 0.259 | 0.000 |
-| memna              |      -0.229 | 0.264 | 0.387 |
+| memna              |      -0.228 | 0.264 | 0.389 |
 | memse              |      -8.311 | 0.260 | 0.000 |
 | picvo              |      -2.697 | 0.259 | 0.000 |
 | pscmp              |       3.069 | 0.267 | 0.000 |
 | vrba               |       5.443 | 0.269 | 0.000 |
-| adversity          |       0.121 | 0.322 | 0.706 |
-| appld \* adversity |      -0.089 | 0.259 | 0.732 |
-| calc \* adversity  |      -0.099 | 0.266 | 0.711 |
-| incom \* adversity |       0.032 | 0.267 | 0.904 |
-| lwid \* adversity  |      -0.277 | 0.259 | 0.285 |
-| memna \* adversity |       0.094 | 0.264 | 0.721 |
-| memse \* adversity |      -0.041 | 0.260 | 0.875 |
-| picvo \* adversity |       0.413 | 0.259 | 0.111 |
-| pscmp \* adversity |       0.086 | 0.266 | 0.746 |
-| vrba \* adversity  |       0.151 | 0.268 | 0.575 |
+| adversity          |      -0.462 | 0.321 | 0.151 |
+| appld \* adversity |       0.204 | 0.259 | 0.432 |
+| calc \* adversity  |       0.457 | 0.268 | 0.088 |
+| incom \* adversity |       0.007 | 0.266 | 0.980 |
+| lwid \* adversity  |      -0.012 | 0.259 | 0.964 |
+| memna \* adversity |       0.266 | 0.263 | 0.313 |
+| memse \* adversity |      -0.220 | 0.260 | 0.397 |
+| picvo \* adversity |      -0.142 | 0.259 | 0.582 |
+| pscmp \* adversity |       0.129 | 0.267 | 0.629 |
+| vrba \* adversity  |      -0.394 | 0.269 | 0.144 |
 
 </div>
 
@@ -589,16 +708,16 @@ subtest_model |>
 | picvo              |          -0.182 | -0.216 |  -0.148 |
 | pscmp              |           0.207 |  0.172 |   0.242 |
 | vrba               |           0.367 |  0.331 |   0.403 |
-| adversity          |           0.008 | -0.034 |   0.051 |
-| appld \* adversity |          -0.006 | -0.040 |   0.028 |
-| calc \* adversity  |          -0.007 | -0.042 |   0.029 |
-| incom \* adversity |           0.002 | -0.033 |   0.037 |
-| lwid \* adversity  |          -0.019 | -0.053 |   0.016 |
-| memna \* adversity |           0.006 | -0.029 |   0.041 |
-| memse \* adversity |          -0.003 | -0.037 |   0.032 |
-| picvo \* adversity |           0.028 | -0.006 |   0.062 |
-| pscmp \* adversity |           0.006 | -0.029 |   0.041 |
-| vrba \* adversity  |           0.010 | -0.025 |   0.046 |
+| adversity          |          -0.031 | -0.074 |   0.011 |
+| appld \* adversity |           0.014 | -0.020 |   0.048 |
+| calc \* adversity  |           0.031 | -0.005 |   0.066 |
+| incom \* adversity |           0.000 | -0.035 |   0.036 |
+| lwid \* adversity  |          -0.001 | -0.035 |   0.033 |
+| memna \* adversity |           0.018 | -0.017 |   0.053 |
+| memse \* adversity |          -0.015 | -0.049 |   0.020 |
+| picvo \* adversity |          -0.010 | -0.044 |   0.025 |
+| pscmp \* adversity |           0.009 | -0.027 |   0.044 |
+| vrba \* adversity  |          -0.027 | -0.062 |   0.009 |
 
 ### Q20: Predicted effect sizes
 
@@ -613,6 +732,14 @@ differences between subtests and the overall average. However, we are
 interested in determining if simple effects falling between -.10 and .10
 are consitent with an effect of 0. For this scenario, we will use
 equivalence testing with -.10 and .10 as bounds.
+
+*\<\< – SV: We might discuss whether these equivalence bounds are the
+best ones. Hypothetically, there could be a true effect of, say, 0.07,
+that is a real adversity effect but too small to be practically
+interesting. Setting equivalence bounds to .10 however would potentially
+classify this as a true zero effect (practically equivalent to zero).
+Thus, I think it could be that we actually want to set more narrow
+boundaries. –\>\>*
 
 ### Q21: Statistical Power
 
@@ -633,7 +760,7 @@ Our inferential criteria will use p \< .05 for interaction effects
 between adversity and subtest type and for simple effects of adversity
 for each subtest.
 
-We interested in three types of effect sizes:
+We are interested in three types of effect sizes:
 
 1.  The main effect of each adversity measure (tested in separate
     models).
