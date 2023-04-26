@@ -1,73 +1,6 @@
-# Setup -------------------------------------------------------------------
-## Libraries
-library(tidyverse)
-library(ggdist)
-
-## Load data
-walk(
-  list.files("data", "^analysis", full.names = T), 
-  function(x) load(x, envir =.GlobalEnv)
-)
-
-# Plotting aesthetics -----------------------------------------------------
-## ggplot2 theme
-theme_set(
-  theme_bw() +
-    theme(
-      axis.line.y       = element_line(),
-      axis.text.y       = element_text(size = rel(1.1)),
-      axis.title.y      = element_text(size = rel(1.25), margin = margin(1,0,0,0,"lines")),
-      axis.ticks.y      = element_line(),
-      axis.text.x       = element_text(size = rel(1.1)),
-      axis.title.x      = element_text(size = rel(1.25), margin = margin(1,0,0,0,"lines")),
-      axis.line.x       = element_line(),
-      panel.border      = element_blank(), 
-      panel.spacing.y   = unit(0.5, "lines"),
-      plot.margin       = margin(.25,.25,.25,.25,"lines"),
-      plot.background   = element_rect(color = NA),
-      plot.title        = element_text(size = rel(1.25), hjust = 0.5, margin = margin(0,0,.5,0, "lines")),
-      plot.subtitle     = element_blank(),
-      panel.grid        = element_line(color = NA),
-      strip.background  = element_blank(), 
-      strip.placement   = "outside",
-      strip.text        = element_text(size = rel(1), angle = 0)
-    )
-)
-
-## WJ factor levels and labels
-wj_order <- 
-  c(
-    "wj_overall_mean",
-    "wj_picvo",
-    "wj_vrba",
-    "wj_pscmp",
-    "wj_appld",
-    "wj_memse",
-    "wj_incom",
-    "wj_memna",
-    "wj_lwid",
-    "wj_wrdat",
-    "wj_calc"
-  )
-
-wj_labels <- 
-  c(
-    "Overall",
-    "Picture Vocab",
-    "Verbal Analogies",
-    "Passage Comprehension",
-    "Applied Problems",
-    "Short-Term Memory",
-    "Auditory Processing",
-    "Auditory-Visual Associations",
-    "Syymbolic Learning",
-    "Unfamilar Words",
-    "Calculations"
-  )
-
 # WJ distribution figure --------------------------------------------------
 ## Prep underying data
-fig2_data <- 
+fig2a_data <- 
   dvs_analysis_long |> 
   bind_rows(
     dvs_analysis_long |> 
@@ -87,17 +20,18 @@ fig2_data <-
   )
 
 ## Make the figure
-fig2 <- 
-  fig2_data |> 
+fig2a <- 
+  fig2a_data |> 
+  filter(wj_subtest != "wj_overall_mean") |> 
   ggplot(
     aes(
       x = wj_test_order, 
       y = mean_score, 
       fill = wj_test_order, 
-      color = wj_test_order)
+      color = wj_test_order
+    )
   ) +
   geom_hline(
-    data = fig2_data |> filter(wj_subtest == "wj_overall_mean"),
     aes(yintercept = mean(mean_score, na.rm = T)), 
     color = "#d2d6de"
   ) +
@@ -111,13 +45,83 @@ fig2 <-
   ) +
   scale_x_discrete("") +
   scale_y_continuous("Standard Score") +
-  scale_fill_manual(values = c( ggpubr::get_palette("npg",k = 10),"#d2d6de")) +
+  scale_fill_manual(values = wj_palette) +
   coord_flip() +
-  ggtitle("Woodcock-Johnson Distributions") +
+  ggtitle("Score Distributions") +
+  facet_wrap(~wj_test_order, scales = "free_y", nrow = 10) +
   theme(
+    strip.text = element_blank(),
+    panel.spacing.y = unit(0, "cm"),
     axis.line.y = element_blank(), 
     axis.ticks.y = element_blank()
   )
 
-## Save output
-ggsave("figures/fig2-wj-distributions.pdf", fig2, height = 8, width = 5)
+# WJ Trajectory figure --------------------------------------------------
+## Prep underying data
+fig2b_data <- 
+  dvs_analysis_wide |> 
+  pivot_longer(
+    c(-id, -assessment, -assessment_order), 
+    names_to = "wj_subtest", 
+    values_to = "score"
+  ) |> 
+  mutate(
+    wj_test_order = factor(wj_subtest, levels = wj_order, labels = ifelse(str_length(wj_labels) > 15, str_replace(wj_labels, " ", "\n"), wj_labels)),
+    wj_test_type = case_when(str_detect(wj_subtest, "(memna|memse|vrba|incom|picvo)") ~ "Cognitive Battery",
+                             str_detect(wj_subtest, "(pscmp|appld|lwid|wrdat|calc)") ~ "Achievement Battery"),
+    assessment_order = 1:n(),
+    .by = c(id, wj_subtest)
+  ) |> 
+  mutate(
+    wj_test_type_order = 1:n(),
+    .by = c(id, assessment, wj_test_type)) |> 
+  arrange(id, assessment_order)
+
+fig2b <- 
+  fig2b_data |>
+  ggplot(
+    aes(
+      x = assessment_order, 
+      y = score, 
+      group = wj_test_order, 
+      color = wj_test_order
+    )
+  ) +
+  geom_hline(
+    aes(yintercept = mean(score, na.rm = T)), 
+    color = "#d2d6de"
+  ) +
+  stat_summary(geom = "line") +
+  stat_pointinterval(
+    point_interval = "mean_qi",
+    shape = 21,
+    fill = "white"
+  ) +
+  geom_dotsinterval(
+    aes(x = 6),
+    side = "left",
+    scale = .5, 
+    show.legend = F
+  ) +
+  stat_slabinterval(
+    aes(x = 6, fill = wj_test_order, color = wj_test_order),
+    side = "right", 
+    point_interval = "mean_qi", 
+    color = "black", 
+    show.legend = F
+  ) +
+  scale_x_continuous(
+    "\nAssessment",
+    breaks = unique(fig2b_data$assessment_order),
+    labels = unique(fig2b_data$assessment)
+  ) +
+  scale_y_continuous(
+    "Standard Score\n",
+  ) +
+  scale_color_manual(values = wj_palette) +
+  scale_fill_manual(values = wj_palette) +
+  guides(color = "none") +
+  facet_wrap(~wj_test_order, nrow = 5)
+
+# Combined Figure ---------------------------------------------------------
+fig2 <- fig2b

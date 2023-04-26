@@ -1,33 +1,306 @@
 ---
-format: docx
-reference-doc: reference-doc.docx
-bibliography: ../references.bib
-csl: ../apa.csl
+format: 
+  docx:
+    reference-doc: reference-doc.docx
+    fig-dpi: 300
+    fig-format: pdf
+bibliography: ../bib-files/references.bib
+csl: ../bib-files/apa.csl
 ---
+
+```{r}
+#| label: setup
+#| include: false
+
+# Chunk options
+knitr::opts_chunk$set(
+  echo = F, 
+  message = F, 
+  warning = F,
+  tab.cap.style = "Table Caption",
+  tab.cap.pre = 'Table ',
+  tab.cap.sep= '. '
+)
+
+# Load libraries
+library(tidyverse)
+library(patchwork)
+library(flextable)
+
+# Custom functions
+source("../scripts/0-corr_table.R")
+
+# Load staged results
+load("r-objects.Rdata")
+
+# ggplot2 theme
+theme_set(
+  theme_bw() +
+    theme(
+      axis.line.y       = element_line(),
+      axis.text.y       = element_text(size = rel(1.1)),
+      axis.title.y      = element_text(size = rel(1.25), margin = margin(1,0,0,0,"lines")),
+      axis.ticks.y      = element_line(),
+      axis.text.x       = element_text(size = rel(1.1)),
+      axis.title.x      = element_text(size = rel(1.25), margin = margin(1,0,0,0,"lines")),
+      axis.line.x       = element_line(),
+      panel.border      = element_blank(), 
+      panel.spacing.y   = unit(0.5, "lines"),
+      plot.margin       = margin(.25,.25,.25,.25,"lines"),
+      plot.background   = element_rect(color = NA),
+      plot.title        = element_text(size = rel(1.25), hjust = 0.5, margin = margin(0,0,.5,0, "lines")),
+      plot.subtitle     = element_blank(),
+      panel.grid        = element_line(color = NA),
+      strip.background  = element_blank(), 
+      strip.placement   = "outside",
+      strip.text        = element_text(size = rel(1), angle = 0)
+    )
+)
+
+## Table settings
+# set up flextable for tables
+set_flextable_defaults(
+  font.family = "Times", 
+  font.size = 10,
+  font.color = "black",
+  line_spacing = 1,
+  padding.bottom = 1, 
+  padding.top = 1,
+  padding.left = 1,
+  padding.right = 1
+)
+
+```
 
 # Abstract
 
-\noindent The idea that some skills might be enhanced by adversity is gaining traction. For example, research leveraging the hidden talents approach has uncovered a few narrow, context-dependent skills enhanced by exposure to adversity. Yet, in order for a field to grow, we must not dig too deep, too fast. In this paper, we zoom out and evaluate two basic features of the hidden talents approach. First, adversity simultaneously decreases and increases test performance, depending on the specific skill. Although commonly assumed, this assertion is rarely tested. Second, empirical work suggests that enhanced skills manifest within- not between- individuals. Although studies have compared the same skill in different testing contexts, research comparing different skills have tested only two or three skills. One reason is that the hidden talents approach uses a functional-link approach to understanding which skills fit the challenges of adverse environments. We expand on this finding by analyzing ten skills in the Woodcock Johnson Cognitive and Achievement test battery in a large, prospective longitudinal dataset. Specifically, we use a within-person modeling strategy to examine how exposure to harshness and unpredictability earlier in life are associated with relative decreases and increases in subtest performance compared to a person’s overall performance. Our goal is to document adversity-shaped cognitive profiles, identify possible drivers of lowered overall performance, and map out sets of ‘intact’ skills. 
+\noindent The idea that some abilities might be enhanced by adversity is gaining traction. For example, research leveraging the hidden talents approach has uncovered a few specific abilities enhanced by exposure to particular forms of adversity in a given context. Yet, in order for a field to grow, we must not dig too deep, too fast. In this paper, we compliment adaptation-based research with principled exploration. To do so, we draw on the basic insights of adaptation-based research: 1) enhanced performance manifests within individuals and 2) reduced and enhanced performance can co-occur. Although commonly assumed, these assertions are rarely tested. To do so, a variety of ability measures are needed that examine relative performance differences. However, rather than using adaptive-logic to predict which abilities are enhanced or reduced, we develop statistical criteria to help interpret three different data patterns: reduced, enhanced, and intact performance. We use these criteria to analyze data from the Study of Early Childcare and Youth Development (SECCYD) to examine how adversity shapes within-person performance across 10 abilities in the Woodcock Johnson Cognitive and Achievement test battery. Our goals are to document adversity-shaped cognitive profiles, identify possible drivers of reduced overall performance, map out sets of 'intact' abilities, and discover new enhanced abilities. We argue that principled exploration with clear criteria can help break new ground, re-map old territory, and fuel theory development. Our approach thus offers a valuable complement to the adaptive-logic approach that has dominated this emerging area of research to date.
 
 {{< pagebreak >}}
 
-# Within-person cognitive performance across abilities among adversity-exposed people in the SECCYD
+# How does adversity relate to performance across different abilities in the same person?
 
-Developmental science commonly asserts that adversity-exposure during development reduces cognitive performance, an assumption built on decades of empirical findings (Duncan et al., 2017; Farah et al., 2006; Hackman et al., 2010, 2014; McLaughlin et al., 2019; Raby et al., 2015). In recent years, however, adaptation-based frameworks, rooted in the idea that adversity might enhance certain abilities, have complimented this work—and it is gaining traction (Ellis et al., 2020; Frankenhuis, Young, et al., 2020; Frankenhuis & de Weerth, 2013; Frankenhuis & Nettle, 2020). Since its inception, the goal of adaptation-based frameworks has been to inspire a more well-rounded view of adversity and its influence on abilities—one that incorporates both the struggles and strengths of people from disadvantaged backgrounds (Frankenhuis & de Weerth, 2013). As it develops, the core task of adaptation-based research is to “uncover a high-resolution map of specific cognitive abilities that are enhanced as a result of growing up under high-adversity conditions” (Ellis et al., 2017, p. 562). 
-To illustrate this map, research has used confirmatory study designs, which has gleaned useful insights. Yet, to cultivate growth in an emerging research program—where little is known and there is much to learn—we must not dig too deep, too fast. Without complimentary approaches, exclusive use of confirmatory designs can create tunnel vision and miss new insights. In this paper, we use a complimentary approach to confirmatory research: principled exploration. Our broad goal is to contribute to drawing our map of adversity shaped abilities. To do so, we extract the essential features of adaptation-based research to drive our exploration into new territory and to re-map familiar ground.
+\indent Developmental science commonly asserts that adversity-exposure during development reduces cognitive performance, a claim founded on decades of empirical findings [@duncan2017; @farah2006; @hackman2010; @mclaughlin2019; @raby2015]. In recent years, however, adaptation-based frameworks, rooted in the idea that adversity might enhance certain abilities, have complemented this work---and it is gaining traction [@ellis2017; @ellis2020; @frankenhuis2020; @frankenhuis2013b; @frankenhuis2020a]. Since its inception, the goal of adaptation-based frameworks has been to inspire a more well-rounded view of adversity and its influence on abilities---one that incorporates both the struggles and strengths of people from disadvantaged backgrounds [@frankenhuis2013b]. As it develops, the core task of adaptation-based research is to "uncover a high-resolution map of specific cognitive abilities that are enhanced as a result of growing up under high-adversity conditions" [@ellis2017, p. 562]. To uncover this map, researchers have used confirmatory study designs, which has gleaned useful insights. Yet, to cultivate growth in an emerging research program---where there is little known and much to learn---we must not dig too deep, too fast. Without complimentary approaches, exclusive use of confirmatory designs can create tunnel vision and miss new insights [@mcintosh2017; @roisman2021; @rozin2001; @scheel2021].
 
-# Motivating Principled Exploration
+In this paper, we use a complimentary approach to confirmatory research: principled exploration. To guide our exploration, we leverage on two basic insights from adaptation-based research: 1) enhanced performance manifests within individuals and 2) reduced and enhanced performance can co-occur. The first insignt implies we need designs and models that can tease apart both within- and between-person peformance differences. The second suggests that--to map a broader set of adveristy-related abiities--we must examine many more abilities measured within the same person. Doing so will allow us to capture cogntiive performance profiles. These profiles comprise three types of data patterns: reduced, intact, and enhanced performance. Past research has focused on reduced and enhanced performance on specific ability tests. However, we know little about intact abilities, or cases where performance is unrelated to adversity exposure. Thus, our goal is to document adversity-shaped cognitive profiles that include reduced, 'intact' abilities, and enhanced test performance patterns.
 
-Most adaptation-based research is confirmatory because its core features are useful guideposts for hypothesis generation. For example, adaptation-based perspectives assume development shapes the individual, and their abilities, to fit the local environment (Frankenhuis, Young, et al., 2020). Because environments differ in the challenges they pose, development can shape a variety of abilities according to specific challenges. With these ideas as building blocks, it is easy to construct an intuitive bridge between an ability and an environmental challenge and, therefore, generate reasonably specific hypotheses. For example, a researcher can identify a specific challenge posed by a dimension of adversity (e.g., threats to safety in high crime neighborhoods) and the specific abilities needed to meet those challenges (e.g., heightened vigilance). This approach is appealing because it forces researchers to be specific and logically tie together challenges posed by an environment and abilities that should help people meet them. 
+# **Essential Features and Empirical Insights from Adaptation-based Frameworks**
 
-This approach has discovered a handful of interesting adversity-enhanced abilities. For example, past work has proposed that constantly changing environments might shape the ability to track and respond to changing information. Using this logic, studies have found that exposure to more unpredictable environments tend to enhance both attention-shifting and working memory updating, two abilities thought to help deal with changes in the environment (Fields et al., 2021; Mittal et al., 2015; Young et al., 2018). Confirmatory hypotheses have also focused on testing content, the notion that performance should improve when the testing content matches the lived experience of people exposed to adversity. For example, Frankenhuis and colleagues (2020) hypothesized that exposure to violence might enhance reasoning about social dominance hierarchies—but not for neutral content, such as age. Their study revealed that youth exposed to more violence were equally or more accurate when asked to memorize social dominance relationships than youth exposed to less violence. Using a similar experimental paradigm, Young and colleagues (2022) examined how real world compared to abstract testing stimuli affects performance on attention shifting and working memory tests. They found that adversity-exposed youth score higher on working memory updating tasks with real world compared to abstract content.
+Adaptation-based research has several essential features. First, it assumes development shapes the individual, and their abilities, to fit the local environment [@frankenhuis2020]. Second, because environments differ in the challenges they pose (resource-scarcity versus violence exposure), development shapes abilities according to specific challenges. Thus, one's abilities are thought to match the challenges of one's lived experience. These features are useful guideposts for confirmatory hypothesis generation. Using them as building blocks, it is easy to construct an intuitive bridge between an ability and an environmental challenge. For example, a researcher might identify a specific challenge posed by a dimension of adversity (e.g., threats to safety in high-crime neighborhoods) and an ability needed to meet the challenge (e.g., enhanced threat detection).
 
-Adaptation-based, confirmatory approaches are clearly useful, but they also have pitfalls. Emerging research programs have yet to lay basic groundwork for testing theories, such as auxiliary assumptions or boundary conditions (Scheel et al., 2021). This reduces our ability to understand conflicting findings. For example, some studies suggest ecologically relevant testing content enhances performance on executive functions but others find ecological content reduces performance on standardized tests (Duquennois, 2022; Muskens, 2019). Is this because each study tested different types of cognitive abilities, used different ecological content, both, or is there a different explanation entirely? In addition, the logic behind confirmatory studies can easily flipped. For example, inhibition, or the ability to resist distractions, is often thought to be reduced by unpredictable environments. If threats and opportunities arise, it is important to quickly respond to them, rather than focus on a long-term goal. But one could make the exact opposite assertion using adaptive logic. For example, inhibition is adaptive in unpredictable environments because saves energy in an environment when there are constant distractions. The broader point is that confirmatory research might need more information before it can be informative (Scheel et al., 2021).
+This approach is appealing because it forces researchers to be specific and logically tie together challenges and abilities. It has also been successful in discovering a handful of interesting adversity-enhanced abilities, especially in harsh and unpredictable environments. For example, past work has proposed that constantly changing environments (i.e., unpredictable environments) might shape the ability to track and respond to changing information. Using this logic, research build an intuitive bridge between changing environments and two abilities--attention-shifting and working memory updating---and some empirical data are consistent with this logic [@fields2021; @mittal2015; @young2018; @nweze2021]. However, there are two limitations to this approach. First, previous studies are difficult to compare because they use different measures and designs. Second, the logic behind confirmatory hypotheses is easily flipped. For example, exposure to unpredictable environments is thought to reduce inhibition, or the ability to resist distractions. If threats and opportunities arise, it is important to quickly respond, rather than ignore them to focus on a long-term goal. But we can assert the exact opposite. For example, inhibition might be enhanced by unpredictable environments because it helps to focus on what is important when there are constant distractions.
+
+Adaptation-based research has also focused on testing content, or the notion that performance should improve when the testing content matches the lived experience of people exposed to adversity. For example, studies have examined relational memory, attention shifting, and working memory task performance using more ecologically relevant content (e.g., social dominance, real-world, and socioemotional stimuli) compared to neutral or abstract content. In some cases, ecologically relevant content appeared to equalize performance for people exposed to adversity, but this depends on the specific adversity measure and task [@frankenhuis2020b; @young2022; @rifkin-graboi2021]. Yet, in other studies, conditions thought to be well-matched to the lived experience of those exposed to adversity actually lower performance. For example, youth from poverty tended to score lower on math items about social relations, money, and food---items thought to be particularly relevant to lived experience---compared to other math items [@duquennois2022; @muskens2019].
+
+In light of various caveats, this body of work has generated at least two general insights. First, although it is possible for adversity to enhance performance between individuals (e.g., low versus high adversity exposure), empirical findings suggest effects mostly occur within individuals [@fields2021; @frankenhuis2020b; @young2022]. Second, enhanced performance appears to be highly context specific---enhancements depend on testing content, context, and ability type [@fields2021; @frankenhuis2020b; @young2022; @nweze2021; @young2018; @mittal2015]. Yet, adaptation-based studies have looked for abilities in an isolated and piecemeal fashion, in part, because confirmatory designs tend to narrow a study's scope. This means we know little about enhanced abilities compared with the broad landscape of ability measures.
+
+# **Motivating Principled Exploration**
+
+We believe that adaptation-based frameworks can provide useful guideposts, but one should use shovels, not scalpels, when breaking new ground. Emerging research programs have yet to lay basic groundwork for testing theories, such as auxiliary assumptions or boundary conditions @scheel2021\]. Our aim is to complement adaptation-based, confirmatory research with principled exploration [@flournoy2020; @rozin2001]. We see two benefits of this approach. The first is to re-examine established patterns with a new lens. For example, both deficit- and adaptation-based perspectives assume that adversity should reduce performance on standard assessments of cognitive ability [@ellis2020; @frankenhuis2020; @hackman2010; @mclaughlin2019; @ursache2016]. Yet, these tests are often comprised of many different subtests, and may show unique patterns that diverge from widely used composite scores. The second is to feed theory with useful description. One reason why we know little about broad sets of abilities is that adaptive logic is yet to be developed for some abilities. However, the lack of such logic this does not imply the presence or absence of a functional link. A complementary approach is to explore, describe, and follow up associations between adversity and abilities to aid theory development. Therefore, we return to the map of cognitive abilities that might be shaped by adversity and ask "what territory needs exploration and which areas may need re-mapping?"
+
+To carefully examine and interpret data in a principled exploration, it is helpful to develop inferential criteria. For example, rather than using adaptive-logic to predict which abilities are enhanced or reduced, we can ask what criteria are needed for evaluating and interpreting different data patterns? In addition, research typically focuses on reduced versus enhanced test performance, but some abilities might remain 'intact' (unaffected) by exposure to adversity [@frankenhuis2020]. We know little about the intact abilities of people exposed to adversity. We also know little about the drivers of reduced performance on broad and generic measures of ability and achievement. For example, deficit approaches have collapsed many abilities into composites and find that adversity exposure reduces performance. However, one possibility is that a smaller set of specific abilities are driving effects. In total, there is still much to learn about the map of adversity shape cognitive abilities. Principled exploration can complement confirmatory research in drawing this map, especially in the early stages of a new field.
 
 # The Current Study
 
-We see two reasons for conducting principled exploration in this area. The first is to re-examine established patterns with a new lens. The second is to feed adaptation-based theory with useful description. Our aim, therefore, is to complement adaptation-based, confirmatory research with principled exploration (Flournoy et al., 2020; Rozin, 2001). To return to the map of cognitive skills that might be shaped by adversity, what territory needs exploration and which areas may need re-mapping? Rather than relying on confirmatory hypotheses to guide our approach, let’s consider the essential features of an adaptation-based framework. First, an ability might be enhanced when it helps to meet an environmental challenge, but it should be reduced when it does not. This suggests that adaptation and impairment can exist at the same time within the same person. Although commonly assumed, this assertion is rarely tested. Second, as suggested by recent empirical work, enhanced abilities should be witnessed within rather than between individuals (Fields et al., 2021; Frankenhuis, de Vries, et al., 2020; Young et al., 2022). Although some studies have compared the same ability in different contexts, research comparing different skills have tested no more than two or three abilities (Fields et al., 2021; Mittal et al., 2015; Young et al., 2018). Thus, we need within-person designs that examine cognitive performance across many abilities. 
+We conduct a principled exploration of how adversity relates to performance on a widely-used cognitive achievement battery using longitudinal, prospective data from the Study of Early Childcare and Youth Development (SECCYD). Drawing on the general insights of adaptation-based research, we employ a within-person performance design to explore performance across 10 abilities. This design allows us to assess how exposure to each measure of adversity are associated with relative performance differences across many abilities (see Figure 1). In other words, we can compare specific abilities (e.g., short-term memory performance) to overall performance (within-person average performance on all tests) to get a clear picture of how enhanced and reduced performance manifest in parallel within an individual.
 
-Finally, research typically focuses on comparing reduced versus enhanced test performance, but some abilities might remain ‘intact’ (unaffected) by exposure to adversity (Frankenhuis, Young, et al., 2020). We know little about the intact skills of people exposed to adversity. We also know little about the drivers of lowered performance on broad and generic measures of ability. Traditional approaches have collapsed many abilities into composites and find that adversity exposure lowers performance (REFS), despite the fact that a smaller set of skills could be driving certain effects. 
+We focus on adversity measures that tap two constructs: environmental harshness and unpredictability. We focus on these constructs because they feature often in adaptation-based research on cognitive abilities [@ellis2017; @ellis2020; @fields2021; @frankenhuis2020; @mittal2015; @young2018; @young2022]. We use both classic and unexplored measures that capture both. Classic measures include family transitions (paternal, residential, and occupational changes) and income-to-needs (mean and variability). Unexplored measures include neighborhood disadvantage (mean and variability). We leverage data from the 1990 Census about the broader ecological context, which has been used to measure the neighborhood context in the SECCYD previously [@bleil2021; @bleil2021b].
 
-In sum, we believe that adaptation-based frameworks can provide useful guideposts, but one should use shovels, not scalpels, when breaking new ground. In this paper, therefore, we focus on developing basic criteria for identifying enhanced, intact, and performance drivers of different cognitive abilities. We apply these criteria to investigate how exposure to harshness and unpredictability in particular shape cognitive profiles across ten cognitive skills. We then explore these skills within-person to examine relative decreases and increases in test performance compared to a person’s overall test performance. Our overarching goal is to excavate new ground, re-map old territory, and fuel theory development. In doing so, we position ourselves to identify the key drivers of lowered overall cognitive performance, map out sets of ‘intact’ cognitive skills, and discover cognitive enhancements. We also hope to encourage adaptation-based researchers to conduct systematic explorations to more accurately draw the map of cognitive skills of people who have been exposed to adversity.
+We outline two sets of criteria for evaluating results. First, our expectations change according to the conceptual framework. For example, from a traditional deficit perspective, we should expect negative overall effects of adversity. Performance on subtests should closely match the overall effect. In contrast, from an adaptation-based perspective, we expect an overall negative effect but performance on some subtests is either less reduced, intact, or even enhanced.
+
+Our second set of criteria are statistical. Our modeling strategy allows us to quantify performance as a function of adversity in two ways. First, we can test whether the effect of adversity on each subtest is different from zero using a simple slopes test. A positive and negative effect suggests enhanced and reduced performance, respectively. Second, we compare subset performance (simple slope) against overall performance (main effect of adversity across all tests), which is measured by the interaction between subtest category and adversity. This interaction term indicates whether performance is significantly more negative, less negative, or even positive compared to overall performance. For both types of effects, we can determine if they are practically equivalent to either zero (simple effect) or overall performance (main effect). Subtest performance is intact when the effect of adversity on a subtest is practically equivalent to zero. Using these criteria, we position ourselves to identify the drivers of reduced overall cognitive performance, map out sets of 'intact' cognitive abilities, and discover (possible) enhancements.
+
+![Figure 1](figures/fig1-conceptual.jpg){fig-align="center"}
+
+# Method
+
+## Participants
+
+Families were initially recruited for the NICHD SECCYD in 1991. A total of 1364 families met all the prescreening criteria, namely that mothers: (a) were age 18 or older, (b) did not plan to move, (c) had a newborn without any known disabilities (and could leave the hospital within one week), (d) had no history of substance abuse, (e) could speak English, and (f) lived within 1 hour driving distance from the research lab and were in a relatively safe neighborhood. More information about recruitment and selection procedures is available from the study [@nichdearlychildcareresearchnetwork2005; see https://www.icpsr.umich.edu/web/ICPSR/series/00233]. The current analyses included participants with non-missing data on most predictors and outcome variables through age 15 (N = 1156).
+
+## Measures
+
+### **Cognitive Ability Test Battery**
+
+We used the Woodcock-Johnson (WJ) Cognitive and Achievement standardized test battery to examine performance across 10 subtests [@woodcock1990; @woodcock1990a]. The SECCYD administered the WJ five times over the 54 month, 1^st^ grade, 3^rd^ grade, 5^th^ grade, and 15-year assessments.
+
+There are two WJ test batteries, the cognitive and achievement tests. The WJ cognitive test includes the Memory for Names, Memory for Sentences, Verbal Analogies, Incomplete Words, and Picture Vocabulary subtests (see Table 1 and below for descriptions). The WJ achievement battery includes Letter-Word Identification, Passage Completion, Calculations, Applied Problems, and Word Attack subtests (see below for descriptions).
+
+For all tests, we analyzed standard scores, which are equivalent to IQ scores (e.g., M = 100, SD = 15). Using standard scores for subtests puts all tests on the same scale to facilitate comparison (see Figure 2). For each subtest, we averaged standard scores over time to create one score per subtest per participant. However, the specific set of subtests administered at each assessment varied (see Figure 2). For example, the Verbal Analogies test was measured at grade three and age 15 whereas Passage completion was measured at grades 3, 5, and age 15 (see Table 1). Thus, to create overall scores for each subtest, we averaged over all timepoints available for each subtest.
+
+```{r}
+#| label: Figure2
+#| fig-cap: Figure 2
+#| fig-width: 4
+#| fig-height: 7.5
+
+fig2
+```
+
+**Picture Vocabulary.** This subtest measures verbal comprehension and crystallized knowledge. The test contains 58 items requiring participants to view and name familiar and unfamiliar objects. The test was administered five times at 54 months, grades 1, 3, 5, and at 15 years. Higher scores indicate more verbal comprehension and more crystallized knowledge.
+
+**Verbal Analogies.** This subtest measures the ability to reason about analogies between relatively simple words. Although the words remain simple, relations between words increase in complexity of over the test items. The test contains 35 items and was assessed twice at grades 3 and 5. Higher scores indicate more reasoning and more verbal/crystalized knowledge.
+
+**Passage Comprehension.** This subtest test measures the ability to read a short passage and name an appropriate key word that is missing. The test contains 43 items and was administered three times at grades 3, 5, and at age 15. Higher scores indicate more vocabulary, comprehension, and reading skill.
+
+**Applied Problems.** This subtest contains a set of practical math problems. Participants must read and identify a strategy for solving the problem and execute simple arithmetic calculations. The test contains 60 items and was administered at the 54-month, 1^st^, 3^rd^ and 5^th^ grade, and 15-year assessments. Higher scores indicate more practical math and problem-solving skill.
+
+**Calculations.** This subtest requires participants to solve traditional math problems containing addition, subtraction, multiplication, division, and different combinations of each. The test also includes some geometry and trigonometry problems. Some items require logarithmic operations and calculus. The test contains 58 items and was administered at the 3^rd^ and 5^th^ grade assessments. Higher scores indicate more mathematical/quantitative skill.
+
+**Memory for Names.** This subtest is an auditory-visual association test. It requires participants to learn a set of 'space creatures' and their names. After learning a set of creature-name pairs, participants must identify which of a set of nine creatures were just introduced and those previously in past sets. The test difficulty is controlled by (decreasing) increasing the create-name pairs presented in each set. The test contains 72 items and was administered at the 1^st^ and 3^rd^ grade assessments. Higher scores indicate more visual-auditory association and long-term memory skill.
+
+**Incomplete Words.** This subtest measures the ability to listen to words containing missing phonemes and complete the word. The test contains 40 items and was administered at the 54 month and 1^st^ grade assessments. Higher scores indicate more auditory processing skill.
+
+**Memory for Sentences.** This subtest measures the ability to listen to and remember words, phrases, and sentences. The words, phrases, and sentences are played on an audio tape and participants must recall as many as possible. The test contains 32 items and was administered at the 54-month, 1^st^ grade, and 3^rd^ grade assessments. Higher scores indicate more short-term memory skill.
+
+**Letter-word Identification.** This subtest measures reading and pronunciation ability. Participants must initially read letters and then words, which gradually increase in difficulty. The test contains 57 items and was administered at the 54-month, 1^st^, 3^rd^, and 5^th^ grade assessments. Higher scores indicate more verbal knowledge.
+
+**Word Attack.** This subtest measures the ability to pronounce unfamiliar words. Participants must read aloud phonetically logical but nonsense or infrequent words. It contains 30 items and was administered at the 1^st^ and 3^rd^ grade assessments. Higher scores indicate more auditory processing and linguistic structural analysis knowledge and skill.
+
+```{r}
+#| label: Table1
+#| tbl-cap: Bivariate correlations and descriptive statistics for WJ subtests.
+#| results: asis
+#| tab.id: table1
+
+table1 |> 
+  flextable() |> 
+  autofit() |> 
+  flextable_to_rmd()
+
+```
+
+### Indicators of Harshness
+
+We measured environmental harshness in two ways. First, following previous studies using data from the SECCYD, we used income-to-needs ratio scores from 1, 6, 15, 24, 36, and 54-month assessments [@belsky2012; @hartman2018a; @li2018; @sung2016; @zhang2022]. We calculated a simple average of all income-to-needs scores across assessments (M, SD).
+
+Second, we leveraged data from the 1990 Census about the broader economic and ecological context in a similar way to previous analyses of neighborhood-level economic conditions in the SECCYD [@bleil2021; @bleil2021b]. Specifically, addresses were tracked for each participant over time. Each family address start and stop dates were recorded, geocoded, and linked to the 1990 decennial Census blocks. These blocks are the smallest Census-tracked geographical unit. For each Census block, sociodemographic data were extracted to measure neighborhood-level economic conditions for each participant. We extracted 5 variables: 1) percent of people living under the poverty line, 2) median household income, 3) Gini coefficients of income inequality based on income bracket frequency data, 4) percent of unemployed individuals over 16 in the workforce, and the percent of occupied houses that were being rented. These neighborhood variables first were standardized and averaged within each unique Census block a participant lived in and then averaged over time (up until the 54-month assessment). Thus, if a participant lived in two homes between birth and the 54-month assessment, neighborhood-level variables would be standardized and averaged within the first and second Census block and then averaged between them. These scores served as neighborhood-level socioeconomic harshness where higher scores indicate higher rates of poverty, income-inequality, unemployment, and lower education.
+
+### **Indicators of Unpredictability**
+
+Environmental unpredictability is notoriously hard to define and measure [@young2020]. Nonetheless, studies leveraging data from the SECCYD have used two approaches. The first is track and count family transitions, including changes in paternal figures, parental job transitions, and residential changes [@belsky2012; @hartman2018a]. The second approach is to quantify variability in repeated measures of harshness indicators (e.g., computing measures of variance across time). For example, Li and colleagues [-@li2018] fit a linear model to each participants' income-to-needs scores over time. Then they computed the residual variance around participant-level linear trends in income-to-needs to create score tapping income variability. In the current study, we compute unpredictability scores using both approaches and extend the Li and colleagues [-@li2018] approach to the neighborhood-level Census block data.
+
+To calculate a family transitions, we computed the number of paternal figure, mother and father (figure) job, and residential changes across 17 assessments from 1 to 54 months [@belsky2012; @hartman2018a]. After computing scores across time, we standardized each variable and averaged them together to compute an overall family transitions variable.
+
+We calculated both familial and neighborhood-level economic variability. For, income-to-needs scores, we computed the simple standard deviation of all income-to-needs scores for each participant from the 1, 6, 15, 24, 36, and 54-month assessments. For neighborhood-level economic variability, we computed the standard deviation of neighborhood socioeconomic harshness scores (see Indicators of Harshness). If participants had only lived in one Census block from 1 to 54 months, their neighborhood socioeconomic harshness variability score was 0.
+
+### **Control Variables**
+
+We used a standard set of three control variables typically used in analyses of SECCYD data: 1) maternal education, 2) sex assigned at birth (1 = female), and 3) the race/ethnicity of each child coded as White/non-Hispanic = 0, otherwise = 1.
+
+```{r}
+#| label: Table2
+#| tbl-cap: Bivariate correlations and descriptive statistics for adversity variables.
+#| results: asis
+#| tab.id: table1
+
+table2 |> 
+  flextable() |> 
+  autofit() |> 
+  flextable_to_rmd()
+```
+
+# Results
+
+## Preregistration, Statistical Power, and Computational Reproducibility
+
+We preregistered this study using a template for secondary data analysis [@akker2021]. The preregistration document and its entire version history was tracked on GitHub (see <https://tinyurl.com/seccyd-wj-prereg> for the document and <https://tinyurl.com/seccyd-wj-prereg-history> for revision history).
+
+We also conducted a power analysis as part of our prergistration (see <https://tinyurl.com/seccyd-wj-power> for write up and see <https://tinyurl.com/seccyd-wj-power-code> for code). In short, we used a simulation approach to conduct power analyses. Although we simulated adversity scores, we leveraged actual WJ test scores from the data. Simulations showed that, with a sample size of (N = 1156), the smallest interaction effect we can detect is $\beta$ = -.075 (or .075) with 90% power, if error is small. When error is larger, we can detect the same effect size with only 65% power. However, even with larger error, we can detect a $\beta$ = -.10 (or .10) with 83% power.
+
+All relevant files (data processing, analysis code, manuscript etc.) for this project are tracked on GitHub (see <https://tinyurl.com/seccyd-wj>), including data needed to reproduce all results (see <https://tinyurl.com/seccyd-wj-data>). Raw data (data provided by SECCYD) is only available via ICPSR ([https://www.icpsr.umich.edu](https://www.icpsr.umich.edu/rpxlogin)). However, documentation for the study is free to download (see <https://www.icpsr.umich.edu/web/ICPSR/studies/21940>), which contains lists of raw datasets and variables. For those who have access to raw SECCYD data, we provide a table of raw datasets and variables used in this project (see <https://tinyurl.com/seccyd-wj-data>).
+
+We used R , Rstudio, and Quarto to process, analyze, and report results [@rcoreteam2023; @positteam2023; @quarto]. For reading raw SECCYD data, used the haven and readxl R packages [@haven; @readxl]. For data processing, visualizations, and table creation, we used the tidyverse, sjlabelled, ggdist, and patchwork R packages [@tidyverse; @ggdist; @patchwork; @sjlabelled; @flextable]. For analyses, including mixed models, simple slopes, and equivalence tests, we used lme4, faux, ggeffects, marginaleffects, and parameters R packages [@bates2015; @ggeffects; @marginaleffects; @parameters; @faux].
+
+## Data Analysis Strategy and Inferential Criteria
+
+We used a mixed effecrts modeling approach to analyze how adversity relates to WJ performance. For our primary analyses, we ran one model per adversity variable. Each model contained sex assigned at birth, race/ethnicity, and maternal education as covariates. Adversity and covariates were standardiazed or recoded to center variables at 0.
+
+To analyze and compare WJ subtest performance with overall WJ performance, we restructured the data so that each participant was represented by 10 rows, one for each WJ subtest score. Then, we created a sum coded contrast variable for WJ subtests with 10 levels (one for each subtest). This type of contrast sets the model interecpt to the grand mean (e.g., the mean of all subtest scores). To analyze the effects on adverstiy on test performance, we entered adversity as a main effect and the interaction between adversity and the contrast-coded subtest variable. A model with this structure will contain a main effect for each covariate and one for adversity and an interaction term for each subtest (i.e., 10 interaction terms). The main effect of adversity reflects the association between adversity and overall WJ performance (e.g., within-person average of all subtests; see Figure 1). The interaction terms reflect the association between adversity and subtest performance. However, interactions reflect the difference between the overall performance and subtest performance (see Figure 1). Thus, the interaction measures whether specific WJ subtest performance differs from overall test performance as a function of adversity exposure.
+
+Using this modeling strategy, we are interested in three types of effect sizes: 1) the main effect of each adversity measure (tested in separate models); 2) the simple effect of adversity for each subtest; and 3) the interaction effect between an adversity measure and subtest. We do not have specific point or range predictions for the effect size types above. However, we view standardized regression coefficients (i.e., $\beta~'s$) .10 (or higher) and -.10 (or lower) meaningful. For main effects, effects outside this range indicate that overall performance is meaningfully positve or negative across levels of adversity. For interactions, effect sizes outside these bounds indicate that a subtest score is meaningfully more negative or more positive compared with the overall score. For simple effects, effects outside these bounds indicate that the effect of adversity on a specific subtest is meaningfully different from zero. We are also interested in null effects. Specifically, we use equivalence testing to determine if a given effect is practically equivalent to a Range of Practical Significance (ROPE). We chose a ROPE falling between $\beta$ = -.10 and $\beta$ = .10 [@lakens2018; @kruschke2018]. Although we report standardized coefficients, we converted our ROPE to the WJ standard score scale by multiplying the standard deviation of standard WJ scores (*SD* = 15) by .1. This means our ROPE was -1.5 to 1.5 for unstandardized coefficients.
+
+To guide interpretation, we apply a set of inferential criteria for categorizing data patterns. We are interested in three data patterns: 1) enhanced performance, 2) reduced performance, and 3) inact performance. We infer 'enhanced performance' when main and simple effects are meaningfully positive and statistically different from zero. We infer 'reduced performance' when main and simple effects are meaningfully negative and statistically different from zero. We use equivalence tests to interpret patterns of 'intact performance'. We infer intact performance when a main or simple effect (and its confidence bounds) is practically equivalent to zero (e.g., falls between $\beta$ = -.10 and $\beta$ = .10 ).
+
+We use the same criteria for interaction terms with one difference. Because interaction terms test the difference between main and simple effects, they quantify relative performance patterns. For 'enhanced relative performance', interactions terms must be meaningfully positive and significant. For 'reduced relative performance', an interaction term must be meaningfully negative and significant. Interaction terms that are practically equivalent to zero reflect subest performance that closely resembles overall perforamnce. However, inferring 'enhanced', 'reduced', or 'intact' relative performance depends on the size and direction of the main effect. We are particularly interested in cases where a main effect is negative and interaction terms is positive. This may reflect 'enhanced relative performance' (e.g., meangingful and significant postive interactions), or 'less reduced' performance on a particular subtest in the context of an overall reduced pattern of performance.
+
+## Primary Analyses
+
+Our primary analyses examined how indicators of harshness and unpredictability were associated with WJ overall and subtest performance. We ran one mixed model per indicator for a total of five primary analyses (2 for harshness and 3 for unpredictability). All analyses controlled for the main effects of maternal education, race/ethinicty, and sex assigned at birth. Across all models, there were main effects for both maternal education and race/ethnicity. Lower maternal education and having a non-White racial/ethnic background was associated with lower WJ overall performance. No model contained effects for sex assigned at birth. Below we describe the effects of our primary analysis predictors (see Supplement Table 1).
+
+### Indicators of Harshness
+
+**Income-to-Needs (Mean)**. Our mixed-model analyzed the effect of income-to-needs on overall compared with subtest WJ performance. There was a main effect of income-to-needs such that a higher poverty (lower income-to-needs) was associated with lower overall WJ performance. Equivalence tests show that this overall main effect was outside the ROPE (see Figure 3a).
+
+Interaction effects between income-to-needs and subtests revealed a more nuanced landscape of associations. Performance on Passage Completion, Calculations, Verbal Analogies, Letter-Word, Short-Term Memory, and Unfamiliar Words subtests did not differ from the overall main effect (see Figure 3a and 3b). However, performance on the Picture Vocabulary subtest was significantly more negative and practically unequivalent to the overall main effect (see Figure 3a and 3b). Interestingly, performance on the Auditory Processing, Unfamiliar Words, and Auditory-Visual Associaitons subtest were significantly more postive than the overall main effect (see Figure 3a and 3b). However, equivalence tests suggest that performance on the Unfamiliar words test was inside the ROPE, and thus practically equivalent to the main effect.
+
+Our simple effects analysis tested whether the association between income-to-needs was statistically different from zero and whether it was practically equivalent to the ROPE (see Figure 3c). Analyses revlealed that the association between adversity and each of the subtests where significantly negative and outside the ROPE for except for the Auditory Processing, Unfamiliar Words, and Auditory-Visual Associaitons subtests (see Figure 3c). For these tests, all effects were not statistically different from zero and practically equivalent to the ROPE (see FIgure 3c).
+
+Based on our inferential criteria, the main effect of income-to-needs was consistent with reduced overall performance. For the Picture Vocabulary subtest, performance was significantly more reduced than the overall pattern and outside the ROPE. However, three tests showed relative enhancemet to the overall pattern: Auditory Processing, Unfamiliar Words, and Auditory-Visual Associaitons subtests. Yet, only the Auditory Processing and Auditory Visual Associations subtests were outside the ROPE. However, no subtest performance pattern was consistent with pure enhancement. Instead, simple effect analyses revealed that Auditory Processing, Unfamiliar Words, and Auditory-Visual Associaitons performance was inside the ROPE, consistent with intact performance among families with low income.
+
+**Neighborhood Poverty (Mean)**. There was also a main effect of neighborhood poverty such that a living in a high poverty neighborhood was associated with lower overall WJ performance (see Figure 3d). Equivalence tests show that this overall main effect was outside the ROPE.
+
+Interaction effects between neighborhood poverty and subtest were again varied. Performance on Passage Completion, Calculations, Letter-Word, and Short-Term Memory subtests did not statistically differ from the overall main effect (see Figure 3d adn 3e). However, performance on the Picture Vocabulary, Verbal Analogies, and Applied Problems subtests were significantly more negative than the main effect (see Figure 3d and 3e). However, equivalence tests showed that only the Verbal Analogies subtest performance was outside the ROPE (see Figure 3e). Similar to the income-to-needs analysis, performance on the Auditory Processing and Auditory-Visual Associaitons subtests were significantly more postive than the overall main effect. Equivalence tests revealed that performance on both were also outside the ROPE (see Figure 3e).
+
+Our simple effects analysis showed that higher neighborhood poverty was associated with statistically negative and outside the ROPE for all subtests except for the Auditory Processing nd Auditory-Visual Associaitons subtests. Again, for these two subtests, performance was not statistically different from zero and inside the ROPE.
+
+According to our inferential criteria, our analysis suggest that the main effecd of neighbohood poverty consistent with reduced overall performance. For the Verbal Analogies subtest, performance was significantly more reduced and outsdide the ROPE. However, performance on the Auditory Processing and Auditory-Visual Associaitons subtests were consistent with relative enhancement. However, similar to the income-to-needs results, no tests showed pure enhancement. Simple effect analyses revealed mostly reduced performance. For Auditory Processing and Auditory-Visual Associaitons performance showing relative enhancement, simple effects suggest that they are practically equivalent to the ROPE, consistent with an intact pattern of performance among those living in high poverty neighborhoods.
+
+```{r}
+#| label: Figure3
+#| fig-cap: Figure 3
+#| fig-width: 6.75
+#| fig-height: 6.25
+
+theme_set(
+  theme_light() +
+    theme(
+      text = element_text(size = 11),
+      title = element_text(size = 11, hjust = .5),
+      axis.line = element_line(),
+      panel.border = element_blank(),
+      panel.background = element_rect(color = NA),
+      panel.grid = element_blank(),
+      plot.background = element_rect(color = NA),
+      plot.title = element_text(hjust = .5, face = "bold"),
+      strip.background = element_rect(color = NA, fill = NA),
+      strip.text = element_text(color = "black", hjust = 0.5, face = "bold.italic")
+    )
+)
+
+fig3
+```
+
+### Indicators of Unpredictability
+
+**Family Transitions**. Our analysis of family transitions revealed no main effect on overall WJ performance. The main effect also fell inside the ROPE range suggesting that overall performance was not associated with exposure to more family transitions (see Figure 4a).
+
+Three interaction terms were statistically different from the main effect: Calculations (more negative), Auditory Processing (more positive), and Audio-Visual Associations (more postive). However, only the effect of family transitions on the Calculations subtest was outside the ROPE (see Figure 4b).
+
+Simple effects revealed there were no associations between family transitions and subtest performance. Only Calculations subtest performance was statistically different from zero and outside the ROPE. Applied Problems subtest performance was outside the ROPE but not statistcally different from zero.
+
+Our inerential criteria suggest that WJ performance is mostly intact among those exposed to family transitions. This was true both for overall WJ performance and most subtets, except for the Calculations subtet, which was consitent with a reduced pattern of performance.
+
+**Income-to-Needs Variability.** Models unpacking the effect of income-to-needs variablity on WJ overall and subtest performance raised questions about the validity of income-to-needs variability scores as indicators of unpredictability. Specifically, the direction of all effects were opposite to analyses using income-to-needs average scores. Simple effects suggest that subtest performance that were reduced by income-to-needs mean scores were enhanced in analyses using income-to-needs variablity. We belieive such effects are driven by the fact that income-to-needs mean and variability scores are strongly related (see Table 2), which has been reported before elsewhere [@li2018]. That is, more poverty was related to less income-to-needs variablity. Put differently, richer families were more likely to experience income fluctuations.
+
+To resolve this issue, we conducted a set of secondary analyses that use different methods for computing variability. We report analyses using income-to-needs varaibility scores and income-to-needs average percent change scores (see Secondary Analyses).
+
+**Neighborhood Poverty Variability**. In contrast to income-to-needs variablity, neighbhorhood poverty variability was related to average neighbhorhood poverty in the expected direciton. That is, families living in poor neighborhoods (more harsh) were more likely to experience variablity in neighborhood poverty (unpredictability) from one to 54 months. Additionally, the association between average and variablity scores were moderate rather than strong (see Table 2).
+
+There was no main effect of neighborhood poverty variablity on overall WJ scores (see FIgure 4). There was only one interaction with subtest performance. Audio-Visual Associations subtest performance was significantly more positive than the main effect, however, this effect was inside the ROPE. In addition, simple effects showed no subtest performance was different from zero and all effects were inside the ROPE.
+
+```{r}
+#| label: Figure4
+#| fig-cap: Figure 4
+#| fig-width: 6.75
+#| fig-height: 6.25
+
+fig4
+```
+
+{{< pagebreak >}}
+
+# References
+
+::: {#refs}
+:::
