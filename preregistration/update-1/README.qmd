@@ -18,6 +18,7 @@ library(tidyverse)
 library(broom)
 
 # set directory to root directory
+knitr::opts_chunk$set(fig.path = "figures/")
 knitr::opts_knit$set(root.dir = "../../")
 ```
 

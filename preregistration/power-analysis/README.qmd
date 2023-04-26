@@ -8,6 +8,7 @@ format: gfm
 #| include: false
 library(tidyverse)
 
+knitr::opts_chunk$set(fig.path = "figures/")
 knitr::opts_knit$set(root.dir = "../../")
 ```
 
@@ -16,7 +17,7 @@ This is a power analysis for a mixed-model testing the effect of adversity on av
 ```{r}
 #| label: load-data
 #| include: false
-load("data/seccyd_dvs_wj.Rdata")
+load("data/seccyd-dvs-wj.Rdata")
 load("preregistration/power-analysis/power-objects.Rdata")
 
 ## Set ggplot2 theme ----

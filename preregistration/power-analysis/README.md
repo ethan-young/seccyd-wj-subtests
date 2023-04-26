@@ -1,5 +1,4 @@
-Power Analysis
-================
+# Power Analysis
 
 This is a power analysis for a mixed-model testing the effect of
 adversity on average and subtest Woodcock Johnson scores. The background
@@ -100,5 +99,4 @@ error, we can detect a $\beta$ = -.10 (or .10) with 83% power.
 
 Below are the full simulation results plotted as power curves:
 
-<img src="README_files/figure-commonmark/unnamed-chunk-4-1.png"
-data-fig-align="center" />
+<img src="figures/unnamed-chunk-4-1.png" data-fig-align="center" />

@@ -6,10 +6,11 @@ library(tidyverse)
 library(broom)
 
 # set directory to root directory
+knitr::opts_chunk$set(fig.path = "figures/")
 knitr::opts_knit$set(root.dir = "../../")
 ```
 
-*Last updated on Wednesday, April 26, 2023 at 11:34 AM*
+*Last updated on Wednesday, April 26, 2023 at 11:47 AM*
 
 ## Background
 
@@ -164,8 +165,7 @@ new_incnt_data2 |>
   facet_wrap(~var_type, ncol = 1, scales = "free_y")
 ```
 
-<img src="README_files/figure-commonmark/scatterplots-1.png"
-data-fig-align="center" />
+<img src="figures/scatterplots-1.png" data-fig-align="center" />
 
 ## Conclusion
 

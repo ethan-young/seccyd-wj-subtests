@@ -1,15 +1,15 @@
-Within-person cognitive performance across abilities among
-adversity-exposed people in the SECCYD
+How does adversity relate to performance across different abilities in
+the same person?
 ================
 
-*Last updated on Friday, April 14, 2023 at 12:22 PM*
+*Last updated on Wednesday, April 26, 2023 at 11:53 AM*
 
 ## Overview
 
 This repository contains a preregistration, data, code, an (eventual)
-reproducible manuscript/supplement for a project entitled “Within-person
-cognitive performance across abilities among adversity-exposed people in
-the SECCYD” (working title).
+reproducible manuscript/supplement for a project entitled “How does
+adversity relate to performance across different abilities in the same
+person?” (working title).
 
 This project is a secondary data analysis using the Study of Early
 Childcare and Youth Development
@@ -19,21 +19,20 @@ Childcare and Youth Development
 ## Directory Structure
 
 The names of each folder are intended to be self-explanatory. There are
-six top-level folders to organize the inputs and outputs of this
-project:
+six components organize the inputs and outputs of this project:
 
-1.  [`codebooks/`](codebooks/): lists of variable names, labels, and
+1.  [`codebooks`](codebooks/): lists of variable names, labels, and
     value labels (where applicable).
-2.  `data/`: data, stored as an `.Rdata` file and `.csv` files.
-3.  `manuscript/`: a manuscript written in R markdown for submission to
-    a journal.
-4.  [`preregistration/`](preregistration/): a preregistration document
+2.  [`data`](%60data/%60): data, stored as an `.Rdata` files.
+3.  [`manuscript`](manuscript/%60): a manuscript written in Quarto for
+    submission to a journal.
+4.  [`preregistration`](preregistration/): a preregistration document
     based on ([Akker et al., 2021](#ref-akker2021)) that details my
     plans for this project.
-5.  [`scripts/`](scripts/): R-scripts that read, analyze, and produce
-    all outputs.
-6.  `supplement/`: a supplemental text with additional information and
-    materials.
+5.  [`scripts`](scripts/): R-scripts that read, analyze, and produce all
+    outputs.
+6.  [`supplement`](manuscript/supplement/%60): a supplemental text with
+    additional information and materials.
 
 ## References
 
