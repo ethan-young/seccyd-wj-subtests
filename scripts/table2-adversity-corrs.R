@@ -1,18 +1,18 @@
 table2 <- 
-  ivs_analysis |> 
-  mutate(
-    incnt_mean = incnt_mean * -1
-  ) |> 
+  primary_data |>
   select(
+    id,
     family_unp,
     incnt_mean,
     incnt_sd,
     neigh_harsh,
     neigh_unp,
   ) |> 
+  distinct() |> 
+  select(-id) |> 
   corr_table(
     numbered = T,
     stats = c("n", "mean", "sd", "min", "median", "max"),
-    c.names = ivs_label |> str_subset("Residual|Percent", T),
+    c.names = ivs_label |> str_subset("Residual|Percent", T) |> str_replace("Standard Deviation", "Family Poverty (SD)"),
     sample_size = F
   )

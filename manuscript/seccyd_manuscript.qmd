@@ -253,7 +253,7 @@ According to our inferential criteria, results suggest that the main effect of n
 ```{r}
 #| label: Figure3
 #| fig-cap: Figure 3
-#| fig-width: 6.75
+#| fig-width: 6.5
 #| fig-height: 6.25
 
 theme_set(
@@ -298,7 +298,7 @@ Based on our inferential criteria, high neighborhood poverty variability was ass
 ```{r}
 #| label: Figure4
 #| fig-cap: Figure 4
-#| fig-width: 6.75
+#| fig-width: 6.5
 #| fig-height: 6.25
 
 fig4
@@ -306,16 +306,34 @@ fig4
 
 ## Secondary Analyses
 
-### Family Poverty - Standard Deviation.
+Our primary analyses examining family poverty variability raised questions about its validity as an unpredictability measure. Our secondary analyses were designed to address this issue and explore different methods of computing variability scores (see <https://tinyurl.com/seccyd-wj-update1> for the secondary analysis plan).
 
-### Family Poverty - Residual Variance.
+We computed three types of variability scores over the income-to-needs data. The first was identical to our primary analyses; we computed a simple within-person standard deviation of income-to-needs from 1 to 54 months. Second, we computed residual standard deviations [@li2018]. To do so, we fit a linear slope to each participant's income-to-needs data, extracted residual scores, and computed the standard deviation of these residuals.
 
-### Family Poverty - Average Percent Change.
+The last method computed percent change scores over each participant's income-to-needs data. In time series analysis, percent change reflects how much a score changes relative to the previous time point. For example, if one's income is \\\$1,000 at time point 1 and increases to \\\$1,500 at time point 2, their percent change score would be .50 or 50% (\\\$500 increase is half of income at timepoint 1). The percent change score is always relative to the previous timepoint so if income increases another \\\$500 at timepoint 3, the percent change score would be .33 or 33% (\\\$500 is 1/3 of timepoint 2 income of \\\$1500). After computing percent change scores for each assessment, we averaged percent change scores to create a single percent change score per participant.
+
+Simple and residual standard deviation family poverty scores were strongly related to both each other and to the average family poverty (see Table 3). However, average percent change scores were only weakly related to simple and residual standard deviation scores. In addition, average percent change scores were weakly and negatively related to family poverty average scores--opposite to simple and residual standard deviation scores (see Table 3). That is, families experiencing higher poverty also experienced larger average percent change over time. This is interesting for two reasons. First, at least empiriclaly, prior research would expect harsher environments to also be more unpredictable. For other indicators of unpredictability in current work, this is the case. Second, families experiencing higher poverty have less income. This means smaller changes in income have a larger impact: a family with a monthly income \\\$1,500 that loses \\\$500 the next month is impacted far more than a family that earns \\\$5,000.
+
+```{r}
+#| label: Table3
+#| tbl-cap: Bivariate correlations and descriptive statistics for family poverty variability scores.
+#| results: asis
+#| tab.id: table1
+
+table3 |> 
+  flextable() |> 
+  autofit() |> 
+  flextable_to_rmd()
+```
+
+After computing each type of family poverty variability scores, we ran three analyses with each as the primary predictor. We used the same modeling strategy, covariates, and inferential criteria as our primary analyses. Findings revealed similar patterns for both simple and residual standard deviation scores: more variability in family poverty was associated with performance patterns opposite to average family poverty (see Figure 5). Again, we believe this is an artifact of the relation between family poverty average and variability scores.
+
+In contrast, however, average family percent change scores did not follow this pattern. Instead, higher percent changes were consistent with intact overall WJ test performance. The only subtest that differed from the overall effect was the Calculations subtest, which showed that higher percent changes was associated with a significant, but not meaningful, reduction in performance. Simple effects showed higher percent changes were associated with intact performance for all subtests except the Auditory Processing subtest, which was meaningfully more positive but not statistically different from zero.
 
 ```{r}
 #| label: Figure5
 #| fig-cap: Figure 5
-#| fig-width: 6.75
+#| fig-width: 6.5
 #| fig-height: 7.25
 
 fig5

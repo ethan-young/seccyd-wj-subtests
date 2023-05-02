@@ -87,8 +87,8 @@ ivs_label <-
     "Family Transitions",
     "Family Poverty (Mean)",
     "Standard Deviation",
-    "Neighborhood Poverty (Mean)",
-    "Neighborhood Poverty (SD)",
+    "Neigh. Poverty (Mean)",
+    "Neigh. Poverty (SD)",
     "Residual Variance",
     "Average Percent Change"
   )
@@ -193,6 +193,7 @@ source("scripts/fig4-unpredictability.R")
 source("scripts/fig5-income-variability.R")
 source("scripts/table1-wj-corrs.R")
 source("scripts/table2-adversity-corrs.R")
+source("scripts/table3-income-variability.R")
 
 # Save output -------------------------------------------------------------
 save(
@@ -204,6 +205,7 @@ save(
   fig5,
   table1,
   table2,
+  table3,
   file = "manuscript/r-objects.Rdata"
 )
 

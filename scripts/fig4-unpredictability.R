@@ -42,7 +42,7 @@ fig4a <-
   geom_text(
     data = equivalence_data1 |> 
       distinct(ivs, main_effect, main_effect_txt) |> 
-      filter(ivs %in% c("Family Transitions", "Neighborhood (SD)")),
+      filter(ivs %in% c("Family Transitions", "Neigh. (SD)")),
     aes(
       x = -1.5, 
       y = -2, 
@@ -76,7 +76,7 @@ fig4a <-
 # Equivalence - Interaction Term ------------------------------------------
 fig4b <- 
   equivalence_data1 |> 
-  filter(ivs %in% c("Family Transitions", "Neighborhood Poverty (SD)")) |> 
+  filter(ivs %in% c("Family Transitions", "Neigh. Poverty (SD)")) |> 
   ggplot(aes(color = parameter)) +
   geom_rect(
     aes(
@@ -121,7 +121,7 @@ fig4b <-
 # Equivalence - Simple Slopes ---------------------------------------------
 fig4c <- 
   equivalence_data1 |> 
-  filter(ivs %in% c("Family Transitions", "Neighborhood Poverty (SD)")) |> 
+  filter(ivs %in% c("Family Transitions", "Neigh. Poverty (SD)")) |> 
   ggplot(aes(color = parameter)) +
   geom_rect(
     aes(
