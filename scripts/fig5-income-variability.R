@@ -1,7 +1,7 @@
 # Standard interaction plots ----
-fig4a <- 
-  wj_plotting_data1 |> 
-  filter(dvs == "z_mean_score", ivs %in% c("z_family_unp", "z_neigh_unp")) |> 
+fig5a <- 
+  wj_plotting_data2 |> 
+  filter(dvs == "z_mean_score", ivs %in% c("z_incnt_sd", "z_incnt_sigma", "z_incnt_pc")) |> 
   mutate(
     test = factor(group, wj_order, wj_labels),
     adversity = x,
@@ -12,7 +12,7 @@ fig4a <-
     .by = c(ivs, adversity)
   ) |>
   left_join(
-    primary_results_stats,
+    secondary_results_stats,
     by = c("ivs", "dvs", "group" = "parameter")
   ) |> 
   mutate(
@@ -40,9 +40,9 @@ fig4a <-
   geom_line() +
   geom_point(fill = "white", size = 2, stroke = 1) +
   geom_text(
-    data = equivalence_data1 |> 
+    data = equivalence_data2 |> 
       distinct(ivs, main_effect, main_effect_txt) |> 
-      filter(ivs %in% c("Family Transitions", "Neighborhood (SD)")),
+      filter(ivs %in% c("Standard Deviation", "Residual Variance", "Average Percent Change")),
     aes(
       x = -1.5, 
       y = -2, 
@@ -74,9 +74,9 @@ fig4a <-
   )
 
 # Equivalence - Interaction Term ------------------------------------------
-fig4b <- 
-  equivalence_data1 |> 
-  filter(ivs %in% c("Family Transitions", "Neighborhood Poverty (SD)")) |> 
+fig5b <- 
+  equivalence_data2 |> 
+  filter(ivs %in% c("Standard Deviation", "Residual Variance", "Average Percent Change")) |> 
   ggplot(aes(color = parameter)) +
   geom_rect(
     aes(
@@ -103,7 +103,7 @@ fig4b <-
     aes(x = parameter_num, y = sig_pos, label = sig_star),
     color = "black"
   ) +
-  scale_x_continuous("", breaks = 1:10, labels = levels(equivalence_data1$parameter),position = "top") +
+  scale_x_continuous("", breaks = 1:10, labels = levels(equivalence_data2$parameter),position = "top") +
   scale_y_continuous("", breaks = seq(-5, 5, by = 1)) +
   scale_color_manual(values = wj_palette) + 
   scale_shape_manual(values = c(16,21)) +
@@ -119,9 +119,9 @@ fig4b <-
   )
 
 # Equivalence - Simple Slopes ---------------------------------------------
-fig4c <- 
-  equivalence_data1 |> 
-  filter(ivs %in% c("Family Transitions", "Neighborhood Poverty (SD)")) |> 
+fig5c <- 
+  equivalence_data2 |> 
+  filter(ivs %in% c("Standard Deviation", "Residual Variance", "Average Percent Change")) |> 
   ggplot(aes(color = parameter)) +
   geom_rect(
     aes(
@@ -148,7 +148,7 @@ fig4c <-
     aes(x = parameter_num, y = sim_sig_pos, label = sim_sig_star),
     color = "black"
   ) +
-  scale_x_continuous("", breaks = 1:10, labels = levels(equivalence_data1$parameter)) +
+  scale_x_continuous("", breaks = 1:10, labels = levels(equivalence_data2$parameter)) +
   scale_y_continuous("Coefficient\n", breaks = seq(-5, 5, by = 1), position = "right") +
   scale_color_manual(values = wj_palette) + 
   scale_shape_manual(values = c(16,21)) +
@@ -165,6 +165,6 @@ fig4c <-
   )
 
 # Stitch Together Plots ---------------------------------------------------
-fig4 <- 
-  (fig4a + fig4b + fig4c + plot_layout(guides = 'collect')) &
+fig5 <- 
+  (fig5a + fig5b + fig5c + plot_layout(guides = 'collect')) &
   theme(legend.position = "bottom", legend.title = element_blank())

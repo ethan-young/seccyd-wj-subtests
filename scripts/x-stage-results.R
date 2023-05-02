@@ -77,30 +77,71 @@ ivs_order <-
     "z_incnt_mean",
     "z_incnt_sd",
     "z_neigh_harsh",
-    "z_neigh_unp"
+    "z_neigh_unp",
+    "z_incnt_sigma",
+    "z_incnt_pc"
   )
 
 ivs_label <- 
   c(
     "Family Transitions",
-    "Income-to-Needs (Mean)",
-    "Income-to-Needs (SD)",
-    "Neighborhood (Mean)",
-    "Neighborhood (SD)"
+    "Family Poverty (Mean)",
+    "Standard Deviation",
+    "Neighborhood Poverty (Mean)",
+    "Neighborhood Poverty (SD)",
+    "Residual Variance",
+    "Average Percent Change"
   )
 
-
 # Plotting Data -----------------------------------------------------------
-## Predicted performance by adeversity level and subtest
-wj_plotting_data <- 
+## Primary Results ----
+### Predicted performance by adversity level and subtest
+wj_plotting_data1 <- 
   primary_results |> 
   reveal(predicted_vals_fitted, ggpredict_full, T) |> 
   filter(contrast == "wj_subtest_con1") |> 
   select(ivs, dvs, x, predicted, conf.low, conf.high, group)
 
-## Data for plotting equivalence info
-equivalence_data <- 
+### Data for plotting equivalence info
+equivalence_data1 <- 
   primary_results_stats |> 
+  mutate(
+    main_effect = ifelse(ivs == parameter, coefficient, NA),
+    main_effect_txt = ifelse(ivs == parameter, str_pad(sprintf("%.2f", main_effect), 8), NA),
+    main_effect_txt = case_when(ivs == parameter & p < .001 ~ paste0(main_effect_txt, "***"),
+                                ivs == parameter & p < .01  ~ paste0(main_effect_txt, "**"),
+                                ivs == parameter & p < .01  ~ paste0(main_effect_txt, "*"),
+                                T ~ main_effect_txt)
+  ) |> 
+  fill(main_effect, main_effect_txt) |> 
+  filter(parameter %in% wj_order, dvs == "mean_score") |> 
+  mutate(
+    parameter = factor(parameter, wj_order, wj_labels),
+    parameter_num = as.numeric(parameter),
+    ivs = factor(ivs, ivs_order, ivs_label),
+    sig_pos = ifelse(coefficient < 0, slope_low -.5, slope_high +.5),
+    sig_star = case_when(p < .001 ~ "***",
+                         p < .01  ~ "**",
+                         p < .01  ~ "*",
+                         T ~ ""),
+    sim_sig_pos = ifelse(slope < 0, slope_low -.5, slope_high +.5),
+    sim_sig_star = case_when(slope_p < .001 ~ "***",
+                             slope_p < .01  ~ "**",
+                             slope_p < .01  ~ "*",
+                             T ~ "")
+  )
+
+## Secondary Results----
+### Predicted performance by adversity level and subtest
+wj_plotting_data2 <- 
+  secondary_results |> 
+  reveal(predicted_vals_fitted, ggpredict_full, T) |> 
+  filter(contrast == "wj_subtest_con1") |> 
+  select(ivs, dvs, x, predicted, conf.low, conf.high, group)
+
+### Data for plotting equivalence info
+equivalence_data2 <- 
+  secondary_results_stats |> 
   mutate(
     main_effect = ifelse(ivs == parameter, coefficient, NA),
     main_effect_txt = ifelse(ivs == parameter, str_pad(sprintf("%.2f", main_effect), 8), NA),
@@ -149,6 +190,7 @@ theme_set(
 
 source("scripts/fig3-harshness.R")
 source("scripts/fig4-unpredictability.R")
+source("scripts/fig5-income-variability.R")
 source("scripts/table1-wj-corrs.R")
 source("scripts/table2-adversity-corrs.R")
 
@@ -159,6 +201,7 @@ save(
   fig2,
   fig3,
   fig4,
+  fig5,
   table1,
   table2,
   file = "manuscript/r-objects.Rdata"
@@ -168,3 +211,5 @@ save(
 ggsave("manuscript/figures/fig2-wj-distributions.pdf", fig2, height = 8, width = 4.5)
 ggsave("manuscript/figures/fig3-harshness.pdf", fig3, height = 6, width = 8)
 ggsave("manuscript/figures/fig4-unpredictability.pdf", fig4, height = 6, width = 8)
+ggsave("manuscript/figures/fig5-income-variability.pdf", fig5, height = 8, width = 8)
+
