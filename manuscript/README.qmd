@@ -429,7 +429,7 @@ skill.
 
 ```{r}
 #| tab.id: table1
-#| results: asis
+#| results: markup
 
 table1 |> 
   flextable() |> 
@@ -456,8 +456,7 @@ table1 |>
     i = 1, j = 1, 
     as_paragraph(as_i("Note: "), as_i("* p "), "< .05, ", as_i("** p "), "< .01"), 
     part = "footer"
-  ) |> 
-  flextable_to_rmd()
+  )
 
 ```
 
