@@ -59,7 +59,7 @@ fig4a <-
   scale_shape_manual(values = c(16,21)) +
   scale_alpha_manual(values = c(.1, 1)) +
   guides(
-    color = guide_legend(ncol = 4, byrow = T),
+    color = guide_legend(ncol = 3, byrow = T),
     fill = "none",
     shape = "none", 
     alpha = "none"

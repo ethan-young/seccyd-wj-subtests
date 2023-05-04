@@ -57,7 +57,7 @@ fig2a <-
   )
 
 # WJ Trajectory figure --------------------------------------------------
-## Prep underying data
+## Prep underlying data
 fig2b_data <- 
   dvs_analysis_wide |> 
   pivot_longer(
@@ -84,30 +84,40 @@ fig2b <-
       x = assessment_order, 
       y = score, 
       group = wj_test_order, 
-      color = wj_test_order
+      color = wj_test_order,
+      fill = wj_test_order
     )
   ) +
   geom_hline(
     aes(yintercept = mean(score, na.rm = T)), 
     color = "#d2d6de"
   ) +
-  stat_summary(geom = "line") +
-  stat_pointinterval(
-    point_interval = "mean_qi",
-    shape = 21,
-    fill = "white"
+  stat_summary(
+    geom = "line",
+    fun.data = mean_se
   ) +
-  geom_dotsinterval(
-    aes(x = 6),
-    side = "left",
-    scale = .5, 
-    show.legend = F
+  stat_summary(
+    geom = "linerange",
+    fun.data = mean_sdl,
+    linewidth = .5,
   ) +
-  stat_slabinterval(
-    aes(x = 6, fill = wj_test_order, color = wj_test_order),
-    side = "right", 
-    point_interval = "mean_qi", 
-    color = "black", 
+  stat_summary(
+    geom = "point", 
+    fun.data = mean_se,
+    color = "white", 
+    shape = 21, 
+    size = 2.25,
+    stroke = 1
+  ) +
+  geom_dots(aes(x = 5.75)) +
+  stat_summary(
+    geom = "point", 
+    aes(x = 5.75),
+    fun.data = mean_se,
+    fill = "white",
+    shape = 21, 
+    size = 2.25,
+    stroke = 1,
     show.legend = F
   ) +
   scale_x_continuous(
@@ -120,8 +130,9 @@ fig2b <-
   ) +
   scale_color_manual(values = wj_palette) +
   scale_fill_manual(values = wj_palette) +
-  guides(color = "none") +
-  facet_wrap(~wj_test_order, nrow = 5)
+  guides(color = "none", fill = "none") +
+  facet_wrap(~wj_test_order, ncol = 2)
 
 # Combined Figure ---------------------------------------------------------
 fig2 <- fig2b
+
