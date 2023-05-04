@@ -541,7 +541,7 @@ White/non-Hispanic = 0, otherwise = 1.
 
 ```{r}
 #| tab.id: table2
-#| results: asis
+#| results: markup
 
 table2 |> 
   flextable() |> 
@@ -568,8 +568,7 @@ table2 |>
     i = 1, j = 1, 
     as_paragraph(as_i("Note: "), as_i("* p "), "< .05, ", as_i("** p "), "< .01"), 
     part = "footer"
-  ) |> 
-  flextable_to_rmd()
+  )
 ```
 
 # Results
@@ -971,7 +970,7 @@ earns \\\$5,000.
 
 ```{r}
 #| tab.id: table3
-#| results: asis
+#| results: markup
 
 table3 |> 
   flextable() |> 
@@ -998,8 +997,7 @@ table3 |>
     as_paragraph(as_i("Note: "), as_i("* p "), "< .05, ", as_i("** p "), "< .01"), 
     part = "footer"
   ) |> 
-  autofit() |> 
-  flextable_to_rmd()
+  autofit()
 ```
 
 After computing each type of family poverty variability scores, we ran
@@ -1021,8 +1019,6 @@ meaningful, reduction in performance. Simple effects showed higher
 percent changes were associated with intact performance for all subtests
 except the Auditory Processing subtest, which was meaningfully more
 positive but not statistically different from zero.
-
-<!--# Do you think this is a meaningful effect? The paragraph above Table 3 seems to conclude that this measure is behaving in unexpected ways, so I'm wondering how much we should read into these patterns of intact performance (over and above the fact that it is a secondary analysis. -->
 
 ```{r}
 #| label: Figure5
