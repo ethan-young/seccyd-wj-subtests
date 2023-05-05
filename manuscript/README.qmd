@@ -163,7 +163,8 @@ goal-directed actions. Thus, adaptive-logic can afford different or (in
 some cases) opposing hypotheses. This does not diminish the
 enterprise---empirical research is the ultimate arbiter---but there is a
 risk of becoming too focused on a particular corner of hypothesis space,
-when other regions would be just as reasonable to explore (REFS).
+when other regions would be just as reasonable to explore
+[@ketelaar2000; @lewis2017; @andrews2002].
 
 Adaptation-based research has also focused on testing content, or the
 notion that performance should improve when the testing content matches

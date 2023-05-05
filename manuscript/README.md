@@ -85,7 +85,8 @@ most goal-directed actions. Thus, adaptive-logic can afford different or
 (in some cases) opposing hypotheses. This does not diminish the
 enterprise—empirical research is the ultimate arbiter—but there is a
 risk of becoming too focused on a particular corner of hypothesis space,
-when other regions would be just as reasonable to explore (REFS).
+when other regions would be just as reasonable to explore (Andrews et
+al., 2002; Ketelaar & Ellis, 2000; Lewis et al., 2017).
 
 Adaptation-based research has also focused on testing content, or the
 notion that performance should improve when the testing content matches
@@ -944,6 +945,14 @@ system*. <https://CRAN.R-project.org/package=quarto>
 
 </div>
 
+<div id="ref-andrews2002" class="csl-entry">
+
+Andrews, P. W., Gangestad, S. W., & Matthews, D. (2002). Adaptationism -
+how to carry out an exaptationist program. *Behavioral and Brain
+Sciences*, *25*(4), 489–504.
+
+</div>
+
 <div id="ref-marginaleffects" class="csl-entry">
 
 Arel-Bundock, V. (2023). *Marginaleffects: Predictions, comparisons,
@@ -1168,6 +1177,15 @@ uncertainty*. <https://doi.org/10.5281/zenodo.3879620>
 
 </div>
 
+<div id="ref-ketelaar2000" class="csl-entry">
+
+Ketelaar, T., & Ellis, B. J. (2000). Are evolutionary explanations
+unfalsifiable? Evolutionary psychology and the Lakatosian philosophy of
+science. *Psychological Inquiry*, *11*(1), 1–21.
+<https://doi.org/dsds7m>
+
+</div>
+
 <div id="ref-kruschke2018" class="csl-entry">
 
 Kruschke, J. K. (2018). Rejecting or accepting parameter values in
@@ -1182,6 +1200,14 @@ Lakens, D., Scheel, A. M., & Isager, P. M. (2018). Equivalence testing
 for psychological research: A tutorial. *Advances in Methods and
 Practices in Psychological Science*, *1*(2), 259–269.
 <https://doi.org/10.1177/2515245918770963>
+
+</div>
+
+<div id="ref-lewis2017" class="csl-entry">
+
+Lewis, D. M. G., Al-Shawaf, L., Conroy-Beam, D., Asao, K., & Buss, D. M.
+(2017). Evolutionary psychology: A how-to guide. *American
+Psychologist*, *72*, 353–373. <https://doi.org/f97kk7>
 
 </div>
 
