@@ -85,12 +85,40 @@ ivs_order <-
 ivs_label <- 
   c(
     "Family Transitions",
-    "Family Poverty (Mean)",
+    "Family Income\nDisadvantage",
     "Standard Deviation",
-    "Neigh. Poverty (Mean)",
-    "Neigh. Poverty (SD)",
-    "Residual Variance",
+    "Neigh. Socioeconomic\nDisadvantage",
+    "Neigh. Socioeconomic\nVariabibiliy",
+    "Residual\nStandard Deviation",
     "Average Percent Change"
+  )
+
+# In text stats -----------------------------------------------------------
+intext <- 
+  list(
+    n = primary_data |> distinct(id) |> nrow(),
+    incm_incsd = primary_data |> 
+      select(id, incnt_mean, incnt_sd) |>
+      distinct() |> 
+      select(-id) |> 
+      psych::corr.test() |> 
+      _$r[1,2] |> 
+      formatC(2, 3, format = "f"),
+    neighm_neighsd = primary_data |> 
+      select(id, neigh_harsh, neigh_unp) |>
+      distinct() |> 
+      select(-id) |> 
+      psych::corr.test() |> 
+      _$r[1,2] |> 
+      formatC(2, 3, format = "f"),
+    incm_incpc = secondary_data |> 
+      select(id, incnt_sd, incnt_sigma, incnt_pc) |> 
+      distinct() |> 
+      left_join(primary_data |> select(id, incnt_mean) |> distinct()) |> 
+      select(incnt_mean, incnt_pc) |> 
+      psych::corr.test() |> 
+      _$r[1,2] |> 
+      formatC(2, 3, format = "f")
   )
 
 # Plotting Data -----------------------------------------------------------
@@ -206,6 +234,7 @@ save(
   table1,
   table2,
   table3,
+  intext,
   file = "manuscript/r-objects.Rdata"
 )
 

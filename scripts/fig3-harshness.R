@@ -42,7 +42,7 @@ fig3a <-
   geom_text(
     data = equivalence_data1 |> 
       distinct(ivs, main_effect, main_effect_txt) |> 
-      filter(ivs %in% c("Family Poverty (Mean)", "Neigh. Poverty (Mean)")),
+      filter(ivs %in% c("Family Income\nDisadvantage", "Neigh. Socioeconomic\nDisadvantage")),
     aes(
       x = -1.5, 
       y = -2, 
@@ -53,7 +53,7 @@ fig3a <-
     inherit.aes = F
   ) +
   scale_y_continuous("Centered WJ Score") +
-  scale_x_continuous("", breaks = c(-1,1), labels = c("Low Adversity","High Adversity")) +
+  scale_x_continuous("", breaks = c(-1,1), labels = c("Low\nDisadvantage","High\nDisadvantage")) +
   scale_color_manual("WJ Subtest", values = wj_palette) + 
   scale_linetype_manual(values = c("dashed", "solid")) +
   scale_shape_manual(values = c(16,21)) +
@@ -77,7 +77,7 @@ fig3a <-
 # Equivalence - Interaction Term ------------------------------------------
 fig3b <- 
   equivalence_data1 |> 
-  filter(ivs %in% c("Family Poverty (Mean)", "Neigh. Poverty (Mean)")) |> 
+  filter(ivs %in% c("Family Income\nDisadvantage", "Neigh. Socioeconomic\nDisadvantage")) |> 
   ggplot(aes(color = parameter)) +
   geom_rect(
     aes(
@@ -122,7 +122,7 @@ fig3b <-
 # Equivalence - Simple Slopes ---------------------------------------------
 fig3c <- 
   equivalence_data1 |> 
-  filter(ivs %in% c("Family Poverty (Mean)", "Neigh. Poverty (Mean)")) |> 
+  filter(ivs %in% c("Family Income\nDisadvantage", "Neigh. Socioeconomic\nDisadvantage")) |> 
   ggplot(aes(color = parameter)) +
   geom_rect(
     aes(

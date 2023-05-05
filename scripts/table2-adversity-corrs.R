@@ -13,6 +13,9 @@ table2 <-
   corr_table(
     numbered = T,
     stats = c("n", "mean", "sd", "min", "median", "max"),
-    c.names = ivs_label |> str_subset("Residual|Percent", T) |> str_replace("Standard Deviation", "Family Poverty (SD)"),
+    c.names = ivs_label |> 
+      str_subset("Residual|Percent", T) |> 
+      str_replace("Standard Deviation", "Family Income Variability") |> 
+      str_replace("\\n", " "),
     sample_size = F
   )

@@ -42,7 +42,7 @@ fig4a <-
   geom_text(
     data = equivalence_data1 |> 
       distinct(ivs, main_effect, main_effect_txt) |> 
-      filter(ivs %in% c("Family Transitions", "Neigh. (SD)")),
+      filter(ivs %in% c("Family Transitions", "Neigh. Socioeconomic\nVariabibiliy")),
     aes(
       x = -1.5, 
       y = -2, 
@@ -53,7 +53,7 @@ fig4a <-
     inherit.aes = F
   ) +
   scale_y_continuous("Centered WJ Score", expand = c(.15,.15)) +
-  scale_x_continuous("", breaks = c(-1,1), labels = c("Low Adversity","High Adversity")) +
+  scale_x_continuous("", breaks = c(-1,1), labels = c("Low","High")) +
   scale_color_manual("WJ Subtest", values = wj_palette) + 
   scale_linetype_manual(values = c("dashed", "solid")) +
   scale_shape_manual(values = c(16,21)) +
@@ -76,7 +76,7 @@ fig4a <-
 # Equivalence - Interaction Term ------------------------------------------
 fig4b <- 
   equivalence_data1 |> 
-  filter(ivs %in% c("Family Transitions", "Neigh. Poverty (SD)")) |> 
+  filter(ivs %in% c("Family Transitions", "Neigh. Socioeconomic\nVariabibiliy")) |> 
   ggplot(aes(color = parameter)) +
   geom_rect(
     aes(
@@ -121,7 +121,7 @@ fig4b <-
 # Equivalence - Simple Slopes ---------------------------------------------
 fig4c <- 
   equivalence_data1 |> 
-  filter(ivs %in% c("Family Transitions", "Neigh. Poverty (SD)")) |> 
+  filter(ivs %in% c("Family Transitions", "Neigh. Socioeconomic\nVariabibiliy")) |> 
   ggplot(aes(color = parameter)) +
   geom_rect(
     aes(
