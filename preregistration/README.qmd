@@ -82,15 +82,15 @@ This preregistration document is based on [@akker2021] for secondary data analys
 - Jeffry A. Simpson^3^
 - Glenn I. Roisman^3^
 
-<sup>1</sup>Utrecht University
+^1^Utrecht University
 
-<sup>2</sup>Max Planck Institute for the Study of Crime, Security and Law 
+^2^Max Planck Institute for the Study of Crime, Security and Law 
 
-<sup>3</sup>University of Minnesota
+^3^University of Minnesota
 
 ### Q3: Research Questions
 
-<i>*Note that some research questions/hypotheses use causal language. Although we are most interested in these causal questions, the data are observational. We retain the causal language here but will use non-causal language when relating any statistical test to these questions/hypotheses.</i>
+*Note that some research questions/hypotheses use causal language. Although we are most interested in these causal questions, the data are observational. We retain the causal language here but will use non-causal language when relating any statistical test to these questions/hypotheses.*
 
 **R1:** How does adversity relate to overall performance compared to subtest performance on large cognitive test batteries? In other words, how does adversity relate to broad testing scores compared with more narrow, specific subtest scores?
 
@@ -343,29 +343,29 @@ Our strategy will be to retain outliers. However, if we discover influential out
 
 **No author has analyzed or worked with the Woodcock Johnson subtest scores prior to this preregistration.**
 
-EY has not published any papers using this dataset. In 2014 and 2015, EY, JS, and GI submitted a paper to  *Child  Development* (rejected) and *Development and Psychopathology* (withdrawn). The paper used aggregated Woodcock Johnson scores over each assessment and used income-to-needs as a covariate.
+Ethan Young has not published any papers using this dataset. In 2014 and 2015, Ethan Young, Jeffry Simpson, and Glenn Roisman submitted a paper to  *Child  Development* (rejected) and *Development and Psychopathology* (withdrawn). The paper used aggregated Woodcock Johnson scores over each assessment and used income-to-needs as a covariate.
 
-MN has intimate knowledge of this dataset. MN has published two papers using the dataset. MN also has one manuscript in  press and one under review using the data. MN has not analyzed or used the subtest variables in the current preregistration.
+Marissa Nivison has intimate knowledge of this dataset. Marissa Nivison has published two papers using the dataset. Marissa Nivison also has one manuscript in press and one under review using the data. Marissa Nivison has not analyzed or used the subtest variables in the current preregistration.
 
-GI has intimate knowledge of this dataset. GI is a co-principal investigator on the project and has published many papers using the data. Variables analyzed in GI publications relate mostly to the dependent variables in this project. Those relevant to the current preregistration include:
+Glenn Roisman has intimate knowledge of this dataset. Glenn Roisman is a co-principal investigator on the project and has published many papers using the data. Variables analyzed in Glenn Roisman publications relate mostly to the dependent variables in this project. Those relevant to the current preregistration include:
 
 - @bleil2021
 - @cottrell2015
 - @monti2014
-- @fraley2013
+- @fraley2013a
 - @roisman2012
 - @burt2010
 
-JS has also worked with the current dataset. Variables in JS publications relate mostly to the independent variables used in this study. Those relevant to the current preregistration include:
+Jeffry Simpson has also worked with the current dataset. Variables in Jeffry Simpson's publications relate mostly to the independent variables used in this study. Those relevant to the current preregistration include:
 
 - @hartman2018a
 - @sung2016
 
-SV and WF have no prior experience with the data.
+Stefan Vermeent and Willem Frankenhuis have no prior experience with the data.
 
 ### Q18: Prior Knowledge 
 
-From prior work, we have some knowledge of how income, maternal education, and quality of maternal caregiving (observations of maternal sensitivity) are associated with aggregated Woodcock Johnson scores. For example, @fraley2013 find correlations between  Woodcock Johnson composites over 5 assessment periods and income-to-needs (averaged over 6, 15, 24, and 36 months; *rs* range = .34-.37), maternal education (*rs* range = .41 - .47), and maternal sensitivity (*rs* range = .40 - .47) . These findings give us a strong prior that harshness/poverty will be associated with a lower within person average Woodcock Johnson score.
+From prior work, we have some knowledge of how income, maternal education, and quality of maternal caregiving (observations of maternal sensitivity) are associated with aggregated Woodcock Johnson scores. For example, @fraley2013a find correlations between  Woodcock Johnson composites over 5 assessment periods and income-to-needs (averaged over 6, 15, 24, and 36 months; *rs* range = .34-.37), maternal education (*rs* range = .41 - .47), and maternal sensitivity (*rs* range = .40 - .47) . These findings give us a strong prior that harshness/poverty will be associated with a lower within person average Woodcock Johnson score.
 
 ## Part 5 - Analyses
 

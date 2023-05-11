@@ -1,6 +1,6 @@
 # Preregistration
 
-*Last updated on Thursday, May 11, 2023 at 10:53 AM*
+*Last updated on Thursday, May 11, 2023 at 11:08 AM*
 
 ## Overview
 
@@ -40,11 +40,11 @@ Law
 
 ### Q3: Research Questions
 
-<i>\*Note that some research questions/hypotheses use causal language.
+*Note that some research questions/hypotheses use causal language.
 Although we are most interested in these causal questions, the data are
 observational. We retain the causal language here but will use
 non-causal language when relating any statistical test to these
-questions/hypotheses.</i>
+questions/hypotheses.*
 
 **R1:** How does adversity relate to overall performance compared to
 subtest performance on large cognitive test batteries? In other words,
@@ -430,46 +430,49 @@ they affect analyses.
 **No author has analyzed or worked with the Woodcock Johnson subtest
 scores prior to this preregistration.**
 
-EY has not published any papers using this dataset. In 2014 and 2015,
-EY, JS, and GI submitted a paper to *Child Development* (rejected) and
-*Development and Psychopathology* (withdrawn). The paper used aggregated
-Woodcock Johnson scores over each assessment and used income-to-needs as
-a covariate.
+Ethan Young has not published any papers using this dataset. In 2014 and
+2015, Ethan Young, Jeffry Simpson, and Glenn Roisman submitted a paper
+to *Child Development* (rejected) and *Development and Psychopathology*
+(withdrawn). The paper used aggregated Woodcock Johnson scores over each
+assessment and used income-to-needs as a covariate.
 
-MN has intimate knowledge of this dataset. MN has published two papers
-using the dataset. MN also has one manuscript in press and one under
-review using the data. MN has not analyzed or used the subtest variables
-in the current preregistration.
+Marissa Nivison has intimate knowledge of this dataset. Marissa Nivison
+has published two papers using the dataset. Marissa Nivison also has one
+manuscript in press and one under review using the data. Marissa Nivison
+has not analyzed or used the subtest variables in the current
+preregistration.
 
-GI has intimate knowledge of this dataset. GI is a co-principal
-investigator on the project and has published many papers using the
-data. Variables analyzed in GI publications relate mostly to the
-dependent variables in this project. Those relevant to the current
-preregistration include:
+Glenn Roisman has intimate knowledge of this dataset. Glenn Roisman is a
+co-principal investigator on the project and has published many papers
+using the data. Variables analyzed in Glenn Roisman publications relate
+mostly to the dependent variables in this project. Those relevant to the
+current preregistration include:
 
 - Bleil et al. ([2021](#ref-bleil2021))
 - Cottrell et al. ([2015](#ref-cottrell2015))
 - Monti et al. ([2014](#ref-monti2014))
-- ([**fraley2013?**](#ref-fraley2013))
+- Fraley et al. ([2013](#ref-fraley2013a))
 - Roisman et al. ([2012](#ref-roisman2012))
 - Burt & Roisman ([2010](#ref-burt2010))
 
-JS has also worked with the current dataset. Variables in JS
-publications relate mostly to the independent variables used in this
-study. Those relevant to the current preregistration include:
+Jeffry Simpson has also worked with the current dataset. Variables in
+Jeffry Simpson’s publications relate mostly to the independent variables
+used in this study. Those relevant to the current preregistration
+include:
 
 - Hartman et al. ([2018](#ref-hartman2018a))
 - Sung et al. ([2016](#ref-sung2016))
 
-SV and WF have no prior experience with the data.
+Stefan Vermeent and Willem Frankenhuis have no prior experience with the
+data.
 
 ### Q18: Prior Knowledge
 
 From prior work, we have some knowledge of how income, maternal
 education, and quality of maternal caregiving (observations of maternal
 sensitivity) are associated with aggregated Woodcock Johnson scores. For
-example, ([**fraley2013?**](#ref-fraley2013)) find correlations between
-Woodcock Johnson composites over 5 assessment periods and
+example, Fraley et al. ([2013](#ref-fraley2013a)) find correlations
+between Woodcock Johnson composites over 5 assessment periods and
 income-to-needs (averaged over 6, 15, 24, and 36 months; *rs* range =
 .34-.37), maternal education (*rs* range = .41 - .47), and maternal
 sensitivity (*rs* range = .40 - .47) . These findings give us a strong
@@ -543,16 +546,16 @@ example_data2 |>
 
 |  id | adversity | wj_sub_test   |    score |
 |----:|----------:|:--------------|---------:|
-|   1 |  1.174194 | wj_picvo_mean | 108.7500 |
-|   1 |  1.174194 | wj_vrba_mean  | 139.5000 |
-|   1 |  1.174194 | wj_pscmp_mean | 133.0000 |
-|   1 |  1.174194 | wj_appld_mean | 130.5000 |
-|   1 |  1.174194 | wj_memse_mean | 115.0000 |
-|   1 |  1.174194 | wj_incom_mean | 128.0000 |
-|   1 |  1.174194 | wj_memna_mean | 117.0000 |
-|   1 |  1.174194 | wj_lwid_mean  | 138.6667 |
-|   1 |  1.174194 | wj_wrdat_mean | 134.0000 |
-|   1 |  1.174194 | wj_calc_mean  | 143.0000 |
+|   1 |   1.30743 | wj_picvo_mean | 108.7500 |
+|   1 |   1.30743 | wj_vrba_mean  | 139.5000 |
+|   1 |   1.30743 | wj_pscmp_mean | 133.0000 |
+|   1 |   1.30743 | wj_appld_mean | 130.5000 |
+|   1 |   1.30743 | wj_memse_mean | 115.0000 |
+|   1 |   1.30743 | wj_incom_mean | 128.0000 |
+|   1 |   1.30743 | wj_memna_mean | 117.0000 |
+|   1 |   1.30743 | wj_lwid_mean  | 138.6667 |
+|   1 |   1.30743 | wj_wrdat_mean | 134.0000 |
+|   1 |   1.30743 | wj_calc_mean  | 143.0000 |
 
 3.  Next, we apply a sum coded contrast to the subtest index column.
     This means the intercept in the mixed effect model reflects the
@@ -632,26 +635,26 @@ subtest_model |>
 
 | Parameter          | Coefficient |    SE |     p |
 |:-------------------|------------:|------:|------:|
-| (Intercept)        |     105.339 | 0.321 | 0.000 |
-| appld              |       2.564 | 0.259 | 0.000 |
-| calc               |       6.537 | 0.268 | 0.000 |
-| incom              |      -9.195 | 0.266 | 0.000 |
-| lwid               |       1.598 | 0.259 | 0.000 |
-| memna              |      -0.228 | 0.264 | 0.389 |
-| memse              |      -8.312 | 0.260 | 0.000 |
-| picvo              |      -2.698 | 0.259 | 0.000 |
-| pscmp              |       3.071 | 0.267 | 0.000 |
-| vrba               |       5.446 | 0.269 | 0.000 |
-| adversity          |       0.845 | 0.321 | 0.008 |
-| appld \* adversity |       0.344 | 0.259 | 0.184 |
-| calc \* adversity  |      -0.143 | 0.267 | 0.593 |
-| incom \* adversity |      -0.307 | 0.267 | 0.249 |
-| lwid \* adversity  |      -0.030 | 0.259 | 0.907 |
-| memna \* adversity |       0.030 | 0.264 | 0.909 |
-| memse \* adversity |      -0.193 | 0.260 | 0.460 |
-| picvo \* adversity |      -0.094 | 0.259 | 0.717 |
-| pscmp \* adversity |       0.212 | 0.267 | 0.428 |
-| vrba \* adversity  |       0.369 | 0.269 | 0.170 |
+| (Intercept)        |     105.338 | 0.321 | 0.000 |
+| appld              |       2.566 | 0.259 | 0.000 |
+| calc               |       6.538 | 0.268 | 0.000 |
+| incom              |      -9.200 | 0.266 | 0.000 |
+| lwid               |       1.600 | 0.259 | 0.000 |
+| memna              |      -0.227 | 0.264 | 0.390 |
+| memse              |      -8.311 | 0.260 | 0.000 |
+| picvo              |      -2.697 | 0.259 | 0.000 |
+| pscmp              |       3.069 | 0.267 | 0.000 |
+| vrba               |       5.444 | 0.269 | 0.000 |
+| adversity          |      -0.234 | 0.321 | 0.468 |
+| appld \* adversity |      -0.209 | 0.259 | 0.420 |
+| calc \* adversity  |      -0.067 | 0.265 | 0.801 |
+| incom \* adversity |       0.539 | 0.265 | 0.042 |
+| lwid \* adversity  |       0.009 | 0.259 | 0.973 |
+| memna \* adversity |      -0.198 | 0.263 | 0.453 |
+| memse \* adversity |      -0.218 | 0.261 | 0.403 |
+| picvo \* adversity |      -0.072 | 0.259 | 0.782 |
+| pscmp \* adversity |      -0.056 | 0.265 | 0.831 |
+| vrba \* adversity  |      -0.358 | 0.267 | 0.180 |
 
 </div>
 
@@ -681,17 +684,17 @@ subtest_model |>
 | memse              |          -0.560 | -0.595 |  -0.526 |
 | picvo              |          -0.182 | -0.216 |  -0.148 |
 | pscmp              |           0.207 |  0.172 |   0.242 |
-| vrba               |           0.367 |  0.332 |   0.403 |
-| adversity          |           0.057 |  0.015 |   0.099 |
-| appld \* adversity |           0.023 | -0.011 |   0.057 |
-| calc \* adversity  |          -0.010 | -0.045 |   0.026 |
-| incom \* adversity |          -0.021 | -0.056 |   0.015 |
-| lwid \* adversity  |          -0.002 | -0.036 |   0.032 |
-| memna \* adversity |           0.002 | -0.033 |   0.037 |
-| memse \* adversity |          -0.013 | -0.047 |   0.021 |
-| picvo \* adversity |          -0.006 | -0.041 |   0.028 |
-| pscmp \* adversity |           0.014 | -0.021 |   0.050 |
-| vrba \* adversity  |           0.025 | -0.011 |   0.060 |
+| vrba               |           0.367 |  0.331 |   0.403 |
+| adversity          |          -0.016 | -0.058 |   0.027 |
+| appld \* adversity |          -0.014 | -0.048 |   0.020 |
+| calc \* adversity  |          -0.005 | -0.040 |   0.031 |
+| incom \* adversity |           0.036 |  0.001 |   0.072 |
+| lwid \* adversity  |           0.001 | -0.034 |   0.035 |
+| memna \* adversity |          -0.013 | -0.048 |   0.022 |
+| memse \* adversity |          -0.015 | -0.049 |   0.020 |
+| picvo \* adversity |          -0.005 | -0.039 |   0.029 |
+| pscmp \* adversity |          -0.004 | -0.039 |   0.031 |
+| vrba \* adversity  |          -0.024 | -0.060 |   0.011 |
 
 ### Q20: Predicted effect sizes
 
@@ -837,6 +840,15 @@ Cottrell, J. M., Newman, D. A., & Roisman, G. I. (2015). Explaining the
 blackwhite gap in cognitive test scores: Toward a theory of adverse
 impact. *Journal of Applied Psychology*, *100*, 1713–1736.
 <https://doi.org/f7zb56>
+
+</div>
+
+<div id="ref-fraley2013a" class="csl-entry">
+
+Fraley, R. C., Roisman, G. I., & Haltigan, J. D. (2013). The legacy of
+early experiences in development: Formalizing alternative models of how
+early experiences are carried forward over time. *Developmental
+Psychology*, *49*, 109–126. <https://doi.org/f4mnf8>
 
 </div>
 
