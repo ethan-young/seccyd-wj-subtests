@@ -1,6 +1,6 @@
 # Preregistration
 
-*Last updated on Thursday, May 11, 2023 at 10:41 AM*
+*Last updated on Thursday, May 11, 2023 at 10:53 AM*
 
 ## Overview
 
@@ -24,19 +24,12 @@ adversity-exposed people in the SECCYD”
 
 ### Q2: Authors
 
-- [Ethan S. Young](https://www.ethan-young.com/)<sup>1</sup>
-  [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-8232-0184)
-- [Stefan Vermeent](https://www.stefan-vermeent.nl)<sup>1,
-  2</sup>[<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-9595-5373)
-- [Willem E.
-  Frankenhuis](http://www.willem.maartenfrankenhuis.nl/)<sup>1, 2</sup>
-- [Marissa Nivison](https://icd.umn.edu/people/nivis004/)<sup>3</sup>
-  [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-9436-722X)
-- [Jeffry A.
-  Simpson](https://cla.umn.edu/about/directory/profile/simps108)<sup>3</sup>
-  [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0003-1899-2493)
-- [Glenn I. Roisman](https://icd.umn.edu/people/roism001/)<sup>3</sup>
-  [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-6941-6560)
+- Ethan S. Young<sup>1</sup>
+- Stefan Vermeent<sup>1,2</sup>
+- Willem E. Frankenhuis<sup>1,2</sup>
+- Marissa Nivison<sup>3</sup>
+- Jeffry A. Simpson<sup>3</sup>
+- Glenn I. Roisman<sup>3</sup>
 
 <sup>1</sup>Utrecht University
 
@@ -550,16 +543,16 @@ example_data2 |>
 
 |  id | adversity | wj_sub_test   |    score |
 |----:|----------:|:--------------|---------:|
-|   1 | 0.3364169 | wj_picvo_mean | 108.7500 |
-|   1 | 0.3364169 | wj_vrba_mean  | 139.5000 |
-|   1 | 0.3364169 | wj_pscmp_mean | 133.0000 |
-|   1 | 0.3364169 | wj_appld_mean | 130.5000 |
-|   1 | 0.3364169 | wj_memse_mean | 115.0000 |
-|   1 | 0.3364169 | wj_incom_mean | 128.0000 |
-|   1 | 0.3364169 | wj_memna_mean | 117.0000 |
-|   1 | 0.3364169 | wj_lwid_mean  | 138.6667 |
-|   1 | 0.3364169 | wj_wrdat_mean | 134.0000 |
-|   1 | 0.3364169 | wj_calc_mean  | 143.0000 |
+|   1 |  1.174194 | wj_picvo_mean | 108.7500 |
+|   1 |  1.174194 | wj_vrba_mean  | 139.5000 |
+|   1 |  1.174194 | wj_pscmp_mean | 133.0000 |
+|   1 |  1.174194 | wj_appld_mean | 130.5000 |
+|   1 |  1.174194 | wj_memse_mean | 115.0000 |
+|   1 |  1.174194 | wj_incom_mean | 128.0000 |
+|   1 |  1.174194 | wj_memna_mean | 117.0000 |
+|   1 |  1.174194 | wj_lwid_mean  | 138.6667 |
+|   1 |  1.174194 | wj_wrdat_mean | 134.0000 |
+|   1 |  1.174194 | wj_calc_mean  | 143.0000 |
 
 3.  Next, we apply a sum coded contrast to the subtest index column.
     This means the intercept in the mixed effect model reflects the
@@ -639,26 +632,26 @@ subtest_model |>
 
 | Parameter          | Coefficient |    SE |     p |
 |:-------------------|------------:|------:|------:|
-| (Intercept)        |     105.338 | 0.322 | 0.000 |
-| appld              |       2.568 | 0.259 | 0.000 |
-| calc               |       6.537 | 0.267 | 0.000 |
-| incom              |      -9.194 | 0.266 | 0.000 |
-| lwid               |       1.601 | 0.259 | 0.000 |
-| memna              |      -0.229 | 0.264 | 0.387 |
-| memse              |      -8.313 | 0.260 | 0.000 |
-| picvo              |      -2.697 | 0.259 | 0.000 |
-| pscmp              |       3.069 | 0.267 | 0.000 |
-| vrba               |       5.443 | 0.269 | 0.000 |
-| adversity          |       0.154 | 0.322 | 0.632 |
-| appld \* adversity |       0.355 | 0.260 | 0.172 |
-| calc \* adversity  |       0.590 | 0.271 | 0.030 |
-| incom \* adversity |      -0.367 | 0.266 | 0.168 |
-| lwid \* adversity  |       0.031 | 0.260 | 0.904 |
-| memna \* adversity |      -0.558 | 0.266 | 0.036 |
-| memse \* adversity |      -0.595 | 0.260 | 0.022 |
-| picvo \* adversity |      -0.181 | 0.259 | 0.486 |
-| pscmp \* adversity |       0.187 | 0.271 | 0.491 |
-| vrba \* adversity  |       0.372 | 0.272 | 0.172 |
+| (Intercept)        |     105.339 | 0.321 | 0.000 |
+| appld              |       2.564 | 0.259 | 0.000 |
+| calc               |       6.537 | 0.268 | 0.000 |
+| incom              |      -9.195 | 0.266 | 0.000 |
+| lwid               |       1.598 | 0.259 | 0.000 |
+| memna              |      -0.228 | 0.264 | 0.389 |
+| memse              |      -8.312 | 0.260 | 0.000 |
+| picvo              |      -2.698 | 0.259 | 0.000 |
+| pscmp              |       3.071 | 0.267 | 0.000 |
+| vrba               |       5.446 | 0.269 | 0.000 |
+| adversity          |       0.845 | 0.321 | 0.008 |
+| appld \* adversity |       0.344 | 0.259 | 0.184 |
+| calc \* adversity  |      -0.143 | 0.267 | 0.593 |
+| incom \* adversity |      -0.307 | 0.267 | 0.249 |
+| lwid \* adversity  |      -0.030 | 0.259 | 0.907 |
+| memna \* adversity |       0.030 | 0.264 | 0.909 |
+| memse \* adversity |      -0.193 | 0.260 | 0.460 |
+| picvo \* adversity |      -0.094 | 0.259 | 0.717 |
+| pscmp \* adversity |       0.212 | 0.267 | 0.428 |
+| vrba \* adversity  |       0.369 | 0.269 | 0.170 |
 
 </div>
 
@@ -684,21 +677,21 @@ subtest_model |>
 | calc               |           0.441 |  0.405 |   0.476 |
 | incom              |          -0.620 | -0.655 |  -0.585 |
 | lwid               |           0.108 |  0.074 |   0.142 |
-| memna              |          -0.015 | -0.050 |   0.019 |
-| memse              |          -0.561 | -0.595 |  -0.526 |
+| memna              |          -0.015 | -0.050 |   0.020 |
+| memse              |          -0.560 | -0.595 |  -0.526 |
 | picvo              |          -0.182 | -0.216 |  -0.148 |
 | pscmp              |           0.207 |  0.172 |   0.242 |
-| vrba               |           0.367 |  0.331 |   0.403 |
-| adversity          |           0.010 | -0.032 |   0.053 |
-| appld \* adversity |           0.024 | -0.010 |   0.058 |
-| calc \* adversity  |           0.040 |  0.004 |   0.075 |
-| incom \* adversity |          -0.025 | -0.059 |   0.010 |
-| lwid \* adversity  |           0.002 | -0.032 |   0.036 |
-| memna \* adversity |          -0.037 | -0.072 |  -0.002 |
-| memse \* adversity |          -0.040 | -0.074 |  -0.006 |
-| picvo \* adversity |          -0.012 | -0.046 |   0.022 |
-| pscmp \* adversity |           0.012 | -0.023 |   0.048 |
-| vrba \* adversity  |           0.025 | -0.011 |   0.061 |
+| vrba               |           0.367 |  0.332 |   0.403 |
+| adversity          |           0.057 |  0.015 |   0.099 |
+| appld \* adversity |           0.023 | -0.011 |   0.057 |
+| calc \* adversity  |          -0.010 | -0.045 |   0.026 |
+| incom \* adversity |          -0.021 | -0.056 |   0.015 |
+| lwid \* adversity  |          -0.002 | -0.036 |   0.032 |
+| memna \* adversity |           0.002 | -0.033 |   0.037 |
+| memse \* adversity |          -0.013 | -0.047 |   0.021 |
+| picvo \* adversity |          -0.006 | -0.041 |   0.028 |
+| pscmp \* adversity |           0.014 | -0.021 |   0.050 |
+| vrba \* adversity  |           0.025 | -0.011 |   0.060 |
 
 ### Q20: Predicted effect sizes
 
