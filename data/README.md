@@ -1,7 +1,7 @@
 Data
 ================
 
-*Last updated on Wednesday, April 26, 2023 at 11:38 AM*
+*Last updated on Thursday, May 11, 2023 at 10:39 AM*
 
 This directory stores `Rdata` files containing processed data.
 
@@ -9,29 +9,31 @@ This directory stores `Rdata` files containing processed data.
 
 The table below contain references to the scripts that produced each:
 
-| Script                                                                                                                   | Data Output             |
-|:-------------------------------------------------------------------------------------------------------------------------|:------------------------|
-| [1-compile-dvs.R](https://github.com/ethan-young/seccyd-wj-subtests/tree/master/scripts/1-compile-dvs.R)                 | seccyd-dvs-wj.Rdata     |
-| [1-compile-ivs-census.R](https://github.com/ethan-young/seccyd-wj-subtests/tree/master/scripts/1-compile-ivs-census.R)   | seccyd-ivs-census.Rdata |
-| [1-compile-ivs-demo.R](https://github.com/ethan-young/seccyd-wj-subtests/tree/master/scripts/1-compile-ivs-demo.R)       | seccyd-ivs-demo.Rdata   |
-| [1-compile-ivs-family.R](https://github.com/ethan-young/seccyd-wj-subtests/tree/master/scripts/1-compile-ivs-family.R)   | seccyd-ivs-family.Rdata |
-| [1-compile-ivs-phone.R](https://github.com/ethan-young/seccyd-wj-subtests/tree/master/scripts/1-compile-ivs-phone.R)     | seccyd-ivs-phone.Rdata  |
-| [1-compile-ivs-raw.R](https://github.com/ethan-young/seccyd-wj-subtests/tree/master/scripts/1-compile-ivs-raw.R)         | ivs-data1.Rdata         |
-| [2-aggregate-dvs.R](https://github.com/ethan-young/seccyd-wj-subtests/tree/master/scripts/2-aggregate-dvs.R)             | analysis-dvs.Rdata      |
-| [2-merge-aggregate-ivs.R](https://github.com/ethan-young/seccyd-wj-subtests/tree/master/scripts/2-merge-aggregate-ivs.R) | analysis-ivs.Rdata      |
-| [3-primary-analysis.R](https://github.com/ethan-young/seccyd-wj-subtests/tree/master/scripts/3-primary-analysis.R)       | primary-results.Rdata   |
+| Script                                                                                                                     | Data Output             |
+|:---------------------------------------------------------------------------------------------------------------------------|:------------------------|
+| [1-compile-dvs.R](https://github.com/ethan-young/seccyd-wj-subtests/tree/master/scripts/1-compile-dvs.R)                   | seccyd-dvs-wj.Rdata     |
+| [1-compile-ivs-census.R](https://github.com/ethan-young/seccyd-wj-subtests/tree/master/scripts/1-compile-ivs-census.R)     | seccyd-ivs-census.Rdata |
+| [1-compile-ivs-demo.R](https://github.com/ethan-young/seccyd-wj-subtests/tree/master/scripts/1-compile-ivs-demo.R)         | seccyd-ivs-demo.Rdata   |
+| [1-compile-ivs-family.R](https://github.com/ethan-young/seccyd-wj-subtests/tree/master/scripts/1-compile-ivs-family.R)     | seccyd-ivs-family.Rdata |
+| [1-compile-ivs-phone.R](https://github.com/ethan-young/seccyd-wj-subtests/tree/master/scripts/1-compile-ivs-phone.R)       | seccyd-ivs-phone.Rdata  |
+| [1-compile-ivs-raw.R](https://github.com/ethan-young/seccyd-wj-subtests/tree/master/scripts/1-compile-ivs-raw.R)           | ivs-data1.Rdata         |
+| [2-aggregate-dvs.R](https://github.com/ethan-young/seccyd-wj-subtests/tree/master/scripts/2-aggregate-dvs.R)               | analysis-dvs.Rdata      |
+| [2-merge-aggregate-ivs.R](https://github.com/ethan-young/seccyd-wj-subtests/tree/master/scripts/2-merge-aggregate-ivs.R)   | analysis-ivs.Rdata      |
+| [3-primary-analysis.R](https://github.com/ethan-young/seccyd-wj-subtests/tree/master/scripts/3-primary-analysis.R)         | primary-results.Rdata   |
+| [4-secondary-analysis-1.R](https://github.com/ethan-young/seccyd-wj-subtests/tree/master/scripts/4-secondary-analysis-1.R) | secondary-results.Rdata |
 
 ## Scripts Using Processed Data
 
 The table below shows the scripts that use processed datasets and, for
 each, which dataset is loaded.
 
-| Script                                                                                                                   | Data Input                                                                                                                                     |
-|:-------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------|
-| [1-compile-ivs-raw.R](https://github.com/ethan-young/seccyd-wj-subtests/tree/master/scripts/1-compile-ivs-raw.R)         | seccyd-ivs-phone.Rdata<br>seccyd-ivs-demo.Rdata                                                                                                |
-| [2-aggregate-dvs.R](https://github.com/ethan-young/seccyd-wj-subtests/tree/master/scripts/2-aggregate-dvs.R)             | seccyd-dvs-wj.Rdata                                                                                                                            |
-| [2-merge-aggregate-ivs.R](https://github.com/ethan-young/seccyd-wj-subtests/tree/master/scripts/2-merge-aggregate-ivs.R) | analysis-ivs.Rdata<br>ivs-data1.Rdata<br>seccyd-ivs-census.Rdata<br>seccyd-ivs-demo.Rdata<br>seccyd-ivs-family.Rdata<br>seccyd-ivs-phone.Rdata |
-| [3-primary-analysis.R](https://github.com/ethan-young/seccyd-wj-subtests/tree/master/scripts/3-primary-analysis.R)       | analysis-dvs.Rdata<br>analysis-ivs.Rdata                                                                                                       |
+| Script                                                                                                                     | Data Input                                                                                                                                     |
+|:---------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------|
+| [1-compile-ivs-raw.R](https://github.com/ethan-young/seccyd-wj-subtests/tree/master/scripts/1-compile-ivs-raw.R)           | seccyd-ivs-phone.Rdata<br>seccyd-ivs-demo.Rdata                                                                                                |
+| [2-aggregate-dvs.R](https://github.com/ethan-young/seccyd-wj-subtests/tree/master/scripts/2-aggregate-dvs.R)               | seccyd-dvs-wj.Rdata                                                                                                                            |
+| [2-merge-aggregate-ivs.R](https://github.com/ethan-young/seccyd-wj-subtests/tree/master/scripts/2-merge-aggregate-ivs.R)   | analysis-ivs.Rdata<br>ivs-data1.Rdata<br>seccyd-ivs-census.Rdata<br>seccyd-ivs-demo.Rdata<br>seccyd-ivs-family.Rdata<br>seccyd-ivs-phone.Rdata |
+| [3-primary-analysis.R](https://github.com/ethan-young/seccyd-wj-subtests/tree/master/scripts/3-primary-analysis.R)         | analysis-dvs.Rdata<br>analysis-ivs.Rdata                                                                                                       |
+| [4-secondary-analysis-1.R](https://github.com/ethan-young/seccyd-wj-subtests/tree/master/scripts/4-secondary-analysis-1.R) | analysis-dvs.Rdata<br>analysis-ivs.Rdata                                                                                                       |
 
 ## List of Raw SECCYDS Datasets
 

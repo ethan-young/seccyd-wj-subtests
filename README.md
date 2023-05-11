@@ -2,7 +2,7 @@ How does adversity relate to performance across different abilities in
 the same person?
 ================
 
-*Last updated on Wednesday, April 26, 2023 at 11:53 AM*
+*Last updated on Thursday, May 11, 2023 at 10:37 AM*
 
 ## Overview
 
@@ -23,15 +23,15 @@ six components organize the inputs and outputs of this project:
 
 1.  [`codebooks`](codebooks/): lists of variable names, labels, and
     value labels (where applicable).
-2.  [`data`](%60data/%60): data, stored as an `.Rdata` files.
-3.  [`manuscript`](manuscript/%60): a manuscript written in Quarto for
+2.  [`data`](data/): data, stored as an `.Rdata` files.
+3.  [`manuscript`](manuscript/): a manuscript written in Quarto for
     submission to a journal.
 4.  [`preregistration`](preregistration/): a preregistration document
     based on ([Akker et al., 2021](#ref-akker2021)) that details my
     plans for this project.
 5.  [`scripts`](scripts/): R-scripts that read, analyze, and produce all
     outputs.
-6.  [`supplement`](manuscript/supplement/%60): a supplemental text with
+6.  [`supplement`](manuscript/supplement/): a supplemental text with
     additional information and materials.
 
 ## References

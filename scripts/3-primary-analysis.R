@@ -110,7 +110,7 @@ primary_results_stats <-
       filter(contrast == "wj_subtest_con1") |> 
       rename(equiv_slope_p = p.value) |> 
       mutate(equiv_slope = ifelse(equiv_slope_p < .05, "Accepted", "Rejected")) |> 
-      select(ivs, dvs, wj_subtest_con1, equiv_slope) |> 
+      select(ivs, dvs, wj_subtest_con1, equiv_slope, equiv_slope_p) |> 
       rename(parameter = wj_subtest_con1)
   )
 

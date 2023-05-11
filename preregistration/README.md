@@ -1,7 +1,6 @@
-Preregistration
-================
+# Preregistration
 
-*Last updated on Friday, April 14, 2023 at 06:12 PM*
+*Last updated on Thursday, May 11, 2023 at 10:41 AM*
 
 ## Overview
 
@@ -33,8 +32,8 @@ adversity-exposed people in the SECCYD”
   Frankenhuis](http://www.willem.maartenfrankenhuis.nl/)<sup>1, 2</sup>
 - [Marissa Nivison](https://icd.umn.edu/people/nivis004/)<sup>3</sup>
   [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-9436-722X)
-- [Jeffry
-  A.Simpson](https://cla.umn.edu/about/directory/profile/simps108)<sup>3</sup>
+- [Jeffry A.
+  Simpson](https://cla.umn.edu/about/directory/profile/simps108)<sup>3</sup>
   [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0003-1899-2493)
 - [Glenn I. Roisman](https://icd.umn.edu/people/roism001/)<sup>3</sup>
   [<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-6941-6560)
@@ -281,8 +280,8 @@ the same degree as the main analyses.
 #### Dependent Variables
 
 The main dependent measures will come from the Woodcock-Johnson
-Cognitive and Achievement Tests ([Woodcock, 1990](#ref-woodcock1990);
-[Woodcock et al., 1990](#ref-woodcock1990a)).
+Cognitive and Achievement Tests ([Woodcock et al.,
+1990](#ref-woodcock1990a); [Woodcock, 1990](#ref-woodcock1990)).
 
 ![](figures/prereg-table1.png)
 
@@ -458,7 +457,7 @@ preregistration include:
 - Bleil et al. ([2021](#ref-bleil2021))
 - Cottrell et al. ([2015](#ref-cottrell2015))
 - Monti et al. ([2014](#ref-monti2014))
-- Fraley et al. ([2013](#ref-fraley2013))
+- ([**fraley2013?**](#ref-fraley2013))
 - Roisman et al. ([2012](#ref-roisman2012))
 - Burt & Roisman ([2010](#ref-burt2010))
 
@@ -476,8 +475,8 @@ SV and WF have no prior experience with the data.
 From prior work, we have some knowledge of how income, maternal
 education, and quality of maternal caregiving (observations of maternal
 sensitivity) are associated with aggregated Woodcock Johnson scores. For
-example, Fraley et al. ([2013](#ref-fraley2013)) find correlations
-between Woodcock Johnson composites over 5 assessment periods and
+example, ([**fraley2013?**](#ref-fraley2013)) find correlations between
+Woodcock Johnson composites over 5 assessment periods and
 income-to-needs (averaged over 6, 15, 24, and 36 months; *rs* range =
 .34-.37), maternal education (*rs* range = .41 - .47), and maternal
 sensitivity (*rs* range = .40 - .47) . These findings give us a strong
@@ -551,16 +550,16 @@ example_data2 |>
 
 |  id | adversity | wj_sub_test   |    score |
 |----:|----------:|:--------------|---------:|
-|   1 | -1.013841 | wj_picvo_mean | 108.7500 |
-|   1 | -1.013841 | wj_vrba_mean  | 139.5000 |
-|   1 | -1.013841 | wj_pscmp_mean | 133.0000 |
-|   1 | -1.013841 | wj_appld_mean | 130.5000 |
-|   1 | -1.013841 | wj_memse_mean | 115.0000 |
-|   1 | -1.013841 | wj_incom_mean | 128.0000 |
-|   1 | -1.013841 | wj_memna_mean | 117.0000 |
-|   1 | -1.013841 | wj_lwid_mean  | 138.6667 |
-|   1 | -1.013841 | wj_wrdat_mean | 134.0000 |
-|   1 | -1.013841 | wj_calc_mean  | 143.0000 |
+|   1 | 0.3364169 | wj_picvo_mean | 108.7500 |
+|   1 | 0.3364169 | wj_vrba_mean  | 139.5000 |
+|   1 | 0.3364169 | wj_pscmp_mean | 133.0000 |
+|   1 | 0.3364169 | wj_appld_mean | 130.5000 |
+|   1 | 0.3364169 | wj_memse_mean | 115.0000 |
+|   1 | 0.3364169 | wj_incom_mean | 128.0000 |
+|   1 | 0.3364169 | wj_memna_mean | 117.0000 |
+|   1 | 0.3364169 | wj_lwid_mean  | 138.6667 |
+|   1 | 0.3364169 | wj_wrdat_mean | 134.0000 |
+|   1 | 0.3364169 | wj_calc_mean  | 143.0000 |
 
 3.  Next, we apply a sum coded contrast to the subtest index column.
     This means the intercept in the mixed effect model reflects the
@@ -640,26 +639,26 @@ subtest_model |>
 
 | Parameter          | Coefficient |    SE |     p |
 |:-------------------|------------:|------:|------:|
-| (Intercept)        |     105.337 | 0.322 | 0.000 |
-| appld              |       2.566 | 0.259 | 0.000 |
-| calc               |       6.538 | 0.268 | 0.000 |
+| (Intercept)        |     105.338 | 0.322 | 0.000 |
+| appld              |       2.568 | 0.259 | 0.000 |
+| calc               |       6.537 | 0.267 | 0.000 |
 | incom              |      -9.194 | 0.266 | 0.000 |
-| lwid               |       1.600 | 0.259 | 0.000 |
-| memna              |      -0.233 | 0.264 | 0.378 |
-| memse              |      -8.305 | 0.260 | 0.000 |
-| picvo              |      -2.696 | 0.259 | 0.000 |
-| pscmp              |       3.072 | 0.267 | 0.000 |
-| vrba               |       5.437 | 0.269 | 0.000 |
-| adversity          |      -0.159 | 0.322 | 0.622 |
-| appld \* adversity |      -0.139 | 0.259 | 0.591 |
-| calc \* adversity  |       0.023 | 0.268 | 0.932 |
-| incom \* adversity |       0.138 | 0.267 | 0.607 |
-| lwid \* adversity  |       0.329 | 0.259 | 0.205 |
-| memna \* adversity |       0.366 | 0.266 | 0.170 |
-| memse \* adversity |      -0.642 | 0.261 | 0.014 |
-| picvo \* adversity |      -0.415 | 0.259 | 0.109 |
-| pscmp \* adversity |      -0.198 | 0.267 | 0.459 |
-| vrba \* adversity  |       0.304 | 0.270 | 0.260 |
+| lwid               |       1.601 | 0.259 | 0.000 |
+| memna              |      -0.229 | 0.264 | 0.387 |
+| memse              |      -8.313 | 0.260 | 0.000 |
+| picvo              |      -2.697 | 0.259 | 0.000 |
+| pscmp              |       3.069 | 0.267 | 0.000 |
+| vrba               |       5.443 | 0.269 | 0.000 |
+| adversity          |       0.154 | 0.322 | 0.632 |
+| appld \* adversity |       0.355 | 0.260 | 0.172 |
+| calc \* adversity  |       0.590 | 0.271 | 0.030 |
+| incom \* adversity |      -0.367 | 0.266 | 0.168 |
+| lwid \* adversity  |       0.031 | 0.260 | 0.904 |
+| memna \* adversity |      -0.558 | 0.266 | 0.036 |
+| memse \* adversity |      -0.595 | 0.260 | 0.022 |
+| picvo \* adversity |      -0.181 | 0.259 | 0.486 |
+| pscmp \* adversity |       0.187 | 0.271 | 0.491 |
+| vrba \* adversity  |       0.372 | 0.272 | 0.172 |
 
 </div>
 
@@ -680,26 +679,26 @@ subtest_model |>
 
 | Parameter          | Std_Coefficient | CI_low | CI_high |
 |:-------------------|----------------:|-------:|--------:|
-| (Intercept)        |          -0.006 | -0.048 |   0.037 |
+| (Intercept)        |          -0.005 | -0.048 |   0.037 |
 | appld              |           0.173 |  0.139 |   0.207 |
 | calc               |           0.441 |  0.405 |   0.476 |
 | incom              |          -0.620 | -0.655 |  -0.585 |
 | lwid               |           0.108 |  0.074 |   0.142 |
-| memna              |          -0.016 | -0.050 |   0.019 |
-| memse              |          -0.560 | -0.595 |  -0.526 |
+| memna              |          -0.015 | -0.050 |   0.019 |
+| memse              |          -0.561 | -0.595 |  -0.526 |
 | picvo              |          -0.182 | -0.216 |  -0.148 |
 | pscmp              |           0.207 |  0.172 |   0.242 |
-| vrba               |           0.367 |  0.331 |   0.402 |
-| adversity          |          -0.011 | -0.053 |   0.032 |
-| appld \* adversity |          -0.009 | -0.044 |   0.025 |
-| calc \* adversity  |           0.002 | -0.034 |   0.037 |
-| incom \* adversity |           0.009 | -0.026 |   0.044 |
-| lwid \* adversity  |           0.022 | -0.012 |   0.056 |
-| memna \* adversity |           0.025 | -0.011 |   0.060 |
-| memse \* adversity |          -0.043 | -0.078 |  -0.009 |
-| picvo \* adversity |          -0.028 | -0.062 |   0.006 |
-| pscmp \* adversity |          -0.013 | -0.048 |   0.022 |
-| vrba \* adversity  |           0.020 | -0.015 |   0.056 |
+| vrba               |           0.367 |  0.331 |   0.403 |
+| adversity          |           0.010 | -0.032 |   0.053 |
+| appld \* adversity |           0.024 | -0.010 |   0.058 |
+| calc \* adversity  |           0.040 |  0.004 |   0.075 |
+| incom \* adversity |          -0.025 | -0.059 |   0.010 |
+| lwid \* adversity  |           0.002 | -0.032 |   0.036 |
+| memna \* adversity |          -0.037 | -0.072 |  -0.002 |
+| memse \* adversity |          -0.040 | -0.074 |  -0.006 |
+| picvo \* adversity |          -0.012 | -0.046 |   0.022 |
+| pscmp \* adversity |           0.012 | -0.023 |   0.048 |
+| vrba \* adversity  |           0.025 | -0.011 |   0.061 |
 
 ### Q20: Predicted effect sizes
 
@@ -848,15 +847,6 @@ impact. *Journal of Applied Psychology*, *100*, 1713–1736.
 
 </div>
 
-<div id="ref-fraley2013" class="csl-entry">
-
-Fraley, R. C., Roisman, G. I., & Haltigan, J. D. (2013). The legacy of
-early experiences in development: Formalizing alternative models of how
-early experiences are carried forward over time. *Developmental
-Psychology*, *49*(1), 109.
-
-</div>
-
 <div id="ref-hartman2018a" class="csl-entry">
 
 Hartman, S., Sung, S., Simpson, J. A., Schlomer, G. L., & Belsky, J.
@@ -868,8 +858,8 @@ and Psychopathology*, *30*(4), 1321–1332. <https://doi.org/gjqzzj>
 
 <div id="ref-lakens2018" class="csl-entry">
 
-Lakens, D., Scheel, A. M., & Isager, P. M. (2018). Equivalence Testing
-for Psychological Research: A Tutorial. *Advances in Methods and
+Lakens, D., Scheel, A. M., & Isager, P. M. (2018). Equivalence testing
+for psychological research: A tutorial. *Advances in Methods and
 Practices in Psychological Science*, *1*(2), 259–269.
 <https://doi.org/10.1177/2515245918770963>
 
@@ -877,9 +867,9 @@ Practices in Psychological Science*, *1*(2), 259–269.
 
 <div id="ref-li2018" class="csl-entry">
 
-Li, Z., Liu, S., Hartman, S., & Belsky, J. (2018). Interactive Effects
-of Early-Life Income Harshness and Unpredictability on Children’s
-Socioemotional and Academic Functioning in Kindergarten and Adolescence.
+Li, Z., Liu, S., Hartman, S., & Belsky, J. (2018). Interactive effects
+of early-life income harshness and unpredictability on children’s
+socioemotional and academic functioning in kindergarten and adolescence.
 *Developmental Psychology*, *54*(11), 2101–2112.
 <https://doi.org/gfmd6w>
 
@@ -923,8 +913,8 @@ effect of early-life stress on age of menarche. *Psychological Science*,
 
 <div id="ref-woodcock1990" class="csl-entry">
 
-Woodcock, R. W. (1990). Theoretical Foundations of the Wj-R Measures of
-Cognitive Ability. *Journal of Psychoeducational Assessment*, *8*(3),
+Woodcock, R. W. (1990). Theoretical foundations of the Wj-R measures of
+cognitive ability. *Journal of Psychoeducational Assessment*, *8*(3),
 231–258. <https://doi.org/ft7mjn>
 
 </div>

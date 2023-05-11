@@ -1,0 +1,20 @@
+---
+title: "Supplemental Tables"
+format: 
+  pdf: 
+    colorlinks: true
+    include-in-header:
+      - text: |
+          \usepackage{lscape}
+---
+
+
+This is a supplement
+
+\pagebreak
+
+\begin{landscape}
+
+This is now landscape?
+
+\end{landscape}

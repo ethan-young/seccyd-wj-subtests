@@ -24,7 +24,7 @@ The table below contain references to the scripts that produced each:
 
 ```{r}
 data_creating_scripts <- 
-  list.files("scripts", pattern = "^[1-3]-(.*).R$", full.names = T, recursive = T) |> 
+  list.files("scripts", pattern = "^[1-4]-(.*).R$", full.names = T, recursive = T) |> 
   map(function(x){
     processed_data <- 
       read_lines(x) |> 
@@ -52,7 +52,7 @@ The table below shows the scripts that use processed datasets and, for each, whi
 
 ```{r}
 data_using_scripts <- 
-  list.files("scripts", pattern = "^(1|2|3).*.R$", full.names = T, recursive = T) |> 
+  list.files("scripts", pattern = "^(1|2|3|4).*.R$", full.names = T, recursive = T) |> 
   map(function(x){
     data_reading <- 
       read_lines(x) |> 

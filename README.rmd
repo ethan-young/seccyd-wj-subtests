@@ -19,10 +19,10 @@ This project is a secondary data analysis using the Study of Early Childcare and
 The names of each folder are intended to be self-explanatory. There are six components organize the inputs and outputs of this project:
 
 1.  [`codebooks`](codebooks/): lists of variable names, labels, and value labels (where applicable).
-2.  [`data`](`data/`): data, stored as an `.Rdata` files.
-3.  [`manuscript`](manuscript/`): a manuscript written in Quarto for submission to a journal.
+2.  [`data`](data/): data, stored as an `.Rdata` files.
+3.  [`manuscript`](manuscript/): a manuscript written in Quarto for submission to a journal.
 4.  [`preregistration`](preregistration/): a preregistration document based on [@akker2021] that details my plans for this project.
 5.  [`scripts`](scripts/): R-scripts that read, analyze, and produce all outputs.
-6.  [`supplement`](manuscript/supplement/`): a supplemental text with additional information and materials.
+6.  [`supplement`](manuscript/supplement/): a supplemental text with additional information and materials.
 
 ## References
