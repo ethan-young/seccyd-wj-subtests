@@ -66,7 +66,7 @@ wj_labels <-
     "Short-Term Memory",
     "Applied Problems",
     "Auditory Processing",
-    "Unfamilar Words",
+    "Unfamiliar Words",
     "Auditory-Visual Associations"
   )
 
@@ -88,7 +88,7 @@ ivs_label <-
     "Family Income\nDisadvantage",
     "Standard Deviation",
     "Neigh. Socioeconomic\nDisadvantage",
-    "Neigh. Socioeconomic\nVariabibiliy",
+    "Neigh. Socioeconomic\nVariability",
     "Residual\nStandard Deviation",
     "Average Percent Change"
   )
@@ -118,7 +118,11 @@ intext <-
       select(incnt_mean, incnt_pc) |> 
       psych::corr.test() |> 
       _$r[1,2] |> 
-      formatC(2, 3, format = "f")
+      formatC(2, 3, format = "f"),
+    crace = primary_data |> 
+      select(id, crace) |> 
+      distinct() |> 
+      count(.by = crace)
   )
 
 # Plotting Data -----------------------------------------------------------

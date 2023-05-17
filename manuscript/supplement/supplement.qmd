@@ -1,0 +1,664 @@
+---
+title: "Supplemental Materials"
+subtitle: "*How does adversity relate to performance across different abilities in the same person?*"
+editor:
+  markdown:
+    wrap: 72
+execute: 
+  echo: false
+  warning: false
+knitr: 
+  opts_chunk: 
+    fig.path: "figures/"
+format: 
+  docx:
+    reference-doc: reference-doc.docx
+    fig-dpi: 300
+    fig-format: pdf
+  gfm: 
+    fig-format: jpeg
+    fig-dpi: 300
+bibliography: ../../bib-files/references.bib
+csl: ../../bib-files/apa.csl
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+# Load libraries
+library(tidyverse)
+library(patchwork)
+library(flextable)
+
+# Load staged results
+load("r-objects.Rdata")
+
+# ggplot2 theme
+theme_set(
+  theme_bw() +
+    theme(
+      axis.line.y       = element_line(),
+      axis.text.y       = element_text(size = rel(1.1)),
+      axis.title.y      = element_text(size = rel(1.25), margin = margin(1,0,0,0,"lines")),
+      axis.ticks.y      = element_line(),
+      axis.text.x       = element_text(size = rel(1.1)),
+      axis.title.x      = element_text(size = rel(1.25), margin = margin(1,0,0,0,"lines")),
+      axis.line.x       = element_line(),
+      panel.border      = element_blank(), 
+      panel.spacing.y   = unit(0.5, "lines"),
+      plot.margin       = margin(.25,.25,.25,.25,"lines"),
+      plot.background   = element_rect(color = NA),
+      plot.title        = element_text(size = rel(1.25), hjust = 0.5, margin = margin(0,0,.5,0, "lines")),
+      plot.subtitle     = element_blank(),
+      panel.grid        = element_line(color = NA),
+      strip.background  = element_blank(), 
+      strip.placement   = "outside",
+      strip.text        = element_text(size = rel(1), angle = 0)
+    )
+)
+
+## Table settings
+# set up flextable for tables
+set_flextable_defaults(
+  font.family = "Times", 
+  font.size = 10,
+  font.color = "black",
+  line_spacing = 1,
+  padding.bottom = 1, 
+  padding.top = 1,
+  padding.left = 1,
+  padding.right = 1
+)
+```
+
+This document contains three parts. First, we provide correlations and descriptive statistics for all indicators used to create aggregate variables for harshness and unpredictability. Second, we provide full regression tables for both primary and secondary analyses. Third, we provide figures for both primary and secondary analyses where WJ scores are uncentered. Note that these analyses are the same, however, centering WJ scores allows for better visual comparison of each subtest slope. The uncentered scores retain visual information about mean differences in performance across subtest types.
+
+Below are links to each of these sections:
+
+- [Correlations Among All Harshness and Unpredictability Indicators](#stab1)
+- **Full Primary Analysis Results**
+  - [Family Income Disadvantage](#p1)
+  - [Neighborhood Socioeconomic Disadvantage](#p2)
+  - [Family Transitions Results](#p3)
+  - [Neighborhood Soocioeconomic Variability](#p4)
+- **Full Secondary Analysis Results**
+  - [Family Income Standard Deviation](#s1)
+  - [Family Income Residual Standard Deviation](#s2)
+  - [Family Income Average Percent Change](#s3)
+- **Figures with Uncentered WJ Scores**
+  - [Primary Analyses](#sfig1)
+  - [Secondary Analyses](#sfig2)
+
+{{< pagebreak >}}
+
+## Correlations Among All Harshness and Unpredictability Indicators {#stab1}
+
+```{r}
+#| tab.id: stable1
+#| results: markup
+
+stable_ivs1 |> 
+  flextable() |> 
+  fontsize(size = 8) |> 
+  autofit() |> 
+  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
+  add_header_row(
+    values = " ",
+    colwidths = 9
+  ) |> 
+  compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Supplemental Table 1a. Correlations and descriptive statistics among all harshness indicators.")),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 9
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 9
+  ) 
+```
+
+```{r}
+#| tab.id: stable1
+#| results: markup
+
+stable_ivs2 |> 
+  flextable() |> 
+  fontsize(size = 8) |> 
+  autofit() |> 
+  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
+  add_header_row(
+    values = " ",
+    colwidths = 15
+  ) |> 
+  compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Supplemental Table 1b. Correlations and descriptive statistics among all unpredictability indicators.")),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 15
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 15
+  ) 
+```
+
+{{< pagebreak >}}
+
+## Full Family Income Disadvantage Results {#p1}
+
+```{r}
+#| tab.id: stable2
+#| results: markup
+
+stables_primary[[2]] |> 
+  select(parameter, b, B, p, rope_p) |> 
+  flextable() |> 
+  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
+  compose(i = 1, j = c(1), as_paragraph(""), part = "header") |> 
+  compose(i = 1, j = c(2), as_paragraph(as_i("b ")), part = "header") |>  
+  compose(i = 1, j = c(3), as_paragraph(as_i("B "), "[95% CI]"), part = "header") |>  
+  compose(i = 1, j = c(4), as_paragraph(as_i("p")), part = "header") |>
+  compose(i = 1, j = c(5), as_paragraph("ROPE ", as_i("p")), part = "header") |>
+  add_header_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Supplemental Table 2. Full model results for Family Income Disadvantage.")),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  autofit()
+```
+
+```{r}
+#| tab.id: stable3
+#| #| results: markup
+
+stables_primary[[2]] |> 
+  select(parameter, slope, slope_p, rope_slope_p) |> 
+  filter(row_number() > 4) |> 
+  flextable() |> 
+  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
+  compose(i = 1, j = c(1), as_paragraph(""), part = "header") |>  
+  compose(i = 1, j = c(2), as_paragraph(as_i("b "), "[95% CI]"), part = "header") |>  
+  compose(i = 1, j = c(3), as_paragraph(as_i("p")), part = "header") |>
+  compose(i = 1, j = c(4), as_paragraph("ROPE ", as_i("p")), part = "header") |>
+  add_header_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Supplemental Table 3. Simple Effects for Family Income Disadvantage.")),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  autofit()
+```
+
+{{< pagebreak >}}
+
+## Full Neighborhood Disadvantage Results {#p2}
+
+```{r}
+#| tab.id: stable4
+#| results: markup
+
+stables_primary[[4]] |> 
+  select(parameter, b, B, p, rope_p) |> 
+  flextable() |> 
+  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
+  compose(i = 1, j = c(1), as_paragraph(""), part = "header") |> 
+  compose(i = 1, j = c(2), as_paragraph(as_i("b ")), part = "header") |>  
+  compose(i = 1, j = c(3), as_paragraph(as_i("B "), "[95% CI]"), part = "header") |>  
+  compose(i = 1, j = c(4), as_paragraph(as_i("p")), part = "header") |>
+  compose(i = 1, j = c(5), as_paragraph("ROPE ", as_i("p")), part = "header") |>
+  add_header_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Supplemental Table 4. Full model results for Neighborhood Socioeconomic Disadvantage.")),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  autofit()
+```
+
+```{r}
+#| tab.id: stable5
+#| results: markup
+
+stables_primary[[4]] |> 
+  select(parameter, slope, slope_p, rope_slope_p) |> 
+  filter(row_number() > 4) |> 
+  flextable() |> 
+  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
+  compose(i = 1, j = c(1), as_paragraph(""), part = "header") |>  
+  compose(i = 1, j = c(2), as_paragraph(as_i("b "), "[95% CI]"), part = "header") |>  
+  compose(i = 1, j = c(3), as_paragraph(as_i("p")), part = "header") |>
+  compose(i = 1, j = c(4), as_paragraph("ROPE ", as_i("p")), part = "header") |>
+  add_header_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Supplemental Table 5. Simple Effects for Neighborhood Socioeconomic Disadvantage.")),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  autofit()
+```
+
+{{< pagebreak >}}
+
+## Full Family Transitions Results {#p3}
+
+```{r}
+#| tab.id: stable6
+#| results: markup
+
+stables_primary[[1]] |> 
+  select(parameter, b, B, p, rope_p) |> 
+  flextable() |> 
+  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
+  compose(i = 1, j = c(1), as_paragraph(""), part = "header") |> 
+  compose(i = 1, j = c(2), as_paragraph(as_i("b ")), part = "header") |>  
+  compose(i = 1, j = c(3), as_paragraph(as_i("B "), "[95% CI]"), part = "header") |>  
+  compose(i = 1, j = c(4), as_paragraph(as_i("p")), part = "header") |>
+  compose(i = 1, j = c(5), as_paragraph("ROPE ", as_i("p")), part = "header") |>
+  add_header_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Supplemental Table 6. Full model results for Family Transitions.")),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  autofit()
+```
+
+```{r}
+#| tab.id: stable7
+#| results: markup
+
+stables_primary[[1]] |> 
+  select(parameter, slope, slope_p, rope_slope_p) |> 
+  filter(row_number() > 4) |> 
+  flextable() |> 
+  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
+  compose(i = 1, j = c(1), as_paragraph(""), part = "header") |>  
+  compose(i = 1, j = c(2), as_paragraph(as_i("b "), "[95% CI]"), part = "header") |>  
+  compose(i = 1, j = c(3), as_paragraph(as_i("p")), part = "header") |>
+  compose(i = 1, j = c(4), as_paragraph("ROPE ", as_i("p")), part = "header") |>
+  add_header_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Supplemental Table 7. Simple Effects for Family Transitions.")),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  autofit()
+```
+
+{{< pagebreak >}}
+
+## Full Neighborhood Socioeconomic Variability
+
+```{r}
+#| tab.id: stable8
+#| results: markup
+
+stables_primary[[5]] |> 
+  select(parameter, b, B, p, rope_p) |> 
+  flextable() |> 
+  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
+  compose(i = 1, j = c(1), as_paragraph(""), part = "header") |> 
+  compose(i = 1, j = c(2), as_paragraph(as_i("b ")), part = "header") |>  
+  compose(i = 1, j = c(3), as_paragraph(as_i("B "), "[95% CI]"), part = "header") |>  
+  compose(i = 1, j = c(4), as_paragraph(as_i("p")), part = "header") |>
+  compose(i = 1, j = c(5), as_paragraph("ROPE ", as_i("p")), part = "header") |>
+  add_header_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Supplemental Table 8. Full model results for Neighborhood Socioeconomic Variability.")),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  autofit()
+```
+
+```{r}
+#| tab.id: stable9
+#| results: markup
+
+stables_primary[[5]] |> 
+  select(parameter, slope, slope_p, rope_slope_p) |> 
+  filter(row_number() > 4) |> 
+  flextable() |> 
+  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
+  compose(i = 1, j = c(1), as_paragraph(""), part = "header") |>  
+  compose(i = 1, j = c(2), as_paragraph(as_i("b "), "[95% CI]"), part = "header") |>  
+  compose(i = 1, j = c(3), as_paragraph(as_i("p")), part = "header") |>
+  compose(i = 1, j = c(4), as_paragraph("ROPE ", as_i("p")), part = "header") |>
+  add_header_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Supplemental Table 9. Simple Effects for Neighborhood Socioeconomic Variability.")),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  autofit()
+```
+
+{{< pagebreak >}}
+
+## Full Family Income Variability (SD) {#s1}
+
+```{r}
+#| tab.id: stable10
+#| results: markup
+
+stables_secondary[[2]] |> 
+  select(parameter, b, B, p, rope_p) |> 
+  flextable() |> 
+  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
+  compose(i = 1, j = c(1), as_paragraph(""), part = "header") |> 
+  compose(i = 1, j = c(2), as_paragraph(as_i("b ")), part = "header") |>  
+  compose(i = 1, j = c(3), as_paragraph(as_i("B "), "[95% CI]"), part = "header") |>  
+  compose(i = 1, j = c(4), as_paragraph(as_i("p")), part = "header") |>
+  compose(i = 1, j = c(5), as_paragraph("ROPE ", as_i("p")), part = "header") |>
+  add_header_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Supplemental Table 10. Full model results for Family Income Variability (SD).")),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  autofit()
+```
+
+```{r}
+#| tab.id: stable11
+#| results: markup
+
+stables_secondary[[2]] |> 
+  select(parameter, slope, slope_p, rope_slope_p) |> 
+  filter(row_number() > 4) |> 
+  flextable() |> 
+  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
+  compose(i = 1, j = c(1), as_paragraph(""), part = "header") |>  
+  compose(i = 1, j = c(2), as_paragraph(as_i("b "), "[95% CI]"), part = "header") |>  
+  compose(i = 1, j = c(3), as_paragraph(as_i("p")), part = "header") |>
+  compose(i = 1, j = c(4), as_paragraph("ROPE ", as_i("p")), part = "header") |>
+  add_header_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Supplemental Table 11. Simple Effects for Family Income Variability (SD).")),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  autofit()
+```
+
+{{< pagebreak >}}
+
+## Full Family Income Variability (Residual SD) {#s2}
+
+```{r}
+#| tab.id: stable12
+#| results: markup
+
+stables_secondary[[3]] |> 
+  select(parameter, b, B, p, rope_p) |> 
+  flextable() |> 
+  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
+  compose(i = 1, j = c(1), as_paragraph(""), part = "header") |> 
+  compose(i = 1, j = c(2), as_paragraph(as_i("b ")), part = "header") |>  
+  compose(i = 1, j = c(3), as_paragraph(as_i("B "), "[95% CI]"), part = "header") |>  
+  compose(i = 1, j = c(4), as_paragraph(as_i("p")), part = "header") |>
+  compose(i = 1, j = c(5), as_paragraph("ROPE ", as_i("p")), part = "header") |>
+  add_header_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Supplemental Table 12. Full model results for Family Income Variability (Residual SD).")),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  autofit()
+```
+
+```{r}
+#| tab.id: stable13
+#| results: markup
+
+stables_secondary[[3]] |> 
+  select(parameter, slope, slope_p, rope_slope_p) |> 
+  filter(row_number() > 4) |> 
+  flextable() |> 
+  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
+  compose(i = 1, j = c(1), as_paragraph(""), part = "header") |>  
+  compose(i = 1, j = c(2), as_paragraph(as_i("b "), "[95% CI]"), part = "header") |>  
+  compose(i = 1, j = c(3), as_paragraph(as_i("p")), part = "header") |>
+  compose(i = 1, j = c(4), as_paragraph("ROPE ", as_i("p")), part = "header") |>
+  add_header_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Supplemental Table 13. Simple Effects for Family Income Variability (Residual SD).")),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  autofit()
+```
+
+{{< pagebreak >}}
+
+
+## Full Family Income Variability (Average Percent Change) {#s3}
+
+```{r}
+#| tab.id: stable14
+#| results: markup
+
+stables_secondary[[1]] |> 
+  select(parameter, b, B, p, rope_p) |> 
+  flextable() |> 
+  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
+  compose(i = 1, j = c(1), as_paragraph(""), part = "header") |> 
+  compose(i = 1, j = c(2), as_paragraph(as_i("b ")), part = "header") |>  
+  compose(i = 1, j = c(3), as_paragraph(as_i("B "), "[95% CI]"), part = "header") |>  
+  compose(i = 1, j = c(4), as_paragraph(as_i("p")), part = "header") |>
+  compose(i = 1, j = c(5), as_paragraph("ROPE ", as_i("p")), part = "header") |>
+  add_header_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Supplemental Table 14. Full model results for Family Income Variability (Average Percent Change).")),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  autofit()
+```
+
+```{r}
+#| tab.id: stable15
+#| results: markup
+
+stables_secondary[[1]] |> 
+  select(parameter, slope, slope_p, rope_slope_p) |> 
+  filter(row_number() > 4) |> 
+  flextable() |> 
+  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
+  compose(i = 1, j = c(1), as_paragraph(""), part = "header") |>  
+  compose(i = 1, j = c(2), as_paragraph(as_i("b "), "[95% CI]"), part = "header") |>  
+  compose(i = 1, j = c(3), as_paragraph(as_i("p")), part = "header") |>
+  compose(i = 1, j = c(4), as_paragraph("ROPE ", as_i("p")), part = "header") |>
+  add_header_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Supplemental Table 15. Simple Effects for Family Income Variability (Average Percent Change).")),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  autofit()
+```
+
+{{< pagebreak >}}
+
+## Supplemental Figure 1 {#sfig1}
+
+```{r}
+#| label: sfigure1
+#| fig-width: 6
+#| fig-height: 7.5
+
+sfig1
+```
+
+## Supplemental Figure 2 {#sfig2}
+
+```{r}
+#| label: sfigure2
+#| fig-width: 5.5
+#| fig-height: 7.5
+
+sfig2
+```
