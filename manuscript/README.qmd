@@ -640,8 +640,8 @@ We also conducted a power analysis as part of our preregistration (see
 for write up and see
 <https://anonymous.4open.science/r/seccyd-wj-subtests-BD3E/scripts/prereg-power-simulation.R>
 for code). We used a simulation approach to conduct power analyses.
-Although we simulated adversity scores, we used the actual WJ test
-scores from the SECCYD data used in this study. Simulations showed that,
+These analyses were based on simulated adversity scores and actual WJ test scores from the SECCYD data used in this study.
+Simulations showed that,
 with a sample size of (*N* = `r intext$n`), the smallest interaction
 effect we can detect is $\beta$ = -.075 (or .075) with 90% power, if
 error is small. When error is larger, we can detect the same effect size
