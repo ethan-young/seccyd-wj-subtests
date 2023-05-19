@@ -641,6 +641,7 @@ for write up and see
 <https://anonymous.4open.science/r/seccyd-wj-subtests-BD3E/scripts/prereg-power-simulation.R>
 for code). We used a simulation approach to conduct power analyses.
 These analyses were based on simulated adversity scores and actual WJ test scores from the SECCYD data used in this study.
+We used actual WJ test scores in order to fully leverage their variance-covariance structure.
 Simulations showed that,
 with a sample size of (*N* = `r intext$n`), the smallest interaction
 effect we can detect is $\beta$ = -.075 (or .075) with 90% power, if
@@ -650,7 +651,7 @@ $\beta$ = -.10 (or .10) with 83% power.
 
 All relevant files (data processing, analysis code, manuscript etc.) for
 this project are tracked on GitHub (see
-<https://anonymous.4open.science/r/seccyd-wj-subtests-BD3E/README.md>),
+<https://anonymous.4open.science/r/seccyd-wj-subtests-BD3E/README.md>), <!-- did you experiment with a Table to all these links? Seeing them all here makes me think that could be nice (although the final urls will be shorter, of course)) -->
 including the data needed to reproduce all results (see
 <https://anonymous.4open.science/r/seccyd-wj-subtests-BD3E/data/README.md>).
 Raw data (data provided by the SECCYD) is available only via
@@ -687,7 +688,7 @@ performance, we restructured the data so that each participant was
 represented by 10 rows, one for each WJ subtest score. Then, we created
 a sum-coded contrast variable for WJ subtests with 10 levels (one for
 each subtest). This type of contrast sets the model intercept to the
-grand mean (e.g., the mean of all subtest scores). To analyze the
+grand mean (i.e., the mean of all subtest scores). To analyze the
 effects of adversity on test performance, we entered adversity as a main
 effect and the interaction between adversity and the contrast-coded
 subtest variable.
@@ -695,8 +696,8 @@ subtest variable.
 A model with this structure contains a main effect for each covariate, a
 main effect of adversity, and an interaction term for each subtest
 (i.e., 10 interaction terms). The main effect of adversity reflects the
-association between adversity and overall WJ performance (e.g.,
-within-person average of all subtests; see Figure 1). Interaction terms
+association between adversity and overall WJ performance (i.e.,
+within-person average across all subtests; see Figure 1). Interaction terms
 reflect the association between adversity and subtest performance
 *compared to the main effect of adversity* (see Figure 1). That is, they
 reflect the difference between the effect of adversity on overall
@@ -719,7 +720,7 @@ indicate that associations between adversity and subtest performance are
 meaningfully more negative or more positive than overall performance.
 For simple effects, effects outside these bounds indicate that the
 effect of adversity on a specific subtest is meaningfully different from
-zero.
+zero.<!-- These two paragraphs are a lot more clear now! -->
 
 We were also interested in null effects. Specifically, we used
 equivalence testing to determine whether a given effect is practically
@@ -756,7 +757,7 @@ in cases where a main effect is negative and interaction terms are
 positive. This may reflect either 'enhanced relative performance' (e.g.,
 meaningful and significant positive interactions) or 'less reduced'
 performance on a particular subtest in the context of an overall reduced
-pattern of performance.
+pattern of performance. <!-- in the case of 'less reduced' performance, wouldn't the interaction term also be positive, just as for 'enhanced relative performance'. Also, perhaps also mention 'intact performance here as a possible data pattern? -->
 
 ## Primary Analyses
 
@@ -765,7 +766,7 @@ unpredictability were associated with WJ overall and subtest
 performance. We ran one mixed model per indicator for a total of five
 primary analyses (two for harshness and three for unpredictability).
 Because these analyses are exploratory (i.e., we are not testing
-specific hypothesis), we do not correct for multiple testing. Instead,
+specific hypotheses), we do not correct for multiple testing. Instead,
 we use our statistical models for description and our inferential
 criteria--which includes equivalence tests---to unpack data patterns.
 
@@ -775,7 +776,7 @@ main effects for both maternal education and race/ethnicity. Lower
 maternal education and having a non-White racial/ethnic background was
 associated with lower WJ overall performance. No model contained effects
 for sex assigned at birth. Below we describe the effects of our primary
-analysis predictors (see Supplement Table 1). Primary analysis code can
+analysis predictors (see Supplement Table 1) <!-- Which Table are you referring to exactly and why? There's a Tabe 1a and b and neither seem relevant to this part -->. Primary analysis code can
 be found on GitHub (see
 <https://anonymous.4open.science/r/seccyd-wj-subtests-BD3E/scripts/3-primary-analysis.R>).
 
@@ -790,9 +791,8 @@ meaningfully negative (outside the ROPE, see Figure 3).
 
 Interaction effects between family income disadvantage and subtests
 revealed a more nuanced pattern of associations. The association between
-disadvantage and performance on Passage Completion, Calculations, Verbal
-Analogies, Letter-Word, Short-Term Memory, and Unfamiliar Words subtests
-did not differ from the overall main effect (see Figure 3). However, the
+disadvantage and performance did not differ from the overal main effect for the following subtests: Passage Completion, Calculations, Verbal
+Analogies, Letter-Word, Short-Term Memory, and Unfamiliar Words (see Figure 3).<!-- I think starting with the pattern and then listing the subtests is easier to parse --> However, the
 association between disadvantage and performance on the Picture
 Vocabulary subtest was significantly and meaningfully more negative than
 the overall main effect (see Figure 3). Interestingly, the association
@@ -801,7 +801,7 @@ Unfamiliar Words, and Auditory-Visual Associations subtests were
 significantly more positive than the overall main effect (see Figure 3).
 However, equivalence tests suggest that the disadvantage and Unfamiliar
 Words performance association was inside the ROPE and, thus, practically
-equivalent to the main effect. The association between disadvantage and
+equivalent to the main effect. The associations between disadvantage and
 Auditory Processing and Auditory-Visual performance were outside the
 ROPE.
 
@@ -823,7 +823,7 @@ reduced performance on each subtest. However, for the Picture Vocabulary
 subtest, the income disadvantage-performance association was
 significantly and meaningfully more negative than the overall pattern,
 suggesting performance on this test was particularly reduced for income
-disadvantaged families.
+disadvantaged families. <!-- I know we talked about a summary paragraph like these two, but reading this section through I think the write up above is clear enough that I don't think we really need these summary paragraphs. I don't know if others would agree though so you could keep it in to see if they think it helped them understand the findings better -->
 
 Interestingly, three subtests showed relative enhancement to the overall
 pattern of income disadvantage: Auditory Processing, Unfamiliar Words,
@@ -844,13 +844,11 @@ reduced overall WJ performance (see Figure 3). Equivalence tests show
 that this overall main effect was outside the ROPE.
 
 Interaction effects between neighborhood socioeconomic disadvantage and
-subtest were also varied. Associations between socioeconomic
-disadvantage and subtest performance on Passage Completion,
-Calculations, Letter-Word, and Short-Term Memory did not statistically
-differ from the overall main effect (see Figure 3). However,
-neighborhood socioeconomic disadvantage and subtest performance
-associations for the Picture Vocabulary, Verbal Analogies, and Applied
-Problems subtests were significantly more negative than the main effect
+subtests were varied.<!-- Not sure what 'also' refers to --> The association between socioeconomic
+disadvantage and performance did not statistically differ from the overal main effect for the following subtests: Passage Completion,
+Calculations, Letter-Word, and Short-Term Memory (see Figure 3). However,
+associations were significantly more negative than the main effect for Picture Vocabulary, Verbal Analogies, and Applied
+Problems subtests
 (see Figure 3). However, equivalence tests revealed that only the
 association between socioeconomic disadvantage and Verbal Analogies
 subtest performance was meaningfully more negative than the main effect.
@@ -866,7 +864,7 @@ socioeconomically disadvantaged neighborhoods (see Figure 3).
 Simple effects revealed that higher neighborhood socioeconomic
 disadvantage was associated with statistically and meaningfully negative
 performance for all subtests except for the Auditory Processing and
-Auditory-Visual Associations subtests. Again, for these two subtests,
+Auditory-Visual Associations subtests. Again <!-- 'Again' because the same thing was true for family income disadvantage? -->, for these two subtests,
 performance among those living in socioeconomically disadvantaged
 neighborhoods was not statistically or meaningfully different from zero.
 
@@ -888,11 +886,12 @@ of neighborhood socioeconomic disadvantage.
 and socioeconomic-related indicators of harshness was associated with
 reduced overall WJ performance. For both family income and
 neighborhood-level socioeconomic disadvantage, almost all WJ subtest
-performance was reduced. However, Picture Vocabulary and Verbal Analogy
-subtests performance was particularly reduced. However, across both
+performance was reduced. Performance was particularly reduced for the Picture Vocabulary and Verbal Analogy
+subtests.<!-- 'however' in two consecutive sentences --> However, across both
 family and neighborhood models, economic disadvantage appeared to leave
 the Auditory Processing and Auditory-Visual Associations subtests
 intact.
+<!-- To add to my point above about leaving out the intermediate summary paragraphs: I really like this one and personally think we can do without the one's above within each subsection. P.S. Would it be weird to lead the harshness section with this paragraph, so to foreshadow the results to come? -->
 
 ```{r}
 #| label: Figure3
@@ -932,11 +931,10 @@ with exposure to more family transitions (see Figure 4).
 Three interaction terms were statistically significant: Calculations
 (more negative), Auditory Processing (more positive), and Audio-Visual
 Associations (more positive). However, only the association between
-family transitions and performance on the Calculations was meaningfully
+family transitions and performance on the Calculations subtest was meaningfully
 different from the main effect (see Figure 4).
 
-Simple effects indicated that exposure to family transitions was not
-associated with subtest performance, except the Calculations and Applied
+Simple effects indicated that exposure to family transitions was only associated with the Calculations and Applied
 Problems subtests. For Calculations, exposure to more family transitions
 was associated with significantly and meaningfully lower performance.
 For Applied Problems, more family transitions were associated with
@@ -963,7 +961,7 @@ strongly negatively related (*r* = `r intext$incm_incsd`), which has
 been reported before [@li2018]. That is, families experiencing more
 income disadvantage tended to experience less income variability. Put
 differently, richer families were more likely to experience income
-fluctuations.
+fluctuations. 
 
 This raises questions about using family income variability as an
 indicator of adversity. In most empirical cases, higher levels of
@@ -1165,8 +1163,8 @@ fig5
 
 # Discussion
 
-In this paper, we set out to document adversity related cognitive
-performance profiles. We used a principled exploration approach to
+In this paper, we set out to document adversity-related profiles of cognitive
+performance <!--Later on we talk about the WJ as measuring achievement, which is more narrow than cognition generally. Not sure if this is a crucial point, but it might be good to not use both interchangeably -->. We used a principled exploration approach to
 complement confirmatory approaches to adaptation-based research. Using
 the basic insights from work so far, we analyzed how exposure to
 indicators of harshness and unpredictability relate to different
@@ -1179,47 +1177,46 @@ different within person performance profiles. It also affords the
 opportunity to document how reduced, intact, and enhanced performance
 might co-occur.
 
-Overall, we found that, although indicators of harshness (family income
-and neighborhood socioeconomic disadvantage) seemed to reduce
-performance on most WJ subtests, Auditory Processing and Auditory-Visual
+For indicators of harshness (family income and neighborhood socioeconomic disadvantage), we found two basic patterns. 
+First, harshness seemed to reduce performance on most WJ subtests. 
+Second, Auditory Processing and Auditory-Visual
 Associations remained intact and relatively enhanced compared to overall
-WJ performance. In contrast, exposure to indicators of unpredictability
+WJ performance. In contrast, indicators of unpredictability
 (family transitions and family/neighborhood socioeconomic disadvantage
 variability) were associated with intact overall WJ performance.
 
 These findings are striking for three reasons. First, most current
 theoretical accounts of the skills and abilities of people living in
-harsh and unpredictable conditions, including contemporary
-adaptation-based models, assume that exposure to adversity should reduce
-performance on traditional achievement tests. Achievement and cognitive
-batteries, like the WJ assessment, use abstract content that is
+harsh and unpredictable conditions---including contemporary
+adaptation-based models---assume that exposure to adversity should reduce
+performance on traditional achievement tests<!--REF-->. Achievement and cognitive
+batteries---like the WJ assessment---use abstract content that is
 relatively detached from the real world. Adaptation-based models often
 assert such tests are a poor fit to the lives of those living in
-harsh/unpredictable conditions. Yet, for family income and neighborhood
+harsh/unpredictable conditions<!--Ref?-->. Yet, for family income and neighborhood
 socioeconomic disadvantage, we find that standard tasks with an auditory
 component remained intact and, for unpredictability, performance on most
 subtests remained intact. Without an principled exploration of a
 standard, abstract achievement battery, research may have overlooked
 these data.
 
-Second, our harshness analyses demonstrate co-occuring reductions,
-relative enhancements, and intact performance patterns within the same
+Second, our harshness analyses demonstrate that patterns of reductions,
+relative enhancements, and intact performance occur within the same
 individual. Specifically, overall performance was reduced, with tests of
-reading, math, reasoning, and short term memory underpinning this
-general pattern. However, tests of verbal and crystallized knowledge
-(i.e., Picture Vocabulary and Verbal analogies) were significantly more
-reduced. Despite the overall WJ performance patter, Auditory Processing
+reading, math, reasoning, and short term memory being in this
+general pattern. Relatively stronger reductions were found for tests of verbal and crystallized knowledge
+(i.e., Picture Vocabulary and Verbal analogies). In contrast, Auditory Processing
 and Auditory-Visual Associations performance was less reduced and intact
 when considering the simple effect ROPE (e.g., comparing if performance
 was practically equivalent to zero). These data patterns are consistent
-with the notion adversity exposure can be associated with nuanced
+with the notion that adversity exposure can be associated with nuanced
 patterns of performance across many abilities. To our knowledge, this is
 the first demonstration of how adversity relates to multiple
-co-occurring and within-person data patterns across many skills.
+co-occurring and within-person data patterns across many cognitive abilities.
 
 Third, the fact that performance on tests with an auditory component
 appeared to be relatively enhanced or intact is noteworthy. Other work
-on examining the skills and abilities of disadvantaged populations
+examining the skills and abilities of disadvantaged populations
 suggests that different types of oral and oral narrative skills may also
 be intact or enhanced among those from low socioeconomic contexts
 [@gardner-neblett2012; @gardner-neblett2015; @ellis2022]. Thus,
@@ -1229,32 +1226,27 @@ this could be because auditory/oral means of learning and knowledge
 acquisition/transmission are important when materials for other forms of
 learning (e.g., books and other visual learning materials) are scarce.
 
-We did not find any instance of "pure" enhancement, or cases where
-subtest performance was significanlty (and practically) positive as a
+We did not find any instance of "pure" enhancement, that is, cases where
+subtest performance was significantly (and practically) positive as a
 function of adversity exposure. Instead, we found patterns of relative
-enhancement (less-reduced) and intact performance. However, what is
-intact, relative enhancement, and "less-reduced" performance and what
-are their differences? Although our inferential criteria help
+enhancement (less-reduced) and intact performance. An important question is how these patterns differ on a functional level.
+In other words, what does it mean for performance to be relatively enhanced or "less-reduced"?
+Although our inferential criteria help
 distinguish data patterns, they cannot tease apart the processes that
-produce them. In the current study, for example, if Auditory Processing
-and Auditory-Visual Associations performance is truly enhanced income
-disadvantage, one explanation might be that socioeconomic disadvantage
-reduces general cogntive skills shared across all subtests, perhaps
-through a general mechanism. However, this reducing effect co-occurs
-with specific enhanced auditory skills unique to these subtests, which
-is adaptive value in socioeconomically harsh conditions. But, combined
-with reduced general cognitive performance, this enhancement does not
-fully counteract the overall performance reduction.
+produce them. 
+For example, our findings for Auditory Processing and Auditory-Visual Processing may be explained by two different processes.
+First, socioeconomic disadvantage might impair general cognitive abilities shared across all subtests (e.g., basic processing speed) while specifically enhancing auditory abilities.
+More specifically, the ability to process auditory information fast and accurately may be particularly adaptive in socioeconomically harsh conditions.
+However, combined with reduced performance in general processes, the auditory ability may not fully counteract this reduction to lead to a pattern of absolute enhancement.
 
 In contrast, Auditory Processing and Auditory-Visual Associations could
-remain intact *despite* exposure to family income disadvantage. The
-forces reducing performance on other subtests leave auditory skills
-untouched. In this case, such skills might not have special adaptive
+remain intact *despite* exposure to family income disadvantage. 
+In this scenario, socioeconomic disadvantage does not specifically *enhance* auditory abilities, but instead merely leave them untouched.
+In this case, such skills might not have special adaptive
 value or relevance for functioning in high socioeconomic disadvantage,
-but also do impose a cost. Thus, performance is equal to
-socioeconomically advantaged peers. Another possibility is that
+but also do not impose a cost which would lead to reduced performance. Another possibility is that
 adversity exposure leads individuals to adopt compensatory strategies
-that work to cancel out general or specific performance reductions.
+that work to cancel out general or specific performance reductions. <!-- This paragraph and the one above it need more work. I've rewritten in an attempt to make it more clear, but I still think the edited version is too complicated.-->
 
 Our secondary analyses revealed insights about measuring variability
 over repeated measures. In line with work by others [e.g., @li2018], we
