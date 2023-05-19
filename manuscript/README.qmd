@@ -1246,21 +1246,21 @@ In this case, such skills might not have special adaptive
 value or relevance for functioning in high socioeconomic disadvantage,
 but also do not impose a cost which would lead to reduced performance. Another possibility is that
 adversity exposure leads individuals to adopt compensatory strategies
-that work to cancel out general or specific performance reductions. <!-- This paragraph and the one above it need more work. I've rewritten in an attempt to make it more clear, but I still think the edited version is too complicated.-->
+that work to cancel out general or specific performance reductions. <!-- This paragraph and the one above it need more work. I've rewritten in an attempt to make it more clear, but I still think the edited version is too complicated. Perhaps we can chat about how to phrase it more clearly early next week.-->
 
-Our secondary analyses revealed insights about measuring variability
+Our secondary analyses provided insights about measuring socioeconomical variability
 over repeated measures. In line with work by others [e.g., @li2018], we
 found a strong dependence between mean family income and family income
 variability scores. Although such a correlation does not inherently
 invalidate variability scores, it does raise questions about whether
 such scores are capturing adversity, especially when families with high
-income tended to experience higher variance in income. We found that
+income tend to experience higher variance in income. We found that
 percent change scores weakened the dependency between average income and
 income variability. Leveraging time series techniques is a promising
 direction, especially for measuring concepts like unpredictability
 [@frankenhuis2019a; @young2020; @ugarte2023]. However, future research
 should exercise extra caution when computing such scores and pay special
-attention to appropriate validation procedures to verify such scores
+attention to appropriate validation procedures to verify that such scores
 capture the intended construct.
 
 The current work has several strengths and limitations. First, the
@@ -1292,7 +1292,7 @@ assessing verbal, crystallized, and formal rule knowledge appear
 reduced, but what happens if we make the test information more relevant
 to the lives of adversity-exposed youth?
 
-Our goal was to return to our "high resolution" map of the skills and
+Our goal was to work towards constructing a "high resolution" map of the skills and
 abilities people develop in harsh and unpredictable conditions. We see
 great value in confirmatory studies, but we also need exploratory
 approaches. Here, we used principled exploration to help remap and chart
