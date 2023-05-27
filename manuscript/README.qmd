@@ -12,7 +12,7 @@ format:
   docx:
     reference-doc: reference-doc.docx
     fig-dpi: 300
-    fig-format: pdf
+    fig-format: jpeg
   gfm: 
     fig-format: jpeg
     fig-dpi: 300
@@ -22,7 +22,7 @@ nocite: |
   @2005
 abstract: |
   # Abstract
-  The idea that some abilities might be enhanced by adversity is gaining traction. For example, research leveraging the adaptation-based approaches have uncovered a few specific abilities enhanced by exposure to particular forms of adversity. Yet, in order for a field to grow, we must not dig too deep, too soon. In this paper, we complement adaptation-based research with principled exploration. To do so, we draw on the basic insights of adaptation-based research: 1) enhanced performance manifests within individuals, and 2) reduced and enhanced performance can co-occur. Although commonly assumed, these assertions are rarely tested. To test them, a variety of ability measures are needed that examine relative performance differences. However, rather than using adaptive-logic to predict which abilities are enhanced or reduced, we develop statistical criteria to help interpret three different data patterns: reduced, enhanced, and intact performance. We use these criteria to analyze data from the NICHD Study of Early Child Care and Youth Development (SECCYD) to investigate whether and how adversity shapes within-person performance across 10 abilities in the Woodcock Johnson Cognitive and Achievement test batteries. Our goals are to document adversity-shaped cognitive profiles, identify possible drivers of reduced overall performance, map out sets of ‘intact’ abilities, and discover new enhanced abilities. We propose that principled exploration with clear criteria can help break new theoretical and empirical ground, re-map old territory, and advance theory development. Our approach, therefore, offers a valuable complement to the adaptive-logic approach that has dominated this emerging area of research to date.
+  The idea that some abilities might be enhanced by adversity is gaining traction. Adaptation-based approaches have uncovered a few specific abilities enhanced by particular adversity exposures. Yet, for a field to grow, we must not dig too deep, too soon. In this paper, we complement confirmatory research with principled exploration. We draw on two insights from adaptation-based research: 1) enhanced performance manifests within individuals, and 2) reduced and enhanced performance can co-occur. Although commonly assumed, these assertions are rarely tested. To test them, we need a variety of ability measures to quantify relative performance differences. However, rather than using adaptive-logic to predict which abilities are enhanced or reduced, we develop statistical criteria to identify three data patterns: reduced, enhanced, and intact performance. With these criteria, we analyzed data from the NICHD Study of Early Child Care and Youth Development to investigate how adversity shapes within-person performance across 10 abilities in a cognitive and achievement battery. Our goals are to document adversity-shaped cognitive profiles, identify drivers of reduced performance, identify sets of ‘intact’ abilities, and discover new enhanced abilities. We believe principled exploration with clear criteria can help break new theoretical and empirical ground, re-map old territory, and advance theory development.
 ---
 
 ```{r}
@@ -81,7 +81,7 @@ set_flextable_defaults(
 
 {{< pagebreak >}}
 
-# How does adversity relate to performance across different abilities in the same person?
+# How does adversity relate to performance across different abilities within individuals?
 
 Developmental science commonly asserts that adversity-exposure during
 development reduces cognitive performance---a claim founded on decades
@@ -123,7 +123,7 @@ to document adversity-shaped cognitive performance profiles that include
 reduced performance, intact abilities, *and* enhanced test performance
 patterns.
 
-# **Essential Features and Empirical Insights from Adaptation-based Frameworks**
+# Essential Features and Empirical Insights from Adaptation-based Frameworks
 
 Adaptation-based research has two essential features. First, such
 research assumes that development shapes the individual, as well as
@@ -176,7 +176,7 @@ memory task performance using more ecologically-relevant testing content
 compared to neutral or abstract content. In some cases,
 ecologically-relevant content tends to equalize performance for people
 exposed to adversity, but this depends on the specific adversity measure
-and task ([@frankenhuis2020b; @young2022; @rifkin-graboi2021a]. In other
+and task [@frankenhuis2020b; @young2022; @rifkin-graboi2021a]. In other
 studies, however, conditions thought to be well-matched to the lived
 experience of those exposed to adversity actually lower performance. For
 example, youth from low socioeconomic backgrounds tend to score lower on
@@ -308,19 +308,16 @@ performance (a main effect). Subtest performance is intact when the
 effect of adversity on a subtest is practically equivalent to zero.
 Using these criteria, we can position ourselves to identify the drivers
 of reduced overall cognitive performance, map out sets of 'intact'
-cognitive abilities, and discover possible enhancements.
+cognitive abilities, and discover possible enhancements.\
 
-![Figure 1. Conceptual visualization of Woodcock Johnson statistical
-models. A) is the main effect of adversity on overall performance; B) is
-the main effect of a subtest, which reflects the average performance on
-a subtest; C) is the simple effect (slope) of adversity for a particular
-subtest; and D) is the interaction effect that measures the difference
-between A and C. A significant simple effect means C ≠ 0, and a
-significant interaction means A ≠ C. Put differently, when C is
-significant, adversity is associated with performance on a subtest. When
-D is significant, the association between adversity and a subtest (C) is
-different than the association between adversity and the overall effect
-(A).](figures/fig1-conceptual.jpg){fig-align="center"}
+```{r}
+#| label: Figure1
+#| out-width: 6in
+#| fig-cap: |
+#|   **Figure 1.** Conceptual visualization of Woodcock Johnson statistical models. A) is the main effect of adversity on overall performance; B) is the main effect of a subtest, which reflects the average performance on a subtest; C) is the simple effect (slope) of adversity for a particular subtest; and D) is the interaction effect that measures the difference between A and C. A significant simple effect means C ≠ 0, and a significant interaction means A ≠ C. Put differently, when C is significant, adversity is associated with performance on a subtest. When D is significant, the association between adversity and a subtest (C) is different than the association between adversity and the overall effect (A).
+
+knitr::include_graphics("figures/fig1-conceptual.jpg")
+```
 
 # Method
 
@@ -381,7 +378,9 @@ for code).
 #| fig-cap: |
 #|   _**Figure 2.**_ WJ subtest standard scores across assessments. Different sets of subtests were administered at each assessment. Scores were averaged over assessments to create an overall subtest score. Vertical histograms reflect distributions of overall scores per subtest. Gray horizontal lines are sample average scores for all subtests (e.g., the overall WJ score).
 #| fig-width: 4.5
-#| fig-height: 7.75
+#| fig-height: 7.5
+#| out-width: 4.5in
+#| out-height: 7.5in
 
 fig2
 ```
@@ -461,8 +460,6 @@ phonetically logical but nonsense or infrequent words. It contains 30
 items and was administered twice: at the 1^st^ and 3^rd^ grade
 assessments. Higher scores indicate more auditory processing and
 linguistic structural analysis knowledge and skill.
-
-\
 
 ```{r}
 #| tab.id: table1
@@ -568,7 +565,7 @@ them to compute an overall family transitions variable (see
 for code).
 
 We next calculated variability scores for both family income and
-neighborhood socioeconomic disadvantage. For, family income disadvantage
+neighborhood socioeconomic disadvantage. For family income disadvantage
 scores, we computed a standard deviation of all income-to-needs scores
 for each participant from the 1, 6, 15, 24, 36, and 54-month assessments
 (see
@@ -588,8 +585,6 @@ analyses of SECCYD data: 1) maternal education, 2) sex assigned at birth
 White/non-Hispanic = 0, otherwise = 1. We chose to code race/ethnicity
 this way because the SECCYD sample is mostly White, making the sample
 sizes for other racial/ethnic groups small.
-
-\
 
 ```{r}
 #| tab.id: table2
@@ -652,7 +647,6 @@ power.
 All relevant files (data processing, analysis code, manuscript etc.) for
 this project are tracked on GitHub (see
 <https://anonymous.4open.science/r/seccyd-wj-subtests-BD3E/README.md>),
-<!-- did you experiment with a Table to all these links? Seeing them all here makes me think that could be nice (although the final urls will be shorter, of course)) -->
 including the data needed to reproduce all results (see
 <https://anonymous.4open.science/r/seccyd-wj-subtests-BD3E/data/README.md>).
 Raw data (data provided by the SECCYD) is available only via
@@ -669,11 +663,11 @@ We used R, Rstudio, and Quarto to process, analyze, and report results
 [@quarto; @rcoreteam2023; @positteam2023]. For reading raw SECCYD data,
 we used the haven and readxl R packages [@readxl; @haven]. For data
 processing, visualizations, and table creation, we used the tidyverse,
-sjlabelled, ggdist, ggsci, and the patchwork R packages [@tidyverse;
-@sjlabelled; @flextable; @patchwork; @ggdist; @ggsci]. For analyses,
-including mixed models, simple slopes, and equivalence tests, we used
-lme4, faux, ggeffects, marginaleffects, and the parameters R packages
-[@bates2015; @ggeffects; @marginaleffects; @parameters; @faux].
+sjlabelled, ggdist, ggsci, flextable, and the patchwork R packages
+[@tidyverse; @sjlabelled; @flextable; @patchwork; @ggdist; @ggsci]. For
+analyses, including mixed models, simple slopes, and equivalence tests,
+we used lme4, faux, ggeffects, marginaleffects, and the parameters R
+packages [@bates2015; @ggeffects; @marginaleffects; @parameters; @faux].
 
 ## Data Analysis Strategy and Inferential Criteria
 
@@ -714,7 +708,8 @@ subtest, and 3) the simple effect of adversity for each subtest. We did
 not have specific point or range predictions for the effect size types
 above. However, we decided a priori to consider standardized regression
 coefficients (i.e., $\beta$'s) of .10 (or higher) and -.10 (or lower) as
-meaningful. For main effects, coefficients outside this range indicate
+meaningful, or large enough to serve as a basis for future confirmatory
+research. For main effects, coefficients outside this range indicate
 that overall performance is meaningfully positive or negative across
 levels of adversity. For interactions, effect sizes outside these bounds
 indicate that associations between adversity and subtest performance are
@@ -741,7 +736,7 @@ the ROPE. We inferred 'reduced performance' when main and simple effects
 were negative, statistically different from zero, and outside the ROPE.
 We inferred intact performance when a main or simple effect (and its
 confidence bounds) was practically equivalent to zero (i.e., fell inside
-the ROPE).
+the ROPE), irrespective of statistical significance.
 
 We used the same criteria for interaction terms with one difference.
 Because interaction terms test the difference between main and simple
@@ -759,7 +754,6 @@ positive. This may reflect either 'enhanced relative performance' (e.g.,
 meaningful and significant positive interactions) or 'less reduced'
 performance on a particular subtest in the context of an overall reduced
 pattern of performance.
-<!-- in the case of 'less reduced' performance, wouldn't the interaction term also be positive, just as for 'enhanced relative performance'. Also, perhaps also mention 'intact performance here as a possible data pattern? -->
 
 ## Primary Analyses
 
@@ -770,16 +764,17 @@ primary analyses (two for harshness and three for unpredictability).
 Because these analyses are exploratory (i.e., we are not testing
 specific hypotheses), we do not correct for multiple testing. Instead,
 we use our statistical models for description and our inferential
-criteria--which includes equivalence tests---to unpack data patterns.
+criteria--which include equivalence tests---to unpack data patterns.
 
 All analyses controlled for the main effects of maternal education,
 race/ethnicity, and sex assigned at birth. Across all models, there were
 main effects for both maternal education and race/ethnicity. Lower
 maternal education and having a non-White racial/ethnic background was
-associated with lower WJ overall performance. No model contained effects
-for sex assigned at birth. Below we describe the effects of our primary
-analysis predictors (see Supplement Materials for full model results).
-Primary analysis code can be found on GitHub (see
+associated with lower WJ overall performance. No model contained
+statistically significant effects for sex assigned at birth. Below we
+describe the effects of our primary analysis predictors (see
+Supplemental Materials for full model results). Primary analysis code
+can be found on GitHub (see
 <https://anonymous.4open.science/r/seccyd-wj-subtests-BD3E/scripts/3-primary-analysis.R>).
 
 ### Indicators of Harshness
@@ -787,7 +782,7 @@ Primary analysis code can be found on GitHub (see
 **Overview**. In general, exposure to more income- and
 socioeconomic-related indicators of harshness was associated with
 reduced overall WJ performance. For both family income and
-neighborhood-level socioeconomic disadvantage, seven out of ten WJ
+neighborhood-level socioeconomic disadvantage, seven out of 10 WJ
 subtests were reduced. Performance was particularly reduced for the
 Picture Vocabulary and Verbal Analogy subtests. However, across both
 family and neighborhood models, economic disadvantage appeared to leave
@@ -804,7 +799,7 @@ meaningfully negative (outside the ROPE, see Figure 3).
 
 Interaction effects between family income disadvantage and subtests
 revealed a more nuanced pattern of associations. The association between
-disadvantage and performance did not differ from the overal main effect
+disadvantage and performance did not differ from the overall main effect
 for the following subtests: Passage Completion, Calculations, Verbal
 Analogies, Letter-Word, and Short-Term Memory (see Figure 3). However,
 the association between income disadvantage and performance on the
@@ -841,8 +836,8 @@ that this overall main effect was outside the ROPE.
 
 Interaction effects between neighborhood socioeconomic disadvantage and
 subtests were varied. The association between socioeconomic disadvantage
-and performance did not statistically differ from the overal main effect
-for the following subtests: Passage Completion, Calculations,
+and performance did not statistically differ from the overall main
+effect for the following subtests: Passage Completion, Calculations,
 Letter-Word, and Short-Term Memory (see Figure 3). However, associations
 were significantly more negative than the main effect for Picture
 Vocabulary, Verbal Analogies, and Applied Problems subtests (see Figure
@@ -871,6 +866,7 @@ suggesting an intact pattern of performance.
 #| label: Figure3
 #| fig-width: 6
 #| fig-height: 6.25
+#| out-width: 6in
 #| fig-cap: |
 #|   **Figure 3.** Results of models testing the effect of family and neighborhood economic disadvantage on WJ performance. The top and bottom rows depict family and neighborhood socioeconomic disadvantage, respectively. The left column plots the overall slope (thick black lines) against the subtest slopes across low to high socioeconomic disadvantage. Unfaded and faded lines are practically inequivalent and equivalent to the overall slope, respectively. The middle and right columns show interaction and simple effects. Black horizontal lines are the main effect and zero for interactions and simple effects, respectively. The gray ribbon reflects the ROPE. Solid points indicate interactions and simple effects that are practically equivalent to the ROPE. Hollow points reflect interaction and simple effects that are outside the ROPE. Statistical significance for interactions (tested against the main effect) and simple effects (tested against zero) are flagged with significance stars. \ 
 #|   \*\*\* *p* < .001,  \*\* *p* < .01,  \* *p* < .05
@@ -901,11 +897,11 @@ fig3
 family transitions and neighborhood socioeconomic variability, was
 associated with intact overall WJ test performance (see below and Figure
 4; see Supplemental Materials for full regression tables). Only one WJ
-subtest showed a deviation from the overall pattern--Applied Problems,
-which was associated with reduced performance among participants who
-experience more family transitions (see Figure 4). Results for family
-income variability raised a number of questions, which we address in our
-Secondary Analyses (see below for details).
+subtest showed a deviation from the overall pattern--Applied
+Problems--which was associated with reduced performance among
+participants who experience more family transitions (see Figure 4).
+Results for family income variability raised a number of questions,
+which we address in our Secondary Analyses (see below for details).
 
 **Family Transitions**. Our analysis of family transitions revealed no
 main effect on overall WJ performance. The main effect also fell inside
@@ -973,16 +969,21 @@ overall effect. In addition, simple effects showed that high
 neighborhood socioeconomic variability was not associated with
 performance on any subtest and all simple effects were inside the ROPE.
 
+\
+
 ```{r}
 #| label: Figure4
 #| fig-width: 6.5
 #| fig-height: 6.25
+#| out-width: 6in
 #| fig-cap: |
 #|   **Figure 4.** Results of models testing the effect of family transitions and neighborhood socioeconomic variability on WJ performance. The top and bottom rows reflect family transitions and neighborhood socioeconomic variability, respectively. The left column plots the overall slope (thick black lines) against the subtest slopes across low to high unpredictability. Unfaded and faded lines are practically inequivalent and equivalent to the overall slope, respectively. The middle and right columns show interaction and simple effects. Black horizontal lines are the main effect and zero for interactions and simple effects, respectively. The gray ribbon reflects the ROPE. Solid points indicate interactions and simple effects that are practically equivalent to the ROPE. Hollow points reflect interaction and simple effects that are outside the ROPE. Statistical significance for interactions (tested against the main effect) and simple effects (tested against zero) are flagged with significance stars. \ 
 #|   \*\*\* *p* < .001,  \*\* *p* < .01,  \* *p* < .05
 
 fig4
 ```
+
+\
 
 ## Secondary Analyses
 
@@ -1089,6 +1090,7 @@ different from zero.
 #| label: Figure5
 #| fig-width: 6.5
 #| fig-height: 7.25
+#| out-width: 6in
 #| fig-cap: |
 #|   **Figure 5.** Results of models testing the effect of different family income variability scores on WJ performance. The top, middle, and bottom rows reflect simple standard deviation, residual standard deviation, and average percent change in family income from one to 54 months. The left column plots the overall slope (thick black lines) against the subtest slopes across low to high variation in family income. Unfaded and faded lines are practically inequivalent and equivalent to the overall slope, respectively. The middle and right columns show interaction and simple effects. Black horizontal lines are the main effect and zero for interactions and simple effects, respectively. The gray ribbon reflects the ROPE. Solid points indicate interactions and simple effects that are practically equivalent to the ROPE. Hollow points reflect interaction and simple effects that are outside the ROPE. Statistical significance for interactions (tested against the main effect) and simple effects (tested against zero) are flagged with significance stars. \ 
 #|   \*\*\* *p* < .001,  \*\* *p* < .01,  \* *p* < .05
@@ -1098,174 +1100,178 @@ fig5
 
 # Discussion
 
-In this paper, we set out to document adversity-related profiles of
+In this research, we set out to document adversity-related profiles of
 cognitive performance. We used a principled exploration approach to
 complement confirmatory approaches to adaptation-based research. Using
-the basic insights from work so far, we analyzed how exposure to
-indicators of harshness and unpredictability relate to different
-patterns of within-person cognitive performance across 10 WJ subtests.
-Instead of using adaptive logic, we developed inferential criteria to
+the basic insights of prior work, we analyzed how exposure to indicators
+of harshness and unpredictability relate to different patterns of
+adversity-related cognitive performance across 10 WJ subtests. However,
+instead of using adaptive logic, we developed inferential criteria to
 aid interpretation of three data patterns of interest: reduced, intact,
 and enhanced performance. We quantified performance using two types of
-comparisons. First, we compared whether subtest performance differed
+comparisons. First, we compared whether WJ subtest performance differed
 from overall performance, which quantified relative reductions and
-enhancements. Second, we compared performance on each subtest to zero,
-which quantified absolute performance reductions and enhancemnts. This
-approach allowed us to describe how exposure to indicators of harshness
-and unpredictability relate to different within person performance
-profiles. It also afforded the opportunity to document how reduced,
-intact, and enhanced performance might co-occur.
+enhancements in performance. Second, we compared performance on each
+subtest to zero, which quantified absolute performance reductions and
+enhancements. This approach allowed us to describe how exposure to
+indicators of harshness and unpredictability are associated with
+different adversity-related performance profiles. It also afforded the
+opportunity to document how reduced, intact, and enhanced performance
+co-occur.
 
 ## Exploratory Insights
 
-We did not find any instance of absolute enhancement, or cases where
+We did not find any instance of absolute enhancement or cases where
 subtest performance was significantly and practically more positive than
-zero. However, for indicators of harshness (family income and
-neighborhood socioeconomic disadvantage), we found two basic patterns.
-First, socioeconomic harshness appeared to reduce overall performance.
-Performance on Picture Vocabulary and Verbal Analogies subtests was
-particularly reduced. Second, compared to the overall reduced pattern,
-Auditory Processing and Auditory-Visual Associations subtest performance
-was relatively enhanced. In an absolute sense (i.e., each compared to
-zero) they appeared to remain intact. In contrast, indicators of
-unpredictability (family transitions and family/neighborhood
-socioeconomic disadvantage variability) were associated with intact
-overall WJ performance.
+zero. For indicators of harshness (family income and neighborhood
+socioeconomic disadvantage), however, we found two basic patterns.
+First, socioeconomic harshness was associated with reduced overall
+cognitive performance. Performance on Picture Vocabulary and Verbal
+Analogies subtests was particularly reduced. Second, compared to the
+overall reduced pattern, Auditory Processing and Auditory-Visual
+Associations subtest performance tended to be enhanced. In an absolute
+sense (i.e., when each subtest was compared to zero), they appeared to
+remain intact. In contrast, indicators of unpredictability (family
+transitions and family/neighborhood socioeconomic disadvantage
+variability) were associated with intact overall WJ performance, an
+unexpected and noteworthy result.
 
-Our analysis was exploratory and we advise caution when interpreting
-findings. Nonetheless, we believe these findings are striking for three
-reasons. First, most current theoretical accounts of the skills and
-abilities of people living in harsh and unpredictable
-conditions---including adaptation-based models---assume that exposure to
-adversity should reduce performance on traditional achievement tests
-[@ellis2022; @frankenhuis2020; @hackman2010; @mclaughlin2019;
-@ursache2016]. Achievement and cognitive batteries---like the WJ
-assessment---use abstract content that is relatively detached from the
-real world. Adaptation-based models often assert such tests are a poor
-fit to the lives of those living in harsh/unpredictable conditions
-[@ellis2022; @ellis2017; @frankenhuis2013b; @frankenhuis2020]. Yet, for
-family income and neighborhood socioeconomic disadvantage, we find that,
-for at least two standard tasks, performance remained intact. Exposure
-to unpredictability was associated with intact performance across all
-but the Calculations subest (but intact for Neighborhood Socioeconomic
-Variability). Without an principled exploration of a standard, abstract
-achievement battery, research may have overlooked these data.
+These findings are striking for three reasons. First, most current
+theoretical accounts of the skills and abilities of people living in
+harsh and unpredictable conditions---including adaptation-based
+models---assume that exposure to adversity should reduce performance on
+traditional achievement tests [e.g., @ellis2022; @frankenhuis2020;
+@hackman2010; @mclaughlin2019; @ursache2016]. Achievement and cognitive
+batteries like the WJ assessment have abstract content that is
+relatively detached from the real world. Adaptation-based models often
+assert that such tests are a poor fit to the lives of those living in
+harsh and/or unpredictable conditions [@ellis2022; @ellis2017;
+@frankenhuis2013b; @frankenhuis2020]. Yet, for family income and
+neighborhood socioeconomic disadvantage, we found that---at least for
+two standard tasks---performance remained intact. Exposure to
+unpredictability was associated with intact performance across all tasks
+except for the Calculations subset (but it was intact for Neighborhood
+Socioeconomic Variability). Without a principled exploration of a
+standard, abstract achievement battery, research may have overlooked
+these novel patterns.
 
 Second, our harshness analyses demonstrate that patterns of reductions,
 relative enhancements, and intact performance occur within individuals.
-Overall performance was reduced, which were underpinned by tests of
-reading, math, reasoning, and short term memory. Relatively stronger
-reductions were found for tests of verbal and crystallized knowledge
-(i.e., Picture Vocabulary and Verbal analogies). At the same time,
-Auditory Processing and Auditory-Visual Associations performance was
-relatively enhanced (or less reduced) compared to overall performance
-and intact when considering the simple effect ROPE (e.g., comparing
-performance to zero). These data patterns are consistent with the notion
-that adversity exposure can be associated with nuanced patterns of
-within-person performance. And, to our knowledge, this is the first
-demonstration of how adversity relates to multiple co-occurring and
-within-person patterns of performance across many tests.
+Overall performance was reduced, as revealed by tests of reading, math,
+reasoning, and short-term memory. Relatively stronger reductions emerged
+for tests of verbal and crystallized knowledge (i.e., Picture Vocabulary
+and Verbal analogies). At the same time, Auditory Processing and
+Auditory-Visual Associations performance was relatively enhanced (or
+less reduced) compared to overall performance, and it was intact when
+considering the simple effect ROPE (e.g., comparing performance to
+zero). These data patterns are consistent with the notion that adversity
+exposure is associated with nuanced patterns of within-person
+performance. To our knowledge, this is the first demonstration of how
+adversity relates to multiple co-occurring and within-person patterns of
+performance across several standard cognitive tests.
 
 Third, the Auditory Processing and Audio-Visual Associations subtests,
-which both showed intact performance patterns, appeared to have two
+both of which showed intact performance patterns, appear to have two
 things in common. First, both contain a listening component, suggesting
-that auditory stimuli might be easier, or less difficult, to process for
-people living in socioeconomically disadvantaged contexts. However,
-performance on the short term memory task, which also presented auditory
-stimuli, was generally reduced. Other work examining the skills and
-abilities of disadvantaged populations suggests that different types of
-oral and oral narrative skills may also be intact or enhanced among
-those from low socioeconomic context [@gardner-neblett2012;
-@gardner-neblett2015; @ellis2022]. This could be because auditory/oral
-means of learning and knowledge acquisition/transmission are important
-when materials for other forms of learning (e.g., books and other visual
-learning materials) are scarce.
+that auditory stimuli might be less difficult to process for people
+living in socioeconomically disadvantaged contexts. However, performance
+on the short-term memory task, which also presented auditory stimuli,
+was generally reduced. Other research examining the skills and abilities
+of disadvantaged populations suggests that different types of oral and
+oral narrative skills may also be intact or enhanced among those from
+low socioeconomic context [@gardner-neblett2012; @gardner-neblett2015;
+@ellis2022], perhaps because auditory/oral means of learning and
+knowledge acquisition/transmission are important when materials for
+other forms of learning, such as books and other visual learning
+materials, are scarce.
 
-In addition, both tests showing intact performance require little
-crystallized or verbal knowledge. The Auditory Processing task required
-listening to words with missing phonemes and complete them. The
-Auditory-Visual Association tasks required memorizing names with
-pictures. Other WJ subtests, which were reduced by socioeconomic
-disadvantage, either directly measure or require accumulated formal
-knowledge (math operations, reading passages, identifying objects,
-verbal analogies). This suggests that tests requiring less accumulated
-knowledge may remain intact for those experiencing socioeconomic
-disadvantage. However, because this research is exploratory, we caution
-against drawing any conclusive inferences.
+In addition, the Auditory Processing and Audio-Visual Associations
+subtests require little crystallized or verbal knowledge. The Auditory
+Processing task requires listening to words with missing phonemes and
+completing them. The Auditory-Visual Association tasks requires
+memorizing names with pictures. Other WJ subtests, which were reduced in
+socioeconomically disadvantaged individuals, either directly measure or
+require accumulated formal knowledge, such as math operations, reading
+passages, identifying objects, and verbal analogies. This suggests that
+tests requiring less accumulated knowledge may remain intact for those
+experiencing socioeconomic disadvantage. However, because this research
+is exploratory, we caution against drawing any conclusive inferences.
 
 ## Income Variability Scores and Unpredictability
 
 Our secondary analyses provided insights about measuring socioeconomic
 variability over repeated measures. In line with work by others [e.g.,
-@li2018], we found a strong dependence between mean family income and
-family income variability scores. Although such a correlation does not
-inherently invalidate variability scores, it does raise questions about
-whether such scores are capturing adversity, especially when families
-with high income tend to experience higher variance in income. We found
-that percent change scores weakened the dependency between average
-income and income variability. Nonetheless, measures of unpredictability
-quantifying variability from repeated measures would benefit from more
-validation and comparison across different data reduction techniques.
-Leveraging time series techniques is a promising direction, especially
-for measuring concepts like unpredictability [@frankenhuis2019a;
-@young2020; @ugarte2023]. However, future research should exercise extra
+@li2018], we found a high correlation between mean family income and
+family income variability scores. Although this does not invalidate
+variability scores, it raises questions about whether such scores are
+capturing adversity, especially when families with higher incomes tend
+to experience greater variance in income. We found that percent change
+scores attenuated the association between average income and income
+variability. Nonetheless, measures of unpredictability quantifying
+variability from repeated measures would benefit from further validation
+and more comparisons with different data reduction techniques.
+Leveraging time-series techniques is one promising direction, especially
+for assessing concepts such as unpredictability [@frankenhuis2019a;
+@young2020; @ugarte2023]. However, future researchers should exercise
 caution when computing such scores and pay special attention to
-appropriate validation procedures to verify that such scores capture the
-intended construct.
+appropriate validation procedures to verify that such scores are, in
+fact, capturing the intended construct.
 
 ## Strengths, Limitations, and Future Directions
 
-The current work has several strengths and limitations. First, the
-SECCYD is a longitudinal, prospective dataset allowing us to analyze
+The current research has several strengths and limitations. First, the
+SECCYD is a longitudinal, prospective dataset that allowed us to analyze
 indicators of harshness, unpredictability, and WJ cognitive data from
-birth to age 15. By using the WJ achievement and cognitive batteries, we
-were able to analyze a rich set of 10 subtests, each with at least two
-assessments. However, the fact that different subtests were administered
-across the five assessments from 54 month to age 15 is a limitation. In
-addition, the SECCYD is not an at-risk sample and the majority of
-families are White. And, although we selected adversity measures that
-align well with previous work, we were unable to look at other
+birth to age 15 years. By using the WJ achievement and cognitive
+batteries, we were able to analyze a rich set of 10 subtests, each with
+at least two assessments. However, the fact that different subtests were
+administered across the five assessments from 54 month to age 15 is a
+limitation. In addition, the SECCYD is not an at-risk sample; the
+majority of families are White, consistent with the 1991 US birth cohort
+from which it was drawn. And, although we selected adversity measures
+that align well with previous work, we were unable to examine other
 potentially relevant forms of adversity, such as exposure to threat
-(e.g., violence exposure), deprivation, and variability in each over
-time. However, we extended the literature by incorporating
-neighborhood-level measures of socioeconomic disadvantage.
+(e.g., violence exposure), deprivation, and variability in each of these
+constructs across time. However, we did extend the literature by
+incorporating neighborhood-level measures of socioeconomic disadvantage.
 
-The value of principled exploration are new the (potentially unexpected)
-new directions for testing confirmatory hypotheses. For example, future
-research is well-positioned research is to tease apart testing
-modalities (visual, verbal, oral, auditory etc.) from the skills
-measured by different tests. For example, future research could examine
-how exposure to harshness affects performance on Auditory-Visual
-Associations compared with other more visual, spatial, or verbal
-association tests. Additionally, future research might explicitly
-compare cognitive tests that do and do not require prior knowledge. For
-example, manipulating such tests by changing the test content to be more
-relevant to those living in socioeconomic disadvantaged families and
-contexts may help to even the playing field. Another direction would be
-to further examine broader sets of auditory and oral skills. In
-addition, we found a number of intact patterns of performance,
-especially for exposure to unpredictability. These intact patterns of
-performance might suggest that manipulations of either testing context
-or content might be fruitful for discovering ways to enhance performance
-among people exposed to unpredictability. Finally, our modeling approach
-could be applied to other broad cognitive batteries such as the NIH
-toolbox and other executive function test batteries. Doing so might
-afford new insights into relative enhancements and intact performance
-across broad sets of executive functions.
+The value of principled exploration is uncovering new and (potentially
+unexpected) directions for testing confirmatory hypotheses. For example,
+future research is well-positioned to tease apart different testing
+modalities (visual, verbal, oral, auditory, etc.) from the specific
+skills assessed by different tests. Future research could also
+investigate how exposure to harshness affects performance on
+Auditory-Visual Associations compared with other more visual, spatial,
+or verbal association tests. Additionally, future research might compare
+cognitive tests that do and do not require prior knowledge. For
+instance, manipulating tests by changing the test content to be more
+relevant to people living in socioeconomically disadvantaged families
+and contexts may help to "even the playing field." Another direction
+could involve examining broader sets of auditory and oral skills. We
+also found a number of intact patterns of performance, especially for
+exposure to unpredictability. These intact patterns of performance might
+suggest that manipulations of either testing context or content might be
+fruitful for discovering ways to enhance performance among people
+exposed to unpredictability. Finally, our modeling approach could be
+applied to other broad cognitive batteries such as the NIH toolbox and
+other executive function test batteries. Doing so might provide new
+insights into relative enhancements and intact performance across broad
+sets of executive functions.
 
 ## Conclusion
 
-Our goal was to work towards constructing a "high resolution" map of the
-skills and abilities people develop in harsh and unpredictable
-conditions. We see great value in confirmatory studies, but we also need
-exploratory approaches. Here, we used principled exploration to help
-remap and chart new territory. We believe more principled exploration of
-standard test batteries could yield new discoveries, replicate
-(conceptually or directly) the current findings, and further build up
-useful description for theory building. For an emerging field, it is
-important to widely explore and describe the hypothesis space.
-Ultimately, this new and exciting research program will benefit from a
-healthy synergy between confirmation and exploration.
+Our goal was to advance progress toward constructing a higher-resolution
+map of the cognitive skills and abilities of people who develop in
+conditions that vary in the degree of harshness and unpredictability.
+Within developmental science, we see great value in confirmatory
+studies, but we also need exploratory approaches. In this research, we
+used principled exploration to begin to remap and chart new territory.
+We believe more principled exploration of standard test batteries could
+yield new discoveries, replicate (conceptually or directly) current
+findings, and advance both theory testing and development. Especially
+for an emerging field, it is important to broadly explore and describe
+the hypothesis space thoroughly, creating and maintaining a healthy
+synergy between confirmation and exploration.
 
 {{< pagebreak >}}
 
