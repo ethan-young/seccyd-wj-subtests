@@ -312,7 +312,7 @@ cognitive abilities, and discover possible enhancements.\
 
 ```{r}
 #| label: Figure1
-#| out-width: 6in
+#| out-width: 5.5in
 #| fig-cap: |
 #|   **Figure 1.** Conceptual visualization of Woodcock Johnson statistical models. A) is the main effect of adversity on overall performance; B) is the main effect of a subtest, which reflects the average performance on a subtest; C) is the simple effect (slope) of adversity for a particular subtest; and D) is the interaction effect that measures the difference between A and C. A significant simple effect means C ≠ 0, and a significant interaction means A ≠ C. Put differently, when C is significant, adversity is associated with performance on a subtest. When D is significant, the association between adversity and a subtest (C) is different than the association between adversity and the overall effect (A).
 
@@ -866,7 +866,7 @@ suggesting an intact pattern of performance.
 #| label: Figure3
 #| fig-width: 6
 #| fig-height: 6.25
-#| out-width: 6in
+#| out-width: 5.5in
 #| fig-cap: |
 #|   **Figure 3.** Results of models testing the effect of family and neighborhood economic disadvantage on WJ performance. The top and bottom rows depict family and neighborhood socioeconomic disadvantage, respectively. The left column plots the overall slope (thick black lines) against the subtest slopes across low to high socioeconomic disadvantage. Unfaded and faded lines are practically inequivalent and equivalent to the overall slope, respectively. The middle and right columns show interaction and simple effects. Black horizontal lines are the main effect and zero for interactions and simple effects, respectively. The gray ribbon reflects the ROPE. Solid points indicate interactions and simple effects that are practically equivalent to the ROPE. Hollow points reflect interaction and simple effects that are outside the ROPE. Statistical significance for interactions (tested against the main effect) and simple effects (tested against zero) are flagged with significance stars. \ 
 #|   \*\*\* *p* < .001,  \*\* *p* < .01,  \* *p* < .05
@@ -975,7 +975,7 @@ performance on any subtest and all simple effects were inside the ROPE.
 #| label: Figure4
 #| fig-width: 6.5
 #| fig-height: 6.25
-#| out-width: 6in
+#| out-width: 5.5in
 #| fig-cap: |
 #|   **Figure 4.** Results of models testing the effect of family transitions and neighborhood socioeconomic variability on WJ performance. The top and bottom rows reflect family transitions and neighborhood socioeconomic variability, respectively. The left column plots the overall slope (thick black lines) against the subtest slopes across low to high unpredictability. Unfaded and faded lines are practically inequivalent and equivalent to the overall slope, respectively. The middle and right columns show interaction and simple effects. Black horizontal lines are the main effect and zero for interactions and simple effects, respectively. The gray ribbon reflects the ROPE. Solid points indicate interactions and simple effects that are practically equivalent to the ROPE. Hollow points reflect interaction and simple effects that are outside the ROPE. Statistical significance for interactions (tested against the main effect) and simple effects (tested against zero) are flagged with significance stars. \ 
 #|   \*\*\* *p* < .001,  \*\* *p* < .01,  \* *p* < .05
@@ -1090,7 +1090,7 @@ different from zero.
 #| label: Figure5
 #| fig-width: 6.5
 #| fig-height: 7.25
-#| out-width: 6in
+#| out-width: 5.5in
 #| fig-cap: |
 #|   **Figure 5.** Results of models testing the effect of different family income variability scores on WJ performance. The top, middle, and bottom rows reflect simple standard deviation, residual standard deviation, and average percent change in family income from one to 54 months. The left column plots the overall slope (thick black lines) against the subtest slopes across low to high variation in family income. Unfaded and faded lines are practically inequivalent and equivalent to the overall slope, respectively. The middle and right columns show interaction and simple effects. Black horizontal lines are the main effect and zero for interactions and simple effects, respectively. The gray ribbon reflects the ROPE. Solid points indicate interactions and simple effects that are practically equivalent to the ROPE. Hollow points reflect interaction and simple effects that are outside the ROPE. Statistical significance for interactions (tested against the main effect) and simple effects (tested against zero) are flagged with significance stars. \ 
 #|   \*\*\* *p* < .001,  \*\* *p* < .01,  \* *p* < .05
