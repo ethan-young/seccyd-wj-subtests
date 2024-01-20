@@ -34,6 +34,12 @@ library(flextable)
 # Load staged results
 load("r-objects.Rdata")
 
+# load custom functions
+source("../../scripts/0-corr_table.R")
+
+# load data for reviewer request
+load("../../data/seccyd-dvs-wj.Rdata")
+
 # ggplot2 theme
 theme_set(
   theme_bw() +
@@ -89,6 +95,8 @@ Below are links to each of these sections:
 - **Figures with Uncentered WJ Scores**
   - [Primary Analyses](#sfig1)
   - [Secondary Analyses](#sfig2)
+- **Reviewer Requested**
+  - [WJ Subtest Correlations Across Time](#srev1)
 
 {{< pagebreak >}}
 
@@ -661,4 +669,157 @@ sfig1
 #| fig-height: 7.5
 
 sfig2
+```
+
+{{< pagebreak >}}
+
+## WJ Subtest Correlations Across Time (Reviewer Requested) {#srev1}
+
+```{r}
+wj_order <- 
+  c(
+    "wj_pscmp",
+    "wj_picvo",
+    "wj_calc",
+    "wj_vrba",
+    "wj_lwid",
+    "wj_memse",
+    "wj_appld",
+    "wj_incom",
+    "wj_wrdat",
+    "wj_memna"
+  )
+
+wj_labels <- 
+  c(
+    "Passage Comprehension",
+    "Picture Vocab",
+    "Calculations",
+    "Verbal Analogies",
+    "Letter-Word Pronunciation",
+    "Short-Term Memory",
+    "Applied Problems",
+    "Auditory Processing",
+    "Unfamiliar Words",
+    "Auditory-Visual Associations"
+  )
+
+assess_fct <- 
+  c(
+    "54m", 
+    "1g", 
+    "3g", 
+    "5g", 
+    "15y"
+  )
+
+assess_label <- 
+  c(
+    "54 month",
+    "Grade 1",
+    "Grade 3",
+    "Grade 5",
+    "Age 15"
+  )
+
+wj_corrs_time <- 
+  map2(
+    wj_order, wj_labels,
+    function(x, y){
+      seccyd_dvs_wj_data2 |> 
+        select(id, assessment, any_of(x)) |> 
+        mutate(
+          assessment = factor(assessment, assess_fct, assess_label)
+        ) |> 
+        pivot_wider(
+          names_from = "assessment", 
+          values_from = x
+        ) |> 
+        select(-id) |> 
+        select(where(~sum(!is.na(.x))>0)) |> 
+        corr_table(sample_size = F, stats = NA, numbered = T) |> 
+        rename("{y}" := Variable) |> 
+        flextable() |> 
+        autofit()
+      
+    }
+  ) 
+```
+
+```{r}
+#| results: markup
+
+wj_corrs_time[[1]]
+```
+
+<br/>
+
+```{r}
+#| results: markup
+
+wj_corrs_time[[2]]
+```
+
+<br/>
+
+```{r}
+#| results: markup
+
+wj_corrs_time[[3]]
+```
+
+<br/>
+
+```{r}
+#| results: markup
+
+wj_corrs_time[[4]]
+```
+
+<br/>
+
+```{r}
+#| results: markup
+
+wj_corrs_time[[5]]
+```
+
+{{< pagebreak >}}
+
+```{r}
+#| results: markup
+
+wj_corrs_time[[6]]
+```
+
+<br/>
+
+```{r}
+#| results: markup
+
+wj_corrs_time[[7]]
+```
+
+<br/>
+
+```{r}
+#| results: markup
+
+wj_corrs_time[[8]]
+```
+
+<br/>
+
+```{r}
+#| results: markup
+
+wj_corrs_time[[9]]
+```
+
+<br/>
+
+```{r}
+#| results: markup
+
+wj_corrs_time[[10]]
 ```

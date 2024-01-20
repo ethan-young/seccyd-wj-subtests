@@ -42,7 +42,7 @@ stable_ivs2 <-
   )
 
 stables_primary <- 
-  primary_results_stats |> 
+  primary_results_adjusted |> 
   filter(dvs == "mean_score") |> 
   group_split(ivs) |> 
   map(function(x){
@@ -73,7 +73,7 @@ stables_primary <-
   })
 
 stables_secondary <- 
-  secondary_results_stats |> 
+  secondary_results_adjusted |> 
   filter(dvs == "mean_score") |> 
   group_split(ivs) |> 
   map(function(x){

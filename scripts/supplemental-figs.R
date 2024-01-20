@@ -3,19 +3,19 @@
 ### Data from models
 wj_plotting_data1 <- 
   primary_results |> 
-  reveal(predicted_vals_fitted, ggpredict_full, T) |> 
+  reveal(predicted_vals_fitted, predicted_vals_full, "wide") |> 
   filter(contrast == "wj_subtest_con1") |> 
   select(ivs, dvs, x, predicted, conf.low, conf.high, group)
 
 ### Data for plotting equivalence info
 equivalence_data1 <- 
-  primary_results_stats |> 
+  primary_results_adjusted |> 
   mutate(
     main_effect = ifelse(ivs == parameter, coefficient, NA),
     main_effect_txt = ifelse(ivs == parameter, str_pad(sprintf("%.2f", main_effect), 8), NA),
     main_effect_txt = case_when(ivs == parameter & p < .001 ~ paste0(main_effect_txt, "***"),
                                 ivs == parameter & p < .01  ~ paste0(main_effect_txt, "**"),
-                                ivs == parameter & p < .01  ~ paste0(main_effect_txt, "*"),
+                                ivs == parameter & p < .05  ~ paste0(main_effect_txt, "*"),
                                 T ~ main_effect_txt)
   ) |> 
   fill(main_effect, main_effect_txt) |> 
@@ -27,12 +27,12 @@ equivalence_data1 <-
     sig_pos = ifelse(coefficient < 0, slope_low -.5, slope_high +.5),
     sig_star = case_when(p < .001 ~ "***",
                          p < .01  ~ "**",
-                         p < .01  ~ "*",
+                         p < .05  ~ "*",
                          T ~ ""),
     sim_sig_pos = ifelse(slope < 0, slope_low -.5, slope_high +.5),
     sim_sig_star = case_when(slope_p < .001 ~ "***",
                              slope_p < .01  ~ "**",
-                             slope_p < .01  ~ "*",
+                             slope_p < .05  ~ "*",
                              T ~ "")
   )
 
@@ -50,7 +50,7 @@ sfig1 <-
     .by = c(ivs, adversity)
   ) |>
   left_join(
-    primary_results_stats,
+    primary_results_adjusted,
     by = c("ivs", "dvs", "group" = "parameter")
   ) |> 
   mutate(
@@ -119,19 +119,19 @@ sfig1 <-
 ### Data from model
 wj_plotting_data2 <- 
   secondary_results |> 
-  reveal(predicted_vals_fitted, ggpredict_full, T) |> 
+  reveal(predicted_vals_fitted, predicted_vals_full, "wide") |> 
   filter(contrast == "wj_subtest_con1") |> 
   select(ivs, dvs, x, predicted, conf.low, conf.high, group)
 
 ### Data for plotting equivalence info
 equivalence_data2 <- 
-  secondary_results_stats |> 
+  secondary_results_adjusted |> 
   mutate(
     main_effect = ifelse(ivs == parameter, coefficient, NA),
     main_effect_txt = ifelse(ivs == parameter, str_pad(sprintf("%.2f", main_effect), 8), NA),
     main_effect_txt = case_when(ivs == parameter & p < .001 ~ paste0(main_effect_txt, "***"),
                                 ivs == parameter & p < .01  ~ paste0(main_effect_txt, "**"),
-                                ivs == parameter & p < .01  ~ paste0(main_effect_txt, "*"),
+                                ivs == parameter & p < .05  ~ paste0(main_effect_txt, "*"),
                                 T ~ main_effect_txt)
   ) |> 
   fill(main_effect, main_effect_txt) |> 
@@ -142,12 +142,12 @@ equivalence_data2 <-
     sig_pos = ifelse(coefficient < 0, slope_low -.5, slope_high +.5),
     sig_star = case_when(p < .001 ~ "***",
                          p < .01  ~ "**",
-                         p < .01  ~ "*",
+                         p < .05  ~ "*",
                          T ~ ""),
     sim_sig_pos = ifelse(slope < 0, slope_low -.5, slope_high +.5),
     sim_sig_star = case_when(slope_p < .001 ~ "***",
                              slope_p < .01  ~ "**",
-                             slope_p < .01  ~ "*",
+                             slope_p < .05  ~ "*",
                              T ~ "")
   )
 
@@ -165,7 +165,7 @@ sfig2 <-
     .by = c(ivs, adversity)
   ) |>
   left_join(
-    secondary_results_stats,
+    secondary_results_adjusted,
     by = c("ivs", "dvs", "group" = "parameter")
   ) |> 
   mutate(
@@ -230,3 +230,4 @@ sfig2 <-
     panel.spacing = unit(1, "lines"), 
     plot.subtitle = element_text(hjust = .5)
   )
+

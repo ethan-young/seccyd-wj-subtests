@@ -111,20 +111,20 @@ secondary_results <- run_multiverse(secondary_grid_expanded)
 ## Extract results data
 secondary_results_stats <-
   secondary_results |> 
-  reveal(betas_unstd_fitted, model_parameters_full, .unpack_specs = T) |> 
+  reveal(betas_unstd_fitted, betas_unstd_full, .unpack_specs = "wide") |> 
   rename_with(tolower) |> 
   filter(contrast == "wj_subtest_con1" | (contrast == "wj_subtest_con2" & str_detect(parameter, "wj_wrdat"))) |> 
   select(ivs, dvs, parameter, coefficient, se, p) |> 
   left_join(
     secondary_results |> 
-      reveal(betas_std_fitted, standardize_parameters_full, .unpack_specs = T) |> 
+      reveal(betas_std_fitted, betas_std_full, .unpack_specs = "wide") |> 
       rename_with(tolower) |> 
       filter(contrast == "wj_subtest_con1" | (contrast == "wj_subtest_con2" & str_detect(parameter, "wj_wrdat"))) |> 
       select(ivs, dvs, parameter, std_coefficient, ci_low, ci_high)
   ) |> 
   left_join(
     secondary_results |> 
-      reveal(eq_betas_fitted, equivalence_test_full, .unpack_specs = T) |> 
+      reveal(eq_betas_fitted, eq_betas_full, .unpack_specs = "wide") |> 
       rename_with(tolower) |> 
       filter(contrast == "wj_subtest_con1" | (contrast == "wj_subtest_con2" & str_detect(parameter, "wj_wrdat"))) |> 
       select(ivs, dvs, parameter, p, ci_low, ci_high) |> 
@@ -135,19 +135,35 @@ secondary_results_stats <-
   mutate(parameter = ifelse(str_detect(parameter, ":"), str_extract(parameter, "(\\.)(wj_.....)", 2) |> str_remove("-$"), parameter)) |> 
   left_join(
     secondary_results |> 
-      reveal(betas_slopes_fitted, hypothesis_test_full, T) |> 
+      reveal(betas_slopes_fitted, betas_slopes_full, .unpack_specs = "wide") |> 
       filter(contrast == "wj_subtest_con1") |> 
       select(ivs, dvs, wj_subtest_con1, Slope, p.value, conf.low, conf.high) |> 
       rename(parameter = wj_subtest_con1, slope_p = p.value, slope = Slope, slope_low = conf.low, slope_high = conf.high)
   ) |> 
   left_join(
     secondary_results |> 
-      reveal(eq_slopes_fitted, hypothesis_test_full, T) |> 
+      reveal(eq_slopes_fitted, eq_slopes_full, .unpack_specs = "wide") |> 
       filter(contrast == "wj_subtest_con1") |> 
       rename(equiv_slope_p = p.value) |> 
       mutate(equiv_slope = ifelse(equiv_slope_p < .05, "Accepted", "Rejected")) |> 
       select(ivs, dvs, wj_subtest_con1, equiv_slope, equiv_slope_p) |> 
       rename(parameter = wj_subtest_con1)
+  )
+
+# Adjust p-values using Benjamini & Hochberg ------------------------------
+secondary_results_adjusted <- 
+  secondary_results_stats |> 
+  mutate(
+    adjust = ifelse(str_detect(parameter, "^wj"), 1, 0)
+  ) |> 
+  mutate(
+    p_int_adjusted = p.adjust(p, method = "BH"),
+    p_slope_adjusted = p.adjust(slope_p, method = "BH"),
+    .by = c(ivs, dvs, adjust)
+  ) |> 
+  mutate(
+    p = ifelse(adjust == 1, p_int_adjusted, p),
+    slope_p = ifelse(adjust == 1, p_slope_adjusted, slope_p)
   )
 
 # Save Results ------------------------------------------------------------
@@ -157,5 +173,6 @@ save(
   secondary_grid_expanded,
   secondary_results,
   secondary_results_stats,
+  secondary_results_adjusted,
   file = "data/secondary-results.Rdata"
 )

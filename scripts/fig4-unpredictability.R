@@ -12,7 +12,7 @@ fig4a <-
     .by = c(ivs, adversity)
   ) |>
   left_join(
-    primary_results_stats,
+    primary_results_adjusted,
     by = c("ivs", "dvs", "group" = "parameter")
   ) |> 
   mutate(

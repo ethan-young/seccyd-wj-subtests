@@ -12,7 +12,7 @@ fig5a <-
     .by = c(ivs, adversity)
   ) |>
   left_join(
-    secondary_results_stats,
+    secondary_results_adjusted,
     by = c("ivs", "dvs", "group" = "parameter")
   ) |> 
   mutate(
@@ -168,3 +168,4 @@ fig5c <-
 fig5 <- 
   (fig5a + fig5b + fig5c + plot_layout(guides = 'collect')) &
   theme(legend.position = "bottom", legend.title = element_blank())
+
