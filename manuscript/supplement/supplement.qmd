@@ -42,25 +42,19 @@ load("../../data/seccyd-dvs-wj.Rdata")
 
 # ggplot2 theme
 theme_set(
-  theme_bw() +
+  theme_light() +
     theme(
-      axis.line.y       = element_line(),
-      axis.text.y       = element_text(size = rel(1.1)),
-      axis.title.y      = element_text(size = rel(1.25), margin = margin(1,0,0,0,"lines")),
-      axis.ticks.y      = element_line(),
-      axis.text.x       = element_text(size = rel(1.1)),
-      axis.title.x      = element_text(size = rel(1.25), margin = margin(1,0,0,0,"lines")),
-      axis.line.x       = element_line(),
-      panel.border      = element_blank(), 
-      panel.spacing.y   = unit(0.5, "lines"),
-      plot.margin       = margin(.25,.25,.25,.25,"lines"),
-      plot.background   = element_rect(color = NA),
-      plot.title        = element_text(size = rel(1.25), hjust = 0.5, margin = margin(0,0,.5,0, "lines")),
-      plot.subtitle     = element_blank(),
-      panel.grid        = element_line(color = NA),
-      strip.background  = element_blank(), 
-      strip.placement   = "outside",
-      strip.text        = element_text(size = rel(1), angle = 0)
+      text = element_text(size = 11),
+      title = element_text(size = 11, hjust = .5),
+      axis.line = element_line(),
+      panel.border = element_blank(),
+      panel.background = element_rect(color = NA),
+      panel.grid = element_blank(),
+      plot.background = element_rect(color = NA),
+      plot.title = element_text(hjust = .5, face = "bold"),
+      strip.background = element_rect(color = NA, fill = NA),
+      strip.text = element_text(color = "black", hjust = 0.5, face = "bold.italic"),
+      strip.placement = "outside"
     )
 )
 
@@ -78,32 +72,55 @@ set_flextable_defaults(
 )
 ```
 
-This document contains three parts. First, we provide correlations and descriptive statistics for all indicators used to create aggregate variables for harshness and unpredictability. Second, we provide full regression tables for both primary and secondary analyses. Third, we provide figures for both primary and secondary analyses where WJ scores are uncentered. Note that these analyses are the same, however, centering WJ scores allows for better visual comparison of each subtest slope. The uncentered scores retain visual information about mean differences in performance across subtest types.
+This document contains three parts. First, we provide correlations and
+descriptive statistics for all indicators used to create aggregate
+variables for harshness and unpredictability. Second, we provide full
+regression tables for both primary and secondary analyses. Third, we
+provide figures for both primary and secondary analyses where WJ scores
+are uncentered. Note that these analyses are the same, however,
+centering WJ scores allows for better visual comparison of each subtest
+slope. The uncentered scores retain visual information about mean
+differences in performance across subtest types.
 
 Below are links to each of these sections:
 
-- [Correlations Among All Harshness and Unpredictability Indicators](#stab1)
-- **Full Primary Analysis Results**
-  - [Family Income Disadvantage](#p1)
-  - [Neighborhood Socioeconomic Disadvantage](#p2)
-  - [Family Transitions Results](#p3)
-  - [Neighborhood Soocioeconomic Variability](#p4)
-- **Full Secondary Analysis Results**
-  - [Family Income Standard Deviation](#s1)
-  - [Family Income Residual Standard Deviation](#s2)
-  - [Family Income Average Percent Change](#s3)
-- **Figures with Uncentered WJ Scores**
-  - [Primary Analyses](#sfig1)
-  - [Secondary Analyses](#sfig2)
-- **Reviewer Requested**
-  - [WJ Subtest Correlations Across Time](#srev1)
+-   [Correlations Among All Harshness and Unpredictability
+    Indicators](#stab1)
+-   **Full Primary Analysis Results**
+    -   [Family Income Disadvantage](#p1)
+    -   [Neighborhood Socioeconomic Disadvantage](#p2)
+    -   [Family Transitions Results](#p3)
+    -   [Neighborhood Soocioeconomic Variability](#p4)
+-   **Full Secondary Analysis Results - Set 1**
+    -   [Family Income Average Percent Change](#s1a)
+    -   [Family Income Coefficient of Variation](#s1b)
+-   **Figures with Uncentered WJ Scores**
+    -   [Primary Analyses](#sfig1)
+    -   [Secondary Analyses](#sfig2)
+-   [WJ Subtest Correlations Across Time](#srev1)
+-   **Full Secondary Analysis Results - Set 2**
+    -   [Causal Models of Harshness and Unpredictability](#srev2)
+    -   [Income Variability Controlling or Average Income](#srev3)
+    -   [Income Variability with and without controls figure](#srev4)
+-   **Full Income Variability Results (SD and Residual SD)**
+    -   No controls (original analysis)
+        -   [Family Income Standard Deviation](#s2a1)
+        -   [Family Income Residual Standard Deviation](#s2b1)
+    -   Main Effect Controls
+        -   [Family Income Standard Deviation](#s2a2)
+        -   [Family Income Residual Standard Deviation](#s2b2)
+    -   Main Effect + Simple Effect Controls
+        -   [Family Income Standard Deviation](#s2a3)
+        -   [Family Income Residual Standard Deviation](#s2b3)
+-   [References](#refs)
 
 {{< pagebreak >}}
 
 ## Correlations Among All Harshness and Unpredictability Indicators {#stab1}
 
 ```{r}
-#| tab.id: stable1
+#| label: Stable1a
+#| tab.id: stable1a
 #| results: markup
 
 stable_ivs1 |> 
@@ -131,17 +148,18 @@ stable_ivs1 |>
 ```
 
 ```{r}
-#| tab.id: stable1
+#| label: Stable1b
+#| tab.id: stable1b
 #| results: markup
 
 stable_ivs2 |> 
   flextable() |> 
-  fontsize(size = 8) |> 
+  fontsize(size = 7) |> 
   autofit() |> 
   border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
   add_header_row(
     values = " ",
-    colwidths = 15
+    colwidths = 16
   ) |> 
   compose(
     i = 1, j = 1, 
@@ -150,11 +168,11 @@ stable_ivs2 |>
   ) |> 
   add_footer_row(
     values = " ",
-    colwidths = 15
+    colwidths = 16
   ) |> 
   add_footer_row(
     values = " ",
-    colwidths = 15
+    colwidths = 16
   ) 
 ```
 
@@ -163,6 +181,7 @@ stable_ivs2 |>
 ## Full Family Income Disadvantage Results {#p1}
 
 ```{r}
+#| label: Stable2
 #| tab.id: stable2
 #| results: markup
 
@@ -196,6 +215,7 @@ stables_primary[[2]] |>
 ```
 
 ```{r}
+#| label: Stable3
 #| tab.id: stable3
 #| #| results: markup
 
@@ -233,10 +253,11 @@ stables_primary[[2]] |>
 ## Full Neighborhood Disadvantage Results {#p2}
 
 ```{r}
+#| label: Stable4
 #| tab.id: stable4
 #| results: markup
 
-stables_primary[[4]] |> 
+stables_primary[[3]] |> 
   select(parameter, b, B, p, rope_p) |> 
   flextable() |> 
   border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
@@ -266,10 +287,11 @@ stables_primary[[4]] |>
 ```
 
 ```{r}
+#| label: Stable5
 #| tab.id: stable5
 #| results: markup
 
-stables_primary[[4]] |> 
+stables_primary[[3]] |> 
   select(parameter, slope, slope_p, rope_slope_p) |> 
   filter(row_number() > 4) |> 
   flextable() |> 
@@ -303,6 +325,7 @@ stables_primary[[4]] |>
 ## Full Family Transitions Results {#p3}
 
 ```{r}
+#| label: Stable6
 #| tab.id: stable6
 #| results: markup
 
@@ -336,6 +359,7 @@ stables_primary[[1]] |>
 ```
 
 ```{r}
+#| label: Stable7
 #| tab.id: stable7
 #| results: markup
 
@@ -373,10 +397,11 @@ stables_primary[[1]] |>
 ## Full Neighborhood Socioeconomic Variability
 
 ```{r}
+#| label: Stable8
 #| tab.id: stable8
 #| results: markup
 
-stables_primary[[5]] |> 
+stables_primary[[4]] |> 
   select(parameter, b, B, p, rope_p) |> 
   flextable() |> 
   border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
@@ -406,10 +431,11 @@ stables_primary[[5]] |>
 ```
 
 ```{r}
+#| label: Stable9
 #| tab.id: stable9
 #| results: markup
 
-stables_primary[[5]] |> 
+stables_primary[[4]] |> 
   select(parameter, slope, slope_p, rope_slope_p) |> 
   filter(row_number() > 4) |> 
   flextable() |> 
@@ -440,13 +466,14 @@ stables_primary[[5]] |>
 
 {{< pagebreak >}}
 
-## Full Family Income Variability (SD) {#s1}
+## Full Average Percent Change {#s1a}
 
 ```{r}
+#| label: Stable10
 #| tab.id: stable10
 #| results: markup
 
-stables_secondary[[2]] |> 
+stables_secondary1[[2]] |> 
   select(parameter, b, B, p, rope_p) |> 
   flextable() |> 
   border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
@@ -461,7 +488,7 @@ stables_secondary[[2]] |>
   ) |> 
   compose(
     i = 1, j = 1, 
-    as_paragraph(as_b("Supplemental Table 10. Full model results for Family Income Variability (SD).")),
+    as_paragraph(as_b("Supplemental Table 10. Full model results for Family Income Percent Change.")),
     part = "header"
   ) |> 
   add_footer_row(
@@ -476,10 +503,11 @@ stables_secondary[[2]] |>
 ```
 
 ```{r}
+#| label: Stable11
 #| tab.id: stable11
 #| results: markup
 
-stables_secondary[[2]] |> 
+stables_secondary1[[2]] |> 
   select(parameter, slope, slope_p, rope_slope_p) |> 
   filter(row_number() > 4) |> 
   flextable() |> 
@@ -494,7 +522,7 @@ stables_secondary[[2]] |>
   ) |> 
   compose(
     i = 1, j = 1, 
-    as_paragraph(as_b("Supplemental Table 11. Simple Effects for Family Income Variability (SD).")),
+    as_paragraph(as_b("Supplemental Table 11. Simple Effects for Family Income Percent Change.")),
     part = "header"
   ) |> 
   add_footer_row(
@@ -510,13 +538,14 @@ stables_secondary[[2]] |>
 
 {{< pagebreak >}}
 
-## Full Family Income Variability (Residual SD) {#s2}
+## Full Coefficient of Variation {#s1b}
 
 ```{r}
+#| label: Stable12
 #| tab.id: stable12
 #| results: markup
 
-stables_secondary[[3]] |> 
+stables_secondary1[[1]] |> 
   select(parameter, b, B, p, rope_p) |> 
   flextable() |> 
   border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
@@ -531,7 +560,7 @@ stables_secondary[[3]] |>
   ) |> 
   compose(
     i = 1, j = 1, 
-    as_paragraph(as_b("Supplemental Table 12. Full model results for Family Income Variability (Residual SD).")),
+    as_paragraph(as_b("Supplemental Table 12. Full model results for Family Income Coefficient of Variation.")),
     part = "header"
   ) |> 
   add_footer_row(
@@ -546,10 +575,11 @@ stables_secondary[[3]] |>
 ```
 
 ```{r}
+#| label: Stable13
 #| tab.id: stable13
 #| results: markup
 
-stables_secondary[[3]] |> 
+stables_secondary1[[1]] |> 
   select(parameter, slope, slope_p, rope_slope_p) |> 
   filter(row_number() > 4) |> 
   flextable() |> 
@@ -564,78 +594,7 @@ stables_secondary[[3]] |>
   ) |> 
   compose(
     i = 1, j = 1, 
-    as_paragraph(as_b("Supplemental Table 13. Simple Effects for Family Income Variability (Residual SD).")),
-    part = "header"
-  ) |> 
-  add_footer_row(
-    values = " ",
-    colwidths = 4
-  ) |> 
-  add_footer_row(
-    values = " ",
-    colwidths = 4
-  ) |> 
-  autofit()
-```
-
-{{< pagebreak >}}
-
-
-## Full Family Income Variability (Average Percent Change) {#s3}
-
-```{r}
-#| tab.id: stable14
-#| results: markup
-
-stables_secondary[[1]] |> 
-  select(parameter, b, B, p, rope_p) |> 
-  flextable() |> 
-  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
-  compose(i = 1, j = c(1), as_paragraph(""), part = "header") |> 
-  compose(i = 1, j = c(2), as_paragraph(as_i("b ")), part = "header") |>  
-  compose(i = 1, j = c(3), as_paragraph(as_i("B "), "[95% CI]"), part = "header") |>  
-  compose(i = 1, j = c(4), as_paragraph(as_i("p")), part = "header") |>
-  compose(i = 1, j = c(5), as_paragraph("ROPE ", as_i("p")), part = "header") |>
-  add_header_row(
-    values = " ",
-    colwidths = 5
-  ) |> 
-  compose(
-    i = 1, j = 1, 
-    as_paragraph(as_b("Supplemental Table 14. Full model results for Family Income Variability (Average Percent Change).")),
-    part = "header"
-  ) |> 
-  add_footer_row(
-    values = " ",
-    colwidths = 5
-  ) |> 
-  add_footer_row(
-    values = " ",
-    colwidths = 5
-  ) |> 
-  autofit()
-```
-
-```{r}
-#| tab.id: stable15
-#| results: markup
-
-stables_secondary[[1]] |> 
-  select(parameter, slope, slope_p, rope_slope_p) |> 
-  filter(row_number() > 4) |> 
-  flextable() |> 
-  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
-  compose(i = 1, j = c(1), as_paragraph(""), part = "header") |>  
-  compose(i = 1, j = c(2), as_paragraph(as_i("b "), "[95% CI]"), part = "header") |>  
-  compose(i = 1, j = c(3), as_paragraph(as_i("p")), part = "header") |>
-  compose(i = 1, j = c(4), as_paragraph("ROPE ", as_i("p")), part = "header") |>
-  add_header_row(
-    values = " ",
-    colwidths = 4
-  ) |> 
-  compose(
-    i = 1, j = 1, 
-    as_paragraph(as_b("Supplemental Table 15. Simple Effects for Family Income Variability (Average Percent Change).")),
+    as_paragraph(as_b("Supplemental Table 13. Simple Effects for Family Income Coefficient of Variation.")),
     part = "header"
   ) |> 
   add_footer_row(
@@ -673,9 +632,10 @@ sfig2
 
 {{< pagebreak >}}
 
-## WJ Subtest Correlations Across Time (Reviewer Requested) {#srev1}
+## WJ Subtest Correlations Across Time {#srev1}
 
 ```{r}
+#| label: wj_corrs_setup
 wj_order <- 
   c(
     "wj_pscmp",
@@ -747,6 +707,7 @@ wj_corrs_time <-
 ```
 
 ```{r}
+#| label: wj_corrs1
 #| results: markup
 
 wj_corrs_time[[1]]
@@ -755,6 +716,7 @@ wj_corrs_time[[1]]
 <br/>
 
 ```{r}
+#| label: wj_corrs2
 #| results: markup
 
 wj_corrs_time[[2]]
@@ -763,6 +725,7 @@ wj_corrs_time[[2]]
 <br/>
 
 ```{r}
+#| label: wj_corrs3
 #| results: markup
 
 wj_corrs_time[[3]]
@@ -771,6 +734,7 @@ wj_corrs_time[[3]]
 <br/>
 
 ```{r}
+#| label: wj_corrs4
 #| results: markup
 
 wj_corrs_time[[4]]
@@ -779,6 +743,7 @@ wj_corrs_time[[4]]
 <br/>
 
 ```{r}
+#| label: wj_corrs5
 #| results: markup
 
 wj_corrs_time[[5]]
@@ -787,6 +752,7 @@ wj_corrs_time[[5]]
 {{< pagebreak >}}
 
 ```{r}
+#| label: wj_corrs6
 #| results: markup
 
 wj_corrs_time[[6]]
@@ -795,6 +761,7 @@ wj_corrs_time[[6]]
 <br/>
 
 ```{r}
+#| label: wj_corrs7
 #| results: markup
 
 wj_corrs_time[[7]]
@@ -803,6 +770,7 @@ wj_corrs_time[[7]]
 <br/>
 
 ```{r}
+#| label: wj_corrs8
 #| results: markup
 
 wj_corrs_time[[8]]
@@ -811,6 +779,7 @@ wj_corrs_time[[8]]
 <br/>
 
 ```{r}
+#| label: wj_corrs9
 #| results: markup
 
 wj_corrs_time[[9]]
@@ -819,7 +788,582 @@ wj_corrs_time[[9]]
 <br/>
 
 ```{r}
+#| label: wj_corrs10
 #| results: markup
 
 wj_corrs_time[[10]]
 ```
+
+{{< pagebreak >}}
+
+## Alternative Causal Models of Harshness, Unpredictability, and Cognitive Performance {#srev2}
+
+It is important to realize that the appropriateness of analyzing
+multiple adversity dimensions in one model depends on an underlying
+causal model [@rohrer2018; @cinelli2022]. There are several possible
+causal models for how each adversity dimension relates to the other and
+to the outcome.
+
+In cases where each adversity dimension is independent (non-causally
+related) and each affects the outcome, the only (potential) benefit to
+adding each to the same model is estimation precision (see figure
+below). For example, imagine income disadvantage and unpredictability do
+not cause each other but they both independently affect WJ performance.
+Including both in the model may improve model estimation but they would
+not change qualitative conclusions of modeling them separately (assuming
+each truly affect the outcome).
+
+![](figures/dag1.png){fig-align="center"}
+
+However, this quickly becomes tricky if each adversity dimension has a
+slightly different causal structure. For example, if income disadvantage
+causes both unpredictability and WJ performance (i.e., is a confounder),
+then estimating the effect of unpredictability requires controlling for
+income disadvantage. Yet, estimating the effect of income disadvantage
+is biased when controlling for unpredictability because unpredictability
+is a mediator for income disadvantage (orange path). Controlling for
+mediators eliminates the indirect effect of the variable of interest.
+Including both in the model removes bias for one variable but adds it to
+the other.
+
+![](figures/dag2.png){fig-align="center"}
+
+In cases where one adversity dimension affects the other but only one
+affects the outcome, adding both to the model decreases estimation
+precision. For example, imagine income disadvantage causes
+unpredictability (but not WJ performance) and unpredictability affects
+WJ performance. Adding income disadvantage to the model will bias the
+estimate of unpredictability.
+
+![](figures/dag3.png){fig-align="center"}
+
+With limited knowledge about the true causal model and the complexity of
+our underlying model (e.g., interactions with dummy-coded WJ subtests),
+we deemed it wiser to model each adversity dimension one at time
+(however, see income varibility analyses below).
+
+## Income Variabilty Analyses Controlling for Average Income {#srev3}
+
+Whether or not controlling for harshness (e.g., average income) will
+help remove bias depends on the underlying causal model. Thus, if theory
+says harshness causes unpredictability and cognitive performance, then
+statistically controlling for average income will remove bias in the
+estimate of the effect of income variability. However, there are other
+plausible models (see above) that do not situate harshness (e.g.,
+average income) as a confound, and which therefore do not require
+including it as a covariate. In our opinion, there is no strong evidence
+that harshness is a confound between unpredictability and cognitive
+performance. In fact, theoretically and conceptually, the two are often
+cast as orthogonal, where environments can be low and high in one or
+both, and have independent effects on outcomes.
+
+![](figures/dag4.png){fig-align="center"}
+
+In addition, a statistical correlation between average income and income
+variability does not automatically mean average income is a confound.
+Note that both variables – average income and income variability – come
+from the same source of information (income-to-needs over time). Their
+correlation is more likely an artifact of measurement scale (e.g., a
+ratio scale with a meaningful zero) than from a causal association
+between harshness and unpredictability.
+
+![](figures/dag5.png){fig-align="center"}
+
+Our second set of secondary analyses report models using standard
+deviation and residual standard deviation in family income. We conduct
+two analyses with each. First, we included the main effect of average
+family income in the model. Second, we included the interaction between
+average family income and WJ subtest category. Importantly, we never
+included an interaction between average income and income variability,
+like other work has done [e.g., @li2018]. Doing so tests a different
+research question: whether or not the effect of average income depends
+on income variability (or vice versa). This is not the focus of the
+current nor does it appropriately remove bias of average income in the
+main effect of unpredictability (if harshness is a confound according to
+an underlying causal model). Below is are the formulas that distinguish
+each (other controls not shown):
+
+``` r
+## No Controls
+WJ_performance = income_sd * wj_subtest + (1|id))
+
+## Controlling the main effect
+WJ_performance = income_avg + (income_sd * wj_subtest) + (1|id))
+
+## Controlling both the main effect and the simple effect
+WJ_performance = (income_avg * wj_subtest) + (income_sd * wj_subtest) + (1|id)
+```
+
+\
+Controlling for the main effect of average family income adjusts the
+main effect of income variability, not each simple effect of WJ subtest
+(see Supplemental Figure 3). Our analyses revealed that doing so changes
+the overall effect of income standard deviation from a positive (no
+control) to a negative effect (with control). This makes more sense when
+considering the average family income and neighborhood disadvantage
+analyses, which show more harshness exposure is associated with reduced
+overall performance. However, when examining the simple effects, the
+effect of income variability on auditory visual associations (orange
+points and lines) and auditory processing (gray points and lines) are
+negative, which are exactly opposite of the average family income
+analyses (see Supplemental Figure 3).
+
+In analyses where the 2-way interaction between average family income
+and WJ test category are entered, the effect trends the same way as
+average income analyses, although all effects are now non-significant
+and practically equivalent to the overall effect. This is more in-line
+with the harshness analyses. Both of these patterns are essentially the
+same when applied to the Residual Standard Deviation version of income
+variability.
+
+{{< pagebreak >}}
+
+## Income Variability with and without controls figure {#srev4}
+
+```{r}
+#| label: sfigure3
+#| fig-width: 7.5
+#| fig-height: 9.25
+#| out-width: 7.5in
+#| out-height: 9.25in
+
+fig6
+```
+
+
+## Full Family Income Standard Deviation Results - no controls {#s2a1}
+
+```{r}
+#| label: Stable14
+#| tab.id: stable14
+#| results: markup
+
+stables_secondary2[[3]] |> 
+  select(parameter, b, B, p, rope_p) |> 
+  flextable() |> 
+  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
+  compose(i = 1, j = c(1), as_paragraph(""), part = "header") |> 
+  compose(i = 1, j = c(2), as_paragraph(as_i("b ")), part = "header") |>  
+  compose(i = 1, j = c(3), as_paragraph(as_i("B "), "[95% CI]"), part = "header") |>  
+  compose(i = 1, j = c(4), as_paragraph(as_i("p")), part = "header") |>
+  compose(i = 1, j = c(5), as_paragraph("ROPE ", as_i("p")), part = "header") |>
+  add_header_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Supplemental Table 14. Full model results for Family Income Variability (SD) - no controls.")),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  autofit()
+```
+
+```{r}
+#| label: Stable15
+#| tab.id: stable15
+#| results: markup
+
+stables_secondary2[[3]] |> 
+  select(parameter, slope, slope_p, rope_slope_p) |> 
+  filter(row_number() > 4) |> 
+  flextable() |> 
+  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
+  compose(i = 1, j = c(1), as_paragraph(""), part = "header") |>  
+  compose(i = 1, j = c(2), as_paragraph(as_i("b "), "[95% CI]"), part = "header") |>  
+  compose(i = 1, j = c(3), as_paragraph(as_i("p")), part = "header") |>
+  compose(i = 1, j = c(4), as_paragraph("ROPE ", as_i("p")), part = "header") |>
+  add_header_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Supplemental Table 15. Simple Effects for Family Income Variability (SD) - no controls.")),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  autofit()
+```
+
+{{< pagebreak >}}
+
+## Full Family Income Standard Deviation Results - main effect control {#s2a2}
+
+```{r}
+#| label: Stable16
+#| tab.id: stable16
+#| results: markup
+
+stables_secondary2[[2]] |> 
+  select(parameter, b, B, p, rope_p) |> 
+  flextable() |> 
+  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
+  compose(i = 1, j = c(1), as_paragraph(""), part = "header") |> 
+  compose(i = 1, j = c(2), as_paragraph(as_i("b ")), part = "header") |>  
+  compose(i = 1, j = c(3), as_paragraph(as_i("B "), "[95% CI]"), part = "header") |>  
+  compose(i = 1, j = c(4), as_paragraph(as_i("p")), part = "header") |>
+  compose(i = 1, j = c(5), as_paragraph("ROPE ", as_i("p")), part = "header") |>
+  add_header_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Supplemental Table 16. Full model results for Family Income Variability (SD) - main effect control.")),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  autofit()
+```
+
+```{r}
+#| label: Stable17
+#| tab.id: stable17
+#| results: markup
+
+stables_secondary2[[2]] |> 
+  select(parameter, slope, slope_p, rope_slope_p) |> 
+  filter(row_number() > 4) |> 
+  flextable() |> 
+  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
+  compose(i = 1, j = c(1), as_paragraph(""), part = "header") |>  
+  compose(i = 1, j = c(2), as_paragraph(as_i("b "), "[95% CI]"), part = "header") |>  
+  compose(i = 1, j = c(3), as_paragraph(as_i("p")), part = "header") |>
+  compose(i = 1, j = c(4), as_paragraph("ROPE ", as_i("p")), part = "header") |>
+  add_header_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Supplemental Table 17. Simple Effects for Family Income Variability (SD) - main effect control.")),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  autofit()
+```
+
+{{< pagebreak >}}
+
+## Full Family Income Standard Deviation Results - main effect + simple effect control {#s2a3}
+
+```{r}
+#| label: Stable18
+#| tab.id: stable18
+#| results: markup
+
+stables_secondary2[[1]] |> 
+  select(parameter, b, B, p, rope_p) |> 
+  flextable() |> 
+  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
+  compose(i = 1, j = c(1), as_paragraph(""), part = "header") |> 
+  compose(i = 1, j = c(2), as_paragraph(as_i("b ")), part = "header") |>  
+  compose(i = 1, j = c(3), as_paragraph(as_i("B "), "[95% CI]"), part = "header") |>  
+  compose(i = 1, j = c(4), as_paragraph(as_i("p")), part = "header") |>
+  compose(i = 1, j = c(5), as_paragraph("ROPE ", as_i("p")), part = "header") |>
+  add_header_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Supplemental Table 18. Full model results for Family Income SD - main + simple effect control.")),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  autofit()
+```
+
+```{r}
+#| label: Stable19
+#| tab.id: stable19
+#| results: markup
+
+stables_secondary2[[1]] |> 
+  select(parameter, slope, slope_p, rope_slope_p) |> 
+  filter(row_number() > 4) |> 
+  flextable() |> 
+  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
+  compose(i = 1, j = c(1), as_paragraph(""), part = "header") |>  
+  compose(i = 1, j = c(2), as_paragraph(as_i("b "), "[95% CI]"), part = "header") |>  
+  compose(i = 1, j = c(3), as_paragraph(as_i("p")), part = "header") |>
+  compose(i = 1, j = c(4), as_paragraph("ROPE ", as_i("p")), part = "header") |>
+  add_header_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Supplemental Table 19. Simple Effects for Family Income SD - main + simple effect control.")),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  autofit()
+```
+
+{{< pagebreak >}}
+
+## Full Family Income Residual Standard Deviation Results - no controls {#s2b1}
+
+```{r}
+#| label: Stable20
+#| tab.id: stable20
+#| results: markup
+
+stables_secondary2[[6]] |> 
+  select(parameter, b, B, p, rope_p) |> 
+  flextable() |> 
+  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
+  compose(i = 1, j = c(1), as_paragraph(""), part = "header") |> 
+  compose(i = 1, j = c(2), as_paragraph(as_i("b ")), part = "header") |>  
+  compose(i = 1, j = c(3), as_paragraph(as_i("B "), "[95% CI]"), part = "header") |>  
+  compose(i = 1, j = c(4), as_paragraph(as_i("p")), part = "header") |>
+  compose(i = 1, j = c(5), as_paragraph("ROPE ", as_i("p")), part = "header") |>
+  add_header_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Supplemental Table 20. Full model results for Family Income Residual SD - no control.")),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  autofit()
+```
+
+```{r}
+#| label: Stable21
+#| tab.id: stable21
+#| results: markup
+
+stables_secondary2[[6]] |> 
+  select(parameter, slope, slope_p, rope_slope_p) |> 
+  filter(row_number() > 4) |> 
+  flextable() |> 
+  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
+  compose(i = 1, j = c(1), as_paragraph(""), part = "header") |>  
+  compose(i = 1, j = c(2), as_paragraph(as_i("b "), "[95% CI]"), part = "header") |>  
+  compose(i = 1, j = c(3), as_paragraph(as_i("p")), part = "header") |>
+  compose(i = 1, j = c(4), as_paragraph("ROPE ", as_i("p")), part = "header") |>
+  add_header_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Supplemental Table 21. Simple Effects for Family Income Residual SD - no control.")),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  autofit()
+```
+
+{{< pagebreak >}}
+
+## Full Family Income Residual Standard Deviation Results - main effect control {#s2b2}
+
+```{r}
+#| label: Stable22
+#| tab.id: stable22
+#| results: markup
+
+stables_secondary2[[5]] |> 
+  select(parameter, b, B, p, rope_p) |> 
+  flextable() |> 
+  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
+  compose(i = 1, j = c(1), as_paragraph(""), part = "header") |> 
+  compose(i = 1, j = c(2), as_paragraph(as_i("b ")), part = "header") |>  
+  compose(i = 1, j = c(3), as_paragraph(as_i("B "), "[95% CI]"), part = "header") |>  
+  compose(i = 1, j = c(4), as_paragraph(as_i("p")), part = "header") |>
+  compose(i = 1, j = c(5), as_paragraph("ROPE ", as_i("p")), part = "header") |>
+  add_header_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Supplemental Table 22. Full model results for Family Income Residual SD - main effect control.")),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  autofit()
+```
+
+```{r}
+#| label: Stable23
+#| tab.id: stable23
+#| results: markup
+
+stables_secondary2[[5]] |> 
+  select(parameter, slope, slope_p, rope_slope_p) |> 
+  filter(row_number() > 4) |> 
+  flextable() |> 
+  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
+  compose(i = 1, j = c(1), as_paragraph(""), part = "header") |>  
+  compose(i = 1, j = c(2), as_paragraph(as_i("b "), "[95% CI]"), part = "header") |>  
+  compose(i = 1, j = c(3), as_paragraph(as_i("p")), part = "header") |>
+  compose(i = 1, j = c(4), as_paragraph("ROPE ", as_i("p")), part = "header") |>
+  add_header_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Supplemental Table 23. Simple Effects for Family Income Residual SD - main effect control.")),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  autofit()
+```
+
+{{< pagebreak >}}
+
+## Full Family Income Residual Standard Deviation Results - main effect + simple effect control {#s2b3}
+
+```{r}
+#| label: Stable24
+#| tab.id: stable24
+#| results: markup
+
+stables_secondary2[[4]] |> 
+  select(parameter, b, B, p, rope_p) |> 
+  flextable() |> 
+  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
+  compose(i = 1, j = c(1), as_paragraph(""), part = "header") |> 
+  compose(i = 1, j = c(2), as_paragraph(as_i("b ")), part = "header") |>  
+  compose(i = 1, j = c(3), as_paragraph(as_i("B "), "[95% CI]"), part = "header") |>  
+  compose(i = 1, j = c(4), as_paragraph(as_i("p")), part = "header") |>
+  compose(i = 1, j = c(5), as_paragraph("ROPE ", as_i("p")), part = "header") |>
+  add_header_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Supplemental Table 24. Full model results for Family Income Residual SD - main + simple effect control.")),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 5
+  ) |> 
+  autofit()
+```
+
+```{r}
+#| label: Stable25
+#| tab.id: stable25
+#| results: markup
+
+stables_secondary2[[4]] |> 
+  select(parameter, slope, slope_p, rope_slope_p) |> 
+  filter(row_number() > 4) |> 
+  flextable() |> 
+  border(i = 1, border.top = fp_border_default(style = "none", width = 0), part = "header") |> 
+  compose(i = 1, j = c(1), as_paragraph(""), part = "header") |>  
+  compose(i = 1, j = c(2), as_paragraph(as_i("b "), "[95% CI]"), part = "header") |>  
+  compose(i = 1, j = c(3), as_paragraph(as_i("p")), part = "header") |>
+  compose(i = 1, j = c(4), as_paragraph("ROPE ", as_i("p")), part = "header") |>
+  add_header_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Supplemental Table 25. Simple Effects for Family Income Residual SD - main + simple effect control.")),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 4
+  ) |> 
+  autofit()
+```
+
+{{< pagebreak >}}
+
+# References
+
+::: {#refs}
+:::

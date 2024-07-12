@@ -1,5 +1,29 @@
 
 
+# Abstract
+
+The idea that some abilities might be enhanced by adversity is gaining
+traction. Adaptation-based approaches have uncovered a few specific
+abilities enhanced by particular adversity exposures. Yet, for a field
+to grow, we must not dig too deep, too soon. In this paper, we
+complement confirmatory research with principled exploration. We draw on
+two insights from adaptation-based research: 1) enhanced performance
+manifests within individuals, and 2) reduced and enhanced performance
+can co-occur. Although commonly assumed, *relative* performance
+differences are rarely tested. To quantify them, we need a wide variety
+of ability measures. However, rather than using adaptive-logic to
+predict which abilities are enhanced or reduced, we develop statistical
+criteria to identify three data patterns: reduced, enhanced, and intact
+performance. With these criteria, we analyzed data from the NICHD Study
+of Early Child Care and Youth Development to investigate how adversity
+shapes within-person performance across 10 abilities in a cognitive and
+achievement battery. Our goals are to document adversity-shaped
+cognitive performance patterns, identify drivers of reduced performance,
+identify sets of ‘intact’ abilities, and discover new enhanced
+abilities. We believe principled exploration with clear criteria can
+help break new theoretical and empirical ground, re-map old territory,
+and advance theory development.
+
 
 
 # How does adversity relate to performance across different abilities within individuals?
@@ -225,18 +249,35 @@ the early stages of a new field.
 # The Current Study
 
 We conduct a principled exploration of how adversity relates to
-performance on a widely-used cognitive achievement battery using
-prospective, longitudinal data from the NICHD Study of Early Childcare
-and Youth Development (SECCYD). Drawing on the general insights of
-adaptation-based research, we employ a within-person performance design
-to explore performance across 10 abilities. This design allows us to
-assess how exposure to each measure of adversity is associated with
-relative performance differences across several abilities (see Figure
-1). Cast another way, we can compare specific abilities (e.g.,
-short-term memory performance) to overall performance (within-person
-average performance on all tests) to gain a clearer picture of how
-enhanced and reduced performance manifest in parallel within an
-individual.
+performance on a widely-used cognitive achievement battery – the
+Woodcock-Johnson (WJ) – using prospective, longitudinal data from the
+NICHD Study of Early Childcare and Youth Development (SECCYD). Drawing
+on the general insights of adaptation-based research, we employ a
+within-person performance design to explore performance across 10
+abilities. This design allows us to assess how exposure to each measure
+of adversity is associated with relative performance differences across
+several abilities (see Figure 1). Cast another way, we can compare
+specific abilities (e.g., short-term memory performance) to overall
+performance (within-person average performance on all tests) to gain a
+clearer picture of how enhanced and reduced performance manifest in
+parallel within an individual.
+
+The Woodcock-Johnson is an ideal measure for principled exploration for
+two reasons. First, some theory actively turns inquiry away from tests
+like the Woodcock-Johnson. This might happen because there are no
+current adaptive hypotheses about performance on the Woodcock-Johnson
+and adversity exposure or researchers uniformly assume performance
+should be reduced because it is a general/abstract test battery. Yet, if
+we take a step back and return to our goal of drawing a high-resolution
+map of abilities enhanced by adversity, the Woodcock-Johnson and its
+subtests are clearly of interest as it measures a diverse set of
+abilities. Second, the Woodcock-Johnson contains many diverse subscales
+measuring different aspects of cognitive performance, each of which was
+measured multiple times. These subscales can be used to measure general
+ability (e.g., *g*) by averaging all subscales and they can be used
+individually. This makes it a desirable assessment for comparing and
+contrasting a general overall ability to specific abilities to uncover
+relative performance patterns.
 
 We focus on adversity measures of two constructs, environmental
 harshness and unpredictability, because they are often featured in
@@ -291,7 +332,7 @@ of reduced overall cognitive performance, map out sets of ‘intact’
 cognitive abilities, and discover possible enhancements.  
 
 <img src="figures/fig1-conceptual.jpg" style="width:5.5in"
-alt="Figure 1. Conceptual visualization of Woodcock Johnson statistical models. A) is the main effect of adversity on overall performance; B) is the main effect of a subtest, which reflects the average performance on a subtest; C) is the simple effect (slope) of adversity for a particular subtest; and D) is the interaction effect that measures the difference between A and C. A significant simple effect means C ≠ 0, and a significant interaction means A ≠ C. Put differently, when C is significant, adversity is associated with performance on a subtest. When D is significant, the association between adversity and a subtest (C) is different than the association between adversity and the overall effect (A)." />
+alt="Figure 1. Conceptual visualization of Woodcock-Johnson statistical models. A) is the main effect of adversity on overall performance; B) is the main effect of a subtest, which reflects the average performance on a subtest; C) is the simple effect (slope) of adversity for a particular subtest; and D) is the interaction effect that measures the difference between A and C. A significant simple effect means C ≠ 0, and a significant interaction means A ≠ C. Put differently, when C is significant, adversity is associated with performance on a subtest. When D is significant, the association between adversity and a subtest (C) is different than the association between adversity and the overall effect (A)." />
 
 # Method
 
@@ -340,7 +381,7 @@ example, the Verbal Analogies test was measured at grade three and age
 15, whereas Passage Comprehension was measured at grades 3, 5, and age
 15 (see Table 1). Thus, to create overall scores for each subtest, we
 averaged over all time-points available for each subtest (see
-<https://anonymous.4open.science/r/seccyd-wj-subtests-BD3E/scripts/2-aggregate-dvs.R>
+<https://github.com/ethan-young/seccyd-wj-subtests/blob/master/scripts/2-aggregate-dvs.R>
 for code).
 
   
@@ -426,7 +467,7 @@ items and was administered twice: at the 1<sup>st</sup> and
 3<sup>rd</sup> grade assessments. Higher scores indicate more auditory
 processing and linguistic structural analysis knowledge and skill.
 
-![](figures/markdown/unnamed-chunk-4-1.png)
+![](figures/markdown/Table1-1.png)
 
   
 
@@ -439,7 +480,7 @@ assessments (Belsky et al., 2012; Hartman et al., 2018; Li et al., 2018;
 Sung et al., 2016; Zhang et al., 2022). We calculated a simple average
 of all income-to-needs scores across assessments to create an overall
 income-to-needs score (see
-<https://anonymous.4open.science/r/seccyd-wj-subtests-BD3E/scripts/2-merge-aggregate-ivs.R>
+<https://github.com/ethan-young/seccyd-wj-subtests/blob/master/scripts/2-merge-aggregate-ivs.R>
 for code). We reverse-scored income-to-needs mean scores to create a
 family income disadvantage score, where higher values indicate more
 disadvantage.
@@ -471,7 +512,7 @@ averaged between them. These scores served as measures of neighborhood
 socioeconomic disadvantage where higher scores indicate higher rates of
 poverty, income-inequality, unemployment, lower education, and more
 rental housing (see
-<https://anonymous.4open.science/r/seccyd-wj-subtests-BD3E/scripts/1-compile-ivs-census.R>
+<https://github.com/ethan-young/seccyd-wj-subtests/blob/master/scripts/1-compile-ivs-census.R>
 for processing and aggregation).
 
 ### **Indicators of Unpredictability**
@@ -498,7 +539,7 @@ and father (figure) job changes, and residential changes across 17
 assessments from 1 to 54 months (Belsky et al., 2012; Hartman et al.,
 2018). After computing scores across time, we standardized each variable
 and averaged them to compute an overall family transitions variable (see
-<https://anonymous.4open.science/r/seccyd-wj-subtests-BD3E/scripts/2-merge-aggregate-ivs.R>
+<https://github.com/ethan-young/seccyd-wj-subtests/blob/master/scripts/2-merge-aggregate-ivs.R>
 for code).
 
 We next calculated variability scores for both family income and
@@ -506,7 +547,7 @@ neighborhood socioeconomic disadvantage. For family income disadvantage
 scores, we computed a standard deviation of all income-to-needs scores
 for each participant from the 1, 6, 15, 24, 36, and 54-month assessments
 (see
-<https://anonymous.4open.science/r/seccyd-wj-subtests-BD3E/scripts/2-merge-aggregate-ivs.R>
+<https://github.com/ethan-young/seccyd-wj-subtests/blob/master/scripts/2-merge-aggregate-ivs.R>
 for code). For neighborhood socioeconomic disadvantage variability, we
 computed the standard deviation of neighborhood socioeconomic
 disadvantage scores (see Indicators of Harshness, above). If
@@ -523,7 +564,7 @@ White/non-Hispanic = 0, otherwise = 1. We chose to code race/ethnicity
 this way because the SECCYD sample is mostly White, making the sample
 sizes for other racial/ethnic groups small.
 
-![](figures/markdown/unnamed-chunk-5-1.png)
+![](figures/markdown/Table2-1.png)
 
   
 
@@ -534,12 +575,12 @@ sizes for other racial/ethnic groups small.
 We preregistered this study using a template for secondary data analysis
 (Akker et al., 2021). The preregistration document and its entire
 version history was tracked on GitHub (see
-<https://anonymous.4open.science/r/seccyd-wj-subtests-BD3E/preregistration/README.md>).
+<https://github.com/ethan-young/seccyd-wj-subtests/tree/master/preregistration>).
 
 We also conducted a power analysis as part of our preregistration (see
-<https://anonymous.4open.science/r/seccyd-wj-subtests-BD3E/preregistration/power-analysis/README.md>
+<https://github.com/ethan-young/seccyd-wj-subtests/tree/master/preregistration/power-analysis>
 for write up and see
-<https://anonymous.4open.science/r/seccyd-wj-subtests-BD3E/scripts/prereg-power-simulation.R>
+<https://github.com/ethan-young/seccyd-wj-subtests/blob/master/scripts/prereg-power-simulation.R>
 for code). We used a simulation approach to conduct power analyses.
 These analyses were based on simulated adversity scores and actual WJ
 test scores from the SECCYD data used in this study. We used actual WJ
@@ -552,9 +593,9 @@ larger error, we can detect a $\beta$ = -.10 (or .10) with 83% power.
 
 All relevant files (data processing, analysis code, manuscript etc.) for
 this project are tracked on GitHub (see
-<https://anonymous.4open.science/r/seccyd-wj-subtests-BD3E/README.md>),
+<https://github.com/ethan-young/seccyd-wj-subtests/tree/master>),
 including the data needed to reproduce all results (see
-<https://anonymous.4open.science/r/seccyd-wj-subtests-BD3E/data/README.md>).
+<https://github.com/ethan-young/seccyd-wj-subtests/tree/master/data>).
 Raw data (data provided by the SECCYD) is available only via
 Inter-university Consortium for Political and Social Research (ICPSR,
 see <https://www.icpsr.umich.edu/web/pages/>). However, documentation
@@ -563,7 +604,7 @@ for the study is free to download (see
 lists of raw datasets and variables. For those who have access to raw
 SECCYD data, we provide a table of raw datasets and variables used in
 this project (see
-<https://anonymous.4open.science/r/seccyd-wj-subtests-BD3E/data/README.md>).
+<https://github.com/ethan-young/seccyd-wj-subtests/tree/master/data>).
 
 We used R, Rstudio, and Quarto to process, analyze, and report results
 (Allaire, 2022; Posit team, 2023; R Core Team, 2023). For reading raw
@@ -573,9 +614,10 @@ table creation, we used the tidyverse, sjlabelled, ggdist, ggsci,
 flextable, and the patchwork R packages (Gohel & Skintzos, 2023; Kay,
 2023; Lüdecke, 2022; Pedersen, 2022; Wickham et al., 2019; Xiao, 2023).
 For analyses, including mixed models, simple slopes, and equivalence
-tests, we used lme4, faux, ggeffects, marginaleffects, and the
-parameters R packages (Arel-Bundock, 2023; Bates et al., 2015; DeBruine,
-2023; Lüdecke, 2018; Lüdecke et al., 2020).
+tests, we used lme4, faux, ggeffects, marginaleffects, multitool, and
+the parameters R packages (Arel-Bundock, 2023; Bates et al., 2015;
+DeBruine, 2023; Lüdecke, 2018; Lüdecke et al., 2020; Young & Vermeent,
+2024).
 
 ## Data Analysis Strategy and Inferential Criteria
 
@@ -685,7 +727,7 @@ statistically significant effects for sex assigned at birth. Below we
 describe the effects of our primary analysis predictors (see
 Supplemental Materials for full model results). Primary analysis code
 can be found on GitHub (see
-<https://anonymous.4open.science/r/seccyd-wj-subtests-BD3E/scripts/3-primary-analysis.R>).
+<https://github.com/ethan-young/seccyd-wj-subtests/blob/master/scripts/3-primary-analysis.R>).
 
 ### Indicators of Harshness
 
@@ -773,7 +815,8 @@ performance among those living in socioeconomically disadvantaged
 neighborhoods was not statistically or meaningfully different from zero,
 suggesting an intact pattern of performance.
 
-<img src="figures/markdown/Figure3-1.jpeg" style="width:5.5in"
+<img src="figures/markdown/Figure3-1.jpeg"
+style="width:6.25in;height:6.5in"
 alt="Figure 3. Results of models testing the effect of family and neighborhood economic disadvantage on WJ performance. The top and bottom rows depict family and neighborhood socioeconomic disadvantage, respectively. The left column plots the overall slope (thick black lines) against the subtest slopes across low to high socioeconomic disadvantage. Unfaded and faded lines are practically inequivalent and equivalent to the overall slope, respectively. The middle and right columns show interaction and simple effects. Black horizontal lines are the main effect and zero for interactions and simple effects, respectively. The gray ribbon reflects the ROPE. Solid points indicate interactions and simple effects that are practically equivalent to the ROPE. Hollow points reflect interaction and simple effects that are outside the ROPE. Statistical significance for interactions (tested against the main effect) and simple effects (tested against zero) are flagged with significance stars. *** p &lt; .001, ** p &lt; .01, * p &lt; .05" />
 
 ### Indicators of Unpredictability
@@ -823,8 +866,9 @@ fluctuations.
 
 Li and colleague’s (2018) strategy involved computing interactions
 between mean and variability scores, which provides some level of
-statistical control. However, we believe the strong negative correlation
-in an unexpected direction raises questions about using family income
+statistical control but tests a different research question entirely
+(see Supplement). However, we believe the strong negative correlation in
+an unexpected direction raises questions about using family income
 variability as an indicator of adversity. In most empirical cases,
 higher levels of harshness are associated with higher levels of
 unpredictability. Yet here, income variability and average income are
@@ -834,7 +878,7 @@ Thus, to address this issue, we conducted a set of secondary analyses
 that used different methods for computing variability over
 income-to-needs scores. Below, we report analyses using different
 methods for quantifying variability in our Secondary Analyses (see
-<https://anonymous.4open.science/r/seccyd-wj-subtests-BD3E/preregistration/update-1/README.md>
+<https://github.com/ethan-young/seccyd-wj-subtests/tree/master/preregistration/update-1>
 for the update to our analysis plan).
 
 **Neighborhood Socioeconomic Variability**. In contrast to family income
@@ -856,7 +900,8 @@ effects were inside the ROPE.
 
   
 
-<img src="figures/markdown/Figure4-1.jpeg" style="width:5.5in"
+<img src="figures/markdown/Figure4-1.jpeg"
+style="width:6.25in;height:6.5in"
 alt="Figure 4. Results of models testing the effect of family transitions and neighborhood socioeconomic variability on WJ performance. The top and bottom rows reflect family transitions and neighborhood socioeconomic variability, respectively. The left column plots the overall slope (thick black lines) against the subtest slopes across low to high unpredictability. Unfaded and faded lines are practically inequivalent and equivalent to the overall slope, respectively. The middle and right columns show interaction and simple effects. Black horizontal lines are the main effect and zero for interactions and simple effects, respectively. The gray ribbon reflects the ROPE. Solid points indicate interactions and simple effects that are practically equivalent to the ROPE. Hollow points reflect interaction and simple effects that are outside the ROPE. Statistical significance for interactions (tested against the main effect) and simple effects (tested against zero) are flagged with significance stars. *** p &lt; .001, ** p &lt; .01, * p &lt; .05" />
 
   
@@ -864,17 +909,84 @@ alt="Figure 4. Results of models testing the effect of family transitions and ne
 ## Secondary Analyses
 
 Our primary analyses examining family income variability raised
-questions about its validity as an adversity measure. Our secondary
-analyses were designed to address this issue and explore different
-methods of computing variability scores.
+questions about its validity as an adversity measure. More specifically,
+analyses using a simple within-person standard deviation of
+income-to-needs to measure unpredictability revealed counterintuitive
+results. Whereas average income analyses showed that lower family income
+was associated with lower overall WJ performance, income variability
+showed enhanced effects. In addition, the two WJ subtests that showed
+relative enhancements as a function of lower average family income -
+Auditory Processing and Auditory-Visual Associations– showed relatively
+reduced performance as a function of more income variability. These
+effects are surprisingly opposite. Although different adversity measures
+are not expected to produce the same results, most would not expect
+different measures to produce exactly opposite results.
 
-We computed three types of variability scores over the income-to-needs
+We argue that this pattern may be driven by the strong association
+between average income and income variability. There are two approaches
+to addressing this issue. The first is to evaluate *how variability is
+computed* by using different methods for summarizing within-person
+variability. This method addresses the validity of variability scores at
+the *measurement* level. That is, we closely examine the properties of
+the measurement scale, how variability is computed, and explore whether
+different methods create better approximations of the construct of
+interest.
+
+The second is to statistically adjust the effect of family income
+variability on WJ test performance by controlling for average family
+income in the same model. This method addresses the *validity of the
+association between income variability and WJ test performance* rather
+than the validity of the measure of variability itself. In other words,
+it is a *modeling* rather than a measurement solution.
+
+From a causal inference perspective, we argue that addressing validity
+at the measurement level is more appropriate than at the modeling level.
+Statistical controls require justification from a *data-independent
+causal model* or a Directed Acyclic Graph (DAG). That is, the decision
+to control for a variable in a statistical model depends a conceptual
+model of its causal role, and more specifically whether the variable is
+a confound (Cinelli et al., 2022; Rohrer, 2018). In the current work,
+controlling for average family income would be appropriate if we
+believed (theoretically) that average family income *causes* both income
+variability *and* WJ test performance. Yet, in theory, harshness and
+unpredictability are characterized as orthogonal, independent
+environmental constructs. Moreover, there are other plausible DAGs that
+do not situate harshness as a confound between unpredictability and
+cognitive performance, even when average income and income variability
+are correlated (see Causal Inference Discussion in the Supplement).
+
+Despite these conceptual arguments, on could argue that variability
+scores should not be modeled without controlling for average levels.
+Yet, a statistical correlation between two proxies (i.e., average family
+income and family income variability) is not necessarily causal and does
+not, by itself, make either a confound of the other. This creates
+tension between the statistical models implied by a particular DAG and
+the desire to ensure variability is modeled correctly. We argue that
+addressing how variability is computed at the measurement level
+alleviates this tension. Nonetheless, we conduct both sets of analyses.
+Secondary analysis code can be found on GitHub (see set one
+<https://github.com/ethan-young/seccyd-wj-subtests/blob/master/scripts/4-secondary-analysis-1.R>
+and see set two
+<https://github.com/ethan-young/seccyd-wj-subtests/blob/master/scripts/4-secondary-analysis-2.R>).
+
+We believe both are important and instructive for future research. We
+emphasize that handling measurement issues should precede modeling
+solutions. Including statistical controls requires specifying an
+underlying causal model. In new exploratory fields, there are many
+alternative and justifiable models. Before adhering to one over another,
+we need to understand each variable on its own.
+
+### Computing Different Income Variability Scores
+
+We computed four types of variability scores over the income-to-needs
 data. The first was identical to our primary analyses; we computed a
 within-person standard deviation of income-to-needs from 1 to 54 months.
+
 Second, we computed residual standard deviations (Bania & Leete, 2009;
 Hardy, 2014; Li et al., 2018; Prause et al., 2009). To do so, we fit a
 linear slope to each participant’s income-to-needs data, extracted
 residual scores, and computed the standard deviation of these residuals.
+
 The third method computed percent change scores over each participant’s
 income-to-needs data. In time series analysis, percent change reflects
 how much a score changes relative to the previous time-point and scales
@@ -893,34 +1005,54 @@ income). After computing percent change scores for each assessment, we
 averaged percent change scores to create a single percent change score
 per participant.
 
+Fourth, we computed within-person coefficients of variation, or the
+ratio of the within-person standard deviation in income-to-needs divided
+by the within-person average income-to-needs mean (Mills & Amick, 2016;
+Newman, 2006; Nichols & Zimmerman, 2008). The coefficient of variation
+is useful because it expresses income variability relative to the
+average. That is, given a particular income-to-needs average value, the
+coefficient of variation measures variation as a proportion of the mean.
+Coefficient of variation statistics are particularly useful for scales
+with a meaningful zero value (i.e., zero income means the complete lack
+of income) as opposed to other scales where is zero not meaningful
+(e.g., temperature where zero degrees Fahrenheit means freezing
+temperature, not the complete lack of heat).
+
 Simple and residual standard deviation family income scores were
 strongly related to both each other and to the average family income
-disadvantage (see Table 3). However, average percent change scores were
-only weakly related to income standard deviation and residual standard
-deviation scores. In addition, average percent change in income scores
+disadvantage (see Table 3). However, average percent change and
+coefficient of variation scores were only weakly to moderately related
+to income standard deviation and residual standard deviation scores. In
+addition, average percent change and coefficient of variation scores
 were weakly and positively related to mean family income disadvantage
-scores (*r* = 0.17, see Table 3). That is, families experiencing higher
+scores (for average percent change *r* = 0.17; for coefficient of
+variation *r* = 0.24 see Table 3). That is, families experiencing higher
 mean levels of income disadvantage also experienced larger average
-percent changes in income over time. This aligns with prior conceptual
-and empirical work that expects and finds that harsher environments tend
-to be more unpredictable (Belsky et al., 2012; Brumbach et al., 2009;
-Ellis et al., 2009; Simpson et al., 2012; Szepsenwol et al., 2015).
+percent changes and show larger coefficients of variation in income over
+time. This aligns with prior empirical work that finds harsher
+environments tend to be more unpredictable (Belsky et al., 2012;
+Brumbach et al., 2009; Ellis et al., 2009; Simpson et al., 2012;
+Szepsenwol et al., 2015).
 
   
 
-![](figures/markdown/unnamed-chunk-8-1.png)
+![](figures/markdown/Table3-1.png)
 
   
+
+### Residual Variance, Percent Change, and Coefficient of Variation Results
 
 After computing each type of family income variability scores, we ran
-three analyses with each as the primary predictor. We used the same
-modeling strategy, covariates, and inferential criteria as our primary
-analyses. The findings revealed similar patterns for both simple and
-residual standard deviation scores: more variability in family income
-was associated with enhanced performance, in contrast to the negative
-associations with average family income disadvantage (see Figure 5).
-Again, we believe this is an artifact of the relation between family
-income average and variability scores.
+analyses with each as the primary predictor. We used the same modeling
+strategy, covariates, and inferential criteria as our primary analyses.
+
+The findings for family income residual variance were nearly identical
+to our previous analysis with family income simple standard deviation.
+More residual variance in family income was associated with enhanced
+performance, in contrast to the negative associations with average
+family income disadvantage (see Supplement Figure 3). Again, we believe
+this is an artifact of the relation between family income average and
+standard deviation-based variability scores.
 
 In contrast, however, average family percent change in income did not
 follow this pattern. Instead, higher percent changes in income were
@@ -933,8 +1065,30 @@ were associated with intact performance for all subtests except the
 Auditory Processing subtest, which was meaningfully more positive but
 not statistically different from zero.
 
-<img src="figures/markdown/Figure5-1.jpeg" style="width:5.5in"
-alt="Figure 5. Results of models testing the effect of different family income variability scores on WJ performance. The top, middle, and bottom rows reflect simple standard deviation, residual standard deviation, and average percent change in family income from one to 54 months. The left column plots the overall slope (thick black lines) against the subtest slopes across low to high variation in family income. Unfaded and faded lines are practically inequivalent and equivalent to the overall slope, respectively. The middle and right columns show interaction and simple effects. Black horizontal lines are the main effect and zero for interactions and simple effects, respectively. The gray ribbon reflects the ROPE. Solid points indicate interactions and simple effects that are practically equivalent to the ROPE. Hollow points reflect interaction and simple effects that are outside the ROPE. Statistical significance for interactions (tested against the main effect) and simple effects (tested against zero) are flagged with significance stars. *** p &lt; .001, ** p &lt; .01, * p &lt; .05" />
+The coefficient of variation also differed from family income standard
+deviation analyses. The effect of the coefficient of variation in family
+income revealed a negative but non-significant overall effect on WJ
+performance. However, the coefficient of variation revealed five effects
+on WJ subtest performance. First, larger coefficients of variation were
+associated with a significantly more positive Auditory Processing and
+Auditory-Visual Associations performance than overall performance.
+However, only Auditory Processing performance was outside the ROPE. In
+addition, larger coefficients of variation in family income were
+associated with significantly reduced performance Picture Vocab, Verbal
+Analogies, and Applied Problems compared to the overall effect. However,
+only performance on Verbal Analogies was outside the ROPE. Simple
+effects revealed that both Auditory Processing and Auditory-Visual
+Associations performance was inside the ROPE, meaning the effect is
+practically equivalent to zero, suggesting intact performance on both
+subtests. Simple effects for Picture Vocab, Verbal Analogies, and
+Applied Problems subtest were significantly and practically negative,
+suggesting that higher income variability (as measured by the
+coefficient of variation) is associated with reduced performance on
+each.
+
+<img src="figures/markdown/Figure5-1.jpeg"
+style="width:6.25in;height:6.5in"
+alt="Figure 5. Results of models testing the effect of alternative family income variability scores to standard deviation and residual standard deviation scores on WJ performance. The top and bottom rows reflect average percent change and the coefficient of variation in family income from one to 54 months. The left column plots the overall slope (thick black lines) against the subtest slopes across low to high variation in family income. Unfaded and faded lines are practically inequivalent and equivalent to the overall slope, respectively. The middle and right columns show interaction and simple effects. Black horizontal lines are the main effect and zero for interactions and simple effects, respectively. The gray ribbon reflects the ROPE. Solid points indicate interactions and simple effects that are practically equivalent to the ROPE. Hollow points reflect interaction and simple effects that are outside the ROPE. Statistical significance for interactions (tested against the main effect) and simple effects (tested against zero) are flagged with significance stars. *** p &lt; .001, ** p &lt; .01, * p &lt; .05" />
 
 # Discussion
 
@@ -969,10 +1123,21 @@ Analogies subtests was particularly reduced. Second, compared to the
 overall reduced pattern, Auditory Processing and Auditory-Visual
 Associations subtest performance tended to be enhanced. In an absolute
 sense (i.e., when each subtest was compared to zero), they appeared to
-remain intact. In contrast, indicators of unpredictability (family
-transitions and family/neighborhood socioeconomic disadvantage
-variability) were associated with intact overall WJ performance, an
-unexpected and noteworthy result.
+remain intact.
+
+In contrast, all indicators of unpredictability (family transitions,
+family/neighborhood socioeconomic disadvantage variability, percent
+change in family income, coefficient of variation) were associated with
+intact overall WJ performance, an unexpected and noteworthy result.
+However, only family transitions and the coefficient of variation were
+associated WJ subtest performance that different from overall
+performance. Family transitions were associated with reduced
+Calculations performance both a relative (compared to overall) and
+absolute sense (compared to zero). The effect of the coefficient of
+variation revealed the most similar effects to the harshness analyses of
+all unpredictability indicators. Larger coefficients of variation were
+associated with relatively enhanced Auditory Processing performance and
+reduced Verbal Analogies performance.
 
 These findings are striking for three reasons. First, achievement and
 cognitive batteries like the WJ assessment have abstract content that is
@@ -1061,31 +1226,29 @@ inferences.
 
 Our secondary analyses provided insights about measuring socioeconomic
 variability over repeated measures. In line with work by others (e.g.,
-Li et al., 2018), we found a high correlation between mean family income
-and family income variability scores in the SECCYD. Although this does
-not invalidate variability scores, it raises questions about whether
-such scores are capturing adversity, especially when families with
-higher incomes tend to experience greater variance in income. We found
-that percent change scores attenuated the association between average
-income and income variability. Nonetheless, measures of unpredictability
-quantifying variability from repeated measures would benefit from
-further validation and more comparisons with different data reduction
-techniques. Leveraging time-series techniques is one promising
-direction, especially for assessing concepts such as unpredictability
-(Frankenhuis et al., 2019; Ugarte & Hastings, 2023; Young et al., 2020).
-However, future researchers should exercise caution when computing such
-scores and pay special attention to appropriate validation procedures to
-verify that such scores are, in fact, capturing the intended construct.
+Li et al., 2018), we found a high correlation between average family
+income and family income variability scores in the SECCYD. Although this
+does not invalidate variability scores, it raises questions about
+whether such scores are capturing adversity, especially when families
+with higher incomes tend to experience greater variance in income. We
+found that percent change and coefficient of variation scores attenuated
+the association between average family income and family income
+variability. Nonetheless, measures of unpredictability quantifying
+variability from repeated measures would benefit from further validation
+and more comparisons with different data reduction techniques.
+Leveraging time-series techniques is one promising direction, especially
+for assessing concepts such as unpredictability (Frankenhuis et al.,
+2019; Ugarte & Hastings, 2023; Young et al., 2020). However, future
+researchers should exercise caution when computing such scores and pay
+special attention to appropriate validation procedures to verify that
+such scores are, in fact, capturing the intended construct.
 
 In addition, it is important to acknowledge that past research has
 operationalized income variability beyond the current work. Some
 examples include the frequency of income shocks (Yeung et al., 2002),
-the coefficient of variation or the ratio of the standard deviation
-divided by the income mean across time (Mills & Amick, 2016; Newman,
-2006; Nichols & Zimmerman, 2008), and “fixed-effect estimation” which
-uses the within-person deviation at a specific time point as an
-indicator of income dynamics (Dearing et al., 2006; Dearing & Taylor,
-2007; Zachrisson & Dearing, 2015).
+and “fixed-effect estimation” which uses the within-person deviation at
+a specific time point as an indicator of income dynamics (Dearing et
+al., 2006; Dearing & Taylor, 2007; Zachrisson & Dearing, 2015).
 
 More broadly, our null results for unpredictability might be related to
 the challenges associated with defining and operationalizing it.
@@ -1314,6 +1477,14 @@ Brumbach, B. H., Figueredo, A. J., & Ellis, B. J. (2009). Effects of
 harsh and unpredictable environments in adolescence on development of
 life history strategies. *Human Nature*, *20*(1), 25–51.
 <https://doi.org/b68cdk>
+
+</div>
+
+<div id="ref-cinelli2022" class="csl-entry">
+
+Cinelli, C., Forney, A., & Pearl, J. (2022). A Crash Course in Good and
+Bad Controls. *Sociological Methods & Research*, 00491241221099552.
+<https://doi.org/grwp6n>
 
 </div>
 
@@ -1758,6 +1929,15 @@ during infancy and preschool cognitive function: Adaptations to context?
 
 </div>
 
+<div id="ref-rohrer2018" class="csl-entry">
+
+Rohrer, J. M. (2018). Thinking clearly about correlations and causation:
+Graphical causal models for observational data. *Advances in Methods and
+Practices in Psychological Science*, *1*(1), 27–42.
+<https://doi.org/gcvj3r>
+
+</div>
+
 <div id="ref-roisman2021" class="csl-entry">
 
 Roisman, G. I. (2021). Editorial: A vision of a fair and efficient,
@@ -1965,6 +2145,13 @@ Mittal, C. (2018). Can an unpredictable childhood environment enhance
 working memory? Testing the sensitized-specialization hypothesis.
 *Journal of Personality and Social Psychology*, *114*(6), 891–908.
 <https://doi.org/10.1037/pspi0000124>
+
+</div>
+
+<div id="ref-multitool" class="csl-entry">
+
+Young, E. S., & Vermeent, S. (2024). *Multitool: Run multiverse style
+analyses*. <https://CRAN.R-project.org/package=multitool>
 
 </div>
 

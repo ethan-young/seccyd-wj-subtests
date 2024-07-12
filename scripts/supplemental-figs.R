@@ -80,7 +80,7 @@ sfig1 <-
   geom_text(
     data = equivalence_data1 |> 
       distinct(ivs, main_effect, main_effect_txt) |> 
-      filter(ivs != "Family Income\nVariability"),
+      filter(ivs != "Standard Deviation"),
     aes(
       x = -1.5, 
       y = 92, 
@@ -97,7 +97,7 @@ sfig1 <-
   scale_shape_manual(values = c(16,21)) +
   scale_alpha_manual(values = c(.1, 1)) +
   guides(
-    color = guide_legend(ncol = 3, byrow = T),
+    color = guide_legend(ncol = 2, byrow = T),
     fill = "none",
     shape = "none", 
     alpha = "none"
@@ -118,14 +118,14 @@ sfig1 <-
 ## Plotting Data ----
 ### Data from model
 wj_plotting_data2 <- 
-  secondary_results |> 
+  secondary_results1 |> 
   reveal(predicted_vals_fitted, predicted_vals_full, "wide") |> 
   filter(contrast == "wj_subtest_con1") |> 
   select(ivs, dvs, x, predicted, conf.low, conf.high, group)
 
 ### Data for plotting equivalence info
 equivalence_data2 <- 
-  secondary_results_adjusted |> 
+  secondary_results_adjusted1 |> 
   mutate(
     main_effect = ifelse(ivs == parameter, coefficient, NA),
     main_effect_txt = ifelse(ivs == parameter, str_pad(sprintf("%.2f", main_effect), 8), NA),
@@ -154,7 +154,7 @@ equivalence_data2 <-
 ## Figure ----
 sfig2 <- 
   wj_plotting_data2 |> 
-  filter(dvs == "mean_score", ivs %in% c("z_incnt_sd", "z_incnt_sigma", "z_incnt_pc")) |> 
+  filter(dvs == "mean_score", ivs %in% c("z_incnt_sd", "z_incnt_sigma", "z_incnt_pc","z_incnt_cv")) |> 
   mutate(
     test = factor(group, wj_order, wj_labels),
     adversity = x,
@@ -165,7 +165,7 @@ sfig2 <-
     .by = c(ivs, adversity)
   ) |>
   left_join(
-    secondary_results_adjusted,
+    secondary_results_adjusted1,
     by = c("ivs", "dvs", "group" = "parameter")
   ) |> 
   mutate(
@@ -195,8 +195,8 @@ sfig2 <-
   geom_text(
     data = equivalence_data2 |> 
       distinct(ivs, main_effect, main_effect_txt) |> 
-      filter(ivs %in% c("z_incnt_sd", "z_incnt_sigma", "z_incnt_pc")) |> 
-      mutate(ivs = factor(ivs, ivs_order, ivs_labels |> str_replace("Family Income\nVariability","Standard Deviation"))),
+      filter(ivs %in% c("z_incnt_pc", "z_incnt_cv")) |> 
+      mutate(ivs = factor(ivs, ivs_order, ivs_labels)),
     aes(
       x = -1.5, 
       y = 92, 
@@ -219,8 +219,7 @@ sfig2 <-
     alpha = "none"
   ) +
   labs(
-    title = "Secondary Analyses",
-    subtitle = "Family Income Variability\nPerformance Slopes"
+    title = "Secondary Analyses"
   ) +
   facet_wrap(~ivs, ncol = 1) +
   theme(

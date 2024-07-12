@@ -54,7 +54,7 @@ new_incnt_data2 <-
   )
 
 # Merge new Variability Scores with Analysis Data -------------------------
-secondary_data1 <- 
+secondary_data2 <- 
   ivs_analysis |> 
   select(id, meduc, csex, crace) |> 
   left_join(
@@ -62,8 +62,9 @@ secondary_data1 <-
       select(id, incnt_mean, incnt_sd, incnt_sigma, incnt_pc, incnt_cv)
   ) |> 
   mutate(
+    incnt_mean = incnt_mean * -1,
     across(
-      c(incnt_pc, incnt_cv, meduc),
+      c(incnt_mean, incnt_sd, incnt_sigma, meduc),
       ~scale(.x) |> as.numeric(), .names = "z_{.col}"
     ),
   ) |> 
@@ -84,16 +85,18 @@ secondary_data1 <-
   )
 
 # New Analysis Grid -------------------------------------------------------
-secondary_grid1 <- 
-  secondary_data1 |> 
+secondary_grid2 <- 
+  secondary_data2 |> 
   add_variables(
     "ivs",
-    z_incnt_pc,
-    z_incnt_cv
+    z_incnt_sd,
+    z_incnt_sigma
   ) |> 
   add_variables("dvs", mean_score, z_mean_score) |> 
   add_variables("contrast", wj_subtest_con1, wj_subtest_con2) |> 
   add_model("within_model", lmer({dvs} ~ sex + race + z_meduc + {ivs}*{contrast} + (1|id))) |> 
+  add_model("cov_main", lmer({dvs} ~ sex + race + z_meduc + z_incnt_mean + {ivs}*{contrast} + (1|id))) |> 
+  add_model("cov_int", lmer({dvs} ~ sex + race + z_meduc + z_incnt_mean*{contrast} + {ivs}*{contrast} + (1|id))) |> 
   add_postprocess("betas_unstd", model_parameters()) |> 
   add_postprocess("betas_std", standardize_parameters()) |> 
   add_postprocess("betas_slopes", hypothesis_test(c("{ivs}", "{contrast}"), re.form = NA, test = NULL)) |> 
@@ -102,57 +105,58 @@ secondary_grid1 <-
   add_postprocess("predicted_vals", ggpredict(c("{ivs} [-1,0,1]", "{contrast}")))
 
 ## Expand pipeline into a grid
-secondary_grid_expanded1 <- expand_decisions(secondary_grid1)
+secondary_grid_expanded2 <- expand_decisions(secondary_grid2)
 
 # Conduct analyses and extract info ---------------------------------------
 ## Execute analysis pipeline grid
-secondary_results1 <- run_multiverse(secondary_grid_expanded1)
+secondary_results2 <- run_multiverse(secondary_grid_expanded2)
 
 ## Extract results data
-secondary_results_stats1 <-
-  secondary_results1 |> 
+secondary_results_stats2 <-
+  secondary_results2 |> 
   reveal(betas_unstd_fitted, betas_unstd_full, .unpack_specs = "wide") |> 
   rename_with(tolower) |> 
   filter(contrast == "wj_subtest_con1" | (contrast == "wj_subtest_con2" & str_detect(parameter, "wj_wrdat"))) |> 
-  select(ivs, dvs, parameter, coefficient, se, p) |> 
+  select(ivs, dvs, model_meta, parameter, coefficient, se, p) |> 
   left_join(
-    secondary_results1 |> 
+    secondary_results2 |> 
       reveal(betas_std_fitted, betas_std_full, .unpack_specs = "wide") |> 
       rename_with(tolower) |> 
       filter(contrast == "wj_subtest_con1" | (contrast == "wj_subtest_con2" & str_detect(parameter, "wj_wrdat"))) |> 
-      select(ivs, dvs, parameter, std_coefficient, ci_low, ci_high)
+      select(ivs, dvs, model_meta, parameter, std_coefficient, ci_low, ci_high)
   ) |> 
   left_join(
-    secondary_results1 |> 
+    secondary_results2 |> 
       reveal(eq_betas_fitted, eq_betas_full, .unpack_specs = "wide") |> 
       rename_with(tolower) |> 
       filter(contrast == "wj_subtest_con1" | (contrast == "wj_subtest_con2" & str_detect(parameter, "wj_wrdat"))) |> 
-      select(ivs, dvs, parameter, p, ci_low, ci_high) |> 
+      select(ivs, dvs, model_meta, parameter, p, ci_low, ci_high) |> 
       rename(equiv_main_p = p, equiv_main_low = ci_low, equiv_main_high = ci_high) |> 
       mutate(equiv_main = ifelse(equiv_main_p < .05, "Accepted", "Rejected"))
   ) |> 
   filter(parameter %in% c("sex", "race", "z_meduc") | parameter == ivs | str_detect(parameter, ":")) |> 
+  filter(!str_detect(parameter, "incnt_mean")) |> 
   mutate(parameter = ifelse(str_detect(parameter, ":"), str_extract(parameter, "(\\.)(wj_.....)", 2) |> str_remove("-$"), parameter)) |> 
   left_join(
-    secondary_results1 |> 
+    secondary_results2 |> 
       reveal(betas_slopes_fitted, betas_slopes_full, .unpack_specs = "wide") |> 
       filter(contrast == "wj_subtest_con1") |> 
-      select(ivs, dvs, wj_subtest_con1, Slope, p.value, conf.low, conf.high) |> 
+      select(ivs, dvs, model_meta, wj_subtest_con1, Slope, p.value, conf.low, conf.high) |> 
       rename(parameter = wj_subtest_con1, slope_p = p.value, slope = Slope, slope_low = conf.low, slope_high = conf.high)
   ) |> 
   left_join(
-    secondary_results1 |> 
+    secondary_results2 |> 
       reveal(eq_slopes_fitted, eq_slopes_full, .unpack_specs = "wide") |> 
       filter(contrast == "wj_subtest_con1") |> 
       rename(equiv_slope_p = p.value) |> 
       mutate(equiv_slope = ifelse(equiv_slope_p < .05, "Accepted", "Rejected")) |> 
-      select(ivs, dvs, wj_subtest_con1, equiv_slope, equiv_slope_p) |> 
+      select(ivs, dvs, model_meta, wj_subtest_con1, equiv_slope, equiv_slope_p) |> 
       rename(parameter = wj_subtest_con1)
   )
 
 # Adjust p-values using Benjamini & Hochberg ------------------------------
-secondary_results_adjusted1 <- 
-  secondary_results_stats1 |> 
+secondary_results_adjusted2 <- 
+  secondary_results_stats2 |> 
   mutate(
     adjust = ifelse(str_detect(parameter, "^wj"), 1, 0)
   ) |> 
@@ -168,11 +172,11 @@ secondary_results_adjusted1 <-
 
 # Save Results ------------------------------------------------------------
 save(
-  secondary_data1,
-  secondary_grid1,
-  secondary_grid_expanded1,
-  secondary_results1,
-  secondary_results_stats1,
-  secondary_results_adjusted1,
-  file = "data/secondary-results-1.Rdata"
+  secondary_data2,
+  secondary_grid2,
+  secondary_grid_expanded2,
+  secondary_results2,
+  secondary_results_stats2,
+  secondary_results_adjusted2,
+  file = "data/secondary-results-2.Rdata"
 )

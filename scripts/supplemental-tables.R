@@ -19,12 +19,12 @@ stable_ivs1 <-
 
 stable_ivs2 <- 
   left_join(
-    secondary_data |> distinct(id, incnt_sd, incnt_sigma, incnt_pc),
+    secondary_data2 |> distinct(id, incnt_sd, incnt_sigma, incnt_pc, incnt_cv),
     ivs_analysis
   ) |> 
   select(
     family_unp, partner_changes, moves_n, job_changes_mean,
-    incnt_sd, incnt_sigma, incnt_pc,
+    incnt_sd, incnt_sigma, incnt_pc, incnt_cv,
     neigh_unp, matches("cen(.*)sd$")
   ) |> 
   corr_table(
@@ -32,8 +32,9 @@ stable_ivs2 <-
     stats = c("n", "mean", "sd", "min", "median", "max"),
     c.names = c("Fam. Transitions", "Partner Changes", 
                 "Job Changes", "Res. Moves",
-                "Fam. Income (SD)", "Fam. Income (Residual SD)",
-                "Fam. Income (Percent Change)",
+                "Income (SD)", "Income (Residual SD)",
+                "Income (% Change)",
+                "Income (CV)",
                 "Neigh. SE (SD)", "Neigh. % Poverty (SD)",
                 "Neigh. HH Income (SD)",  "Neigh. Gini (SD)",
                 "Neigh. % Renting (SD)", "Neigh. % Unemploy (SD)", 
@@ -43,7 +44,7 @@ stable_ivs2 <-
 
 stables_primary <- 
   primary_results_adjusted |> 
-  filter(dvs == "mean_score") |> 
+  filter(dvs == "mean_score", ivs != "z_incnt_sd") |> 
   group_split(ivs) |> 
   map(function(x){
     x |> 
@@ -72,8 +73,8 @@ stables_primary <-
     
   })
 
-stables_secondary <- 
-  secondary_results_adjusted |> 
+stables_secondary1 <- 
+  secondary_results_adjusted1 |> 
   filter(dvs == "mean_score") |> 
   group_split(ivs) |> 
   map(function(x){
@@ -85,6 +86,36 @@ stables_secondary <-
         across(.cols = matches("p$"), ~formatC(.x, 3, 5, format = "f"))
       ) |> 
       transmute(
+        parameter = parameter,
+        b = glue::glue("{coefficient} ({se})"),
+        B = glue::glue("{std_coefficient} [{ci_low}, {ci_high}]"),
+        p = glue::glue("{p}"),
+        rope_p = glue::glue("{equiv_main_p}"),
+        slope = glue::glue("{slope} [{slope_low}, {slope_high}]"),
+        slope_p = glue::glue("{slope_p}"),
+        rope_slope_p = glue::glue("{equiv_slope_p}")
+      ) |> 
+      mutate(
+        parameter = factor(parameter, c(ivs_order, wj_order), c(ivs_labels, wj_labels)),
+        slope = ifelse(str_detect(slope, "NA"), "", slope),
+        rope_slope_p = ifelse(str_detect(rope_slope_p, "NA"), "", rope_slope_p),
+      )
+  })
+
+stables_secondary2 <- 
+  secondary_results_adjusted2 |> 
+  filter(dvs == "mean_score") |> 
+  group_split(ivs, model_meta) |> 
+  map(function(x){
+    x |> 
+      mutate(
+        across(.cols = matches("coefficient|^slope$"), ~formatC(.x, 2, 5, format = "f")),
+        across(.cols = matches("^se$"), ~formatC(.x, 2, 4, format = "f")),
+        across(.cols = matches("^ci|slope_(h|l)"), ~formatC(.x, 2, 5, format = "f")),
+        across(.cols = matches("p$"), ~formatC(.x, 3, 5, format = "f"))
+      ) |> 
+      transmute(
+        model_meta = model_meta,
         parameter = parameter,
         b = glue::glue("{coefficient} ({se})"),
         B = glue::glue("{std_coefficient} [{ci_low}, {ci_high}]"),

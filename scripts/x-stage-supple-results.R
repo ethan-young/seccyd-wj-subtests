@@ -4,6 +4,7 @@ library(tidyverse)
 library(ggdist)
 library(patchwork)
 library(multitool)
+library(glue)
 
 ## Custom functions----
 source("scripts/0-corr_table.R")
@@ -15,7 +16,6 @@ walk(
 )
 
 ## ggplot2 theme ----
-# Set ggplot2 theme ----
 theme_set(
   theme_light() +
     theme(
@@ -28,7 +28,8 @@ theme_set(
       plot.background = element_rect(color = NA),
       plot.title = element_text(hjust = .5, face = "bold"),
       strip.background = element_rect(color = NA, fill = NA),
-      strip.text = element_text(color = "black", hjust = 0.5, face = "bold.italic")
+      strip.text = element_text(color = "black", hjust = 0.5, face = "bold.italic"),
+      strip.placement = "outside"
     )
 )
 
@@ -76,7 +77,8 @@ ivs_order <-
     "z_incnt_sd",
     "z_neigh_unp",
     "z_incnt_sigma",
-    "z_incnt_pc"
+    "z_incnt_pc",
+    "z_incnt_cv"
   )
 
 ivs_labels <- 
@@ -87,23 +89,27 @@ ivs_labels <-
     "Family Income\nDisadvantage",
     "Neigh. Socioeconomic\nDisadvantage",
     "Family Transitions",
-    "Family Income\nVariability",
+    "Standard Deviation",
     "Neigh. Socioeconomic\nVariabibiliy",
     "Residual\nStandard Deviation",
-    "Average Percent Change"
+    "Average Percent Change",
+    "Coefficient of Variation"
   )
 
 # Source files ------------------------------------------------------------
+source("scripts/fig6-income-variability-controls.R")
 source("scripts/supplemental-figs.R")
 source("scripts/supplemental-tables.R")
 
 # Save output -------------------------------------------------------------
 save(
+  fig6,
   sfig1,
   sfig2,
   stable_ivs1,
   stable_ivs2,
   stables_primary,
-  stables_secondary,
+  stables_secondary1,
+  stables_secondary2,
   file = "manuscript/supplement/r-objects.Rdata"
 )

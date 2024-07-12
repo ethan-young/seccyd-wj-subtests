@@ -14,7 +14,7 @@ table2 <-
     numbered = T,
     stats = c("n", "mean", "sd", "min", "median", "max"),
     c.names = ivs_label |> 
-      str_subset("Residual|Percent", T) |> 
+      str_subset("Residual|Percent|Coefficient", T) |> 
       str_replace("Standard Deviation", "Family Income Variability") |> 
       str_replace("\\n", " "),
     sample_size = F

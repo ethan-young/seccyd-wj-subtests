@@ -45,11 +45,12 @@ fig3a <-
       filter(ivs %in% c("Family Income\nDisadvantage", "Neigh. Socioeconomic\nDisadvantage")),
     aes(
       x = -1.5, 
-      y = -2, 
-      label = paste("Overall Effect\n", main_effect_txt)
+      y = -Inf, 
+      label = glue::glue("Overall = {str_trim(main_effect_txt)}")
     ),
     size = 3,
     hjust = 0,
+    vjust = -.5,
     inherit.aes = F
   ) +
   scale_y_continuous("Centered WJ Score") +
@@ -58,8 +59,9 @@ fig3a <-
   scale_linetype_manual(values = c("dashed", "solid")) +
   scale_shape_manual(values = c(16,21)) +
   scale_alpha_manual(values = c(.1, 1)) +
+  coord_cartesian(clip = "off") +
   guides(
-    color = guide_legend(ncol = 3, byrow = T),
+    color = guide_legend(ncol = 2, byrow = T),
     fill = "none",
     shape = "none", 
     alpha = "none"
@@ -70,7 +72,7 @@ fig3a <-
     axis.ticks = element_blank(),
     axis.line.x = element_blank(),
     legend.justification = "center",
-    strip.text = element_text(hjust = 0.5, size = rel(.85)),
+    strip.text = element_text(hjust = 0.5, size = rel(.85), margin = margin(0,0,1,0, "lines")),
     panel.spacing = unit(1, "lines")
   )
 

@@ -1,7 +1,7 @@
 # Standard interaction plots ----
 fig5a <- 
   wj_plotting_data2 |> 
-  filter(dvs == "z_mean_score", ivs %in% c("z_incnt_sd", "z_incnt_sigma", "z_incnt_pc")) |> 
+  filter(dvs == "z_mean_score", ivs %in% c("z_incnt_sd", "z_incnt_sigma", "z_incnt_pc", "z_incnt_cv")) |> 
   mutate(
     test = factor(group, wj_order, wj_labels),
     adversity = x,
@@ -12,7 +12,7 @@ fig5a <-
     .by = c(ivs, adversity)
   ) |>
   left_join(
-    secondary_results_adjusted,
+    secondary_results_adjusted1,
     by = c("ivs", "dvs", "group" = "parameter")
   ) |> 
   mutate(
@@ -42,14 +42,15 @@ fig5a <-
   geom_text(
     data = equivalence_data2 |> 
       distinct(ivs, main_effect, main_effect_txt) |> 
-      filter(ivs %in% c("Standard Deviation", "Residual\nStandard Deviation", "Average Percent Change")),
+      filter(ivs %in% c("Standard Deviation", "Residual\nStandard Deviation", "Average Percent Change", "Coefficient of Variation")),
     aes(
       x = -1.5, 
-      y = -2, 
-      label = paste("Overall Effect\n", main_effect_txt)
+      y = -Inf, 
+      label = glue::glue("Overall = {str_trim(main_effect_txt)}")
     ),
     size = 3,
     hjust = 0,
+    vjust = -.5,
     inherit.aes = F
   ) +
   scale_y_continuous("Centered WJ Score", expand = c(.15,.15)) +
@@ -59,12 +60,13 @@ fig5a <-
   scale_shape_manual(values = c(16,21)) +
   scale_alpha_manual(values = c(.1, 1)) +
   guides(
-    color = guide_legend(ncol = 3, byrow = T),
+    color = guide_legend(ncol = 2, byrow = T),
     fill = "none",
     shape = "none", 
     alpha = "none"
   ) +
   ggtitle("Performance Slopes") +
+  coord_cartesian(clip = "off") +
   facet_wrap(~ivs, ncol = 1) +
   theme(
     axis.ticks = element_blank(),
@@ -76,7 +78,7 @@ fig5a <-
 # Equivalence - Interaction Term ------------------------------------------
 fig5b <- 
   equivalence_data2 |> 
-  filter(ivs %in% c("Standard Deviation", "Residual\nStandard Deviation", "Average Percent Change")) |> 
+  filter(ivs %in% c("Standard Deviation", "Residual\nStandard Deviation", "Average Percent Change", "Coefficient of Variation")) |> 
   ggplot(aes(color = parameter)) +
   geom_rect(
     aes(
@@ -110,18 +112,20 @@ fig5b <-
   facet_wrap(~ivs, ncol = 1) +
   guides(color = "none", fill = "none", shape = "none") +
   ggtitle("Interaction Effects") +
+  coord_cartesian(clip = "off") +
   theme(
     axis.line = element_blank(),
     axis.text = element_blank(),
     axis.ticks = element_blank(),
     panel.spacing = unit(1, "lines"),
-    strip.text = element_blank()
+    strip.text = element_blank(),
+    
   )
 
 # Equivalence - Simple Slopes ---------------------------------------------
 fig5c <- 
   equivalence_data2 |> 
-  filter(ivs %in% c("Standard Deviation", "Residual\nStandard Deviation", "Average Percent Change")) |> 
+  filter(ivs %in% c("Standard Deviation", "Residual\nStandard Deviation", "Average Percent Change", "Coefficient of Variation")) |> 
   ggplot(aes(color = parameter)) +
   geom_rect(
     aes(

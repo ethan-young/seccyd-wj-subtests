@@ -79,7 +79,8 @@ ivs_order <-
     "z_neigh_harsh",
     "z_neigh_unp",
     "z_incnt_sigma",
-    "z_incnt_pc"
+    "z_incnt_pc",
+    "z_incnt_cv"
   )
 
 ivs_label <- 
@@ -90,7 +91,8 @@ ivs_label <-
     "Neigh. Socioeconomic\nDisadvantage",
     "Neigh. Socioeconomic\nVariability",
     "Residual\nStandard Deviation",
-    "Average Percent Change"
+    "Average Percent Change",
+    "Coefficient of Variation"
   )
 
 # In text stats -----------------------------------------------------------
@@ -111,11 +113,19 @@ intext <-
       psych::corr.test() |> 
       _$r[1,2] |> 
       formatC(2, 3, format = "f"),
-    incm_incpc = secondary_data |> 
-      select(id, incnt_sd, incnt_sigma, incnt_pc) |> 
+    incm_incpc = secondary_data1 |> 
+      select(id, incnt_sd, incnt_sigma, incnt_pc, incnt_cv) |> 
       distinct() |> 
       left_join(primary_data |> select(id, incnt_mean) |> distinct()) |> 
       select(incnt_mean, incnt_pc) |> 
+      psych::corr.test() |> 
+      _$r[1,2] |> 
+      formatC(2, 3, format = "f"),
+    incm_inccv = secondary_data1 |> 
+      select(id, incnt_sd, incnt_sigma, incnt_pc, incnt_cv) |> 
+      distinct() |> 
+      left_join(primary_data |> select(id, incnt_mean) |> distinct()) |> 
+      select(incnt_mean, incnt_cv) |> 
       psych::corr.test() |> 
       _$r[1,2] |> 
       formatC(2, 3, format = "f"),
@@ -163,17 +173,54 @@ equivalence_data1 <-
                              T ~ "")
   )
 
-## Secondary Results----
+## Secondary Results 1 ----
 ### Predicted performance by adversity level and subtest
 wj_plotting_data2 <- 
-  secondary_results |> 
+  secondary_results1 |> 
   reveal(predicted_vals_fitted, predicted_vals_full, .unpack_specs = "wide") |> 
   filter(contrast == "wj_subtest_con1") |> 
   select(ivs, dvs, x, predicted, conf.low, conf.high, group)
 
 ### Data for plotting equivalence info
 equivalence_data2 <- 
-  secondary_results_adjusted |> 
+  secondary_results_adjusted1 |> 
+  mutate(
+    main_effect = ifelse(ivs == parameter, coefficient, NA),
+    main_effect_txt = ifelse(ivs == parameter, str_pad(sprintf("%.2f", main_effect), 8), NA),
+    main_effect_txt = case_when(ivs == parameter & p < .001 ~ paste0(main_effect_txt, "***"),
+                                ivs == parameter & p < .01  ~ paste0(main_effect_txt, "**"),
+                                ivs == parameter & p < .05  ~ paste0(main_effect_txt, "*"),
+                                T ~ main_effect_txt)
+  ) |> 
+  fill(main_effect, main_effect_txt) |> 
+  filter(parameter %in% wj_order, dvs == "mean_score") |> 
+  mutate(
+    parameter = factor(parameter, wj_order, wj_labels),
+    parameter_num = as.numeric(parameter),
+    ivs = factor(ivs, ivs_order, ivs_label),
+    sig_pos = ifelse(coefficient < 0, slope_low -.5, slope_high +.5),
+    sig_star = case_when(p < .001 ~ "***",
+                         p < .01  ~ "**",
+                         p < .05  ~ "*",
+                         T ~ ""),
+    sim_sig_pos = ifelse(slope < 0, slope_low -.5, slope_high +.5),
+    sim_sig_star = case_when(slope_p < .001 ~ "***",
+                             slope_p < .01  ~ "**",
+                             slope_p < .05  ~ "*",
+                             T ~ "")
+  )
+
+## Secondary Results 2 ----
+### Predicted performance by adversity level and subtest
+wj_plotting_data3 <- 
+  secondary_results2 |> 
+  reveal(predicted_vals_fitted, predicted_vals_full, .unpack_specs = "wide") |> 
+  filter(contrast == "wj_subtest_con1") |> 
+  select(ivs, dvs, x, model_meta, predicted, conf.low, conf.high, group)
+
+### Data for plotting equivalence info
+equivalence_data3 <- 
+  secondary_results_adjusted2 |> 
   mutate(
     main_effect = ifelse(ivs == parameter, coefficient, NA),
     main_effect_txt = ifelse(ivs == parameter, str_pad(sprintf("%.2f", main_effect), 8), NA),
@@ -216,13 +263,15 @@ theme_set(
       plot.background = element_rect(color = NA),
       plot.title = element_text(hjust = .5, face = "bold"),
       strip.background = element_rect(color = NA, fill = NA),
-      strip.text = element_text(color = "black", hjust = 0.5, face = "bold.italic")
+      strip.text = element_text(color = "black", hjust = 0.5, face = "bold.italic"),
+      strip.placement = "outside"
     )
 )
 
 source("scripts/fig3-harshness.R")
 source("scripts/fig4-unpredictability.R")
 source("scripts/fig5-income-variability.R")
+source("scripts/fig6-income-variability-controls.R")
 source("scripts/table1-wj-corrs.R")
 source("scripts/table2-adversity-corrs.R")
 source("scripts/table3-income-variability.R")
@@ -244,7 +293,9 @@ save(
 
 # Write figures -----------------------------------------------------------
 ggsave("manuscript/figures/fig2-wj-distributions.pdf", fig2, height = 8, width = 4.5)
-ggsave("manuscript/figures/fig3-harshness.pdf", fig3, height = 6, width = 8)
-ggsave("manuscript/figures/fig4-unpredictability.pdf", fig4, height = 6, width = 8)
-ggsave("manuscript/figures/fig5-income-variability.pdf", fig5, height = 8, width = 8)
+ggsave("manuscript/figures/fig3-harshness.pdf", fig3, height = 7, width = 8)
+ggsave("manuscript/figures/fig4-unpredictability.pdf", fig4, height = 7, width = 8)
+ggsave("manuscript/figures/fig5-income-variability.pdf", fig5, height = 7, width = 8)
+ggsave("manuscript/figures/fig6-income-variability-controls.pdf", fig6, height = 11, width = 8)
+
 

@@ -45,11 +45,12 @@ fig4a <-
       filter(ivs %in% c("Family Transitions", "Neigh. Socioeconomic\nVariability")),
     aes(
       x = -1.5, 
-      y = -2, 
-      label = paste("Overall Effect\n", main_effect_txt)
+      y = -Inf, 
+      label = glue::glue("Overall = {str_trim(main_effect_txt)}")
     ),
     size = 3,
     hjust = 0,
+    vjust = -.5,
     inherit.aes = F
   ) +
   scale_y_continuous("Centered WJ Score", expand = c(.15,.15)) +
@@ -59,7 +60,7 @@ fig4a <-
   scale_shape_manual(values = c(16,21)) +
   scale_alpha_manual(values = c(.1, 1)) +
   guides(
-    color = guide_legend(ncol = 3, byrow = T),
+    color = guide_legend(ncol = 2, byrow = T),
     fill = "none",
     shape = "none", 
     alpha = "none"
