@@ -1,15 +1,16 @@
-How does adversity relate to performance across different abilities in
-the same person?
+How does adversity relate to performance across different abilities
+within individuals?
 ================
 
-*Last updated on Thursday, May 11, 2023 at 10:37 AM*
+*Last updated on Saturday, July 13, 2024 at 10:26 AM*
 
 ## Overview
 
-This repository contains a preregistration, data, code, an (eventual)
-reproducible manuscript/supplement for a project entitled “How does
-adversity relate to performance across different abilities in the same
-person?” (working title).
+This repository contains a preregistration, data, code, a reproducible
+manuscript/supplement for a project entitled “How does adversity relate
+to performance across different abilities within individuals?” submitted
+to [*Development and
+Psychopathology*](https://www.cambridge.org/core/journals/development-and-psychopathology#).
 
 This project is a secondary data analysis using the Study of Early
 Childcare and Youth Development
@@ -24,8 +25,7 @@ six components organize the inputs and outputs of this project:
 1.  [`codebooks`](codebooks/): lists of variable names, labels, and
     value labels (where applicable).
 2.  [`data`](data/): data, stored as an `.Rdata` files.
-3.  [`manuscript`](manuscript/): a manuscript written in Quarto for
-    submission to a journal.
+3.  [`manuscript`](manuscript/): a manuscript written in Quarto.
 4.  [`preregistration`](preregistration/): a preregistration document
     based on ([Akker et al., 2021](#ref-akker2021)) that details my
     plans for this project.
@@ -37,7 +37,7 @@ six components organize the inputs and outputs of this project:
 ## References
 
 <div id="refs" class="references csl-bib-body hanging-indent"
-line-spacing="2">
+entry-spacing="0" line-spacing="2">
 
 <div id="ref-akker2021" class="csl-entry">
 

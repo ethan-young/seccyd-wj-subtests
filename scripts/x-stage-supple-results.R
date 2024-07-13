@@ -90,7 +90,7 @@ ivs_labels <-
     "Neigh. Socioeconomic\nDisadvantage",
     "Family Transitions",
     "Standard Deviation",
-    "Neigh. Socioeconomic\nVariabibiliy",
+    "Neigh. Socioeconomic\nVariability",
     "Residual\nStandard Deviation",
     "Average Percent Change",
     "Coefficient of Variation"

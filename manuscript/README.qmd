@@ -76,7 +76,7 @@ set_flextable_defaults(
 
 ```
 
-# Abstract 
+# Abstract
 
 The idea that some abilities might be enhanced by adversity is gaining
 traction. Adaptation-based approaches have uncovered a few specific
@@ -1096,18 +1096,18 @@ relative enhancements as a function of lower average family income -
 Auditory Processing and Auditory-Visual Associations– showed relatively
 reduced performance as a function of more income variability. These
 effects are surprisingly opposite. Although different adversity measures
-are not expected to produce the same results, most would not expect
-different measures to produce exactly opposite results.
+are not expected to produce the same results, we suspect most would not
+expect different measures to produce exactly opposite results.
 
-We argue that this pattern may be driven by the strong association
+We believe that this pattern may be driven by the strong association
 between average income and income variability. There are two approaches
 to addressing this issue. The first is to evaluate *how variability is
 computed* by using different methods for summarizing within-person
 variability. This method addresses the validity of variability scores at
 the *measurement* level. That is, we closely examine the properties of
-the measurement scale, how variability is computed, and explore whether
-different methods create better approximations of the construct of
-interest.
+the measurement scale and how variability is computed and then explore
+whether different methods create better approximations of the construct
+of interest.
 
 The second is to statistically adjust the effect of family income
 variability on WJ test performance by controlling for average family
@@ -1121,37 +1121,37 @@ at the measurement level is more appropriate than at the modeling level.
 Statistical controls require justification from a *data-independent
 causal model* or a Directed Acyclic Graph (DAG). That is, the decision
 to control for a variable in a statistical model depends a conceptual
-model of its causal role, and more specifically whether the variable is
+model of its causal role, and more specifically, whether the variable is
 a confound [@rohrer2018; @cinelli2022]. In the current work, controlling
 for average family income would be appropriate if we believed
 (theoretically) that average family income *causes* both income
 variability *and* WJ test performance. Yet, in theory, harshness and
-unpredictability are characterized as orthogonal, independent
-environmental constructs. Moreover, there are other plausible DAGs that
-do not situate harshness as a confound between unpredictability and
-cognitive performance, even when average income and income variability
-are correlated (see Causal Inference Discussion in the Supplement).
+unpredictability are characterized as independent environmental
+constructs. Moreover, there are other plausible DAGs that do not situate
+harshness as a confound between unpredictability and cognitive
+performance, even when average income and income variability are
+correlated (see Causal Inference Discussion in the Supplement).
 
-Despite these conceptual arguments, on could argue that variability
+Despite these conceptual arguments, one could argue that variability
 scores should not be modeled without controlling for average levels.
-Yet, a statistical correlation between two proxies (i.e., average family
-income and family income variability) is not necessarily causal and does
-not, by itself, make either a confound of the other. This creates
-tension between the statistical models implied by a particular DAG and
-the desire to ensure variability is modeled correctly. We argue that
-addressing how variability is computed at the measurement level
-alleviates this tension. Nonetheless, we conduct both sets of analyses.
-Secondary analysis code can be found on GitHub (see set one
+However, a statistical correlation between two proxies (i.e., average
+family income and family income variability) is not necessarily causal
+and does not, by itself, make either one a confounder of the other. This
+creates tension between the statistical models implied by a particular
+DAG and the desire to ensure variability is modeled correctly. We
+propose that addressing how variability is computed at the measurement
+level alleviates this tension. Nonetheless, we conducted both sets of
+analyses. Secondary analysis code can be found on GitHub (see set one
 <https://github.com/ethan-young/seccyd-wj-subtests/blob/master/scripts/4-secondary-analysis-1.R>
 and see set two
 <https://github.com/ethan-young/seccyd-wj-subtests/blob/master/scripts/4-secondary-analysis-2.R>).
 
-We believe both are important and instructive for future research. We
-emphasize that handling measurement issues should precede modeling
-solutions. Including statistical controls requires specifying an
-underlying causal model. In new exploratory fields, there are many
-alternative and justifiable models. Before adhering to one over another,
-we need to understand each variable on its own.
+We believe that both analyses are important and instructive for future
+research. We emphasize, however, that handling measurement issues should
+precede modeling solutions. Including statistical controls requires
+specifying an underlying causal model. In new exploratory fields, there
+are many alternative and justifiable models. Before adhering to one over
+another, we need to understand each variable on its own.
 
 ### Computing Different Income Variability Scores
 
@@ -1191,7 +1191,7 @@ a particular income-to-needs average value, the coefficient of variation
 measures variation as a proportion of the mean. Coefficient of variation
 statistics are particularly useful for scales with a meaningful zero
 value (i.e., zero income means the complete lack of income) as opposed
-to other scales where is zero not meaningful (e.g., temperature where
+to other scales in which zero is not meaningful (e.g., temperature where
 zero degrees Fahrenheit means freezing temperature, not the complete
 lack of heat).
 
@@ -1281,17 +1281,17 @@ associated with a significantly more positive Auditory Processing and
 Auditory-Visual Associations performance than overall performance.
 However, only Auditory Processing performance was outside the ROPE. In
 addition, larger coefficients of variation in family income were
-associated with significantly reduced performance Picture Vocab, Verbal
-Analogies, and Applied Problems compared to the overall effect. However,
-only performance on Verbal Analogies was outside the ROPE. Simple
-effects revealed that both Auditory Processing and Auditory-Visual
-Associations performance was inside the ROPE, meaning the effect is
-practically equivalent to zero, suggesting intact performance on both
-subtests. Simple effects for Picture Vocab, Verbal Analogies, and
-Applied Problems subtest were significantly and practically negative,
-suggesting that higher income variability (as measured by the
-coefficient of variation) is associated with reduced performance on
-each.
+associated with significantly reduced performance in Picture Vocab,
+Verbal Analogies, and Applied Problems compared to the overall effect.
+However, only performance on Verbal Analogies was outside the ROPE.
+Simple effects revealed that both Auditory Processing and
+Auditory-Visual Associations performance were inside the ROPE, meaning
+that these effects were practically equivalent to zero, suggesting
+intact performance on both subtests. Simple effects for Picture Vocab,
+Verbal Analogies, and Applied Problems subtest were significantly and
+practically negative, suggesting that higher income variability (as
+measured by the coefficient of variation) is associated with reduced
+performance on each.
 
 ```{r}
 #| label: Figure5
@@ -1343,17 +1343,18 @@ remain intact.
 
 In contrast, all indicators of unpredictability (family transitions,
 family/neighborhood socioeconomic disadvantage variability, percent
-change in family income, coefficient of variation) were associated with
-intact overall WJ performance, an unexpected and noteworthy result.
-However, only family transitions and the coefficient of variation were
-associated WJ subtest performance that different from overall
-performance. Family transitions were associated with reduced
-Calculations performance both a relative (compared to overall) and
-absolute sense (compared to zero). The effect of the coefficient of
-variation revealed the most similar effects to the harshness analyses of
-all unpredictability indicators. Larger coefficients of variation were
-associated with relatively enhanced Auditory Processing performance and
-reduced Verbal Analogies performance.
+change in family income, and the coefficient of variation) were
+associated with intact overall WJ performance, an unexpected and
+noteworthy result. However, only family transitions and the coefficient
+of variation were associated with WJ subtest performance that differed
+from overall performance. Family transitions were associated with
+reduced Calculations performance in both a relative (compared to
+overall) and absolute sense (compared to zero). The effect of the
+coefficient of variation revealed the most similar effects to the
+harshness analyses among all unpredictability indicators. Larger
+coefficients of variation were associated with relatively enhanced
+Auditory Processing performance and reduced Verbal Analogies
+performance.
 
 These findings are striking for three reasons. First, achievement and
 cognitive batteries like the WJ assessment have abstract content that is

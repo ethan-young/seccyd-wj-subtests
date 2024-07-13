@@ -72,37 +72,46 @@ set_flextable_defaults(
 )
 ```
 
-This document contains three parts. First, we provide correlations and
+This document contains seven parts. First, we provide correlations and
 descriptive statistics for all indicators used to create aggregate
 variables for harshness and unpredictability. Second, we provide full
-regression tables for both primary and secondary analyses. Third, we
-provide figures for both primary and secondary analyses where WJ scores
-are uncentered. Note that these analyses are the same, however,
-centering WJ scores allows for better visual comparison of each subtest
-slope. The uncentered scores retain visual information about mean
-differences in performance across subtest types.
+regression tables for the primary results. Third, we provide full
+results for the first set of secondary analyses. Fourth, we provide
+figures for both primary and secondary analyses where WJ scores are
+uncentered. Note that these analyses are the same, however, centering WJ
+scores allows for better visual comparison of each subtest slope. The
+uncentered scores retain visual information about mean differences in
+performance across subtest types. Fifth, we provide correlations between
+WJ subtests over time. Sixth, we provide background and a causal
+inference discussion regarding statistical controls. We then use this
+discussion to frame the various issues with controlling for average
+income in our income variability analyses. Next, we describe our
+analytic approach to controlling for average income and provide a figure
+of results for the income variability analyses with and without average
+income controls. Finally, we provide full regression results for each of
+these analyses.
 
 Below are links to each of these sections:
 
--   [Correlations Among All Harshness and Unpredictability
+1.  [Correlations Among All Harshness and Unpredictability
     Indicators](#stab1)
--   **Full Primary Analysis Results**
+2.  **Full Primary Analysis Results**
     -   [Family Income Disadvantage](#p1)
     -   [Neighborhood Socioeconomic Disadvantage](#p2)
     -   [Family Transitions Results](#p3)
-    -   [Neighborhood Soocioeconomic Variability](#p4)
--   **Full Secondary Analysis Results - Set 1**
+    -   [Neighborhood Socioeconomic Variability](#p4)
+3.  **Full Secondary Analysis Results - Set 1**
     -   [Family Income Average Percent Change](#s1a)
     -   [Family Income Coefficient of Variation](#s1b)
--   **Figures with Uncentered WJ Scores**
+4.  **Figures with Uncentered WJ Scores**
     -   [Primary Analyses](#sfig1)
     -   [Secondary Analyses](#sfig2)
--   [WJ Subtest Correlations Across Time](#srev1)
--   **Full Secondary Analysis Results - Set 2**
+5.  [WJ Subtest Correlations Across Time](#srev1)
+6.  **Full Secondary Analysis Results - Set 2**
     -   [Causal Models of Harshness and Unpredictability](#srev2)
     -   [Income Variability Controlling or Average Income](#srev3)
     -   [Income Variability with and without controls figure](#srev4)
--   **Full Income Variability Results (SD and Residual SD)**
+7.  **Full Income Variability Results (SD and Residual SD)**
     -   No controls (original analysis)
         -   [Family Income Standard Deviation](#s2a1)
         -   [Family Income Residual Standard Deviation](#s2b1)
@@ -112,9 +121,6 @@ Below are links to each of these sections:
     -   Main Effect + Simple Effect Controls
         -   [Family Income Standard Deviation](#s2a3)
         -   [Family Income Residual Standard Deviation](#s2b3)
--   [References](#refs)
-
-{{< pagebreak >}}
 
 ## Correlations Among All Harshness and Unpredictability Indicators {#stab1}
 
@@ -840,9 +846,9 @@ estimate of unpredictability.
 With limited knowledge about the true causal model and the complexity of
 our underlying model (e.g., interactions with dummy-coded WJ subtests),
 we deemed it wiser to model each adversity dimension one at time
-(however, see income varibility analyses below).
+(however, see income variability analyses below).
 
-## Income Variabilty Analyses Controlling for Average Income {#srev3}
+## Income Variability Analyses Controlling for Average Income {#srev3}
 
 Whether or not controlling for harshness (e.g., average income) will
 help remove bias depends on the underlying causal model. Thus, if theory
@@ -850,7 +856,7 @@ says harshness causes unpredictability and cognitive performance, then
 statistically controlling for average income will remove bias in the
 estimate of the effect of income variability. However, there are other
 plausible models (see above) that do not situate harshness (e.g.,
-average income) as a confound, and which therefore do not require
+average income) as a confound and which, therefore, do not require
 including it as a covariate. In our opinion, there is no strong evidence
 that harshness is a confound between unpredictability and cognitive
 performance. In fact, theoretically and conceptually, the two are often
@@ -929,7 +935,6 @@ variability.
 
 fig6
 ```
-
 
 ## Full Family Income Standard Deviation Results - no controls {#s2a1}
 

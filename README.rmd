@@ -1,5 +1,5 @@
 ---
-title: "How does adversity relate to performance across different abilities in the same person?"
+title: "How does adversity relate to performance across different abilities within individuals?"
 output: github_document
 bibliography: bib-files/references.bib
 csl: bib-files/apa.csl
@@ -10,7 +10,7 @@ link-citations: true
 
 ## Overview
 
-This repository contains a preregistration, data, code, an (eventual) reproducible manuscript/supplement for a project entitled "How does adversity relate to performance across different abilities in the same person?" (working title).
+This repository contains a preregistration, data, code, a reproducible manuscript/supplement for a project entitled "How does adversity relate to performance across different abilities within individuals?" submitted to [*Development and Psychopathology*](https://www.cambridge.org/core/journals/development-and-psychopathology#).
 
 This project is a secondary data analysis using the Study of Early Childcare and Youth Development [[SECCYD](https://www.icpsr.umich.edu/web/ICPSR/series/00233), @nichdearlychildcareresearchnetwork2005].
 
@@ -20,7 +20,7 @@ The names of each folder are intended to be self-explanatory. There are six comp
 
 1.  [`codebooks`](codebooks/): lists of variable names, labels, and value labels (where applicable).
 2.  [`data`](data/): data, stored as an `.Rdata` files.
-3.  [`manuscript`](manuscript/): a manuscript written in Quarto for submission to a journal.
+3.  [`manuscript`](manuscript/): a manuscript written in Quarto.
 4.  [`preregistration`](preregistration/): a preregistration document based on [@akker2021] that details my plans for this project.
 5.  [`scripts`](scripts/): R-scripts that read, analyze, and produce all outputs.
 6.  [`supplement`](manuscript/supplement/): a supplemental text with additional information and materials.
